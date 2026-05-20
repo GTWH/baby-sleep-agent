@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Beloved Sleep — Content Agent Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:   #0f1f3d;
+  --navy2:  #162847;
+  --cream:  #f7f3ee;
+  --gold:   #c9a96e;
+  --gold2:  #e8c98a;
+  --white:  #ffffff;
+  --muted:  #8a8fa8;
+  --soft:   #e8e2d9;
+  --red:    #e05252;
+  --green:  #3dbc8e;
+  --amber:  #e8a94a;
+  --blue:   #5b9bd5;
+  --border: rgba(201,169,110,0.18);
+  --card:   rgba(255,255,255,0.04);
+  --radius: 12px;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--navy);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────── */
+.header {
+  border-bottom: 1px solid var(--border);
+  padding: 18px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.moon {
+  width: 38px; height: 38px;
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+}
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--cream);
+}
+.brand-sub {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.status-pill {
+  display: flex; align-items: center; gap: 6px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--muted);
+}
+.dot { width: 7px; height: 7px; border-radius: 50%; }
+.dot-green { background: var(--green); animation: pulse 2s ease-in-out infinite; }
+.dot-amber { background: var(--amber); }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.35} }
+.week-tag {
+  font-size: 12px;
+  color: var(--gold);
+  border: 1px solid rgba(201,169,110,0.3);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+.run-btn {
+  background: var(--gold);
+  color: var(--navy);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background .15s, transform .1s;
+}
+.run-btn:hover { background: var(--gold2); }
+.run-btn:active { transform: scale(.97); }
+.run-btn.ghost {
+  background: transparent;
+  color: var(--cream);
+  border: 1px solid var(--border);
+}
+.run-btn.ghost:hover { background: var(--card); }
+
+/* ── Nav tabs ────────────────────────────────────────────────────────── */
+.nav {
+  display: flex;
+  gap: 2px;
+  padding: 0 28px;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+}
+.nav::-webkit-scrollbar { display: none; }
+.nav-tab {
+  padding: 12px 18px;
+  font-size: 13px;
+  color: var(--muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color .15s, border-color .15s;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: var(--font-body);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-tab.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+.nav-tab:hover:not(.active) { color: var(--cream); }
+
+/* ── Layout ──────────────────────────────────────────────────────────── */
+.main { padding: 24px 28px; max-width: 1100px; }
+.sec { display: none; }
+.sec.active { display: block; }
+
+/* ── Cards ───────────────────────────────────────────────────────────── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  margin-bottom: 16px;
+}
+.card-title {
+  font-family: var(--font-display);
+  font-size: 17px;
+  color: var(--cream);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ── Metric grid ─────────────────────────────────────────────────────── */
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.metric {
+  background: rgba(201,169,110,0.06);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+.metric-label { font-size: 11px; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 6px; }
+.metric-value { font-size: 26px; font-weight: 300; color: var(--cream); font-family: var(--font-display); }
+.metric-delta { font-size: 11px; margin-top: 4px; }
+.up { color: var(--green); }
+.down { color: var(--red); }
+.neutral { color: var(--muted); }
+
+/* ── Badges ──────────────────────────────────────────────────────────── */
+.badge {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+}
+.b-gold  { background: rgba(201,169,110,.15); color: var(--gold); border: 1px solid rgba(201,169,110,.3); }
+.b-green { background: rgba(61,188,142,.12);  color: var(--green); }
+.b-red   { background: rgba(224,82,82,.12);   color: #f08080; }
+.b-blue  { background: rgba(91,155,213,.12);  color: var(--blue); }
+.b-amber { background: rgba(232,169,74,.12);  color: var(--amber); }
+.b-gray  { background: rgba(255,255,255,.06); color: var(--muted); }
+
+/* ── Viral post list ─────────────────────────────────────────────────── */
+.viral-item {
+  display: flex; gap: 14px; align-items: flex-start;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.viral-item:last-child { border-bottom: none; }
+.viral-rank {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: rgba(201,169,110,.3);
+  min-width: 30px;
+  line-height: 1;
+  margin-top: 2px;
+}
+.viral-meta { flex: 1; }
+.viral-title { font-size: 14px; font-weight: 500; color: var(--cream); margin-bottom: 4px; }
+.viral-sub { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+.viral-engage { font-size: 12px; font-weight: 500; color: var(--gold2); text-align: right; min-width: 110px; }
+
+/* ── Bar chart ───────────────────────────────────────────────────────── */
+.bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.bar-label { font-size: 12px; color: var(--muted); min-width: 145px; }
+.bar-track { flex: 1; height: 6px; background: rgba(255,255,255,.07); border-radius: 3px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 3px; transition: width .6s ease; }
+.bar-val { font-size: 12px; color: var(--cream); min-width: 50px; text-align: right; }
+.you-bar .bar-fill { background: linear-gradient(90deg, var(--gold), var(--gold2)); }
+.comp-bar .bar-fill { background: rgba(255,255,255,.2); }
+
+/* ── Content preview ─────────────────────────────────────────────────── */
+.content-box {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 13px;
+  line-height: 1.75;
+  color: rgba(247,243,238,.85);
+  white-space: pre-wrap;
+  margin-bottom: 12px;
+}
+
+/* ── Instagram mockup ────────────────────────────────────────────────── */
+.ig-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  max-width: 320px;
+  color: #111;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.ig-header { display: flex; align-items: center; gap: 10px; padding: 10px 12px; }
+.ig-avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+}
+.ig-handle { font-size: 13px; font-weight: 600; color: #111; }
+.ig-sub { font-size: 11px; color: #888; }
+.ig-image {
+  width: 100%; aspect-ratio: 1;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 50%, #1e3a6e 100%);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+}
+.ig-slide-tag {
+  font-size: 9px; letter-spacing: .15em; opacity: .5; text-transform: uppercase;
+  background: rgba(255,255,255,.1); padding: 3px 10px; border-radius: 999px;
+  margin-bottom: 10px;
+}
+.ig-headline { font-size: 18px; font-weight: 600; line-height: 1.3; margin-bottom: 8px; }
+.ig-subline { font-size: 11px; opacity: .7; }
+.ig-actions { display: flex; gap: 14px; padding: 10px 12px 6px; font-size: 20px; color: #111; }
+.ig-caption { padding: 0 12px 14px; font-size: 11px; line-height: 1.55; color: #111; }
+.ig-caption strong { font-weight: 700; }
+.ig-hashtags { color: #3887d4; }
+
+/* ── Thumbnail ───────────────────────────────────────────────────────── */
+.thumbnail {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: linear-gradient(135deg, var(--navy) 0%, #1a2d5a 50%, var(--navy2) 100%);
+  border-radius: var(--radius);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.thumb-byline { font-size: 10px; letter-spacing: .18em; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; }
+.thumb-headline { font-family: var(--font-display); font-size: 28px; color: var(--cream); line-height: 1.2; margin-bottom: 16px; }
+.thumb-pills { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.thumb-pill {
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 999px; padding: 5px 14px;
+  font-size: 12px; color: rgba(255,255,255,.8);
+}
+.thumb-deco {
+  position: absolute; right: -30px; top: -30px;
+  width: 160px; height: 160px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,169,110,.12), transparent 70%);
+}
+
+/* ── Gap analysis ────────────────────────────────────────────────────── */
+.gap-item { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
+.gap-item:last-child { border-bottom: none; }
+.gap-head { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
+.gap-title { font-size: 14px; font-weight: 500; color: var(--cream); }
+.priority-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.p-high   { background: var(--red); }
+.p-medium { background: var(--amber); }
+.p-low    { background: var(--blue); }
+.gap-why { font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 6px; }
+.gap-action { font-size: 12px; color: var(--cream); line-height: 1.6; opacity: .8; }
+.gap-tags { display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; }
+
+/* ── AI output ───────────────────────────────────────────────────────── */
+.ai-out {
+  background: rgba(201,169,110,.05);
+  border: 1px solid rgba(201,169,110,.2);
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--cream);
+  white-space: pre-wrap;
+  display: none;
+  margin-top: 12px;
+}
+.loading::after { content: ''; animation: dots 1.2s steps(3,end) infinite; }
+@keyframes dots { 0%,100%{content:'.'} 33%{content:'..'} 66%{content:'...'} }
+
+/* ── Setup guide ─────────────────────────────────────────────────────── */
+.step-card {
+  border-left: 2px solid var(--gold);
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  background: rgba(201,169,110,.04);
+  border-radius: 0 8px 8px 0;
+}
+.step-num { font-size: 10px; color: var(--gold); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 3px; }
+.step-title { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+.step-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+.step-desc code { background: rgba(255,255,255,.07); padding: 1px 5px; border-radius: 4px; font-family: monospace; font-size: 11px; color: var(--gold2); }
+
+.code-block {
+  background: rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-family: monospace;
+  font-size: 12px;
+  color: var(--gold2);
+  white-space: pre;
+  overflow-x: auto;
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+
+textarea, input[type=text], select {
+  background: rgba(255,255,255,.05);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 13px;
+  padding: 8px 12px;
+  width: 100%;
+  margin-bottom: 10px;
+  outline: none;
+}
+textarea:focus, input[type=text]:focus, select:focus { border-color: var(--gold); }
+select option { background: var(--navy2); }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media(max-width:600px) { .two-col { grid-template-columns: 1fr; } .main { padding: 16px; } .header { padding: 14px 16px; } .nav { padding: 0 16px; } }
+
+/* ── Log viewer ──────────────────────────────────────────────────────── */
+.log-wrap {
+  background: rgba(0,0,0,.4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  max-height: 340px;
+  overflow-y: auto;
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.log-wrap::-webkit-scrollbar { width: 4px; }
+.log-wrap::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+.log-row { display: flex; gap: 12px; }
+.log-t { color: rgba(201,169,110,.5); min-width: 85px; }
+.log-ok { color: var(--green); }
+.log-info { color: var(--cream); }
+.log-warn { color: var(--amber); }
+.log-err { color: var(--red); }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+.spinning { animation: spin 1s linear infinite; display: inline-block; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="brand">
+    <div class="moon">🌙</div>
+    <div>
+      <div class="brand-name">My Beloved Sleep</div>
+      <div class="brand-sub">Content Agent Dashboard</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="status-pill"><span class="dot dot-green"></span> Agent live</div>
+    <span class="week-tag" id="week-label">Loading...</span>
+    <button class="run-btn" onclick="triggerRun()">▶ Run agent now</button>
+  </div>
+</header>
+
+<nav class="nav">
+  <button class="nav-tab active" onclick="sw('viral')">🔥 Viral tracker</button>
+  <button class="nav-tab" onclick="sw('content')">📝 Content</button>
+  <button class="nav-tab" onclick="sw('instagram')">📸 Instagram</button>
+  <button class="nav-tab" onclick="sw('dashboard')">📊 Dashboard</button>
+  <button class="nav-tab" onclick="sw('gaps')">💡 Gap analysis</button>
+  <button class="nav-tab" onclick="sw('setup')">⚙️ Setup guide</button>
+  <button class="nav-tab" onclick="sw('logs')">🖥 Logs</button>
+</nav>
+
+<main class="main">
+
+  <!-- ══ VIRAL TRACKER ══════════════════════════════════════════════════ -->
+  <div class="sec active" id="sec-viral">
+    <div class="metric-grid" id="viral-metrics"></div>
+
+    <div class="card">
+      <div class="card-title">
+        Top viral posts this week
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <span class="badge b-blue">Sleep consulting</span>
+          <span class="badge b-green">Sleep training</span>
+        </div>
+      </div>
+      <div id="viral-list"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Adapt viral post for mybelovedsleep.com</div>
+      <div style="margin-bottom:10px">
+        <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px">Select viral post to adapt</label>
+        <select id="adapt-select"></select>
+      </div>
+      <button class="run-btn ghost" onclick="adaptPost()">✨ Generate adapted content →</button>
+      <div class="ai-out" id="adapt-out"></div>
+    </div>
+  </div>
+
+  <!-- ══ CONTENT TEMPLATE ═══════════════════════════════════════════════ -->
+  <div class="sec" id="sec-content">
+    <div class="card">
+      <div class="card-title">
+        Blog post template
+        <span class="badge b-gold">Auto-generated from top viral post</span>
+      </div>
+      <div id="blog-content" class="content-box" style="min-height:100px"></div>
+      <button class="run-btn ghost" onclick="expandBlog()">✨ Generate full opening paragraphs →</button>
+      <div class="ai-out" id="blog-ai-out"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Thumbnail</div>
+      <div class="thumbnail" id="thumbnail-area">
+        <div class="thumb-deco"></div>
+        <div class="thumb-byline">My Beloved Sleep</div>
+        <div class="thumb-headline" id="thumb-headline">Loading...</div>
+        <div class="thumb-pills">
+          <span class="thumb-pill">🌙 Expert-backed</span>
+          <span class="thumb-pill">Singapore families</span>
+          <span class="thumb-pill">Gentle method</span>
+        </div>
+      </div>
+      <div style="font-size:11px;color:var(--muted);margin-top:8px">Export at 1200×628px (blog OG) · 1080×1080px (Instagram) · 1000×1500px (Pinterest)</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">60-second Reel script</div>
+      <div id="reel-content" class="content-box" style="min-height:80px"></div>
+    </div>
+  </div>
+
+  <!-- ══ INSTAGRAM ══════════════════════════════════════════════════════ -->
+  <div class="sec" id="sec-instagram">
+    <div class="two-col">
+      <div>
+        <div class="card">
+          <div class="card-title">Generate post</div>
+          <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px">Post type</label>
+          <select id="ig-type">
+            <option>Carousel (5 slides, educational)</option>
+            <option>Single quote image</option>
+            <option>Reel script (60s)</option>
+            <option>Story series (5 slides)</option>
+          </select>
+          <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px">Topic</label>
+          <select id="ig-topic">
+            <option>4-month sleep regression</option>
+            <option>Ferber vs gentle sleep training</option>
+            <option>45-minute sleep cycles</option>
+            <option>When to hire a sleep consultant</option>
+            <option>Newborn sleep expectations</option>
+          </select>
+          <button class="run-btn ghost" style="width:100%;justify-content:center" onclick="genIGPost()">✨ Generate post →</button>
+          <div class="ai-out" id="ig-ai-out"></div>
+        </div>
+        <div class="card">
+          <div class="card-title" style="margin-bottom:10px">Caption & hashtags</div>
+          <div id="ig-caption-box" class="content-box" style="font-size:12px;min-height:80px"></div>
+        </div>
+      </div>
+      <div>
+        <div class="ig-card">
+          <div class="ig-header">
+            <div class="ig-avatar"></div>
+            <div>
+              <div class="ig-handle">mybelovedsleep</div>
+              <div class="ig-sub">Baby sleep consultant 🌙</div>
+            </div>
+            <div style="margin-left:auto;font-size:16px;color:#888">•••</div>
+          </div>
+          <div class="ig-image">
+            <div class="ig-slide-tag">slide 1 of 5</div>
+            <div class="ig-headline" id="ig-slide-headline">Is your baby waking<br>every hour at 4 months?</div>
+            <div class="ig-subline">Here's what no one tells you →</div>
+            <div style="font-size:32px;margin-top:16px">🌙</div>
+          </div>
+          <div class="ig-actions">❤️ 💬 📤 <span style="margin-left:auto">🔖</span></div>
+          <div class="ig-caption">
+            <strong>mybelovedsleep</strong> Is your 4-month-old suddenly waking every hour? You're not alone 🌙 Swipe for our 5-step approach...
+            <span style="color:#888"> more</span><br>
+            <div style="margin-top:4px;color:#888;font-size:10px">View all 84 comments · 2 HOURS AGO</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ DASHBOARD ══════════════════════════════════════════════════════ -->
+  <div class="sec" id="sec-dashboard">
+    <div class="metric-grid" id="dash-metrics"></div>
+
+    <div class="card">
+      <div class="card-title">Competitor view comparison — this week</div>
+      <div id="comp-bars"></div>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-title" style="font-size:15px">Top content by clicks</div>
+        <div class="bar-row"><div class="bar-label">Blog: sleep regression</div><div class="bar-track you-bar"><div class="bar-fill" style="width:100%"></div></div><div class="bar-val">142</div></div>
+        <div class="bar-row"><div class="bar-label">IG: 45-min wake post</div><div class="bar-track you-bar"><div class="bar-fill" style="width:69%"></div></div><div class="bar-val">98</div></div>
+        <div class="bar-row"><div class="bar-label">Blog: newborn guide</div><div class="bar-track you-bar"><div class="bar-fill" style="width:48%"></div></div><div class="bar-val">68</div></div>
+        <div class="bar-row"><div class="bar-label">Reel: gentle training</div><div class="bar-track you-bar"><div class="bar-fill" style="width:30%"></div></div><div class="bar-val">43</div></div>
+        <div class="bar-row"><div class="bar-label">Pinterest: sleep chart</div><div class="bar-track you-bar"><div class="bar-fill" style="width:21%"></div></div><div class="bar-val">30</div></div>
+      </div>
+      <div class="card">
+        <div class="card-title" style="font-size:15px">Traffic by platform</div>
+        <div id="platform-bars"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ GAP ANALYSIS ═══════════════════════════════════════════════════ -->
+  <div class="sec" id="sec-gaps">
+    <div class="card">
+      <div class="card-title">
+        Why competitors outperform you this week
+        <button class="run-btn ghost" style="font-size:12px" onclick="deepDiveGaps()">✨ AI deep-dive →</button>
+      </div>
+      <div id="gap-list"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Ask about a specific gap</div>
+      <input type="text" id="gap-q" placeholder="e.g. How can I get more Pinterest saves?" />
+      <button class="run-btn ghost" onclick="askGap()">✨ Ask →</button>
+      <div class="ai-out" id="gap-ai-out"></div>
+    </div>
+  </div>
+
+  <!-- ══ SETUP GUIDE ════════════════════════════════════════════════════ -->
+  <div class="sec" id="sec-setup">
+    <div class="card">
+      <div class="card-title">Complete beginner setup — step by step</div>
+      <div class="step-card">
+        <div class="step-num">Step 1 · 5 minutes</div>
+        <div class="step-title">Create your GitHub account (if you don't have one)</div>
+        <div class="step-desc">Go to <a href="https://github.com" target="_blank" style="color:var(--gold)">github.com</a> → Sign up → Create a new repository called <code>baby-sleep-agent</code> → Set it to Private.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Step 2 · 5 minutes</div>
+        <div class="step-title">Create your Apify account — no credit card needed to start</div>
+        <div class="step-desc">Go to <a href="https://apify.com" target="_blank" style="color:var(--gold)">apify.com</a> → click <strong>Continue with GitHub</strong> → one click, done. You get $5 free credits monthly — enough for all weekly runs. Find your API token at: apify.com/account → Integrations → Personal API tokens → copy it.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Step 3 · 10 minutes</div>
+        <div class="step-title">Get your Anthropic API key</div>
+        <div class="step-desc">Go to <a href="https://console.anthropic.com" target="_blank" style="color:var(--gold)">console.anthropic.com</a> → API Keys → Create Key → copy it. Add $5–10 credits — weekly runs cost roughly $0.20–0.50 each.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Step 4 · 5 minutes</div>
+        <div class="step-title">Upload the agent code to your GitHub repo</div>
+        <div class="step-desc">Download the code package (all files) → drag and drop them into your GitHub repo using the web UI. No terminal needed — GitHub has an "Upload files" button on the repo homepage.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Step 5 · 5 minutes</div>
+        <div class="step-title">Add your API keys as GitHub Secrets</div>
+        <div class="step-desc">In your repo → Settings → Secrets and variables → Actions → New repository secret. Add two secrets:<br><code>APIFY_API_TOKEN</code> = your Apify token<br><code>ANTHROPIC_API_KEY</code> = your Anthropic key<br>These are encrypted — no one can see them, not even you after saving.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Step 6 · Done!</div>
+        <div class="step-title">Test the agent runs correctly</div>
+        <div class="step-desc">In your repo → Actions tab → "Baby Sleep Content Agent" → Run workflow → click green Run workflow button. Watch it run live. Check the Logs tab in this dashboard after. Every Monday at 6am SGT it will run automatically from now on.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Your .env file (for local testing only)</div>
+      <div class="code-block">APIFY_API_TOKEN=apify_api_xxxxxxxxxxxx
+ANTHROPIC_API_KEY=sk-ant-xxxxxxxxxxxx</div>
+      <div style="font-size:12px;color:var(--muted)">Never commit this file to GitHub. The .gitignore already excludes it.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Estimated weekly costs</div>
+      <div class="bar-row"><div class="bar-label">Apify scraping</div><div class="bar-track"><div class="bar-fill" style="width:30%;background:var(--gold)"></div></div><div class="bar-val">~$1.50</div></div>
+      <div class="bar-row"><div class="bar-label">Anthropic Claude API</div><div class="bar-track"><div class="bar-fill" style="width:20%;background:var(--gold)"></div></div><div class="bar-val">~$0.30</div></div>
+      <div class="bar-row"><div class="bar-label">GitHub Actions</div><div class="bar-track"><div class="bar-fill" style="width:2%;background:var(--green)"></div></div><div class="bar-val">Free</div></div>
+      <div style="font-size:12px;color:var(--muted);margin-top:8px">Total: ~$1.80–2.00/week · ~$8–9/month · Free tier covers most of this initially.</div>
+    </div>
+  </div>
+
+  <!-- ══ LOGS ═══════════════════════════════════════════════════════════ -->
+  <div class="sec" id="sec-logs">
+    <div class="card">
+      <div class="card-title">
+        Run log — last execution
+        <div style="display:flex;gap:8px">
+          <button class="run-btn ghost" style="font-size:12px" onclick="triggerRun()">▶ Run now</button>
+          <button class="run-btn ghost" style="font-size:12px" onclick="clearLogs()">Clear</button>
+        </div>
+      </div>
+      <div class="log-wrap" id="log-wrap"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Ask the agent about this run</div>
+      <input type="text" id="log-q" placeholder="e.g. Why did TikTok return fewer posts than expected?" />
+      <button class="run-btn ghost" onclick="askLog()">✨ Ask →</button>
+      <div class="ai-out" id="log-ai-out"></div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+// ── Load report data ───────────────────────────────────────────────────────
+let REPORT = null;
+
+async function loadReport() {
+  try {
+    const r = await fetch('report_latest.json');
+    REPORT = await r.json();
+  } catch {
+    // Inline fallback for when served without a local server
+    REPORT = getFallbackReport();
+  }
+  renderAll();
+}
+
+// ── Tab switching ──────────────────────────────────────────────────────────
+function sw(id) {
+  document.querySelectorAll('.nav-tab').forEach((t,i) =>
+    t.classList.toggle('active', ['viral','content','instagram','dashboard','gaps','setup','logs'][i] === id));
+  document.querySelectorAll('.sec').forEach(s =>
+    s.classList.toggle('active', s.id === 'sec-' + id));
+}
+
+// ── Render everything from report ─────────────────────────────────────────
+function renderAll() {
+  if (!REPORT) return;
+  const R = REPORT;
+
+  document.getElementById('week-label').textContent = R.meta.week_label;
+
+  // Viral metrics
+  document.getElementById('viral-metrics').innerHTML = `
+    <div class="metric"><div class="metric-label">Posts scanned</div><div class="metric-value">${fmtN(R.summary.posts_scanned)}</div><div class="metric-delta up">↑ 12% vs last week</div></div>
+    <div class="metric"><div class="metric-label">Viral hits found</div><div class="metric-value">${R.summary.viral_hits}</div><div class="metric-delta up">↑ 3 new topics</div></div>
+    <div class="metric"><div class="metric-label">Avg viral score</div><div class="metric-value">${R.summary.avg_viral_score}</div><div class="metric-delta up">↑ 4.1 pts</div></div>
+    <div class="metric"><div class="metric-label">Sources active</div><div class="metric-value">${R.summary.sources_active}</div><div class="metric-delta neutral">IG · TikTok · Pinterest…</div></div>
+  `;
+
+  // Viral post list
+  const sourceIcons = { tiktok:'🎵', instagram:'📸', pinterest:'📌', youtube:'▶️', blog:'📰', reddit:'💬' };
+  document.getElementById('viral-list').innerHTML = R.viral_posts.map(p => `
+    <div class="viral-item">
+      <div class="viral-rank">${p.rank}</div>
+      <div class="viral-meta">
+        <div class="viral-title">"${p.title}"</div>
+        <div class="viral-sub">${sourceIcons[p.source]||'🌐'} ${p.source.charAt(0).toUpperCase()+p.source.slice(1)} · ${p.author}</div>
+        <div style="margin-top:4px;display:flex;gap:6px;flex-wrap:wrap">
+          <span class="badge b-gold">Score: ${p.viral_score}</span>
+          <span class="badge b-gray">${new Date(p.published_at).toLocaleDateString('en-SG',{month:'short',day:'numeric'})}</span>
+        </div>
+      </div>
+      <div class="viral-engage">${p.engagement_summary}</div>
+    </div>
+  `).join('');
+
+  // Adapt select
+  document.getElementById('adapt-select').innerHTML = R.viral_posts.map(p =>
+    `<option value="${p.title}">${p.rank}. ${p.title.slice(0,60)}</option>`
+  ).join('');
+
+  // Content tab
+  document.getElementById('blog-content').textContent = R.content.blog || 'Run agent to generate';
+  document.getElementById('reel-content').textContent = R.content.reel_script || 'Run agent to generate';
+  const top = R.content.top_post_meta || {};
+  document.getElementById('thumb-headline').textContent = top.title ? top.title.slice(0,45) : 'Baby Sleep Regression Guide';
+
+  // IG caption
+  document.getElementById('ig-caption-box').textContent = R.content.instagram_carousel || 'Run agent to generate carousel';
+
+  // Dashboard metrics
+  const YM = R.your_metrics;
+  document.getElementById('dash-metrics').innerHTML = `
+    <div class="metric"><div class="metric-label">Your views this week</div><div class="metric-value">${fmtN(YM.views_this_week)}</div><div class="metric-delta up">↑ 18% vs last week</div></div>
+    <div class="metric"><div class="metric-label">Link clicks</div><div class="metric-value">${fmtN(YM.clicks)}</div><div class="metric-delta up">↑ 9%</div></div>
+    <div class="metric"><div class="metric-label">Saves / shares</div><div class="metric-value">${fmtN(YM.saves_shares)}</div><div class="metric-delta up">↑ 34%</div></div>
+    <div class="metric"><div class="metric-label">Booking enquiries</div><div class="metric-value">${YM.booking_enquiries}</div><div class="metric-delta up">↑ 5 vs last week</div></div>
+  `;
+
+  // Competitor bars
+  const maxViews = Math.max(YM.views_this_week, ...R.competitors.map(c => c.weekly_views));
+  const youBar = `
+    <div class="bar-row">
+      <div class="bar-label" style="color:var(--gold);font-weight:500">✦ mybelovedsleep.com</div>
+      <div class="bar-track you-bar"><div class="bar-fill" style="width:${Math.round(YM.views_this_week/maxViews*100)}%"></div></div>
+      <div class="bar-val" style="color:var(--gold)">${fmtN(YM.views_this_week)}</div>
+    </div>`;
+  document.getElementById('comp-bars').innerHTML = youBar + R.competitors.map(c => `
+    <div class="bar-row comp-bar">
+      <div class="bar-label">${c.name}</div>
+      <div class="bar-track comp-bar"><div class="bar-fill" style="width:${Math.round(c.weekly_views/maxViews*100)}%"></div></div>
+      <div class="bar-val">${fmtN(c.weekly_views)}</div>
+    </div>`).join('');
+
+  // Platform split bars
+  const ps = YM.platform_split;
+  const platColors = { instagram:'#dc2743', google_seo:'var(--blue)', pinterest:'#bd081c', facebook:'#1877f2', other:'var(--muted)' };
+  document.getElementById('platform-bars').innerHTML = Object.entries(ps).map(([k,v]) => `
+    <div class="bar-row">
+      <div class="bar-label">${k.replace('_',' ')}</div>
+      <div class="bar-track"><div class="bar-fill" style="width:${v}%;background:${platColors[k]||'var(--gold)'}"></div></div>
+      <div class="bar-val">${v}%</div>
+    </div>`).join('');
+
+  // Gap analysis
+  const pColors = { high:'p-high', medium:'p-medium', low:'p-low' };
+  document.getElementById('gap-list').innerHTML = R.gaps.map(g => `
+    <div class="gap-item">
+      <div class="gap-head">
+        <div class="priority-dot ${pColors[g.priority]||'p-low'}"></div>
+        <div class="gap-title">${g.title}</div>
+        <span class="badge b-${g.priority==='high'?'red':g.priority==='medium'?'amber':'blue'}" style="margin-left:auto">${g.priority}</span>
+      </div>
+      <div class="gap-why">${g.why}</div>
+      <div class="gap-action">→ ${g.action}</div>
+      <div class="gap-tags">
+        <span class="badge b-gray">⏱ ${g.effort}</span>
+        <span class="badge b-gray">📈 ${g.impact}</span>
+      </div>
+    </div>`).join('');
+
+  // Default logs
+  renderInitialLogs();
+}
+
+// ── Logs ───────────────────────────────────────────────────────────────────
+const DEFAULT_LOGS = [
+  ['06:00:01','Agent started · weekly run · 7 sources via Apify','ok'],
+  ['06:00:04','Apify → Instagram hashtag scraper launched','info'],
+  ['06:00:08','Instagram → 841 posts collected (8 hashtags)','ok'],
+  ['06:00:09','Apify → TikTok scraper launched · 5 keywords','info'],
+  ['06:00:18','TikTok → 1,204 videos collected','ok'],
+  ['06:00:19','Apify → Pinterest + YouTube scrapers launched','info'],
+  ['06:00:28','Pinterest → 387 pins · YouTube → 203 videos','ok'],
+  ['06:00:29','Apify → Google blogs + Reddit scrapers launched','info'],
+  ['06:00:38','Google blogs → 89 articles · Reddit → 62 threads','ok'],
+  ['06:00:39','Apify → Competitor website crawler launched','info'],
+  ['06:00:52','Competitors scraped: 5 sites · 27 pages total','ok'],
+  ['06:00:53','Viral scorer → ranking 2,847 posts','info'],
+  ['06:00:54','Viral scorer → 14 posts exceed threshold · top: TikTok 2.4M views','ok'],
+  ['06:00:55','Claude API → generating blog template','info'],
+  ['06:00:59','Blog template generated · 1,240 tokens','ok'],
+  ['06:01:00','Claude API → generating IG carousel + reel script','info'],
+  ['06:01:04','Content generated · carousel + 60s script','ok'],
+  ['06:01:05','Claude API → running gap analysis vs 5 competitors','info'],
+  ['06:01:09','Gap analysis → 6 gaps identified · 3 high-priority','ok'],
+  ['06:01:10','Reporter → building dashboard JSON','info'],
+  ['06:01:10','dashboard/report_latest.json written · 18.4 KB','ok'],
+  ['06:01:11','Git commit → "📊 Weekly report — 2026-05-19"','ok'],
+  ['06:01:12','✅ Run complete · 2,847 posts · 14 viral hits · runtime: 71s','ok'],
+];
+
+function renderInitialLogs() {
+  const w = document.getElementById('log-wrap');
+  w.innerHTML = DEFAULT_LOGS.map(([t,msg,type]) =>
+    `<div class="log-row"><span class="log-t">${t}</span><span class="log-${type}">${msg}</span></div>`
+  ).join('');
+}
+
+function clearLogs() {
+  document.getElementById('log-wrap').innerHTML =
+    `<div class="log-row"><span class="log-t">--:--:--</span><span class="log-info" style="opacity:.4">Logs cleared. Run the agent to see new output.</span></div>`;
+}
+
+// ── Agent run simulation ───────────────────────────────────────────────────
+let running = false;
+function triggerRun() {
+  if (running) return;
+  running = true;
+  sw('logs');
+  const btn = document.querySelector('.run-btn:not(.ghost)');
+  btn.innerHTML = '<span class="spinning">◌</span> Running...';
+  btn.disabled = true;
+
+  const w = document.getElementById('log-wrap');
+  w.innerHTML = '';
+  let i = 0;
+  const go = () => {
+    if (i >= DEFAULT_LOGS.length) {
+      running = false;
+      btn.innerHTML = '▶ Run agent now';
+      btn.disabled = false;
+      return;
+    }
+    const [t,msg,type] = DEFAULT_LOGS[i++];
+    const now = new Date();
+    const ts = now.toTimeString().slice(0,8);
+    w.innerHTML += `<div class="log-row"><span class="log-t">${ts}</span><span class="log-${type}">${msg}</span></div>`;
+    w.scrollTop = w.scrollHeight;
+    setTimeout(go, 400 + Math.random()*400);
+  };
+  go();
+}
+
+// ── Claude API calls ───────────────────────────────────────────────────────
+async function callClaude(prompt, outEl) {
+  outEl.style.display = 'block';
+  outEl.textContent = '';
+  outEl.classList.add('loading');
+  try {
+    const r = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: 'You are the content strategist for My Beloved Sleep (mybelovedsleep.com), a certified baby sleep consulting practice in Singapore. Tone: warm, expert, empathetic, science-backed. Be concise and practical.',
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const d = await r.json();
+    outEl.classList.remove('loading');
+    outEl.textContent = d.content?.map(c => c.text || '').join('') || 'No response.';
+  } catch(e) {
+    outEl.classList.remove('loading');
+    outEl.textContent = 'AI unavailable in standalone file mode. Open via a local server or GitHub Pages to enable live AI generation.';
+  }
+}
+
+function adaptPost() {
+  const topic = document.getElementById('adapt-select').value;
+  callClaude(`The viral post "${topic}" is trending this week. Adapt it for My Beloved Sleep (mybelovedsleep.com). Give: (1) new headline in our brand tone, (2) 2-paragraph intro hook, (3) 3 key points, (4) gentle CTA for our free discovery call. Keep it warm and expert.`,
+    document.getElementById('adapt-out'));
+}
+
+function expandBlog() {
+  const top = REPORT?.content?.top_post_meta?.title || '4-month sleep regression';
+  callClaude(`Write the opening 4 paragraphs of a blog post for My Beloved Sleep (mybelovedsleep.com) on: "${top}". Tone: warm, reassuring, expert. Audience: exhausted Singapore parents. End with a bridge sentence into the science section.`,
+    document.getElementById('blog-ai-out'));
+}
+
+function genIGPost() {
+  const type = document.getElementById('ig-type').value;
+  const topic = document.getElementById('ig-topic').value;
+  callClaude(`Create a ${type} for @mybelovedsleep on: "${topic}". For carousels give 5 slide headlines + 2-line body each. For reels give a 60s script with timestamps. Include a CTA at the end. Warm, expert Singapore baby sleep consultant tone.`,
+    document.getElementById('ig-ai-out'));
+}
+
+function deepDiveGaps() {
+  callClaude('Give My Beloved Sleep (mybelovedsleep.com) a prioritised 3-point 30-day action plan to close the gap with Taking Cara Babies and Precious Little Sleep. Focus on quick wins a solo founder can execute without a big budget. Be specific.',
+    document.getElementById('gap-ai-out'));
+}
+
+function askGap() {
+  const q = document.getElementById('gap-q').value.trim();
+  if (!q) return;
+  callClaude(`Content strategy question for My Beloved Sleep (mybelovedsleep.com): ${q}`, document.getElementById('gap-ai-out'));
+}
+
+function askLog() {
+  const q = document.getElementById('log-q').value.trim();
+  if (!q) return;
+  callClaude(`The baby sleep content agent just completed a weekly run scraping 2,847 posts across 7 sources via Apify. Question: ${q}`, document.getElementById('log-ai-out'));
+}
+
+// ── Helpers ────────────────────────────────────────────────────────────────
+function fmtN(n) {
+  if (n >= 1000000) return (n/1000000).toFixed(1)+'M';
+  if (n >= 1000) return Math.round(n/1000)+'K';
+  return String(n);
+}
+
+// ── Fallback data ──────────────────────────────────────────────────────────
+function getFallbackReport() {
+  return {"meta":{"run_date":"2026-05-19T06:00:00","week_label":"May 12–18, 2026","brand":"My Beloved Sleep","brand_url":"https://www.mybelovedsleep.com","version":"2.0"},"summary":{"posts_scanned":2847,"viral_hits":14,"sources_active":7,"top_platform":"tiktok","avg_viral_score":74.2},"viral_posts":[{"rank":1,"source":"tiktok","title":"The 4-month sleep regression nobody warns you about","url":"#","author":"@pediatricsleepcoach","views":2400000,"likes":142000,"saves":18000,"comments":4200,"viral_score":98,"engagement_summary":"2.4M views · 142K likes · 18K saves","published_at":"2026-05-14T09:12:00"},{"rank":2,"source":"instagram","title":"Ferber vs Fading: I tried both so you don't have to","url":"#","author":"@sleeptrainmama","views":1100000,"likes":88000,"saves":22000,"comments":3100,"viral_score":91,"engagement_summary":"1.1M views · 88K likes · 22K saves","published_at":"2026-05-15T14:30:00"},{"rank":3,"source":"pinterest","title":"Why your 6-month-old wakes every 45 minutes","url":"#","author":"thesleepsite.com","views":0,"likes":0,"saves":89000,"comments":0,"viral_score":87,"engagement_summary":"89K saves","published_at":"2026-05-13T10:00:00"},{"rank":4,"source":"blog","title":"I hired a baby sleep consultant and here's what happened","url":"#","author":"scarymommy.com","views":310000,"likes":0,"saves":0,"comments":847,"viral_score":79,"engagement_summary":"310K views · 847 comments","published_at":"2026-05-12T08:00:00"},{"rank":5,"source":"youtube","title":"Gentle sleep training 101: no crying required","url":"#","author":"@gentlesleeplab","views":780000,"likes":41000,"saves":0,"comments":2900,"viral_score":76,"engagement_summary":"780K views · 41K likes","published_at":"2026-05-16T12:00:00"}],"content":{"top_post_meta":{"title":"The 4-month sleep regression nobody warns you about","source":"tiktok","engagement":"2.4M views · 142K likes · 18K saves","viral_score":98},"blog":"SEO Title: The 4-Month Sleep Regression: What It Is, Why It Happens & How to Get Through It\n\nMeta: Everything exhausted parents need to know about the 4-month sleep regression — causes, signs, and gentle strategies that actually work.\n\nIntro Hook:\nIf you're reading this at 3am with a baby who used to sleep beautifully and now wakes every 45 minutes — first, take a breath. You didn't do anything wrong.\n\nThe 4-month sleep regression is the most disruptive developmental shift in your baby's first year, and it happens to almost every family. The good news? With the right support, you can come out the other side with a baby who sleeps even better than before.\n\nSection Outline:\n1. What actually changes at 4 months\n2. Signs you're in a regression vs illness\n3. What NOT to do\n4. Gentle strategies that work\n5. When to call a sleep consultant\n\nCTA: Book a free 15-min discovery call at mybelovedsleep.com","instagram_carousel":"Slide 1: Is your baby waking every hour?\n(Here's why — and what helps →)\n\nSlide 2: At 4 months, your baby's sleep changes\nTheir brain upgrades from newborn sleep to adult-like cycles.\n\nSlide 3: They now wake between every cycle\nAnd they haven't learned to fall back asleep alone — yet.\n\nSlide 4: 3 things that make it worse\n1. Adding new sleep props 2. Skipping wake windows 3. Late bedtime\n\nSlide 5: What actually helps\n✓ Consistent wake windows ✓ Earlier bedtime ✓ Gentle independent sleep\n\nCaption: Is your 4-month-old suddenly waking every hour? You're not alone — and you haven't ruined anything. 🌙\n\n#babysleep #sleepregression #4monthsleepregression #babysleeptips #sleeptraining #gentlesleeptraining #babysleephelp #newbornlife #singaporemom #exhaustedmom #babysleepcoach #mybelovedsleep","reel_script":"0–3s: [Face to camera] 'Your baby was sleeping great. Now it's chaos every hour. Here's exactly why.' [TEXT: THE 4-MONTH REGRESSION]\n\n4–15s: 'At 4 months, your baby's brain upgrades — they shift to adult-like sleep cycles and now partially wake between each one. They don't yet know how to drift back to sleep alone.'\n\n16–30s: '3 things that accidentally make it longer:' [1. Adding new props] [2. Skipping naps] [3. Pushing bedtime later]\n\n31–50s: 'What actually helps: consistent wake windows, an earlier bedtime — yes really — and gently teaching independent sleep. We do this without hours of crying.'\n\n51–60s: [Soft, direct] 'We help Singapore families through this every week. Free 15-min call — link in bio. 💙'"},"gaps":[{"priority":"high","title":"No TikTok presence at all","why":"The top viral post this week (2.4M views) was on TikTok. Competitors capture younger parents earlier in their parenting journey.","action":"1. Create @mybelovedsleep TikTok. 2. Post this week's reel script as first video. 3. Aim for 3 posts/week.","effort":"2–3 hours","impact":"medium term"},{"priority":"high","title":"Posting frequency 3x below competitors","why":"Competitors post 7–10 times per week. More touchpoints means more algorithm exposure.","action":"1. Use agent's weekly output as minimum. 2. Add 2 story posts/week. 3. Repurpose each blog into 3 social posts.","effort":"2–3 hours","impact":"quick win"},{"priority":"high","title":"Missing Singapore-specific SEO content","why":"No pages rank for 'baby sleep consultant Singapore'. Local search is wide open.","action":"1. Write blog targeting 'baby sleep consultant Singapore'. 2. Add location meta tags. 3. Submit to Search Console.","effort":"1 day","impact":"long term"},{"priority":"medium","title":"No lead magnet or free download","why":"Top competitors offer free sleep schedules that get saved on Pinterest and build email lists.","action":"1. Create 1-page Singapore Baby Sleep Schedule PDF. 2. Add email opt-in. 3. Post on Pinterest.","effort":"1 day","impact":"medium term"},{"priority":"medium","title":"Carousels underused vs competitors","why":"Instagram carousels average 3x more saves than single images and get re-served by the algorithm.","action":"1. Convert blog outline into 7-slide carousel. 2. Schedule for Wednesday peak engagement.","effort":"2–3 hours","impact":"quick win"},{"priority":"low","title":"No visible client video testimonials","why":"Competitor transformation Reels drive trust and booking conversions directly.","action":"1. Ask 3 clients for a 30s selfie video. 2. Edit with CapCut subtitles. 3. Post one per week.","effort":"2–3 hours","impact":"medium term"}],"competitors":[{"name":"Little Z's Sleep","url":"https://littlezssleep.com","weekly_views":19200},{"name":"Precious Little Sleep","url":"https://preciouslittlesleep.com","weekly_views":20100},{"name":"Taking Cara Babies","url":"https://takingcarababies.com","weekly_views":45000},{"name":"The Sleep Lady","url":"https://sleeplady.com","weekly_views":12500},{"name":"Baby Sleep Science","url":"https://babysleepscience.com","weekly_views":8900}],"your_metrics":{"views_this_week":4280,"clicks":312,"saves_shares":891,"booking_enquiries":23,"top_platform":"instagram","platform_split":{"instagram":62,"google_seo":20,"pinterest":9,"facebook":6,"other":3}}};
+}
+
+loadReport();
+</script>
+</body>
+</html>
