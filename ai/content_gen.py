@@ -22,7 +22,7 @@ from typing import Dict, List
 
 GEMINI_URL = (
     "https://generativelanguage.googleapis.com/v1beta/models/"
-    "gemini-1.5-flash:generateContent"
+    "gemini-3.5-flash:generateContent"
 )
 
 SYSTEM_CONTEXT = """You are the lead content strategist for My Beloved Sleep
