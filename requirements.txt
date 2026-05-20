@@ -2,7 +2,8 @@
 # Total cost: $0.00/month
 # Install: pip install -r requirements.txt
 
-playwright>=1.44.0       # Playwright for Instagram, TikTok, Pinterest, competitor scraping
+playwright>=1.44.0
+# Playwright for Instagram, TikTok, Pinterest, competitor scraping
 # Note: after pip install, run: python -m playwright install chromium
 # (GitHub Actions workflow does this automatically)
 
