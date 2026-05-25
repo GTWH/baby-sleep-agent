@@ -75,8 +75,7 @@ async def run_agent():
         scrape_instagram(HASHTAGS),
         scrape_tiktok(KEYWORDS),
         scrape_pinterest(KEYWORDS),
-        scrape_blogs(KEYWORDS, api_key=os.environ["GOOGLE_API_KEY"],
-                     cse_id=os.environ["GOOGLE_CSE_ID"]),
+        scrape_blogs(KEYWORDS),
         scrape_competitors(COMPETITORS),
     )
 
