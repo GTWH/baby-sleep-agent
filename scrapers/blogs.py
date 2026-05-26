@@ -1,94 +1,105 @@
 """
 scrapers/blogs.py
-Scrapes top blog articles using Playwright to search Google directly.
-NO API KEY REQUIRED — replaces the Google Custom Search API approach.
+Finds top blog articles using Serper.dev — Google Search API.
 
-Uses the same Playwright browser already installed for Instagram/TikTok.
+WHY SERPER.DEV INSTEAD OF SCRAPING:
+  - Never breaks — uses Google's own index, no HTML scraping
+  - Free tier: 2,500 searches/month (your weekly runs use ~20/month)
+  - No credit card needed to sign up
+  - Stable JSON API — extremely unlikely to change
+
+SETUP (2 minutes, free):
+  1. Go to serper.dev
+  2. Click "Get Started Free" — sign in with Google
+  3. Copy your API key from the dashboard
+  4. Add to GitHub Secrets as: SERPER_API_KEY
 """
 
 import asyncio
+import json
+import urllib.request
+import urllib.parse
 import re
-from playwright.async_api import async_playwright
+from typing import List, Dict
 
 
-async def scrape_blogs(keywords: list, api_key: str = "", cse_id: str = "") -> list:
+SERPER_URL = "https://google.serper.dev/search"
+
+
+async def scrape_blogs(keywords: List[str], serper_api_key: str = "") -> List[Dict]:
     """
-    api_key and cse_id params kept for compatibility but no longer used.
-    Playwright scrapes Google search results directly.
+    Search for top blog articles published in the past week.
+    Uses ~4 API calls per run (well within 2,500/month free limit).
     """
     posts = []
 
-    async with async_playwright() as pw:
-        browser = await pw.chromium.launch(
-            headless=True,
-            args=["--no-sandbox", "--disable-setuid-sandbox",
-                  "--disable-dev-shm-usage"]
-        )
-        context = await browser.new_context(
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                       "AppleWebKit/537.36 (KHTML, like Gecko) "
-                       "Chrome/124.0 Safari/537.36",
-            locale="en-US",
-        )
-        page = await context.new_page()
+    for kw in keywords[:4]:        # 4 keywords = 4 of your 2,500 monthly quota
+        try:
+            result = await asyncio.to_thread(
+                _search_serper, kw, serper_api_key
+            )
+            posts.extend(result)
+            await asyncio.sleep(0.5)   # gentle delay between calls
 
-        for kw in keywords[:4]:
-            try:
-                # Search Google for blog posts from the past week
-                query = f"{kw} blog".replace(" ", "+")
-                url = f"https://www.google.com/search?q={query}&tbs=qdr:w&num=10"
+        except Exception as e:
+            print(f"    ⚠ Blog search '{kw}': {e}")
+            continue
 
-                await page.goto(url, wait_until="networkidle", timeout=25000)
-                await page.wait_for_timeout(2000)
+    # Deduplicate by URL
+    seen = set()
+    unique = []
+    for p in posts:
+        if p["url"] not in seen:
+            seen.add(p["url"])
+            unique.append(p)
 
-                # Extract search result titles and URLs
-                results = await page.eval_on_selector_all(
-                    "h3",
-                    "els => els.map(e => ({"
-                    "  title: e.innerText.trim(),"
-                    "  url: e.closest('a') ? e.closest('a').href : ''"
-                    "})).filter(r => r.title.length > 10 && r.url.startsWith('http'))"
-                )
+    print(f"    Blogs → {len(unique)} articles via Serper.dev")
+    return unique
 
-                # Extract snippets (description text under each result)
-                snippets = await page.eval_on_selector_all(
-                    "[data-sncf], .VwiC3b, .yXK7lf",
-                    "els => els.map(e => e.innerText.trim()).filter(t => t.length > 30)"
-                )
 
-                for i, result in enumerate(results[:8]):
-                    # Skip Google's own pages
-                    if "google.com" in result.get("url", ""):
-                        continue
-                    posts.append({
-                        "source":       "blog",
-                        "id":           result.get("url", ""),
-                        "title":        result.get("title", "")[:150],
-                        "url":          result.get("url", ""),
-                        "author":       _extract_domain(result.get("url", "")),
-                        "description":  snippets[i] if i < len(snippets) else "",
-                        "views":        0,
-                        "likes":        0,
-                        "saves":        0,
-                        "published_at": "",
-                    })
+def _search_serper(keyword: str, api_key: str) -> List[Dict]:
+    """Single synchronous Serper.dev search call."""
+    payload = json.dumps({
+        "q":          f"{keyword} baby sleep",
+        "gl":         "sg",        # Singapore region results
+        "hl":         "en",
+        "num":        10,
+        "tbs":        "qdr:w",     # past week only
+    }).encode("utf-8")
 
-                await asyncio.sleep(3)  # polite delay between searches
+    req = urllib.request.Request(
+        SERPER_URL,
+        data=payload,
+        headers={
+            "X-API-KEY":    api_key,
+            "Content-Type": "application/json",
+        },
+        method="POST",
+    )
 
-            except Exception as e:
-                print(f"    ⚠ Blog search '{kw}': {e}")
-                continue
+    with urllib.request.urlopen(req, timeout=15) as resp:
+        data = json.loads(resp.read())
 
-        await browser.close()
-
-    print(f"    Blogs → {len(posts)} articles via Playwright/Google")
+    posts = []
+    for item in data.get("organic", []):
+        posts.append({
+            "source":       "blog",
+            "id":           item.get("link", ""),
+            "title":        item.get("title", "")[:150],
+            "url":          item.get("link", ""),
+            "author":       _domain(item.get("link", "")),
+            "description":  item.get("snippet", ""),
+            "views":        0,
+            "likes":        0,
+            "saves":        0,
+            "published_at": item.get("date", ""),
+        })
     return posts
 
 
-def _extract_domain(url: str) -> str:
-    """Extract domain name from URL for display."""
+def _domain(url: str) -> str:
     try:
-        match = re.search(r"https?://(?:www\.)?([^/]+)", url)
-        return match.group(1) if match else url
+        m = re.search(r"https?://(?:www\.)?([^/]+)", url)
+        return m.group(1) if m else url
     except Exception:
         return url
