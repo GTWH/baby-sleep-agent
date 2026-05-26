@@ -103,6 +103,10 @@ async def run_agent():
     )
     print("    ✓ Blog template, IG carousel, reel script generated")
 
+    # Wait before gap analysis — 4th Gemini call, respect rate limit
+    print("    Waiting 15s before gap analysis Gemini call...")
+    await asyncio.sleep(15)
+
     # Step 4 — Gap analysis with Gemini
     print("\n[4/5] Running competitor gap analysis...")
     gaps = await run_gap_analysis(
