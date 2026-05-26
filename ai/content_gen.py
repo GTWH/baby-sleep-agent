@@ -1,16 +1,7 @@
 """
 ai/content_gen.py
-Generates all content using Google Gemini 1.5 Flash.
-
-FREE tier limits (more than enough for weekly runs):
-  - 15 requests/minute
-  - 1,500 requests/day
-  - 1 million tokens/minute
-
-Setup (3 minutes, free):
-  1. Go to aistudio.google.com
-  2. Click "Get API key" → Create API key → copy it
-  3. Add to GitHub Secrets as: GEMINI_API_KEY
+Generates all content using Google Gemini 2.0 Flash (free tier).
+Calls are spaced 10 seconds apart to stay within rate limits.
 """
 
 import asyncio
@@ -34,11 +25,11 @@ Parents reading our content are exhausted and need reassurance first,
 practical steps second. Always end with a clear, gentle call to action.
 
 Market: Singapore parents, pragmatic, value credentials and evidence,
-many are first-time parents aged 28–40."""
+many are first-time parents aged 28-40."""
 
 
 def _call_gemini(prompt: str, api_key: str, max_tokens: int = 1500) -> str:
-    """Synchronous Gemini API call."""
+    """Synchronous Gemini API call with basic error info."""
     url = f"{GEMINI_URL}?key={api_key}"
     payload = {
         "contents": [{
@@ -72,14 +63,15 @@ async def generate_weekly_content(
     eng   = top.get("engagement_summary", "")
 
     # ── Blog post template ──────────────────────────────────────────────
+    print("    Generating blog template...")
     blog = await asyncio.to_thread(_call_gemini, f"""
 The top viral post this week was on {src}: "{title}" ({eng}).
 
 Write a complete blog post template for mybelovedsleep.com adapted from this topic:
 1. SEO title (compelling, keyword-rich, include "Singapore" if natural)
 2. Meta description (155 characters max)
-3. Intro hook — 2 warm paragraphs: empathetic opening, then reassurance
-4. H2 section outline — 5 sections with 2-sentence descriptions
+3. Intro hook - 2 warm paragraphs: empathetic opening, then reassurance
+4. H2 section outline - 5 sections with 2-sentence descriptions
 5. "Real family story" placeholder section
 6. CTA block for a free 15-min discovery call at mybelovedsleep.com
 7. 3 Pinterest image description ideas for the post
@@ -87,7 +79,11 @@ Write a complete blog post template for mybelovedsleep.com adapted from this top
 Use clear section labels.
 """, gemini_api_key, max_tokens=1200)
 
+    print("    Waiting 15s before next Gemini call...")
+    await asyncio.sleep(15)   # respect free tier rate limit (15 RPM)
+
     # ── Instagram carousel ──────────────────────────────────────────────
+    print("    Generating Instagram carousel...")
     carousel = await asyncio.to_thread(_call_gemini, f"""
 Based on this week's top viral topic: "{title}"
 
@@ -97,24 +93,28 @@ For each slide:
   - Body: 2 lines max, conversational, fits a phone screen
   - Visual direction: what to show
 
-Then write a caption (150–180 words):
+Then write a caption (150-180 words):
   - Hook opener (first line must stop scrolling)
   - Value body
   - Save CTA
   - 15 hashtags (mix of niche and broad, include #singaporemom)
 """, gemini_api_key, max_tokens=700)
 
+    print("    Waiting 15s before next Gemini call...")
+    await asyncio.sleep(15)   # respect free tier rate limit (15 RPM)
+
     # ── 60-second Reel script ───────────────────────────────────────────
+    print("    Generating Reel script...")
     reel = await asyncio.to_thread(_call_gemini, f"""
 Write a 60-second Instagram/TikTok Reel script for @mybelovedsleep on:
 "{title}"
 
 Format with timestamps:
-  0–3s   : hook (stop-scroll, spoken to camera)
-  4–15s  : problem (what parents are experiencing)
-  16–35s : insight (the science or key truth)
-  36–50s : solution steps (numbered, fast)
-  51–60s : soft CTA (free discovery call, link in bio)
+  0-3s   : hook (stop-scroll, spoken to camera)
+  4-15s  : problem (what parents are experiencing)
+  16-35s : insight (the science or key truth)
+  36-50s : solution steps (numbered, fast)
+  51-60s : soft CTA (free discovery call, link in bio)
 
 Include:
   - Spoken words exactly as said
@@ -134,8 +134,8 @@ Include:
         "instagram_carousel": carousel,
         "reel_script":        reel,
         "thumbnail_spec": {
-            "blog_og":        {"size": "1200×628px",  "style": "Navy background, cream headline, MBS logo, moon icon"},
-            "instagram_feed": {"size": "1080×1080px", "style": "Slide 1 of carousel, large headline, brand colours"},
-            "pinterest":      {"size": "1000×1500px", "style": "Tall format, headline top, URL watermark bottom"},
+            "blog_og":        {"size": "1200x628px",  "style": "Navy background, cream headline, MBS logo, moon icon"},
+            "instagram_feed": {"size": "1080x1080px", "style": "Slide 1 of carousel, large headline, brand colours"},
+            "pinterest":      {"size": "1000x1500px", "style": "Tall format, headline top, URL watermark bottom"},
         },
     }
