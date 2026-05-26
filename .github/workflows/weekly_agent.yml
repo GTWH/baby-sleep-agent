@@ -43,6 +43,7 @@ jobs:
       - name: Run baby sleep agent
         env:
           GEMINI_API_KEY:  ${{ secrets.GEMINI_API_KEY }}
+          SERPER_API_KEY:  ${{ secrets.SERPER_API_KEY }}
         run: python agent.py
 
       # ── 6. Commit updated dashboard JSON ──────────────────────────────
