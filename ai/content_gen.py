@@ -1,13 +1,23 @@
 """
 ai/content_gen.py
 Generates all content using Google Gemini 2.0 Flash (free tier).
-Calls are spaced 10 seconds apart to stay within rate limits.
+
+Retry strategy on 429 Too Many Requests:
+  Attempt 1 fails → wait 60s  → retry
+  Attempt 2 fails → wait 120s → retry
+  Attempt 3 fails → wait 180s → retry
+  Attempt 4 fails → wait 240s → retry
+  Attempt 5 fails → give up gracefully, return placeholder text
+
+Between each of the 3 content calls: 60s deliberate pause.
+Total worst-case runtime: ~25 minutes (still within GitHub Actions free limits).
 """
 
 import asyncio
 import urllib.request
-import urllib.parse
+import urllib.error
 import json
+import time
 from typing import Dict, List
 
 
@@ -27,28 +37,56 @@ practical steps second. Always end with a clear, gentle call to action.
 Market: Singapore parents, pragmatic, value credentials and evidence,
 many are first-time parents aged 28-40."""
 
+# Retry wait times in seconds: attempt 1 → 60s, 2 → 120s, 3 → 180s, 4 → 240s
+RETRY_WAITS = [60, 120, 180, 240]
 
-def _call_gemini(prompt: str, api_key: str, max_tokens: int = 1500) -> str:
-    """Synchronous Gemini API call with basic error info."""
+
+def _call_gemini_with_retry(prompt: str, api_key: str,
+                             max_tokens: int = 1000,
+                             label: str = "Gemini") -> str:
+    """
+    Call Gemini with escalating retry delays on 429 rate limit errors.
+    Each failed attempt waits progressively longer before retrying.
+    """
     url = f"{GEMINI_URL}?key={api_key}"
-    payload = {
-        "contents": [{
-            "parts": [{"text": f"{SYSTEM_CONTEXT}\n\n{prompt}"}]
-        }],
+    payload = json.dumps({
+        "contents": [{"parts": [{"text": f"{SYSTEM_CONTEXT}\n\n{prompt}"}]}],
         "generationConfig": {
             "maxOutputTokens": max_tokens,
             "temperature":     0.7,
-        }
-    }
-    data = json.dumps(payload).encode("utf-8")
-    req  = urllib.request.Request(
-        url, data=data,
-        headers={"Content-Type": "application/json"},
-        method="POST",
-    )
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        result = json.loads(resp.read())
-    return result["candidates"][0]["content"]["parts"][0]["text"]
+        },
+    }).encode("utf-8")
+
+    for attempt, wait in enumerate(RETRY_WAITS, start=1):
+        try:
+            req = urllib.request.Request(
+                url, data=payload,
+                headers={"Content-Type": "application/json"},
+                method="POST",
+            )
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                result = json.loads(resp.read())
+            text = result["candidates"][0]["content"]["parts"][0]["text"]
+            print(f"    ✓ {label} succeeded on attempt {attempt}")
+            return text
+
+        except urllib.error.HTTPError as e:
+            if e.code == 429:
+                print(f"    ⏳ {label} rate limited — attempt {attempt}/{len(RETRY_WAITS)}")
+                print(f"    ⏳ Waiting {wait}s before retry {attempt + 1}...")
+                time.sleep(wait)
+                continue
+            else:
+                # Not a rate limit error — raise immediately
+                raise
+
+        except Exception as e:
+            print(f"    ⚠ {label} unexpected error: {e}")
+            raise
+
+    # All retries exhausted — return graceful placeholder
+    print(f"    ⚠ {label} — all {len(RETRY_WAITS)} retries exhausted. Using placeholder.")
+    return f"[Content unavailable — Gemini rate limit exceeded after {len(RETRY_WAITS)} retries. Re-run the agent in 1 hour to generate this content.]"
 
 
 async def generate_weekly_content(
@@ -62,65 +100,55 @@ async def generate_weekly_content(
     src   = top.get("source", "social media")
     eng   = top.get("engagement_summary", "")
 
-    # ── Blog post template ──────────────────────────────────────────────
-    print("    Generating blog template...")
-    blog = await asyncio.to_thread(_call_gemini, f"""
-The top viral post this week was on {src}: "{title}" ({eng}).
+    # ── Call 1 of 3: Blog post template ────────────────────────────────
+    print("\n    [Gemini 1/3] Blog template...")
+    blog = await asyncio.to_thread(
+        _call_gemini_with_retry,
+        f"""The top viral post this week was on {src}: "{title}" ({eng}).
 
-Write a complete blog post template for mybelovedsleep.com adapted from this topic:
-1. SEO title (compelling, keyword-rich, include "Singapore" if natural)
-2. Meta description (155 characters max)
-3. Intro hook - 2 warm paragraphs: empathetic opening, then reassurance
-4. H2 section outline - 5 sections with 2-sentence descriptions
-5. "Real family story" placeholder section
-6. CTA block for a free 15-min discovery call at mybelovedsleep.com
-7. 3 Pinterest image description ideas for the post
+Write a blog post template for mybelovedsleep.com:
+1. SEO title (keyword-rich, include Singapore if natural)
+2. Meta description (155 chars max)
+3. Intro hook — 2 warm empathetic paragraphs
+4. 5 H2 section headings with 1-sentence descriptions each
+5. CTA for a free 15-min discovery call at mybelovedsleep.com
+""",
+        gemini_api_key, 800, "Blog template"
+    )
 
-Use clear section labels.
-""", gemini_api_key, max_tokens=1200)
+    print("    Pausing 60s before next Gemini call...")
+    await asyncio.sleep(60)
 
-    print("    Waiting 15s before next Gemini call...")
-    await asyncio.sleep(15)   # respect free tier rate limit (15 RPM)
+    # ── Call 2 of 3: Instagram carousel ────────────────────────────────
+    print("\n    [Gemini 2/3] Instagram carousel...")
+    carousel = await asyncio.to_thread(
+        _call_gemini_with_retry,
+        f"""Topic: "{title}"
 
-    # ── Instagram carousel ──────────────────────────────────────────────
-    print("    Generating Instagram carousel...")
-    carousel = await asyncio.to_thread(_call_gemini, f"""
-Based on this week's top viral topic: "{title}"
+Create a 5-slide Instagram carousel for @mybelovedsleep.
+For each slide: headline (max 8 words) + 2-line body + visual direction.
+Then write a 150-word caption with hook, value, save CTA, and 12 hashtags
+including #singaporemom and #babysleep.
+""",
+        gemini_api_key, 600, "IG carousel"
+    )
 
-Create a 5-slide Instagram carousel for @mybelovedsleep:
-For each slide:
-  - Headline: max 8 words, punchy, stops the scroll
-  - Body: 2 lines max, conversational, fits a phone screen
-  - Visual direction: what to show
+    print("    Pausing 60s before next Gemini call...")
+    await asyncio.sleep(60)
 
-Then write a caption (150-180 words):
-  - Hook opener (first line must stop scrolling)
-  - Value body
-  - Save CTA
-  - 15 hashtags (mix of niche and broad, include #singaporemom)
-""", gemini_api_key, max_tokens=700)
+    # ── Call 3 of 3: Reel script ────────────────────────────────────────
+    print("\n    [Gemini 3/3] Reel script...")
+    reel = await asyncio.to_thread(
+        _call_gemini_with_retry,
+        f"""Write a 60-second Reel script for @mybelovedsleep on: "{title}"
 
-    print("    Waiting 15s before next Gemini call...")
-    await asyncio.sleep(15)   # respect free tier rate limit (15 RPM)
+Timestamps: 0-3s hook, 4-15s problem, 16-35s insight, 36-50s solution, 51-60s CTA.
+Include spoken words, [visual directions in brackets], and "on-screen text in quotes".
+""",
+        gemini_api_key, 500, "Reel script"
+    )
 
-    # ── 60-second Reel script ───────────────────────────────────────────
-    print("    Generating Reel script...")
-    reel = await asyncio.to_thread(_call_gemini, f"""
-Write a 60-second Instagram/TikTok Reel script for @mybelovedsleep on:
-"{title}"
-
-Format with timestamps:
-  0-3s   : hook (stop-scroll, spoken to camera)
-  4-15s  : problem (what parents are experiencing)
-  16-35s : insight (the science or key truth)
-  36-50s : solution steps (numbered, fast)
-  51-60s : soft CTA (free discovery call, link in bio)
-
-Include:
-  - Spoken words exactly as said
-  - [Visual direction in brackets]
-  - "On-screen text in quotes"
-""", gemini_api_key, max_tokens=500)
+    print("\n    All 3 Gemini content calls complete.")
 
     return {
         "top_post_meta": {
