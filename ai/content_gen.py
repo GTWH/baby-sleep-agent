@@ -2,15 +2,15 @@
 ai/content_gen.py
 Generates all content using Google Gemini 2.0 Flash (free tier).
 
-Retry strategy on 429 Too Many Requests:
+Retry strategy on 429/503/500/502/504:
   Attempt 1 fails → wait 60s  → retry
   Attempt 2 fails → wait 120s → retry
   Attempt 3 fails → wait 180s → retry
   Attempt 4 fails → wait 240s → retry
-  Attempt 5 fails → give up gracefully, return placeholder text
+  Attempt 5 fails → graceful fallback + logs to FALLBACK_LOG
 
-Between each of the 3 content calls: 60s deliberate pause.
-Total worst-case runtime: ~25 minutes (still within GitHub Actions free limits).
+All fallbacks are recorded in FALLBACK_LOG and saved to the dashboard
+report so you can track reliability trends over time.
 """
 
 import asyncio
@@ -18,6 +18,7 @@ import urllib.request
 import urllib.error
 import json
 import time
+from datetime import datetime
 from typing import Dict, List
 
 
@@ -37,16 +38,20 @@ practical steps second. Always end with a clear, gentle call to action.
 Market: Singapore parents, pragmatic, value credentials and evidence,
 many are first-time parents aged 28-40."""
 
-# Retry wait times in seconds: attempt 1 → 60s, 2 → 120s, 3 → 180s, 4 → 240s
+# Escalating retry waits in seconds
 RETRY_WAITS = [60, 120, 180, 240]
+
+# Module-level fallback log — collects events across all calls this run
+FALLBACK_LOG: List[Dict] = []
 
 
 def _call_gemini_with_retry(prompt: str, api_key: str,
                              max_tokens: int = 1000,
-                             label: str = "Gemini") -> str:
+                             label: str = "Gemini") -> tuple:
     """
-    Call Gemini with escalating retry delays on 429 rate limit errors.
-    Each failed attempt waits progressively longer before retrying.
+    Call Gemini with escalating retry delays.
+    Returns (response_text, status_dict) where status_dict records
+    success/failure details for fallback tracking.
     """
     url = f"{GEMINI_URL}?key={api_key}"
     payload = json.dumps({
@@ -56,6 +61,8 @@ def _call_gemini_with_retry(prompt: str, api_key: str,
             "temperature":     0.7,
         },
     }).encode("utf-8")
+
+    attempts_made = []
 
     for attempt, wait in enumerate(RETRY_WAITS, start=1):
         try:
@@ -68,25 +75,45 @@ def _call_gemini_with_retry(prompt: str, api_key: str,
                 result = json.loads(resp.read())
             text = result["candidates"][0]["content"]["parts"][0]["text"]
             print(f"    ✓ {label} succeeded on attempt {attempt}")
-            return text
+            status = {
+                "label":      label,
+                "result":     "success",
+                "attempts":   attempt,
+                "errors":     attempts_made,
+                "timestamp":  datetime.utcnow().isoformat(),
+            }
+            return text, status
 
         except urllib.error.HTTPError as e:
-            if e.code == 429:
-                print(f"    ⏳ {label} rate limited — attempt {attempt}/{len(RETRY_WAITS)}")
-                print(f"    ⏳ Waiting {wait}s before retry {attempt + 1}...")
+            if e.code in (429, 500, 502, 503, 504):
+                attempts_made.append({"attempt": attempt, "error_code": e.code})
+                print(f"    ⏳ {label} HTTP {e.code} — attempt {attempt}/{len(RETRY_WAITS)}, waiting {wait}s...")
                 time.sleep(wait)
                 continue
             else:
-                # Not a rate limit error — raise immediately
                 raise
 
         except Exception as e:
             print(f"    ⚠ {label} unexpected error: {e}")
             raise
 
-    # All retries exhausted — return graceful placeholder
-    print(f"    ⚠ {label} — all {len(RETRY_WAITS)} retries exhausted. Using placeholder.")
-    return f"[Content unavailable — Gemini rate limit exceeded after {len(RETRY_WAITS)} retries. Re-run the agent in 1 hour to generate this content.]"
+    # ── All retries exhausted — graceful fallback ───────────────────────
+    fallback_msg = (
+        f"[{label} unavailable — Gemini returned errors on all "
+        f"{len(RETRY_WAITS)} attempts. Errors: "
+        f"{[a['error_code'] for a in attempts_made]}. "
+        f"Re-run the agent to regenerate this section.]"
+    )
+    status = {
+        "label":      label,
+        "result":     "fallback",
+        "attempts":   len(RETRY_WAITS),
+        "errors":     attempts_made,
+        "timestamp":  datetime.utcnow().isoformat(),
+    }
+    FALLBACK_LOG.append(status)
+    print(f"    ⚠ {label} — all retries exhausted. Fallback recorded.")
+    return fallback_msg, status
 
 
 async def generate_weekly_content(
@@ -95,14 +122,19 @@ async def generate_weekly_content(
     gemini_api_key: str,
 ) -> Dict:
 
+    # Clear fallback log for this run
+    FALLBACK_LOG.clear()
+
     top   = viral_posts[0]
     title = top.get("title", "baby sleep tips")[:100]
     src   = top.get("source", "social media")
     eng   = top.get("engagement_summary", "")
 
+    call_statuses = []
+
     # ── Call 1 of 3: Blog post template ────────────────────────────────
     print("\n    [Gemini 1/3] Blog template...")
-    blog = await asyncio.to_thread(
+    blog, s1 = await asyncio.to_thread(
         _call_gemini_with_retry,
         f"""The top viral post this week was on {src}: "{title}" ({eng}).
 
@@ -115,13 +147,14 @@ Write a blog post template for mybelovedsleep.com:
 """,
         gemini_api_key, 800, "Blog template"
     )
+    call_statuses.append(s1)
 
     print("    Pausing 60s before next Gemini call...")
     await asyncio.sleep(60)
 
     # ── Call 2 of 3: Instagram carousel ────────────────────────────────
     print("\n    [Gemini 2/3] Instagram carousel...")
-    carousel = await asyncio.to_thread(
+    carousel, s2 = await asyncio.to_thread(
         _call_gemini_with_retry,
         f"""Topic: "{title}"
 
@@ -132,13 +165,14 @@ including #singaporemom and #babysleep.
 """,
         gemini_api_key, 600, "IG carousel"
     )
+    call_statuses.append(s2)
 
     print("    Pausing 60s before next Gemini call...")
     await asyncio.sleep(60)
 
     # ── Call 3 of 3: Reel script ────────────────────────────────────────
     print("\n    [Gemini 3/3] Reel script...")
-    reel = await asyncio.to_thread(
+    reel, s3 = await asyncio.to_thread(
         _call_gemini_with_retry,
         f"""Write a 60-second Reel script for @mybelovedsleep on: "{title}"
 
@@ -147,8 +181,10 @@ Include spoken words, [visual directions in brackets], and "on-screen text in qu
 """,
         gemini_api_key, 500, "Reel script"
     )
+    call_statuses.append(s3)
 
-    print("\n    All 3 Gemini content calls complete.")
+    fallbacks = [s for s in call_statuses if s["result"] == "fallback"]
+    print(f"\n    Content generation complete — {len(fallbacks)}/{len(call_statuses)} calls fell back to placeholder.")
 
     return {
         "top_post_meta": {
@@ -165,5 +201,13 @@ Include spoken words, [visual directions in brackets], and "on-screen text in qu
             "blog_og":        {"size": "1200x628px",  "style": "Navy background, cream headline, MBS logo, moon icon"},
             "instagram_feed": {"size": "1080x1080px", "style": "Slide 1 of carousel, large headline, brand colours"},
             "pinterest":      {"size": "1000x1500px", "style": "Tall format, headline top, URL watermark bottom"},
+        },
+        # ── Reliability tracking ────────────────────────────────────────
+        "reliability": {
+            "calls_total":    len(call_statuses),
+            "calls_success":  len([s for s in call_statuses if s["result"] == "success"]),
+            "calls_fallback": len(fallbacks),
+            "fallback_rate":  f"{round(len(fallbacks)/len(call_statuses)*100)}%",
+            "details":        call_statuses,
         },
     }
