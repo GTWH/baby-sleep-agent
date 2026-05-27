@@ -444,6 +444,7 @@ select option { background: var(--navy2); }
   <button class="nav-tab" onclick="sw('gaps')">💡 Gap analysis</button>
   <button class="nav-tab" onclick="sw('setup')">⚙️ Setup guide</button>
   <button class="nav-tab" onclick="sw('logs')">🖥 Logs</button>
+  <button class="nav-tab" onclick="sw('reliability')">📡 Reliability</button>
 </nav>
 
 <main class="main">
@@ -677,6 +678,51 @@ ANTHROPIC_API_KEY=sk-ant-xxxxxxxxxxxx</div>
     </div>
   </div>
 
+  <!-- ══ RELIABILITY ══════════════════════════════════════════════════ -->
+  <div class="sec" id="sec-reliability">
+    <div class="card" id="rel-summary-card">
+      <div class="card-title">Agent reliability — this run</div>
+      <div id="rel-summary">Loading...</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Fallback trend — all runs</div>
+      <div id="rel-history">Loading...</div>
+    </div>
+    <div class="card" id="rel-action-card">
+      <div class="card-title">What to do — beginner action guide</div>
+      <div id="rel-action-content">
+        <!-- Populated dynamically by renderActionGuide() -->
+        <div style="font-size:13px;color:var(--color-text-secondary)">Loading recommendations...</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title" style="font-size:15px">Glossary — what these terms mean</div>
+      <div style="display:flex;flex-direction:column;gap:0">
+        <div style="padding:10px 0;border-bottom:0.5px solid var(--color-border-tertiary);font-size:13px">
+          <div style="font-weight:500;margin-bottom:2px">✅ Complete run</div>
+          <div style="color:var(--color-text-secondary)">All 4 Gemini AI calls succeeded. Your blog template, Instagram carousel, reel script, and gap analysis were all generated with real AI content this week.</div>
+        </div>
+        <div style="padding:10px 0;border-bottom:0.5px solid var(--color-border-tertiary);font-size:13px">
+          <div style="font-weight:500;margin-bottom:2px">⚠️ Fallback</div>
+          <div style="color:var(--color-text-secondary)">One or more Gemini calls hit an error even after all retries. That section shows a placeholder message starting with "[…unavailable…]" instead of real content. The rest of the report is fine.</div>
+        </div>
+        <div style="padding:10px 0;border-bottom:0.5px solid var(--color-border-tertiary);font-size:13px">
+          <div style="font-weight:500;margin-bottom:2px">429 — Rate limited</div>
+          <div style="color:var(--color-text-secondary)">Gemini received too many requests in a short window. Most common cause. Usually clears within 1 hour. Safe to re-run the agent.</div>
+        </div>
+        <div style="padding:10px 0;border-bottom:0.5px solid var(--color-border-tertiary);font-size:13px">
+          <div style="font-weight:500;margin-bottom:2px">503 / 500 — Server error</div>
+          <div style="color:var(--color-text-secondary)">Google's Gemini servers had a temporary problem. Nothing you did wrong. Re-running the agent after 30 minutes almost always fixes it.</div>
+        </div>
+        <div style="padding:10px 0;font-size:13px">
+          <div style="font-weight:500;margin-bottom:2px">Fallback rate</div>
+          <div style="color:var(--color-text-secondary)">The percentage of runs where at least one section used a placeholder. Under 20% is normal. Over 20% consistently means your Gemini quota needs attention.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </main>
 
 <script>
@@ -697,7 +743,7 @@ async function loadReport() {
 // ── Tab switching ──────────────────────────────────────────────────────────
 function sw(id) {
   document.querySelectorAll('.nav-tab').forEach((t,i) =>
-    t.classList.toggle('active', ['viral','content','instagram','dashboard','gaps','setup','logs'][i] === id));
+    t.classList.toggle('active', ['viral','content','instagram','dashboard','gaps','setup','logs','reliability'][i] === id));
   document.querySelectorAll('.sec').forEach(s =>
     s.classList.toggle('active', s.id === 'sec-' + id));
 }
@@ -801,6 +847,12 @@ function renderAll() {
 
   // Default logs
   renderInitialLogs();
+  renderReliability();
+  renderHistory();
+  renderActionGuide();
+  renderReliability();
+  renderHistory();
+  renderActionGuide();
 }
 
 // ── Logs ───────────────────────────────────────────────────────────────────
@@ -944,6 +996,194 @@ function fmtN(n) {
 function getFallbackReport() {
   return {"meta":{"run_date":"2026-05-19T06:00:00","week_label":"May 12–18, 2026","brand":"My Beloved Sleep","brand_url":"https://www.mybelovedsleep.com","version":"2.0"},"summary":{"posts_scanned":2847,"viral_hits":14,"sources_active":7,"top_platform":"tiktok","avg_viral_score":74.2},"viral_posts":[{"rank":1,"source":"tiktok","title":"The 4-month sleep regression nobody warns you about","url":"#","author":"@pediatricsleepcoach","views":2400000,"likes":142000,"saves":18000,"comments":4200,"viral_score":98,"engagement_summary":"2.4M views · 142K likes · 18K saves","published_at":"2026-05-14T09:12:00"},{"rank":2,"source":"instagram","title":"Ferber vs Fading: I tried both so you don't have to","url":"#","author":"@sleeptrainmama","views":1100000,"likes":88000,"saves":22000,"comments":3100,"viral_score":91,"engagement_summary":"1.1M views · 88K likes · 22K saves","published_at":"2026-05-15T14:30:00"},{"rank":3,"source":"pinterest","title":"Why your 6-month-old wakes every 45 minutes","url":"#","author":"thesleepsite.com","views":0,"likes":0,"saves":89000,"comments":0,"viral_score":87,"engagement_summary":"89K saves","published_at":"2026-05-13T10:00:00"},{"rank":4,"source":"blog","title":"I hired a baby sleep consultant and here's what happened","url":"#","author":"scarymommy.com","views":310000,"likes":0,"saves":0,"comments":847,"viral_score":79,"engagement_summary":"310K views · 847 comments","published_at":"2026-05-12T08:00:00"},{"rank":5,"source":"youtube","title":"Gentle sleep training 101: no crying required","url":"#","author":"@gentlesleeplab","views":780000,"likes":41000,"saves":0,"comments":2900,"viral_score":76,"engagement_summary":"780K views · 41K likes","published_at":"2026-05-16T12:00:00"}],"content":{"top_post_meta":{"title":"The 4-month sleep regression nobody warns you about","source":"tiktok","engagement":"2.4M views · 142K likes · 18K saves","viral_score":98},"blog":"SEO Title: The 4-Month Sleep Regression: What It Is, Why It Happens & How to Get Through It\n\nMeta: Everything exhausted parents need to know about the 4-month sleep regression — causes, signs, and gentle strategies that actually work.\n\nIntro Hook:\nIf you're reading this at 3am with a baby who used to sleep beautifully and now wakes every 45 minutes — first, take a breath. You didn't do anything wrong.\n\nThe 4-month sleep regression is the most disruptive developmental shift in your baby's first year, and it happens to almost every family. The good news? With the right support, you can come out the other side with a baby who sleeps even better than before.\n\nSection Outline:\n1. What actually changes at 4 months\n2. Signs you're in a regression vs illness\n3. What NOT to do\n4. Gentle strategies that work\n5. When to call a sleep consultant\n\nCTA: Book a free 15-min discovery call at mybelovedsleep.com","instagram_carousel":"Slide 1: Is your baby waking every hour?\n(Here's why — and what helps →)\n\nSlide 2: At 4 months, your baby's sleep changes\nTheir brain upgrades from newborn sleep to adult-like cycles.\n\nSlide 3: They now wake between every cycle\nAnd they haven't learned to fall back asleep alone — yet.\n\nSlide 4: 3 things that make it worse\n1. Adding new sleep props 2. Skipping wake windows 3. Late bedtime\n\nSlide 5: What actually helps\n✓ Consistent wake windows ✓ Earlier bedtime ✓ Gentle independent sleep\n\nCaption: Is your 4-month-old suddenly waking every hour? You're not alone — and you haven't ruined anything. 🌙\n\n#babysleep #sleepregression #4monthsleepregression #babysleeptips #sleeptraining #gentlesleeptraining #babysleephelp #newbornlife #singaporemom #exhaustedmom #babysleepcoach #mybelovedsleep","reel_script":"0–3s: [Face to camera] 'Your baby was sleeping great. Now it's chaos every hour. Here's exactly why.' [TEXT: THE 4-MONTH REGRESSION]\n\n4–15s: 'At 4 months, your baby's brain upgrades — they shift to adult-like sleep cycles and now partially wake between each one. They don't yet know how to drift back to sleep alone.'\n\n16–30s: '3 things that accidentally make it longer:' [1. Adding new props] [2. Skipping naps] [3. Pushing bedtime later]\n\n31–50s: 'What actually helps: consistent wake windows, an earlier bedtime — yes really — and gently teaching independent sleep. We do this without hours of crying.'\n\n51–60s: [Soft, direct] 'We help Singapore families through this every week. Free 15-min call — link in bio. 💙'"},"gaps":[{"priority":"high","title":"No TikTok presence at all","why":"The top viral post this week (2.4M views) was on TikTok. Competitors capture younger parents earlier in their parenting journey.","action":"1. Create @mybelovedsleep TikTok. 2. Post this week's reel script as first video. 3. Aim for 3 posts/week.","effort":"2–3 hours","impact":"medium term"},{"priority":"high","title":"Posting frequency 3x below competitors","why":"Competitors post 7–10 times per week. More touchpoints means more algorithm exposure.","action":"1. Use agent's weekly output as minimum. 2. Add 2 story posts/week. 3. Repurpose each blog into 3 social posts.","effort":"2–3 hours","impact":"quick win"},{"priority":"high","title":"Missing Singapore-specific SEO content","why":"No pages rank for 'baby sleep consultant Singapore'. Local search is wide open.","action":"1. Write blog targeting 'baby sleep consultant Singapore'. 2. Add location meta tags. 3. Submit to Search Console.","effort":"1 day","impact":"long term"},{"priority":"medium","title":"No lead magnet or free download","why":"Top competitors offer free sleep schedules that get saved on Pinterest and build email lists.","action":"1. Create 1-page Singapore Baby Sleep Schedule PDF. 2. Add email opt-in. 3. Post on Pinterest.","effort":"1 day","impact":"medium term"},{"priority":"medium","title":"Carousels underused vs competitors","why":"Instagram carousels average 3x more saves than single images and get re-served by the algorithm.","action":"1. Convert blog outline into 7-slide carousel. 2. Schedule for Wednesday peak engagement.","effort":"2–3 hours","impact":"quick win"},{"priority":"low","title":"No visible client video testimonials","why":"Competitor transformation Reels drive trust and booking conversions directly.","action":"1. Ask 3 clients for a 30s selfie video. 2. Edit with CapCut subtitles. 3. Post one per week.","effort":"2–3 hours","impact":"medium term"}],"competitors":[{"name":"Little Z's Sleep","url":"https://littlezssleep.com","weekly_views":19200},{"name":"Precious Little Sleep","url":"https://preciouslittlesleep.com","weekly_views":20100},{"name":"Taking Cara Babies","url":"https://takingcarababies.com","weekly_views":45000},{"name":"The Sleep Lady","url":"https://sleeplady.com","weekly_views":12500},{"name":"Baby Sleep Science","url":"https://babysleepscience.com","weekly_views":8900}],"your_metrics":{"views_this_week":4280,"clicks":312,"saves_shares":891,"booking_enquiries":23,"top_platform":"instagram","platform_split":{"instagram":62,"google_seo":20,"pinterest":9,"facebook":6,"other":3}}};
 }
+
+
+// ── Reliability tab ─────────────────────────────────────────────────────────
+function renderReliability() {
+  if (!REPORT) return;
+  const rel = REPORT.reliability || {calls_total:4,calls_success:4,calls_fallback:0,fallback_rate:'0%',run_complete:true,details:[]};
+  const icon  = rel.run_complete ? '✅' : '⚠️';
+  const color = rel.run_complete ? 'var(--color-text-success)' : 'var(--color-text-warning)';
+  const statusText = rel.run_complete
+    ? 'Run fully complete — all AI content generated'
+    : 'Run partially complete — ' + rel.calls_fallback + ' section(s) used placeholder text';
+
+  let detailRows = (rel.details || []).map(d =>
+    '<div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:0.5px solid var(--color-border-tertiary);font-size:13px">' +
+    '<span style="font-size:15px">' + (d.result==='success' ? '✅' : '⚠️') + '</span>' +
+    '<div style="flex:1"><strong>' + d.label + '</strong></div>' +
+    '<span style="font-size:11px;color:var(--color-text-secondary)">' +
+      (d.result==='success' ? 'Succeeded on attempt ' + d.attempts : 'Fallback after ' + d.attempts + ' attempts — errors: ' + (d.errors||[]).map(e=>e.error_code).join(', ')) +
+    '</span></div>'
+  ).join('');
+
+  document.getElementById('rel-summary').innerHTML =
+    '<div style="display:flex;flex-direction:column;gap:10px">' +
+    '<div style="display:flex;align-items:center;gap:12px;padding:14px;border-radius:var(--border-radius-md);background:var(--color-background-secondary)">' +
+    '<div style="font-size:28px">' + icon + '</div>' +
+    '<div><div style="font-size:14px;font-weight:500;color:' + color + '">' + statusText + '</div>' +
+    '<div style="font-size:12px;color:var(--color-text-secondary);margin-top:3px">' +
+      rel.calls_success + ' of ' + rel.calls_total + ' Gemini calls succeeded &nbsp;·&nbsp; Fallback rate this run: ' + rel.fallback_rate +
+    '</div></div></div>' +
+    (detailRows ? '<div>' + detailRows + '</div>' : '') +
+    '</div>';
+}
+
+function renderHistory() {
+  fetch('reliability_history.json')
+    .then(r => r.json())
+    .then(history => {
+      const total = history.length;
+      const withFallback = history.filter(h => !h.run_complete).length;
+      const overallRate  = Math.round(withFallback / Math.max(total,1) * 100);
+
+      const summaryBar =
+        '<div style="display:flex;gap:16px;margin-bottom:14px;flex-wrap:wrap">' +
+        '<div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 14px;font-size:13px;flex:1;min-width:100px">' +
+          '<div style="font-size:11px;color:var(--color-text-secondary);margin-bottom:4px;text-transform:uppercase;letter-spacing:.05em">Total runs</div>' +
+          '<div style="font-size:22px;font-weight:300">' + total + '</div></div>' +
+        '<div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 14px;font-size:13px;flex:1;min-width:100px">' +
+          '<div style="font-size:11px;color:var(--color-text-secondary);margin-bottom:4px;text-transform:uppercase;letter-spacing:.05em">Complete runs</div>' +
+          '<div style="font-size:22px;font-weight:300;color:var(--color-text-success)">' + (total - withFallback) + '</div></div>' +
+        '<div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 14px;font-size:13px;flex:1;min-width:100px">' +
+          '<div style="font-size:11px;color:var(--color-text-secondary);margin-bottom:4px;text-transform:uppercase;letter-spacing:.05em">Had fallbacks</div>' +
+          '<div style="font-size:22px;font-weight:300;color:' + (withFallback>0?'var(--color-text-warning)':'var(--color-text-success)') + '">' + withFallback + '</div></div>' +
+        '<div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 14px;font-size:13px;flex:1;min-width:100px">' +
+          '<div style="font-size:11px;color:var(--color-text-secondary);margin-bottom:4px;text-transform:uppercase;letter-spacing:.05em">Overall fallback rate</div>' +
+          '<div style="font-size:22px;font-weight:300;color:' + (overallRate>20?'var(--color-text-warning)':'var(--color-text-success)') + '">' + overallRate + '%</div></div>' +
+        '</div>';
+
+      const rows = history.slice(-16).reverse().map(h => {
+        const d   = new Date(h.run_date);
+        const lbl = d.toLocaleDateString('en-SG',{month:'short',day:'numeric',year:'numeric'});
+        const ok  = h.run_complete;
+        return '<div style="display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:0.5px solid var(--color-border-tertiary);font-size:13px">' +
+          '<span style="font-size:14px">' + (ok?'✅':'⚠️') + '</span>' +
+          '<div style="flex:1;font-weight:500">' + lbl + '</div>' +
+          '<div style="font-size:12px;color:var(--color-text-secondary)">' + h.calls_success + '/' + h.calls_total + ' calls ok</div>' +
+          '<div style="font-size:12px;font-weight:500;min-width:80px;text-align:right;color:' + (ok?'var(--color-text-success)':'var(--color-text-warning)') + '">' +
+            (ok ? 'Complete' : h.fallback_rate + ' fallback') +
+          '</div></div>';
+      }).join('');
+
+      document.getElementById('rel-history').innerHTML = summaryBar + rows;
+    })
+    .catch(() => {
+      document.getElementById('rel-history').innerHTML =
+        '<div style="font-size:13px;color:var(--color-text-secondary);padding:8px 0">' +
+        'No history yet — this panel fills in after your first completed run. ' +
+        'Each Monday the agent appends a new entry to reliability_history.json in your repo.</div>';
+    });
+}
+
+function renderActionGuide() {
+  if (!REPORT) return;
+  const rel = REPORT.reliability || {run_complete:true, calls_fallback:0, fallback_rate:'0%', details:[]};
+
+  // Work out which specific calls fell back
+  const fallbackCalls = (rel.details || []).filter(d => d.result === 'fallback').map(d => d.label);
+  const errorCodes    = [...new Set((rel.details || []).flatMap(d => (d.errors||[]).map(e => e.error_code)))];
+  const has429        = errorCodes.includes(429);
+  const has503        = errorCodes.includes(503) || errorCodes.includes(500);
+
+  let html = '';
+
+  if (rel.run_complete) {
+    // ── All good ──────────────────────────────────────────────────────
+    html = `
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:14px;background:var(--color-background-success);border:0.5px solid var(--color-border-success);border-radius:var(--border-radius-md);margin-bottom:12px">
+        <div style="font-size:24px;flex-shrink:0">✅</div>
+        <div>
+          <div style="font-size:14px;font-weight:500;color:var(--color-text-success);margin-bottom:4px">Everything worked perfectly this week</div>
+          <div style="font-size:13px;color:var(--color-text-secondary);line-height:1.7">All 4 AI calls completed successfully. Your blog template, Instagram carousel, reel script, and gap analysis are all real AI-generated content. No action needed — go use your content!</div>
+        </div>
+      </div>
+      <div style="font-size:13px;color:var(--color-text-secondary);line-height:1.7">
+        <strong style="color:var(--color-text-primary)">What to do now:</strong> Head to the
+        <button onclick="sw('content')" style="background:none;border:none;color:var(--color-text-info);cursor:pointer;font-size:13px;padding:0;text-decoration:underline">Content tab</button>
+        to copy your blog template, then the
+        <button onclick="sw('instagram')" style="background:none;border:none;color:var(--color-text-info);cursor:pointer;font-size:13px;padding:0;text-decoration:underline">Instagram tab</button>
+        for your ready-to-post carousel and reel script.
+      </div>`;
+
+  } else {
+    // ── Has fallbacks — build specific action steps ───────────────────
+    const fallbackList = fallbackCalls.length > 0
+      ? '<strong>' + fallbackCalls.join(', ') + '</strong>'
+      : 'one or more sections';
+
+    html = `
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:14px;background:var(--color-background-warning);border:0.5px solid var(--color-border-warning);border-radius:var(--border-radius-md);margin-bottom:14px">
+        <div style="font-size:24px;flex-shrink:0">⚠️</div>
+        <div>
+          <div style="font-size:14px;font-weight:500;color:var(--color-text-warning);margin-bottom:4px">${fallbackList} used placeholder text this run</div>
+          <div style="font-size:13px;color:var(--color-text-secondary);line-height:1.7">These sections show a message starting with "[…unavailable…]" instead of real AI content. Everything else in the report is fine and usable.</div>
+        </div>
+      </div>`;
+
+    // Step 1 — always shown when there's a fallback
+    html += `
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:14px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+            <div style="width:24px;height:24px;border-radius:50%;background:var(--color-background-info);color:var(--color-text-info);font-size:12px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0">1</div>
+            <div style="font-size:14px;font-weight:500">Wait at least 1 hour, then re-run the agent</div>
+          </div>
+          <div style="font-size:13px;color:var(--color-text-secondary);line-height:1.7;margin-bottom:8px">Gemini's free tier resets its quota every hour. Most fallbacks clear on the next run automatically.</div>
+          <div style="font-size:12px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;line-height:1.8">
+            <div><strong>How to re-run:</strong></div>
+            <div>1. Go to <strong>github.com → your repo → Actions tab</strong></div>
+            <div>2. Click <strong>"Baby Sleep Content Agent"</strong></div>
+            <div>3. Click the grey <strong>"Run workflow"</strong> button → green <strong>"Run workflow"</strong></div>
+            <div>4. Wait ~5 minutes → refresh this dashboard</div>
+          </div>
+        </div>`;
+
+    // Step 2 — shown if 429 errors
+    if (has429) {
+      html += `
+        <div style="border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:14px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+            <div style="width:24px;height:24px;border-radius:50%;background:var(--color-background-info);color:var(--color-text-info);font-size:12px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0">2</div>
+            <div style="font-size:14px;font-weight:500">If it keeps happening — check your Gemini quota</div>
+          </div>
+          <div style="font-size:13px;color:var(--color-text-secondary);line-height:1.7;margin-bottom:8px">Error 429 means Gemini hit its rate limit. If this happens on multiple consecutive runs, your daily quota may be used up by other projects using the same API key.</div>
+          <div style="font-size:12px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;line-height:1.8">
+            <div><strong>How to check:</strong></div>
+            <div>1. Go to <a href="https://aistudio.google.com" target="_blank" style="color:var(--color-text-info)">aistudio.google.com</a></div>
+            <div>2. Click your profile icon → <strong>API key</strong></div>
+            <div>3. Look for a usage/quota section — free tier allows 1,500 requests/day</div>
+            <div>4. If quota is full, the agent will succeed tomorrow automatically</div>
+          </div>
+        </div>`;
+    }
+
+    // Step 3 — shown if 503/500 errors
+    if (has503) {
+      html += `
+        <div style="border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:14px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+            <div style="width:24px;height:24px;border-radius:50%;background:var(--color-background-info);color:var(--color-text-info);font-size:12px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0">${has429 ? 3 : 2}</div>
+            <div style="font-size:14px;font-weight:500">Server error — nothing you did wrong</div>
+          </div>
+          <div style="font-size:13px;color:var(--color-text-secondary);line-height:1.7;margin-bottom:8px">Error 503 or 500 means Google's Gemini servers had a temporary problem. This is rare and almost always fixes itself. Simply re-run the agent after 30 minutes.</div>
+          <div style="font-size:12px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;line-height:1.8">
+            <div><strong>Quick check:</strong> Visit <a href="https://status.cloud.google.com" target="_blank" style="color:var(--color-text-info)">status.cloud.google.com</a> to see if Google Cloud has a known outage. If there is one, wait for it to resolve — usually under 1 hour.</div>
+          </div>
+        </div>`;
+    }
+
+    // Final note — always shown
+    html += `
+        <div style="font-size:12px;color:var(--color-text-secondary);padding:8px 4px;line-height:1.7;border-top:0.5px solid var(--color-border-tertiary);margin-top:4px">
+          💡 <strong>Good to know:</strong> A fallback doesn't affect your scraped data, viral post rankings, or competitor analysis — only the AI-written sections. You can still use everything else in the report while waiting to regenerate.
+        </div>
+      </div>`;
+  }
+
+  document.getElementById('rel-action-content').innerHTML = html;
+}
+
 
 loadReport();
 </script>
