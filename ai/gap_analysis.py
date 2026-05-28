@@ -18,7 +18,7 @@ GEMINI_URL = (
     "gemini-2.0-flash:generateContent"
 )
 
-RETRY_WAITS = [60, 120, 180, 240]
+RETRY_WAITS = [30, 60, 90, 120]
 
 
 def _call_gemini_with_retry(prompt: str, api_key: str) -> tuple:
@@ -97,7 +97,7 @@ Return ONLY a valid JSON array of exactly 6 gap objects. No markdown. Each objec
 """
 
     print("\n    [Gemini 4/4] Gap analysis — pausing 60s first...")
-    await asyncio.sleep(60)
+    await asyncio.sleep(20)
 
     raw, status = await asyncio.to_thread(_call_gemini_with_retry, prompt, gemini_api_key)
     raw = re.sub(r"```json|```", "", raw).strip()
