@@ -39,7 +39,7 @@ Market: Singapore parents, pragmatic, value credentials and evidence,
 many are first-time parents aged 28-40."""
 
 # Escalating retry waits in seconds
-RETRY_WAITS = [60, 120, 180, 240]
+RETRY_WAITS = [30, 60, 90, 120]
 
 # Module-level fallback log — collects events across all calls this run
 FALLBACK_LOG: List[Dict] = []
@@ -150,7 +150,7 @@ Write a blog post template for mybelovedsleep.com:
     call_statuses.append(s1)
 
     print("    Pausing 60s before next Gemini call...")
-    await asyncio.sleep(60)
+    await asyncio.sleep(20)
 
     # ── Call 2 of 3: Instagram carousel ────────────────────────────────
     print("\n    [Gemini 2/3] Instagram carousel...")
@@ -168,7 +168,7 @@ including #singaporemom and #babysleep.
     call_statuses.append(s2)
 
     print("    Pausing 60s before next Gemini call...")
-    await asyncio.sleep(60)
+    await asyncio.sleep(20)
 
     # ── Call 3 of 3: Reel script ────────────────────────────────────────
     print("\n    [Gemini 3/3] Reel script...")
