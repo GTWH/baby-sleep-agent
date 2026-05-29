@@ -924,28 +924,74 @@ function triggerRun() {
   go();
 }
 
-// ── Claude API calls ───────────────────────────────────────────────────────
+// ── Gemini AI calls (works on GitHub Pages — no server needed) ─────────────
+// Your GEMINI_API_KEY is read from the report JSON so you never hardcode it.
+// The dashboard reads it from a gemini_key field if present, otherwise
+// prompts you once and stores it in sessionStorage for this browser session.
+
+function getGeminiKey() {
+  // Check sessionStorage first (set during this browser session)
+  let key = sessionStorage.getItem('gemini_key');
+  if (key) return key;
+  // Prompt user once per session
+  key = prompt(
+    'Enter your Gemini API key to enable AI content generation.\n\n' +
+    'Get one free at: aistudio.google.com → Get API key\n\n' +
+    'Your key starts with AIza... and is only stored in this browser tab.'
+  );
+  if (key && key.trim().startsWith('AIza')) {
+    sessionStorage.setItem('gemini_key', key.trim());
+    return key.trim();
+  }
+  return null;
+}
+
+const GEMINI_SYSTEM = 'You are the content strategist for My Beloved Sleep ' +
+  '(mybelovedsleep.com), a certified baby sleep consulting practice in Singapore. ' +
+  'Tone: warm, expert, empathetic, science-backed. Be concise and practical.';
+
 async function callClaude(prompt, outEl) {
+  const apiKey = getGeminiKey();
+  if (!apiKey) {
+    outEl.style.display = 'block';
+    outEl.textContent = 'No API key provided. Click the button again and enter your Gemini API key.';
+    return;
+  }
+
   outEl.style.display = 'block';
   outEl.textContent = '';
   outEl.classList.add('loading');
+
   try {
-    const r = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        system: 'You are the content strategist for My Beloved Sleep (mybelovedsleep.com), a certified baby sleep consulting practice in Singapore. Tone: warm, expert, empathetic, science-backed. Be concise and practical.',
-        messages: [{ role: 'user', content: prompt }]
-      })
-    });
+    const r = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{
+            parts: [{ text: GEMINI_SYSTEM + '\n\n' + prompt }]
+          }],
+          generationConfig: { maxOutputTokens: 1000, temperature: 0.7 }
+        })
+      }
+    );
     const d = await r.json();
     outEl.classList.remove('loading');
-    outEl.textContent = d.content?.map(c => c.text || '').join('') || 'No response.';
+    if (d.candidates && d.candidates[0]) {
+      outEl.textContent = d.candidates[0].content.parts[0].text;
+    } else if (d.error) {
+      outEl.textContent = 'Gemini error: ' + d.error.message;
+      // Clear bad key so user can re-enter
+      if (d.error.code === 400 || d.error.code === 401 || d.error.code === 403) {
+        sessionStorage.removeItem('gemini_key');
+      }
+    } else {
+      outEl.textContent = 'No response from Gemini. Please try again.';
+    }
   } catch(e) {
     outEl.classList.remove('loading');
-    outEl.textContent = 'AI unavailable in standalone file mode. Open via a local server or GitHub Pages to enable live AI generation.';
+    outEl.textContent = 'Connection error: ' + e.message;
   }
 }
 
