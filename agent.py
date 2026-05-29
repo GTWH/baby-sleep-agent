@@ -152,7 +152,7 @@ async def run_agent():
     )
 
     # Save latest report
-    out_dir = Path("dashboard")
+    out_dir = Path("docs")
     out_dir.mkdir(exist_ok=True)
     (out_dir / "report_latest.json").write_text(json.dumps(report, indent=2))
     (out_dir / f"report_{run_start.strftime('%Y-%m-%d')}.json").write_text(
@@ -160,7 +160,7 @@ async def run_agent():
     )
 
     # ── Append to reliability history log ─────────────────────────────────
-    history_path = Path("dashboard/reliability_history.json")
+    history_path = Path("docs/reliability_history.json")
     history = []
     if history_path.exists():
         try:
