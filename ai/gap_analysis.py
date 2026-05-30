@@ -15,7 +15,7 @@ from typing import List, Dict
 
 GEMINI_URL = (
     "https://generativelanguage.googleapis.com/v1beta/models/"
-    "gemini-1.5-flash-8b:generateContent"
+    "gemini-2.5-flash-lite:generateContent"
 )
 
 RETRY_WAITS = [30, 60, 90, 120]
