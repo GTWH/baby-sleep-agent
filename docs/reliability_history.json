@@ -1,0 +1,40 @@
+[
+  {
+    "run_date": "2026-05-30T07:30:28.808447",
+    "calls_total": 4,
+    "calls_success": 4,
+    "calls_fallback": 0,
+    "fallback_rate": "0%",
+    "run_complete": true,
+    "details": [
+      {
+        "label": "Blog template",
+        "result": "success",
+        "attempts": 1,
+        "errors": [],
+        "timestamp": "2026-05-30T07:31:25.699826"
+      },
+      {
+        "label": "IG carousel",
+        "result": "success",
+        "attempts": 1,
+        "errors": [],
+        "timestamp": "2026-05-30T07:31:49.220425"
+      },
+      {
+        "label": "Reel script",
+        "result": "success",
+        "attempts": 1,
+        "errors": [],
+        "timestamp": "2026-05-30T07:32:12.217136"
+      },
+      {
+        "label": "Gap analysis",
+        "result": "success",
+        "attempts": 1,
+        "errors": [],
+        "timestamp": "2026-05-30T07:32:36.464007"
+      }
+    ]
+  }
+]
