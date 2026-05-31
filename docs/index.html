@@ -489,6 +489,17 @@ select option { background: var(--navy2); }
 
     <div class="card">
       <div class="card-title">Thumbnail</div>
+      <div id="blog-thumb-result" style="margin-bottom:12px;display:none">
+        <div id="blog-thumb-loading" style="text-align:center;padding:16px;font-size:12px;color:var(--color-text-secondary)">Generating blog thumbnail...</div>
+        <img id="blog-thumb-img" style="display:none;width:100%;border-radius:var(--border-radius-md);margin-bottom:8px"
+          alt="Blog thumbnail for My Beloved Sleep"
+          onload="document.getElementById('blog-thumb-loading').style.display='none';this.style.display='block'"
+          onerror="document.getElementById('blog-thumb-loading').textContent='Image failed — try again'">
+        <a id="blog-thumb-dl" download="mybelovedsleep-thumbnail.jpg">
+          <button class="run-btn ghost" style="width:100%;justify-content:center;font-size:12px;display:none" id="blog-thumb-dl-btn">⬇ Download thumbnail</button>
+        </a>
+      </div>
+      <button class="run-btn ghost" style="width:100%;justify-content:center;margin-bottom:10px" onclick="generateBlogThumbnail()">🎨 Generate real thumbnail →</button>
       <div class="thumbnail" id="thumbnail-area">
         <div class="thumb-deco"></div>
         <div class="thumb-byline">My Beloved Sleep</div>
@@ -1041,6 +1052,87 @@ function fmtN(n) {
 // ── Fallback data ──────────────────────────────────────────────────────────
 function getFallbackReport() {
   return {"meta":{"run_date":"2026-05-19T06:00:00","week_label":"May 12–18, 2026","brand":"My Beloved Sleep","brand_url":"https://www.mybelovedsleep.com","version":"2.0"},"summary":{"posts_scanned":2847,"viral_hits":14,"sources_active":7,"top_platform":"tiktok","avg_viral_score":74.2},"viral_posts":[{"rank":1,"source":"tiktok","title":"The 4-month sleep regression nobody warns you about","url":"#","author":"@pediatricsleepcoach","views":2400000,"likes":142000,"saves":18000,"comments":4200,"viral_score":98,"engagement_summary":"2.4M views · 142K likes · 18K saves","published_at":"2026-05-14T09:12:00"},{"rank":2,"source":"instagram","title":"Ferber vs Fading: I tried both so you don't have to","url":"#","author":"@sleeptrainmama","views":1100000,"likes":88000,"saves":22000,"comments":3100,"viral_score":91,"engagement_summary":"1.1M views · 88K likes · 22K saves","published_at":"2026-05-15T14:30:00"},{"rank":3,"source":"pinterest","title":"Why your 6-month-old wakes every 45 minutes","url":"#","author":"thesleepsite.com","views":0,"likes":0,"saves":89000,"comments":0,"viral_score":87,"engagement_summary":"89K saves","published_at":"2026-05-13T10:00:00"},{"rank":4,"source":"blog","title":"I hired a baby sleep consultant and here's what happened","url":"#","author":"scarymommy.com","views":310000,"likes":0,"saves":0,"comments":847,"viral_score":79,"engagement_summary":"310K views · 847 comments","published_at":"2026-05-12T08:00:00"},{"rank":5,"source":"youtube","title":"Gentle sleep training 101: no crying required","url":"#","author":"@gentlesleeplab","views":780000,"likes":41000,"saves":0,"comments":2900,"viral_score":76,"engagement_summary":"780K views · 41K likes","published_at":"2026-05-16T12:00:00"}],"content":{"top_post_meta":{"title":"The 4-month sleep regression nobody warns you about","source":"tiktok","engagement":"2.4M views · 142K likes · 18K saves","viral_score":98},"blog":"SEO Title: The 4-Month Sleep Regression: What It Is, Why It Happens & How to Get Through It\n\nMeta: Everything exhausted parents need to know about the 4-month sleep regression — causes, signs, and gentle strategies that actually work.\n\nIntro Hook:\nIf you're reading this at 3am with a baby who used to sleep beautifully and now wakes every 45 minutes — first, take a breath. You didn't do anything wrong.\n\nThe 4-month sleep regression is the most disruptive developmental shift in your baby's first year, and it happens to almost every family. The good news? With the right support, you can come out the other side with a baby who sleeps even better than before.\n\nSection Outline:\n1. What actually changes at 4 months\n2. Signs you're in a regression vs illness\n3. What NOT to do\n4. Gentle strategies that work\n5. When to call a sleep consultant\n\nCTA: Book a free 15-min discovery call at mybelovedsleep.com","instagram_carousel":"Slide 1: Is your baby waking every hour?\n(Here's why — and what helps →)\n\nSlide 2: At 4 months, your baby's sleep changes\nTheir brain upgrades from newborn sleep to adult-like cycles.\n\nSlide 3: They now wake between every cycle\nAnd they haven't learned to fall back asleep alone — yet.\n\nSlide 4: 3 things that make it worse\n1. Adding new sleep props 2. Skipping wake windows 3. Late bedtime\n\nSlide 5: What actually helps\n✓ Consistent wake windows ✓ Earlier bedtime ✓ Gentle independent sleep\n\nCaption: Is your 4-month-old suddenly waking every hour? You're not alone — and you haven't ruined anything. 🌙\n\n#babysleep #sleepregression #4monthsleepregression #babysleeptips #sleeptraining #gentlesleeptraining #babysleephelp #newbornlife #singaporemom #exhaustedmom #babysleepcoach #mybelovedsleep","reel_script":"0–3s: [Face to camera] 'Your baby was sleeping great. Now it's chaos every hour. Here's exactly why.' [TEXT: THE 4-MONTH REGRESSION]\n\n4–15s: 'At 4 months, your baby's brain upgrades — they shift to adult-like sleep cycles and now partially wake between each one. They don't yet know how to drift back to sleep alone.'\n\n16–30s: '3 things that accidentally make it longer:' [1. Adding new props] [2. Skipping naps] [3. Pushing bedtime later]\n\n31–50s: 'What actually helps: consistent wake windows, an earlier bedtime — yes really — and gently teaching independent sleep. We do this without hours of crying.'\n\n51–60s: [Soft, direct] 'We help Singapore families through this every week. Free 15-min call — link in bio. 💙'"},"gaps":[{"priority":"high","title":"No TikTok presence at all","why":"The top viral post this week (2.4M views) was on TikTok. Competitors capture younger parents earlier in their parenting journey.","action":"1. Create @mybelovedsleep TikTok. 2. Post this week's reel script as first video. 3. Aim for 3 posts/week.","effort":"2–3 hours","impact":"medium term"},{"priority":"high","title":"Posting frequency 3x below competitors","why":"Competitors post 7–10 times per week. More touchpoints means more algorithm exposure.","action":"1. Use agent's weekly output as minimum. 2. Add 2 story posts/week. 3. Repurpose each blog into 3 social posts.","effort":"2–3 hours","impact":"quick win"},{"priority":"high","title":"Missing Singapore-specific SEO content","why":"No pages rank for 'baby sleep consultant Singapore'. Local search is wide open.","action":"1. Write blog targeting 'baby sleep consultant Singapore'. 2. Add location meta tags. 3. Submit to Search Console.","effort":"1 day","impact":"long term"},{"priority":"medium","title":"No lead magnet or free download","why":"Top competitors offer free sleep schedules that get saved on Pinterest and build email lists.","action":"1. Create 1-page Singapore Baby Sleep Schedule PDF. 2. Add email opt-in. 3. Post on Pinterest.","effort":"1 day","impact":"medium term"},{"priority":"medium","title":"Carousels underused vs competitors","why":"Instagram carousels average 3x more saves than single images and get re-served by the algorithm.","action":"1. Convert blog outline into 7-slide carousel. 2. Schedule for Wednesday peak engagement.","effort":"2–3 hours","impact":"quick win"},{"priority":"low","title":"No visible client video testimonials","why":"Competitor transformation Reels drive trust and booking conversions directly.","action":"1. Ask 3 clients for a 30s selfie video. 2. Edit with CapCut subtitles. 3. Post one per week.","effort":"2–3 hours","impact":"medium term"}],"competitors":[{"name":"Little Z's Sleep","url":"https://littlezssleep.com","weekly_views":19200},{"name":"Precious Little Sleep","url":"https://preciouslittlesleep.com","weekly_views":20100},{"name":"Taking Cara Babies","url":"https://takingcarababies.com","weekly_views":45000},{"name":"The Sleep Lady","url":"https://sleeplady.com","weekly_views":12500},{"name":"Baby Sleep Science","url":"https://babysleepscience.com","weekly_views":8900}],"your_metrics":{"views_this_week":4280,"clicks":312,"saves_shares":891,"booking_enquiries":23,"top_platform":"instagram","platform_split":{"instagram":62,"google_seo":20,"pinterest":9,"facebook":6,"other":3}}};
+}
+
+
+// ── Pollinations.ai image generation ────────────────────────────────────────
+// 100% free, no API key, no account needed. Uses Flux model via Pollinations.
+
+const POL_BRAND = "deep navy blue background, soft moonlight, warm cream and gold tones, elegant minimal style, professional baby sleep brand Singapore, @mybelovedsleep";
+
+const POL_CONFIGS = {
+  carousel:  { w: 1080, h: 1080, label: "square Instagram carousel slide 1:1 format" },
+  thumbnail: { w: 1200, h: 628,  label: "wide blog thumbnail 16:9 landscape format" },
+  reel:      { w: 1080, h: 1920, label: "vertical Instagram Reel cover 9:16 portrait format" },
+};
+
+function buildPolPrompt(topic, type) {
+  const cfg = POL_CONFIGS[type];
+  const topicPrompts = {
+    carousel:  `peacefully sleeping baby, soft golden moonlight, text overlay "${topic}", warm reassuring mood`,
+    thumbnail: `editorial lifestyle photography, sleeping newborn in cream muslin, bold headline text "${topic}", professional`,
+    reel:      `bold eye-catching mobile design, sleeping baby, large text hook "${topic}", scroll-stopping vertical`,
+  };
+  return `${topicPrompts[type]}, ${POL_BRAND}, ${cfg.label}, high quality photography style`;
+}
+
+function generatePolImage(type) {
+  window._lastPolType = type;
+  const topic = document.getElementById('pol-topic')?.value || '4-month sleep regression';
+  const cfg   = POL_CONFIGS[type];
+  const prompt = buildPolPrompt(topic, type);
+  const seed   = Math.floor(Math.random() * 99999);
+  const url    = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=${cfg.w}&height=${cfg.h}&seed=${seed}&nologo=true&model=flux`;
+
+  const result  = document.getElementById('pol-result');
+  const loading = document.getElementById('pol-loading');
+  const img     = document.getElementById('pol-img');
+  const actions = document.getElementById('pol-img-actions');
+  const dlLink  = document.getElementById('pol-download');
+
+  result.style.display  = 'block';
+  loading.style.display = 'block';
+  img.style.display     = 'none';
+  actions.style.display = 'none';
+
+  img.onload = () => {
+    loading.style.display = 'none';
+    img.style.display     = 'block';
+    actions.style.display = 'flex';
+    dlLink.href           = url;
+  };
+  img.onerror = () => {
+    loading.textContent = 'Image failed to load — Pollinations may be busy. Try again in a moment.';
+  };
+  img.src = url;
+}
+
+function generateBlogThumbnail() {
+  const top = REPORT?.content?.top_post_meta?.title || '4-month sleep regression';
+  const prompt = `editorial blog header, sleeping newborn baby, deep navy background, moonlight glow, headline text "${top}", professional lifestyle photography, wide landscape, My Beloved Sleep brand, ${POL_BRAND}`;
+  const url    = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=1200&height=628&seed=${Math.floor(Math.random()*99999)}&nologo=true&model=flux`;
+
+  const wrap  = document.getElementById('blog-thumb-result');
+  const load  = document.getElementById('blog-thumb-loading');
+  const img   = document.getElementById('blog-thumb-img');
+  const dlBtn = document.getElementById('blog-thumb-dl-btn');
+  const dlLnk = document.getElementById('blog-thumb-dl');
+
+  wrap.style.display = 'block';
+  load.style.display = 'block';
+  img.style.display  = 'none';
+  dlBtn.style.display = 'none';
+
+  img.onload = () => {
+    load.style.display  = 'none';
+    img.style.display   = 'block';
+    dlBtn.style.display = 'block';
+    dlLnk.href          = url;
+  };
+  img.onerror = () => {
+    load.textContent = 'Image failed — try again in a moment.';
+  };
+  img.src = url;
 }
 
 
