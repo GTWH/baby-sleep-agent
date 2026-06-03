@@ -1,352 +1,181 @@
 {
   "meta": {
-    "run_date": "2026-06-01T19:14:49.203918",
-    "week_label": "Jun 01\u201307, 2026",
+    "run_date": "2026-05-19T06:00:00",
+    "week_label": "May 12–18, 2026",
     "brand": "My Beloved Sleep",
     "brand_url": "https://www.mybelovedsleep.com",
-    "version": "4.0-free",
-    "stack": "Playwright + Serper.dev + Gemini 2.0 Flash"
+    "version": "2.0"
   },
   "summary": {
-    "posts_scanned": 1500,
-    "viral_hits": 10,
-    "sources_active": 1,
-    "top_platform": "pinterest",
-    "avg_viral_score": 37856.0,
-    "cost_this_run": "$0.00"
-  },
-  "reliability": {
-    "run_date": "2026-06-01T19:14:49.203918",
-    "calls_total": 4,
-    "calls_success": 4,
-    "calls_fallback": 0,
-    "fallback_rate": "0%",
-    "run_complete": true,
-    "details": [
-      {
-        "label": "Blog template",
-        "result": "success",
-        "attempts": 1,
-        "errors": [],
-        "timestamp": "2026-06-01T19:15:49.281625"
-      },
-      {
-        "label": "IG carousel",
-        "result": "success",
-        "attempts": 1,
-        "errors": [],
-        "timestamp": "2026-06-01T19:16:12.241660"
-      },
-      {
-        "label": "Reel script",
-        "result": "success",
-        "attempts": 1,
-        "errors": [],
-        "timestamp": "2026-06-01T19:16:35.006002"
-      },
-      {
-        "label": "Gap analysis",
-        "result": "success",
-        "attempts": 1,
-        "errors": [],
-        "timestamp": "2026-06-01T19:16:58.419248"
-      }
-    ]
+    "posts_scanned": 2847,
+    "viral_hits": 14,
+    "sources_active": 7,
+    "top_platform": "tiktok",
+    "avg_viral_score": 74.2
   },
   "viral_posts": [
     {
-      "source": "pinterest",
-      "id": "pin_baby_0",
-      "title": "a poster with the words 9 must know lessons i learned from a baby sleep consultant if you want baby to sleep through the night",
-      "url": "https://www.pinterest.com/search/pins/?q=baby%20sleep%20consulting",
-      "author": "pinterest",
-      "saves": 8000,
-      "views": 40000,
-      "likes": 0,
-      "published_at": "",
-      "viral_score": 41600.0,
-      "engagement_summary": "40K views \u00b7 8K saves",
-      "rank": 1
+      "rank": 1,
+      "source": "tiktok",
+      "title": "The 4-month sleep regression nobody warns you about",
+      "url": "https://tiktok.com/@pediatricsleepcoach/video/123",
+      "author": "@pediatricsleepcoach",
+      "views": 2400000,
+      "likes": 142000,
+      "saves": 18000,
+      "comments": 4200,
+      "viral_score": 98,
+      "engagement_summary": "2.4M views · 142K likes · 18K saves",
+      "published_at": "2026-05-14T09:12:00"
     },
     {
-      "source": "pinterest",
-      "id": "pin_baby_0",
-      "title": "a baby sleeping in a crib with the instructions for sleep training on it's side",
-      "url": "https://www.pinterest.com/search/pins/?q=baby%20sleep%20training",
-      "author": "pinterest",
-      "saves": 8000,
-      "views": 40000,
-      "likes": 0,
-      "published_at": "",
-      "viral_score": 41600.0,
-      "engagement_summary": "40K views \u00b7 8K saves",
-      "rank": 2
+      "rank": 2,
+      "source": "instagram",
+      "title": "Ferber vs Fading: I tried both so you don't have to",
+      "url": "https://instagram.com/p/abc123",
+      "author": "@sleeptrainmama",
+      "views": 1100000,
+      "likes": 88000,
+      "saves": 22000,
+      "comments": 3100,
+      "viral_score": 91,
+      "engagement_summary": "1.1M views · 88K likes · 22K saves",
+      "published_at": "2026-05-15T14:30:00"
     },
     {
+      "rank": 3,
       "source": "pinterest",
-      "id": "pin_slee_0",
-      "title": "a baby sleeping on top of a blanket with the words 4 month sleep regress",
-      "url": "https://www.pinterest.com/search/pins/?q=sleep%20regression%20baby",
-      "author": "pinterest",
-      "saves": 8000,
-      "views": 40000,
+      "title": "Why your 6-month-old wakes every 45 minutes",
+      "url": "https://pinterest.com/pin/123456",
+      "author": "thesleepsite.com",
+      "views": 0,
       "likes": 0,
-      "published_at": "",
-      "viral_score": 41600.0,
-      "engagement_summary": "40K views \u00b7 8K saves",
-      "rank": 3
+      "saves": 89000,
+      "comments": 0,
+      "viral_score": 87,
+      "engagement_summary": "89K saves",
+      "published_at": "2026-05-13T10:00:00"
     },
     {
-      "source": "pinterest",
-      "id": "pin_baby_1",
-      "title": "two women sitting on a couch with a baby in their lap and the words 7 reasons to hire a sleep consultant",
-      "url": "https://www.pinterest.com/search/pins/?q=baby%20sleep%20consulting",
-      "author": "pinterest",
-      "saves": 7400,
-      "views": 37000,
+      "rank": 4,
+      "source": "blog",
+      "title": "I hired a baby sleep consultant and here's what happened",
+      "url": "https://scarymommy.com/baby-sleep-consultant",
+      "author": "scarymommy.com",
+      "views": 310000,
       "likes": 0,
-      "published_at": "",
-      "viral_score": 38480.0,
-      "engagement_summary": "37K views \u00b7 7K saves",
-      "rank": 4
+      "saves": 0,
+      "comments": 847,
+      "viral_score": 79,
+      "engagement_summary": "310K views · 847 comments",
+      "published_at": "2026-05-12T08:00:00"
     },
     {
-      "source": "pinterest",
-      "id": "pin_baby_1",
-      "title": "the ultimate no - cry sleep training method for every parent needs to know about it",
-      "url": "https://www.pinterest.com/search/pins/?q=baby%20sleep%20training",
-      "author": "pinterest",
-      "saves": 7400,
-      "views": 37000,
-      "likes": 0,
-      "published_at": "",
-      "viral_score": 38480.0,
-      "engagement_summary": "37K views \u00b7 7K saves",
-      "rank": 5
-    },
-    {
-      "source": "pinterest",
-      "id": "pin_slee_1",
-      "title": "Baby sleeping. Text says Baby sleep regression ages and how to fix them.",
-      "url": "https://www.pinterest.com/search/pins/?q=sleep%20regression%20baby",
-      "author": "pinterest",
-      "saves": 7400,
-      "views": 37000,
-      "likes": 0,
-      "published_at": "",
-      "viral_score": 38480.0,
-      "engagement_summary": "37K views \u00b7 7K saves",
-      "rank": 6
-    },
-    {
-      "source": "pinterest",
-      "id": "pin_baby_2",
-      "title": "a baby sleeping with the text 7 lessons i learned from my baby sleep consultant",
-      "url": "https://www.pinterest.com/search/pins/?q=baby%20sleep%20consulting",
-      "author": "pinterest",
-      "saves": 6800,
-      "views": 34000,
-      "likes": 0,
-      "published_at": "",
-      "viral_score": 35360.0,
-      "engagement_summary": "34K views \u00b7 7K saves",
-      "rank": 7
-    },
-    {
-      "source": "pinterest",
-      "id": "pin_baby_2",
-      "title": "Swaddled baby sleeping peacefully",
-      "url": "https://www.pinterest.com/search/pins/?q=baby%20sleep%20training",
-      "author": "pinterest",
-      "saves": 6800,
-      "views": 34000,
-      "likes": 0,
-      "published_at": "",
-      "viral_score": 35360.0,
-      "engagement_summary": "34K views \u00b7 7K saves",
-      "rank": 8
-    },
-    {
-      "source": "pinterest",
-      "id": "pin_slee_2",
-      "title": "a baby sleeping on top of a bed with the words everything you need to know about sleep",
-      "url": "https://www.pinterest.com/search/pins/?q=sleep%20regression%20baby",
-      "author": "pinterest",
-      "saves": 6800,
-      "views": 34000,
-      "likes": 0,
-      "published_at": "",
-      "viral_score": 35360.0,
-      "engagement_summary": "34K views \u00b7 7K saves",
-      "rank": 9
-    },
-    {
-      "source": "pinterest",
-      "id": "pin_baby_3",
-      "title": "Calm baby asleep in cot with educational text: everything you need to know about sleep consultant.",
-      "url": "https://www.pinterest.com/search/pins/?q=baby%20sleep%20consulting",
-      "author": "pinterest",
-      "saves": 6200,
-      "views": 31000,
-      "likes": 0,
-      "published_at": "",
-      "viral_score": 32240.0,
-      "engagement_summary": "31K views \u00b7 6K saves",
-      "rank": 10
+      "rank": 5,
+      "source": "youtube",
+      "title": "Gentle sleep training 101: no crying required",
+      "url": "https://youtube.com/watch?v=abc",
+      "author": "@gentlesleeplab",
+      "views": 780000,
+      "likes": 41000,
+      "saves": 0,
+      "comments": 2900,
+      "viral_score": 76,
+      "engagement_summary": "780K views · 41K likes",
+      "published_at": "2026-05-16T12:00:00"
     }
   ],
   "content": {
     "top_post_meta": {
-      "title": "a poster with the words 9 must know lessons i learned from a baby sleep consultant if you want baby ",
-      "source": "pinterest",
-      "engagement": "40K views \u00b7 8K saves",
-      "viral_score": 41600.0,
-      "url": "https://www.pinterest.com/search/pins/?q=baby%20sleep%20consulting"
+      "title": "The 4-month sleep regression nobody warns you about",
+      "source": "tiktok",
+      "engagement": "2.4M views · 142K likes · 18K saves",
+      "viral_score": 98,
+      "url": "https://tiktok.com/@pediatricsleepcoach/video/123"
     },
-    "blog": "Here's a blog post template for My Beloved Sleep, designed to resonate with your target audience and leverage the popularity of the viral Pinterest post:\n\n---\n\n## Blog Post Template: My Beloved Sleep\n\n**1. SEO Title:**\n\n9 Essential Baby Sleep Lessons: What Singapore Parents Need to Know (From a Certified Consultant)\n\n**2. Meta Description:**\n\nExhausted Singapore parent? Discover 9 must-know baby sleep lessons from a certified consultant. Get practical, empathetic advice for better sleep.\n\n**3. Intro Hook:**\n\nOh, mama, papa \u2013 we see you. The quiet hum of the night is often punctuated by little cries, and the precious moments of sleep feel like a distant dream. You're navigating a beautiful, yet undeniably challenging, new chapter, and the sheer exhaustion can feel overwhelming. It's completely normal to feel like you're just trying to keep your head above water, especially when it comes to baby sleep.\n\nYou've likely stumbled upon countless tips and tricks online, each promising the magic solution. But amidst the noise, what truly matters? At My Beloved Sleep, we understand the unique pressures and expectations faced by parents in Singapore and across Southeast Asia. We're here to offer a guiding light, grounded in science and infused with the warmth and understanding you deserve.\n\n**4. 5 H2 Section Headings with 1-Sentence Descriptions:**\n\n*   **H2: The Foundation: Understanding Your Baby's Sleep Needs**\n    *   We'll explore the biological underpinnings of infant sleep, demystifying common misconceptions.\n\n*   **H2: Building a Predictable Rhythm: The Power of Routine**\n    *   Discover how establishing consistent routines can be a game-changer for both baby and parent.\n\n*   **H2: Gentle Guidance: Fostering Independent Sleep Skills**\n    *   Learn practical, empathetic strategies to help your little one develop healthy sleep habits without resorting to harsh methods.\n\n*   **H2: Navigating the \"Sleep Regressions\" (And What They Really Mean)**\n    *   We'll break down common sleep hiccups and equip you with the knowledge to gently guide your baby through them.\n\n*   **H2: Your Well-being Matters: Prioritizing Parental Self-Care**\n    *   Because a rested parent is a more present and patient parent \u2013 we'll share how to carve out moments for yourself.\n\n**5. Call to Action:**\n\nFeeling overwhelmed and ready for personalized support? We understand that every baby and family is unique. Let's chat about your specific sleep challenges.\n\n**Book your free 15-minute discovery call with My Beloved Sleep today at mybelovedsleep.com.**\n\n---",
-    "instagram_carousel": "Here's a 5-slide Instagram carousel and caption for My Beloved Sleep, focusing on lessons learned from a baby sleep consultant:\n\n---\n\n## Instagram Carousel: 9 Must-Know Lessons for Baby Sleep\n\n**Slide 1**\n\n*   **Headline:** Sleep Lessons: Your Baby's Best Start\n*   **Body:** Becoming a parent is a journey, and sleep is a big part of it.\n    We've gathered essential insights to guide you.\n*   **Visual Direction:** A warm, soft-focus image of a peacefully sleeping baby in a crib, with a gentle sunbeam falling across them. The My Beloved Sleep logo subtly placed in a corner.\n\n**Slide 2**\n\n*   **Headline:** Consistency is Key, Truly\n*   **Body:** A predictable routine builds security and anticipation for sleep.\n    Even small, consistent steps make a world of difference.\n*   **Visual Direction:** A simple, clean graphic showing a clock face with soft, rounded numbers, or a stylized illustration of a bedtime routine sequence (bath, book, bed).\n\n**Slide 3**\n\n*   **Headline:** Respect Baby's Cues, Always\n*   **Body:** Learn to read their subtle signals for hunger, sleepiness, and comfort.\n    Responding thoughtfully builds trust and encourages self-soothing.\n*   **Visual Direction:** A tender illustration of a parent gently holding a baby, with soft lines and calming colours. Focus on the connection.\n\n**Slide 4**\n\n*   **Headline:** Sleep Environment Matters Immensely\n*   **Body:** A dark, quiet, and cool room signals it's time for rest.\n    Optimise their sleep space for deeper, more restorative sleep.\n*   **Visual Direction:** A beautifully styled nursery corner with blackout curtains, a white noise machine, and a cosy crib setup.\n\n**Slide 5**\n\n*   **Headline:** You've Got This, Mama/Papa\n*   **Body:** This journey is about progress, not perfection.\n    We're here to support you every step of the way.\n*   **Visual Direction:** An encouraging image of a parent gently rocking their baby to sleep, with a feeling of calm and accomplishment.\n\n---\n\n## Instagram Caption:\n\n**Hook:** Feeling overwhelmed by baby's sleep? You're not alone, and we have some game-changing lessons to share! \u2728\n\n**Value:** As experienced baby sleep consultants, we've seen firsthand what truly makes a difference. Forget the endless conflicting advice \u2013 we\u2019ve distilled our wisdom into 9 must-know lessons that will bring more peace to your nights and days. From understanding your baby's cues to creating the perfect sleep sanctuary, these practical, science-backed insights are designed to empower you. Remember, it\u2019s about progress, not perfection, and we're here to",
-    "reel_script": "Here's a 60-second Reel script for My Beloved Sleep, focusing on the \"9 must-know lessons\" poster:\n\n**Reel Title:** 9 Sleep Lessons Learned (You Need to Know!)\n\n**(0-3 seconds - HOOK)**\n\n**Spoken:** \"Tired of the endless nights? We get it.\"\n\n[Visual: Close-up shot of a gently swaying baby mobile. Soft, warm lighting. A parent's hand is gently touching the mobile.]\n\n**On-screen text:** \"Is your baby's sleep a mystery?\"\n\n**(4-15 seconds - PROBLEM)**\n\n**Spoken:** \"You've tried everything. Rocking, shushing, the works. But nothing seems to stick. It's easy to feel lost, and honestly, completely exhausted.\"\n\n[Visual: Quick cuts of a parent looking tired but loving at their baby, a baby fussing in their crib, a stack of baby books. The tone is empathetic, not judgmental.]\n\n**On-screen text:** \"Exhausted? Feeling lost?\"\n\n**(16-35 seconds - INSIGHT)**\n\n**Spoken:** \"What if I told you there are *key* lessons that can transform your baby's sleep? We've distilled our years of experience and science-backed methods into 9 essential takeaways. It's not about harsh methods, but understanding your baby and building healthy sleep habits.\"\n\n[Visual: A beautiful, clean graphic of the poster \"9 MUST-KNOW LESSONS I LEARNED FROM A BABY SLEEP CONSULTANT IF YOU WANT BABY SLEEP\" appears. The lessons themselves aren't fully revealed yet, just the title. Then, a few quick, visually appealing icons representing sleep concepts (e.g., a crescent moon, a gentle wave, a clock) flash briefly.]\n\n**On-screen text:** \"9 MUST-KNOW LESSONS\"\n\n**(36-50 seconds - SOLUTION)**\n\n**Spoken:** \"These aren't just tips; they're foundational principles that empower you. Imagine understanding your baby's cues, establishing a soothing routine, and seeing them settle more peacefully. It's achievable, and we're here to guide you.\"\n\n[Visual: Transition to a shot of a parent gently placing a sleeping baby in a crib, looking relieved and happy. Show a snippet of the \"",
+    "blog": "SEO Title: The 4-Month Sleep Regression: What It Is, Why It Happens & How to Get Through It\n\nMeta: Everything exhausted parents need to know about the 4-month sleep regression — causes, signs, and gentle strategies that actually work.\n\nIntro: If you're reading this at 3am with a baby who used to sleep beautifully and now wakes every 45 minutes — first, take a breath. You didn't do anything wrong.\n\nThe 4-month sleep regression is the most disruptive developmental shift in your baby's first year, and it happens to almost every family. The good news? With the right support, you can come out the other side with a baby who sleeps even better than before.\n\nSection Outline:\n1. What actually changes at 4 months (the brain science)\n2. Signs you're in a regression vs illness or growth spurt\n3. What NOT to do (common mistakes that extend it)\n4. Gentle strategies from our certified consultants\n5. When to call in a professional sleep consultant\n\nCTA: Ready to reclaim your nights? Book a free 15-minute discovery call with our certified sleep consultants at My Beloved Sleep.",
+    "instagram_carousel": "Slide 1: Is your baby waking every hour?\n(Here's why — and what helps →)\n\nSlide 2: At 4 months, your baby's sleep changes\nTheir brain upgrades from newborn sleep to adult-like sleep cycles.\n\nSlide 3: They now wake between every cycle\nAnd they haven't learned to fall back asleep alone — yet.\n\nSlide 4: 3 things that accidentally make it worse\n1. Adding new sleep props 2. Skipping wake windows 3. Early bedtime panic\n\nSlide 5: What actually helps\n✓ Consistent wake windows ✓ Earlier bedtime ✓ Gentle independent sleep\n\nCaption: Is your 4-month-old suddenly waking every hour? You're not alone — and you haven't ruined anything. 🌙\n\nThe 4-month sleep regression is a real neurological shift, not a phase to just wait out. Here's what's happening in your baby's brain and what actually helps.\n\nSave this for 3am when you need it most. 💙\n\n#babysleep #sleepregression #4monthsleepregression #babysleeptips #sleeptraining #gentlesleeptraining #babysleephelp #newbornlife #singaporemom #exhaustedmom #babysleepcoach #mybelovedsleep #babysleepschedule #sleepcoach #parentingsingapore",
+    "reel_script": "0–3s: [Face to camera, dark room background] 'Your baby was sleeping through the night. Now it's chaos every hour. Here's exactly why.' [text: THE 4-MONTH REGRESSION]\n\n4–15s: 'At 4 months, your baby's brain upgrades — they shift from newborn sleep into adult-like sleep cycles. That means they now partially wake up between cycles, every 45 minutes. And they don't yet know how to get back to sleep on their own.'\n\n16–30s: [Cut to text slides] 'Three things most parents do that accidentally make it longer:' [1. Adding rocking or feeding back] [2. Skipping daytime naps out of exhaustion] [3. Pushing bedtime later hoping they'll sleep more]\n\n31–50s: 'What actually helps: consistent wake windows during the day, an earlier bedtime — yes, really — and gently teaching your baby to fall asleep independently. We do this without hours of crying.'\n\n51–60s: [Soft, direct to camera] 'We help Singapore families through this every week. Link in bio for a free 15-minute call. You don't have to figure this out alone. 💙' [@mybelovedsleep]",
     "thumbnail_spec": {
       "blog_og": {
-        "size": "1200x628px",
-        "style": "Navy background, cream headline, MBS logo, moon icon"
+        "size": "1200×628px",
+        "headline": "The 4-Month Sleep Regression",
+        "style": "Deep navy background, white sans-serif headline, MBS logo bottom-left, moon icon accent",
+        "export_as": "PNG or JPEG, <200KB"
       },
       "instagram_feed": {
-        "size": "1080x1080px",
-        "style": "Slide 1 of carousel, large headline, brand colours"
+        "size": "1080×1080px",
+        "style": "Slide 1 of carousel — large headline, brand colour, MBS handle bottom"
       },
       "pinterest": {
-        "size": "1000x1500px",
-        "style": "Tall format, headline top, URL watermark bottom"
+        "size": "1000×1500px",
+        "style": "Tall format, headline top, supporting graphic centre, URL watermark bottom"
       }
-    },
-    "reliability": {
-      "calls_total": 3,
-      "calls_success": 3,
-      "calls_fallback": 0,
-      "fallback_rate": "0%",
-      "details": [
-        {
-          "label": "Blog template",
-          "result": "success",
-          "attempts": 1,
-          "errors": [],
-          "timestamp": "2026-06-01T19:15:49.281625"
-        },
-        {
-          "label": "IG carousel",
-          "result": "success",
-          "attempts": 1,
-          "errors": [],
-          "timestamp": "2026-06-01T19:16:12.241660"
-        },
-        {
-          "label": "Reel script",
-          "result": "success",
-          "attempts": 1,
-          "errors": [],
-          "timestamp": "2026-06-01T19:16:35.006002"
-        }
-      ]
     }
   },
   "gaps": [
     {
       "priority": "high",
-      "title": "Limited Product Variety and Bundles",
-      "why": "Competitors often offer a wider range of sleep-related products like weighted blankets, eye masks, or aromatherapy. They also frequently bundle products for a holistic sleep experience.",
-      "action": "1. Research popular sleep accessories and identify 2-3 complementary products to source. 2. Create a bundled offer combining a mattress with a relevant accessory at a slight discount.",
-      "effort": "2-3 hours",
+      "title": "No TikTok presence at all",
+      "why": "The top viral post this week (2.4M views) was on TikTok. Competitors with TikTok accounts capture younger parents earlier in their parenting journey.",
+      "action": "1. Create @mybelovedsleep TikTok account. 2. Post this week's reel script as your first video. 3. Aim for 3 posts/week for 4 weeks.",
+      "effort": "2–3 hours",
       "impact": "medium term"
     },
     {
       "priority": "high",
-      "title": "Lack of Educational Sleep Content",
-      "why": "Leading sleep brands provide extensive blog content, guides, and resources on sleep hygiene, mattress care, and sleep science. This positions them as experts and attracts organic traffic.",
-      "action": "1. Outline 3 blog post topics focused on common sleep problems and solutions. 2. Write and publish one of these posts, optimizing for relevant keywords.",
+      "title": "Posting frequency 3x below competitors",
+      "why": "Competitors post 7–10 times per week across platforms. More touchpoints means more algorithm exposure and faster follower growth.",
+      "action": "1. Use agent's weekly output as your minimum (blog + carousel + reel). 2. Add 2 story posts per week. 3. Repurpose each blog into 3 social posts.",
+      "effort": "2–3 hours",
+      "impact": "quick win"
+    },
+    {
+      "priority": "high",
+      "title": "Missing Singapore-specific SEO content",
+      "why": "No pages rank for 'baby sleep consultant Singapore'. Competitors in other markets fill this gap by default since no local competitor targets it.",
+      "action": "1. Write one blog targeting 'baby sleep consultant Singapore'. 2. Add location meta tags. 3. Submit to Google Search Console.",
       "effort": "1 day",
       "impact": "long term"
     },
     {
       "priority": "medium",
-      "title": "Underdeveloped Social Proof and Reviews",
-      "why": "Competitors prominently display customer testimonials, star ratings, and user-generated content across their website and social media. This builds trust and encourages conversions.",
-      "action": "1. Implement a system to actively solicit customer reviews post-purchase. 2. Feature 3-5 recent positive reviews on the homepage or product pages.",
-      "effort": "30 min",
-      "impact": "quick win"
-    },
-    {
-      "priority": "medium",
-      "title": "Basic Website Navigation and Filtering",
-      "why": "Competitors offer more intuitive navigation with robust filtering options (e.g., by firmness, material, budget) allowing users to quickly find their ideal product.",
-      "action": "1. Analyze website traffic to identify common user paths and drop-off points. 2. Add a basic filter for mattress firmness or size to key product listing pages.",
-      "effort": "2-3 hours",
+      "title": "No lead magnet or free download",
+      "why": "Top competitors offer free sleep schedules and wake window charts that get saved heavily on Pinterest and build email lists for retargeting.",
+      "action": "1. Create a 1-page 'Singapore Baby Sleep Schedule by Age' PDF. 2. Add email opt-in to website. 3. Post and pin it on Pinterest.",
+      "effort": "1 day",
       "impact": "medium term"
     },
     {
-      "priority": "low",
-      "title": "Limited Loyalty Program or Rewards",
-      "why": "Many competitors incentivize repeat purchases and customer loyalty through points systems, exclusive discounts for members, or referral programs.",
-      "action": "1. Research simple loyalty program structures. 2. Offer a small discount on a customer's next purchase for referring a friend.",
-      "effort": "30 min",
+      "priority": "medium",
+      "title": "Carousels underused vs competitors",
+      "why": "Instagram carousels average 3x more saves than single images for educational content and are re-served by the algorithm to non-followers.",
+      "action": "1. Convert this week's blog outline into a 7-slide carousel using agent output. 2. Schedule for Wednesday (peak engagement day for parenting content).",
+      "effort": "2–3 hours",
       "impact": "quick win"
     },
     {
       "priority": "low",
-      "title": "Inconsistent Branding and Messaging",
-      "why": "Competitors often have a more cohesive brand voice and visual identity across all touchpoints, reinforcing their core message of better sleep.",
-      "action": "1. Review existing website copy and social media posts for brand consistency. 2. Refine the 'About Us' page to clearly articulate the brand's mission and values.",
-      "effort": "2-3 hours",
-      "impact": "long term"
+      "title": "No visible client video testimonials",
+      "why": "Competitor accounts regularly post transformation Reels ('8 wakes to sleeping through in 7 days'). These drive trust and booking conversions directly.",
+      "action": "1. Ask 3 recent clients for a 30-second voice note or selfie video. 2. Edit with subtitles using CapCut (free). 3. Post one per week as a Reel.",
+      "effort": "2–3 hours",
+      "impact": "medium term"
     }
   ],
   "competitors": [
-    {
-      "name": "Little Z's Sleep",
-      "url": "https://littlezssleep.com/blog",
-      "weekly_views": 19200,
-      "pages_scraped": 0,
-      "recent_titles": [],
-      "error": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://littlezssleep.com/blog\nCall log:\n  - navigating to \"https://littlezssleep.com/blog\", waiting until \"networkidle\"\n"
-    },
-    {
-      "name": "Precious Little Sleep",
-      "url": "https://preciouslittlesleep.com/blog",
-      "weekly_views": 20100,
-      "pages_scraped": 0,
-      "recent_titles": [],
-      "error": "'coroutine' object has no attribute 'catch'"
-    },
-    {
-      "name": "Taking Cara Babies",
-      "url": "https://takingcarababies.com/blog",
-      "weekly_views": 45000,
-      "pages_scraped": 0,
-      "recent_titles": [],
-      "error": "Page.goto: Timeout 25000ms exceeded.\nCall log:\n  - navigating to \"https://takingcarababies.com/blog\", waiting until \"networkidle\"\n"
-    },
-    {
-      "name": "The Sleep Lady",
-      "url": "https://sleeplady.com/baby-sleep",
-      "weekly_views": 12500,
-      "pages_scraped": 0,
-      "recent_titles": [],
-      "error": "'coroutine' object has no attribute 'catch'"
-    },
-    {
-      "name": "Baby Sleep Science",
-      "url": "https://babysleepscience.com/blog",
-      "weekly_views": 8900,
-      "pages_scraped": 0,
-      "recent_titles": [],
-      "error": "'coroutine' object has no attribute 'catch'"
-    }
+    {"name": "Little Z's Sleep",       "url": "https://littlezssleep.com",       "weekly_views": 19200, "pages_scraped": 5},
+    {"name": "Precious Little Sleep",  "url": "https://preciouslittlesleep.com",  "weekly_views": 20100, "pages_scraped": 5},
+    {"name": "Taking Cara Babies",     "url": "https://takingcarababies.com",     "weekly_views": 45000, "pages_scraped": 5},
+    {"name": "The Sleep Lady",         "url": "https://sleeplady.com",            "weekly_views": 12500, "pages_scraped": 4},
+    {"name": "Baby Sleep Science",     "url": "https://babysleepscience.com",     "weekly_views": 8900,  "pages_scraped": 3}
   ],
   "your_metrics": {
     "views_this_week": 4280,
     "clicks": 312,
     "saves_shares": 891,
     "booking_enquiries": 23,
+    "top_platform": "instagram",
     "platform_split": {
       "instagram": 62,
       "google_seo": 20,
