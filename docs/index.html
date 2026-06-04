@@ -562,13 +562,18 @@ function buildPolPrompt(topic, type) {
   return `${base[type]}, ${POL_BRAND}, ${POL_CFG[type].label}, high quality`;
 }
 
-function generatePolImage(type) {
+// Models to try in order if one fails
+const POL_MODELS = ['flux', 'flux-pro', 'turbo'];
+
+function generatePolImage(type, modelIdx) {
   window._polType = type;
+  window._polModelIdx = modelIdx || 0;
   const topic  = document.getElementById('pol-topic')?.value || '4-month sleep regression';
   const cfg    = POL_CFG[type];
   const prompt = buildPolPrompt(topic, type);
   const seed   = Math.floor(Math.random()*99999);
-  const url    = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=${cfg.w}&height=${cfg.h}&seed=${seed}&nologo=true&model=flux`;
+  const model  = POL_MODELS[window._polModelIdx] || 'flux';
+  const url    = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=${cfg.w}&height=${cfg.h}&seed=${seed}&nologo=true&model=${model}&enhance=true`;
 
   const result  = document.getElementById('pol-result');
   const loading = document.getElementById('pol-loading');
@@ -577,7 +582,7 @@ function generatePolImage(type) {
 
   result.style.display  = 'block';
   loading.style.display = 'block';
-  loading.textContent   = 'Generating image — takes 5–15 seconds... ☕';
+  loading.textContent   = `Generating image using ${model} — takes 5–20 seconds... ☕`;
   img.style.display     = 'none';
   actions.style.display = 'none';
   img.src = url;
@@ -590,13 +595,21 @@ function polImgLoaded() {
   document.getElementById('pol-download').href         = document.getElementById('pol-img').src;
 }
 function polImgError() {
-  document.getElementById('pol-loading').textContent = '⚠ Image failed to load — Pollinations may be busy. Click Regenerate to try again.';
+  // Auto-retry with next model before giving up
+  const nextIdx = (window._polModelIdx || 0) + 1;
+  if (nextIdx < POL_MODELS.length) {
+    console.log('Trying next model:', POL_MODELS[nextIdx]);
+    generatePolImage(window._polType, nextIdx);
+  } else {
+    window._polModelIdx = 0;
+    document.getElementById('pol-loading').textContent = '⚠ All models busy right now. Click Regenerate to try again, or wait a few minutes.';
+  }
 }
 
 function generateBlogThumbnail() {
   const top    = REPORT?.content?.top_post_meta?.title || '4-month sleep regression';
   const prompt = `editorial blog header, sleeping newborn baby, deep navy moonlight background, headline text "${top}", professional lifestyle photography, My Beloved Sleep Singapore brand, ${POL_BRAND}`;
-  const url    = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=1200&height=628&seed=${Math.floor(Math.random()*99999)}&nologo=true&model=flux`;
+  const url    = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=1200&height=628&seed=${Math.floor(Math.random()*99999)}&nologo=true&model=flux-pro`;
 
   const wrap = document.getElementById('blog-thumb-result');
   const load = document.getElementById('blog-thumb-loading');
