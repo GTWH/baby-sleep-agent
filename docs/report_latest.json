@@ -1,6 +1,6 @@
 {
   "meta": {
-    "run_date": "2026-06-15T10:59:07.282987",
+    "run_date": "2026-06-15T17:34:39.170356",
     "week_label": "Jun 15\u201321, 2026",
     "brand": "My Beloved Sleep",
     "brand_url": "https://www.mybelovedsleep.com",
@@ -16,7 +16,7 @@
     "cost_this_run": "$0.00"
   },
   "reliability": {
-    "run_date": "2026-06-15T10:59:07.282987",
+    "run_date": "2026-06-15T17:34:39.170356",
     "calls_total": 4,
     "calls_success": 4,
     "calls_fallback": 0,
@@ -28,136 +28,106 @@
         "result": "success",
         "attempts": 1,
         "errors": [],
-        "timestamp": "2026-06-15T11:00:27.657622"
+        "timestamp": "2026-06-15T17:35:58.900344"
       },
       {
         "label": "IG carousel",
         "result": "success",
         "attempts": 1,
         "errors": [],
-        "timestamp": "2026-06-15T11:00:51.564699"
+        "timestamp": "2026-06-15T17:36:21.866601"
       },
       {
         "label": "Reel script",
         "result": "success",
         "attempts": 1,
         "errors": [],
-        "timestamp": "2026-06-15T11:01:15.207574"
+        "timestamp": "2026-06-15T17:36:43.941408"
       },
       {
         "label": "Gap analysis",
         "result": "success",
         "attempts": 1,
         "errors": [],
-        "timestamp": "2026-06-15T11:01:38.417962"
+        "timestamp": "2026-06-15T17:37:07.174469"
       }
     ]
   },
   "viral_posts": [
     {
       "source": "blog",
-      "id": "https://www.instagram.com/p/DZfchJtCi0o/",
-      "title": "Meet our TEAM We are a passionate team of sleep consultants dedicated ...",
-      "url": "https://www.instagram.com/p/DZfchJtCi0o/",
-      "author": "instagram.com",
-      "description": "Chat with us how you and baby can get better sleep. Comment \"free\" below for a free consultation to get your baby sleeping independently! www.mybelovedsleep.com ...",
+      "id": "https://www.reddit.com/r/bninfantsleep/comments/1u58bi3/this_sub_seems_to_be_more_about_sleep/",
+      "title": "this sub seems to be more about sleep training-lite lately : r/bninfantsleep",
+      "url": "https://www.reddit.com/r/bninfantsleep/comments/1u58bi3/this_sub_seems_to_be_more_about_sleep/",
+      "author": "reddit.com",
+      "description": "Sleep training refers to the behavioral modification process meant to eliminate infant signaling when they wake. It is predicated on non responsiveness (\u201c ...",
       "views": 0,
       "likes": 0,
       "saves": 0,
-      "published_at": "3 days ago",
+      "published_at": "2 days ago",
       "viral_score": 0.0,
       "engagement_summary": "\u2014",
       "rank": 1
     },
     {
       "source": "blog",
-      "id": "https://www.facebook.com/groups/babysleeptrainingtipshelp/posts/1586203093132980/",
-      "title": "Common questions about baby sleep training and sleep consulting",
-      "url": "https://www.facebook.com/groups/babysleeptrainingtipshelp/posts/1586203093132980/",
+      "id": "https://www.facebook.com/groups/babysleeptrainingtipshelp/posts/1587883572964932/",
+      "title": "Sleep training methods for a 12-month-old baby - Facebook",
+      "url": "https://www.facebook.com/groups/babysleeptrainingtipshelp/posts/1587883572964932/",
       "author": "facebook.com",
-      "description": "How long does it take? What methods do you use to sleep train? Does baby need to learn to self soothe to have effective sleep training?",
-      "views": 0,
-      "likes": 0,
-      "saves": 0,
-      "published_at": "7 days ago",
-      "viral_score": 0.0,
-      "engagement_summary": "\u2014",
-      "rank": 2
-    },
-    {
-      "source": "blog",
-      "id": "https://www.instagram.com/reel/DZaMNIjsh4B/",
-      "title": "A baby who sleeps through the night at 8 weeks isn't a good ... - Instagram",
-      "url": "https://www.instagram.com/reel/DZaMNIjsh4B/",
-      "author": "instagram.com",
-      "description": "\u2713 overtiredness and regulation \u2713 how to gently shape healthy sleep habits from birth. Because newborn sleep is completely different from toddler sleep. And if ...",
+      "description": "Hi there! What I teach is called The Five Pillars of Sleep Support\u2122\ufe0f, which is my philosophy that all areas surrounding sleep must be regulated in order...",
       "views": 0,
       "likes": 0,
       "saves": 0,
       "published_at": "5 days ago",
       "viral_score": 0.0,
       "engagement_summary": "\u2014",
-      "rank": 3
+      "rank": 2
     },
     {
       "source": "blog",
-      "id": "https://www.bbc.com/news/articles/crrprxy2257o",
-      "title": "'Lives still at risk' from unregulated baby sleep industry after BBC ...",
-      "url": "https://www.bbc.com/news/articles/crrprxy2257o",
-      "author": "bbc.com",
-      "description": "Currently anyone can call themselves a maternity nurse, sleep expert or consultant, without any training, oversight or accountability.",
+      "id": "https://kindredmedia.org/2026/06/sleep-training-harms-babies/",
+      "title": "Sleep Training Harms Babies - Kindred Media",
+      "url": "https://kindredmedia.org/2026/06/sleep-training-harms-babies/",
+      "author": "kindredmedia.org",
+      "description": "Sleep training creates an anti-growth biochemistry. When baby is apart from being with the bodies of nurturers, their systems get dysregulated (e.g., heart rate ...",
       "views": 0,
       "likes": 0,
       "saves": 0,
       "published_at": "6 days ago",
       "viral_score": 0.0,
       "engagement_summary": "\u2014",
+      "rank": 3
+    },
+    {
+      "source": "blog",
+      "id": "https://www.sleepfoundation.org/children-and-sleep",
+      "title": "Children and Sleep: Healthy Sleep Habits for Kids - Sleep Foundation",
+      "url": "https://www.sleepfoundation.org/children-and-sleep",
+      "author": "sleepfoundation.org",
+      "description": "The best time to put your child to bed is when they're sleepy, not when they're already asleep. This helps them learn how to fall asleep on their own. If ...",
+      "views": 0,
+      "likes": 0,
+      "saves": 0,
+      "published_at": "5 days ago",
+      "viral_score": 0.0,
+      "engagement_summary": "\u2014",
       "rank": 4
     },
     {
       "source": "blog",
-      "id": "https://m.yelp.com/biz/rest-well-baby-los-angeles-2",
-      "title": "REST WELL BABY - Updated June 2026 - 65 Reviews - Yelp",
-      "url": "https://m.yelp.com/biz/rest-well-baby-los-angeles-2",
-      "author": "m.yelp.com",
-      "description": "(310) 422-6872, If you need help with infant sleeping problems, she should be your first call. She helped our family go from crying-all-night to sleeping-all- ...",
+      "id": "https://www.instagram.com/reel/DZh2YiSz8FK/",
+      "title": "Sleep training! Parents fear it, but in my experience it's short-term pain ...",
+      "url": "https://www.instagram.com/reel/DZh2YiSz8FK/",
+      "author": "instagram.com",
+      "description": "Sleep training allows a baby to develop their own self-soothing mechanisms so they can fall back asleep even if they wake up. I just don't think there's any ...",
       "views": 0,
       "likes": 0,
       "saves": 0,
-      "published_at": "4 days ago",
+      "published_at": "2 days ago",
       "viral_score": 0.0,
       "engagement_summary": "\u2014",
       "rank": 5
-    },
-    {
-      "source": "blog",
-      "id": "https://www.hereforyounz.com/",
-      "title": "Here For You",
-      "url": "https://www.hereforyounz.com/",
-      "author": "hereforyounz.com",
-      "description": "An internationally Certified Family Sleep and Wellness Coach aka infant and child sleep consultant! I am the face behind Here For You.",
-      "views": 0,
-      "likes": 0,
-      "saves": 0,
-      "published_at": "4 days ago",
-      "viral_score": 0.0,
-      "engagement_summary": "\u2014",
-      "rank": 6
-    },
-    {
-      "source": "blog",
-      "id": "https://www.reddit.com/r/sleeptrain/comments/1u2lp51/night_1_sleep_training_my_4_month_old_but_hes/",
-      "title": "Night 1 sleep training my 4 month old but he's been crying for 3.5 hours ...",
-      "url": "https://www.reddit.com/r/sleeptrain/comments/1u2lp51/night_1_sleep_training_my_4_month_old_but_hes/",
-      "author": "reddit.com",
-      "description": "This is a safe place to discuss biologically normal infant (and toddler/preschooler) sleep for those wanting an alternative to sleep training. Biologically ...",
-      "views": 0,
-      "likes": 0,
-      "saves": 0,
-      "published_at": "4 days ago",
-      "viral_score": 0.0,
-      "engagement_summary": "\u2014",
-      "rank": 7
     },
     {
       "source": "blog",
@@ -165,41 +135,71 @@
       "title": "What to do when pooping affects your child's sleep! \u2014 Baby Sleep Training",
       "url": "https://www.sleeptrainingsolutions.com/blog/what-to-do-when-pooping-affects-your-childs-sleep",
       "author": "sleeptrainingsolutions.com",
-      "description": "In this post, we'll talk about why your child is pooping during sleep and what to do when pooping starts affecting your child's sleep!",
+      "description": "What to do when your child poops during sleep \u00b7 Lather on the butt cream \u00b7 Use zips - no snaps! \u00b7 Time fruit and fiber wisely \u00b7 Move bathtime to the beginning ...",
       "views": 0,
       "likes": 0,
       "saves": 0,
       "published_at": "3 days ago",
+      "viral_score": 0.0,
+      "engagement_summary": "\u2014",
+      "rank": 6
+    },
+    {
+      "source": "blog",
+      "id": "https://www.bbc.com/news/articles/crrprxy2257o",
+      "title": "'Lives still at risk' from unregulated baby sleep industry after BBC ...",
+      "url": "https://www.bbc.com/news/articles/crrprxy2257o",
+      "author": "bbc.com",
+      "description": "MPs are now urging the government to set out a timeline for legislation to make training and background checks compulsory, in the wake of a BBC investigation.",
+      "views": 0,
+      "likes": 0,
+      "saves": 0,
+      "published_at": "7 days ago",
+      "viral_score": 0.0,
+      "engagement_summary": "\u2014",
+      "rank": 7
+    },
+    {
+      "source": "blog",
+      "id": "https://parenthood4ever.com/baby-sleep-challenges/",
+      "title": "Navigating Baby Sleep Challenges: A Comprehensive Guide for Parents",
+      "url": "https://parenthood4ever.com/baby-sleep-challenges/",
+      "author": "parenthood4ever.com",
+      "description": "2. Wake-to-Sleep Method \u00b7 Lightly stir your baby about 15\u201330 minutes before they usually wake up, then allow them to resettle. \u00b7 It can help break habitual waking ...",
+      "views": 0,
+      "likes": 0,
+      "saves": 0,
+      "published_at": "4 days ago",
       "viral_score": 0.0,
       "engagement_summary": "\u2014",
       "rank": 8
     },
     {
       "source": "blog",
-      "id": "https://www.joinsnooze.com/camp-snooze-sleep-coaching",
-      "title": "Camp Snooze | 2-Week Baby Sleep Coaching",
-      "url": "https://www.joinsnooze.com/camp-snooze-sleep-coaching",
-      "author": "joinsnooze.com",
-      "description": "Camp Snooze is two weeks of guided baby sleep training with daily coaching and a personalised plan from Sally and Bec. Limited to six families per intake.",
+      "id": "https://ca.pinterest.com/ideas/sleep-training-babies/928778948725/",
+      "title": "Sleep Training Babies - Pinterest",
+      "url": "https://ca.pinterest.com/ideas/sleep-training-babies/928778948725/",
+      "author": "ca.pinterest.com",
+      "description": "Sleep training babies ; 10 Month Old Sleep Training \u00b7 Sleep Training At 1 Year \u00b7 One Year Old Sleep Schedule ; How To Sleep Train A Newborn \u00b7 Gentle Ferber Method.",
       "views": 0,
       "likes": 0,
       "saves": 0,
-      "published_at": "3 days ago",
+      "published_at": "5 days ago",
       "viral_score": 0.0,
       "engagement_summary": "\u2014",
       "rank": 9
     },
     {
       "source": "blog",
-      "id": "https://www.instagram.com/reel/DZa6MEZT81H/",
-      "title": "After SO much thought (and so much experimenting) we've decided to go ...",
-      "url": "https://www.instagram.com/reel/DZa6MEZT81H/",
-      "author": "instagram.com",
-      "description": "We've paid for a sleep consultant (Sarah from @swoopbabyco \u2728) who offered to fly up to help us with sleep because we are at absolute breaking point. I'll share ...",
+      "id": "https://www.reddit.com/r/newborns/comments/1u2w5lw/does_every_baby_go_through_a_sleep_regression/",
+      "title": "Does every baby go through a \u201csleep regression?\u201d : r/newborns",
+      "url": "https://www.reddit.com/r/newborns/comments/1u2w5lw/does_every_baby_go_through_a_sleep_regression/",
+      "author": "reddit.com",
+      "description": "My baby started 'sleeping through' pretty consistently from 3 weeks, then at around 3.5 months the 4 month sleep regression hit HARD! She was up every 45 ...",
       "views": 0,
       "likes": 0,
       "saves": 0,
-      "published_at": "5 days ago",
+      "published_at": "4 days ago",
       "viral_score": 0.0,
       "engagement_summary": "\u2014",
       "rank": 10
@@ -207,15 +207,15 @@
   ],
   "content": {
     "top_post_meta": {
-      "title": "Meet our TEAM We are a passionate team of sleep consultants dedicated ...",
+      "title": "this sub seems to be more about sleep training-lite lately : r/bninfantsleep",
       "source": "blog",
       "engagement": "\u2014",
       "viral_score": 0.0,
-      "url": "https://www.instagram.com/p/DZfchJtCi0o/"
+      "url": "https://www.reddit.com/r/bninfantsleep/comments/1u58bi3/this_sub_seems_to_be_more_about_sleep/"
     },
-    "blog": "Here's a blog post template for My Beloved Sleep, designed to resonate with your target audience and align with your brand voice:\n\n---\n\n**1. SEO Title:**\n\n*   **Option 1 (Focus on a common sleep struggle):** Singapore Baby Sleep Solutions: Gentle Ways to Conquer [Specific Sleep Challenge, e.g., Night Wakings, Early Mornings]\n*   **Option 2 (Focus on expertise/support):** Sleep Expert Singapore: Your Guide to Restful Nights with My Beloved Sleep\n*   **Option 3 (Broader appeal):** Baby Sleep Singapore: Practical Tips for Exhausted Parents from My Beloved Sleep\n\n**2. Meta Description:**\n\nExhausted by baby sleep struggles in Singapore? Get science-backed, empathetic advice from My Beloved Sleep. Find your family's rest. Book a free call!\n\n**3. Intro Hook:**\n\nOh, mama. We see you. The endless nights, the whispered worries, the feeling of being perpetually underwater. You\u2019re navigating a beautiful, yet incredibly demanding, phase of parenthood, and the lack of sleep can feel like a heavy blanket that never lifts. It's completely understandable to feel overwhelmed when your little one's sleep is a constant puzzle.\n\nWe know that every yawn, every frustrated sigh, is a testament to your unwavering love and dedication. You're doing an amazing job, even when it doesn't feel like it. At My Beloved Sleep, we believe that every family deserves the gift of restful nights, and we're here to guide you with warmth, understanding, and practical, evidence-based strategies that truly work.\n\n**4. H2 Section Headings (with 1-sentence descriptions):**\n\n*   **Understanding Your Baby's Sleep Cycles: The Science Behind the Snooze**\n    *   Demystifying how babies sleep and why it's different from adults.\n*   **Common Singaporean Sleep Challenges & How We Address Them**\n    *   Highlighting prevalent issues faced by parents in the region and our tailored approach.\n*   **Building a Foundation for Healthy Sleep Habits: Gentle, Effective Strategies**\n    *   Introducing the core principles of our sleep consulting methodology.\n*   **Why Evidence-Based Sleep Consulting Matters for Your Family**\n    *   Explaining the benefits of a science-backed approach for long-term sleep success.\n*   **Your Journey to Restful Nights Starts Here: Meet Our Supportive Team**\n    *   Connecting the reader to the human element of your practice and the personalized support available.\n\n**5. Call to Action:**\n\nReady to reclaim your nights and create a more peaceful sleep environment for your entire family? We're here to listen and offer personalized guidance.\n\n**Book your free 15-minute discovery call today at mybelovedsleep.com and let's start building your path to better sleep, together.**\n\n---",
-    "instagram_carousel": "Here's a 5-slide Instagram carousel and caption for My Beloved Sleep, tailored to your brand voice and target audience:\n\n---\n\n## Instagram Carousel Content:\n\n**Slide 1:**\n\n*   **Headline:** Your Sleep Journey, Our Passion\n*   **Body:** Meet the hearts behind My Beloved Sleep. We're here for you.\n*   **Visual Direction:** A warm, inviting photo of the team (or a representative group if not all are available for a single shot). Soft lighting, natural smiles. Perhaps a subtle background element hinting at sleep (e.g., a soft blanket, a gentle nursery scene).\n\n**Slide 2:**\n\n*   **Headline:** Certified Expertise, Empathetic Support\n*   **Body:** Science-backed methods meet compassionate guidance. We understand.\n*   **Visual Direction:** A graphic overlay on a soft, blurred background. The graphic could feature icons representing \"certification\" (like a badge or star) and \"empathy\" (like a heart or two hands gently holding).\n\n**Slide 3:**\n\n*   **Headline:** Real Results, Real Families\n*   **Body:** We've helped countless families find restful nights.\n*   **Visual Direction:** A collage of subtle, positive imagery. Think a baby peacefully sleeping in a cot (no faces visible for privacy), a parent looking relaxed and happy, or a gentle sunrise.\n\n**Slide 4:**\n\n*   **Headline:** Your Partner in Peaceful Sleep\n*   **Body:** Let us guide you with practical, gentle strategies.\n*   **Visual Direction:** An image of a consultant (or a representative one) in a gentle, supportive interaction with a parent (perhaps a silhouette or from behind). Focus on the connection and understanding.\n\n**Slide 5:**\n\n*   **Headline:** Ready for Restful Nights?\n*   **Body:** Let's chat about your family's unique needs.\n*   **Visual Direction:** A clear, simple graphic with the My Beloved Sleep logo and website URL. A soft, calming color palette.\n\n---\n\n## Instagram Caption:\n\n**Hook:** Tired of sleepless nights? You're not alone, and we're here to help! \u2728\n\n**Value:** At My Beloved Sleep, we're more than just consultants; we're a team of passionate, certified experts dedicated to guiding you towards peaceful sleep for your little one. We understand the exhaustion and the worry that comes with sleep challenges, and our approach is always science-backed, deeply empathetic, and completely non-judgmental. We believe in empowering you with practical, gentle strategies tailored to your family's unique needs, so you can finally enjoy restful nights and brighter days.\n\n**Save CTA:** Save this post for a reminder of our supportive team!\n\n**Call to Action:** Ready to explore how we can help your family find sleep harmony? Visit our website",
-    "reel_script": "Here's a 60-second Reel script for My Beloved Sleep, tailored for your brand voice and target audience:\n\n---\n\n**Reel Script: Meet Our Team at My Beloved Sleep**\n\n**(0-3 seconds) HOOK**\n\n**Spoken Words:** \"Is this you? Staring at the ceiling at 3 AM, wondering if you'll ever sleep again?\"\n\n**[Visual Directions]:**\n*   [Quick, relatable shots: a parent looking tiredly at a clock showing 3:00 AM, a baby stirring in a crib (subtly, not distressed), a close-up of a parent's tired eyes.]\n*   [Upbeat, gentle music begins to swell slightly.]\n\n**On-Screen Text:** \"3 AM and still awake?\"\n\n**(4-15 seconds) PROBLEM**\n\n**Spoken Words:** \"We get it. The exhaustion is real. As parents in Southeast Asia, we know the pressures, the late nights, and the constant worry. It feels like a marathon with no finish line.\"\n\n**[Visual Directions]:**\n*   [Transition to slightly warmer, softer shots: a parent gently rocking a baby, a glimpse of a cozy nursery, a parent scrolling through their phone looking overwhelmed.]\n*   [Music continues, creating a sense of shared understanding.]\n\n**On-Screen Text:** \"Exhaustion is REAL.\"\n\n**(16-35 seconds) INSIGHT**\n\n**Spoken Words:** \"But what if we told you there's a kinder, more science-backed way to navigate this? At My Beloved Sleep, we're not just consultants; we're a passionate team of certified sleep experts, many of us parents ourselves. We believe in understanding *your* unique family, not just a one-size-fits-all approach.\"\n\n**[Visual Directions]:**\n*   [Introduce the team: warm, smiling headshots or short clips of the consultants. Show them interacting gently with babies/children (if possible and appropriate) or looking knowledgeable and approachable.]\n*   [Subtle animations or graphics highlighting \"Certified\" and \"Science-Backed\".]\n*   [Music becomes more uplifting and reassuring.]\n\n**On-Screen Text:** \"Meet Your Sleep Allies.\"\n**On-Screen Text:** \"Certified Experts. Science-Backed.\"\n\n**(36-50 seconds) SOLUTION",
+    "blog": "Here is a blog post template for My Beloved Sleep, tailored to your brand voice and target audience:\n\n---\n\n**Blog Post Template: My Beloved Sleep**\n\n**1. SEO Title:**\n\n*   **Option 1 (Focus on Sleep Training Nuance):** Gentle Sleep Solutions for Singapore Babies: Beyond \"Sleep Training-Lite\"\n*   **Option 2 (Focus on Parental Concerns):** Is \"Sleep Training-Lite\" Enough? Finding Sustainable Sleep for Your Singaporean Baby\n*   **Option 3 (Broader Appeal):** Navigating Baby Sleep: What Parents in Singapore Really Need (and What \"Lite\" Might Miss)\n\n**2. Meta Description:**\n\nFeeling overwhelmed by baby sleep advice? Discover gentle, science-backed strategies for sustainable sleep solutions that truly work for your Singaporean family.\n\n**3. Intro Hook:**\n\nYou've scrolled through countless forums, read articles until your eyes blurred, and maybe even seen trending discussions about \"sleep training-lite.\" It's completely understandable to feel a bit lost in the sea of information, especially when you're running on fumes and just want your little one \u2013 and yourself \u2013 to get some restful sleep. We see you, and we understand the exhaustion that comes with navigating those early parenting days.\n\nThe desire for a well-rested baby is universal, and the journey to achieving it can feel complex. It's natural to seek out methods that feel gentle and less intense, but it's also important to ensure those approaches are truly effective and sustainable for your family's unique needs. At My Beloved Sleep, we believe in empowering parents with knowledge and practical, evidence-based strategies that foster healthy sleep habits without compromising on comfort or connection.\n\n**4. 5 H2 Section Headings with 1-Sentence Descriptions:**\n\n*   **H2: Understanding the \"Sleep Training-Lite\" Conversation**\n    This section will explore what parents often mean when they refer to \"sleep training-lite\" and why it's a popular topic of discussion.\n*   **H2: The Science Behind Sustainable Sleep Habits**\n    We'll delve into the developmental science that underpins healthy sleep patterns in infants and toddlers, offering a grounded perspective.\n*   **H2: Beyond the Quick Fix: Building Long-Term Sleep Success**\n    This part will focus on how to move beyond temporary solutions to establish foundational sleep skills that benefit your child for years to come.\n*   **H2: Gentle, Empathetic Approaches That Actually Work**\n    Here, we'll highlight practical, nurturing strategies that respect your baby's needs while guiding them towards better sleep.\n*   **H2: Finding the Right Path for Your Singaporean Family**\n    This section will address how to tailor sleep strategies to the specific context and values of families living in Singapore and Southeast Asia.\n\n**5. CTA for a Free 15-min Discovery Call:**\n\nReady to explore gentle, effective sleep solutions tailored for your baby and family? We're here to offer a supportive, expert ear. Book your complimentary 15-minute discovery call today at mybelovedsleep.com and let's start charting your course to more peaceful nights.\n\n---",
+    "instagram_carousel": "Here's a 5-slide Instagram carousel for My Beloved Sleep, addressing the Reddit thread sentiment:\n\n---\n\n## Instagram Carousel: \"Sleep Training-Lite\" on Reddit\n\n**Slide 1**\n\n*   **Headline:** Sleep Training-Lite: What's the Buzz?\n*   **Body:** Seeing discussions about gentler sleep approaches online?\n    It\u2019s a sign of evolving, caring parenting.\n*   **Visual Direction:** A soft, warm image of a baby peacefully sleeping in a crib, perhaps with a hint of sunlight.\n\n**Slide 2**\n\n*   **Headline:** Is \"Lite\" the Right Approach?\n*   **Body:** Gentle methods focus on responsiveness and connection.\n    They acknowledge your baby's needs and your instinct.\n*   **Visual Direction:** A close-up of a parent's hand gently touching their baby's back while they sleep.\n\n**Slide 3**\n\n*   **Headline:** Science Meets Empathy in Sleep\n*   **Body:** Effective sleep strategies blend research with compassion.\n    We believe in supporting your baby's development, gently.\n*   **Visual Direction:** An infographic-style slide with simple icons representing \"science\" (e.g., a beaker) and \"empathy\" (e.g., a heart), with the My Beloved Sleep logo subtly present.\n\n**Slide 4**\n\n*   **Headline:** Finding Your Family's Sleep Balance\n*   **Body:** Every family is unique, every baby different.\n    Let's find a path that feels right for you.\n*   **Visual Direction:** A split image: one side showing a parent looking relieved and happy, the other side showing a well-rested baby.\n\n**Slide 5**\n\n*   **Headline:** Your Gentle Sleep Journey Starts\n*   **Body:** Ready to explore personalized sleep solutions?\n    We're here to guide you with warmth and expertise.\n*   **Visual Direction:** A clear call to action graphic with the My Beloved Sleep logo and website URL: \"Visit mybelovedsleep.com for support.\"\n\n---\n\n## Instagram Caption:\n\n**Hook:** Seeing more talk about \"sleep training-lite\" and gentler approaches online? We get it! It's wonderful to see parents exploring ways to support their little ones\u2019 sleep that feel nurturing and responsive.\n\n**Value:** At My Beloved Sleep, we've always believed that effective sleep solutions are rooted in a beautiful blend of science-backed knowledge and deep empathy. We understand the exhaustion and the desire to do what's best for your baby, without sacrificing connection. Whether you're exploring gentle methods or seeking a tailored approach for your unique family, we're here to offer reassurance and practical, evidence-based guidance. You're not alone in this journey.\n\n**Save CTA:** Save this post for",
+    "reel_script": "Here's a 60-second Reel script for @mybelovedsleep, addressing the Reddit discussion:\n\n---\n\n**Reel Script: \"Sleep Training-Lite? Let's Talk\"**\n\n**(0-3 seconds)**\n**Spoken:** \"Scrolling through parenting forums and see this? 'Sleep training-lite' lately?\"\n**[Visual:** Quick, slightly blurred shot of someone scrolling on their phone, then a clear shot of the Instagram/TikTok logo appearing. Then, a close-up of the @mybelovedsleep logo with a warm, inviting background.]\n**On-screen text:** \"Is it 'Sleep Training-Lite'?\"\n\n**(4-15 seconds)**\n**Spoken:** \"We get it. The exhaustion is real. You're looking for answers, for a way to get *some* sleep, but the idea of 'cry it out' feels\u2026 a lot.\"\n**[Visual:** A parent looking visibly tired, maybe rubbing their eyes, holding a baby gently. Transition to a split screen: one side showing a chaotic, overstimulated baby, the other side showing a calm, dimly lit nursery.]\n**On-screen text:** \"Exhausted? Overwhelmed?\"\n\n**(16-35 seconds)**\n**Spoken:** \"The truth is, there's no one-size-fits-all 'lite' approach. What *does* work is understanding your baby's unique sleep cues and building gentle, consistent habits. It's about nurturing their development, not forcing them.\"\n**[Visual:** Gentle, slow-motion shots of a baby sleeping peacefully. Then, a visual metaphor: a seedling being carefully watered and nurtured to grow. Show a graphic with simple icons representing \"understanding cues\" and \"consistent habits.\"]\n**On-screen text:** \"Gentle Habits. Real Progress.\"\n\n**(36-50 seconds)**\n**Spoken:** \"At My Beloved Sleep, we blend evidence-based science with deep empathy. We help you find a path that feels right for *your* family, focusing on creating a safe, nurturing environment for restful sleep for everyone.\"\n**[Visual:** Warm, inviting shots of a certified sleep consultant interacting kindly with a parent and baby (actors or stock footage). Show a graphic highlighting \"Certified Experts\" and \"Science-Backed.\" Briefly show the My Beloved Sleep website URL.]\n**",
     "thumbnail_spec": {
       "blog_og": {
         "size": "1200x628px",
@@ -241,21 +241,21 @@
           "result": "success",
           "attempts": 1,
           "errors": [],
-          "timestamp": "2026-06-15T11:00:27.657622"
+          "timestamp": "2026-06-15T17:35:58.900344"
         },
         {
           "label": "IG carousel",
           "result": "success",
           "attempts": 1,
           "errors": [],
-          "timestamp": "2026-06-15T11:00:51.564699"
+          "timestamp": "2026-06-15T17:36:21.866601"
         },
         {
           "label": "Reel script",
           "result": "success",
           "attempts": 1,
           "errors": [],
-          "timestamp": "2026-06-15T11:01:15.207574"
+          "timestamp": "2026-06-15T17:36:43.941408"
         }
       ]
     }
@@ -263,50 +263,50 @@
   "gaps": [
     {
       "priority": "high",
-      "title": "Limited Product Variety and Bundles",
-      "why": "Competitors often offer a wider range of sleep products, including complementary items like eye masks, earplugs, or weighted blankets. They also frequently bundle products, providing perceived value and encouraging larger purchases.",
-      "action": "1. Research and identify 2-3 complementary sleep products to add to the catalog. 2. Create two introductory bundles combining existing popular products with new additions.",
+      "title": "Limited Product Comparison Features",
+      "why": "Competitors often offer robust comparison tables or tools that allow users to easily see key differences between products. My Beloved Sleep lacks a clear, consolidated way to compare its offerings side-by-side.",
+      "action": "1. Create a simple comparison table for 2-3 core product categories. 2. Highlight key differentiating features for each product within the table.",
       "effort": "2-3 hours",
       "impact": "medium term"
     },
     {
       "priority": "high",
-      "title": "Lack of Customer Reviews and Social Proof",
-      "why": "Competitors leverage customer reviews prominently on product pages and throughout their websites, building trust and credibility. Social proof, such as user-generated content or testimonials, is often actively encouraged and displayed.",
-      "action": "1. Implement a post-purchase email sequence encouraging customers to leave reviews. 2. Feature a selection of positive customer testimonials on the homepage and key product pages.",
+      "title": "Lack of Customer Reviews Integration",
+      "why": "Many successful e-commerce sites heavily feature customer reviews prominently on product pages. This builds trust and provides social proof, which is currently absent or not easily discoverable on My Beloved Sleep.",
+      "action": "1. Implement a customer review system on product pages. 2. Encourage early adopters to leave reviews via a post-purchase email campaign.",
       "effort": "1 day",
       "impact": "long term"
     },
     {
       "priority": "medium",
-      "title": "Basic Content Marketing Strategy",
-      "why": "Competitors often have more robust content strategies, including blog posts, guides, and educational resources related to sleep health and wellness. This attracts organic traffic and positions them as experts.",
-      "action": "1. Outline 3 blog post topics focused on common sleep issues. 2. Draft and publish one of these blog posts, optimizing for relevant keywords.",
-      "effort": "1 day",
-      "impact": "long term"
+      "title": "Unclear Value Proposition Messaging",
+      "why": "Competitors often have concise, benefit-driven taglines or sections that immediately communicate their unique selling points. My Beloved Sleep's core benefits could be more clearly articulated upfront.",
+      "action": "1. Develop a strong, benefit-focused headline for the homepage. 2. Create a short 'Why Choose Us' section on the homepage highlighting key advantages.",
+      "effort": "30 min",
+      "impact": "quick win"
     },
     {
       "priority": "medium",
-      "title": "Unoptimized Mobile User Experience",
-      "why": "Many competitors invest heavily in a seamless mobile experience, recognizing the majority of traffic comes from mobile devices. This includes faster loading times and intuitive navigation on smaller screens.",
-      "action": "1. Conduct a mobile usability test by navigating the site on a smartphone. 2. Identify and address the top 2-3 friction points in mobile navigation or checkout.",
+      "title": "Limited Blog Content for SEO",
+      "why": "Competitors frequently maintain active blogs with informative content related to sleep health and products. This drives organic traffic and positions them as authorities, a strategy not fully leveraged by My Beloved Sleep.",
+      "action": "1. Outline 3-5 blog post ideas related to sleep improvement. 2. Write and publish one informative blog post within the next two weeks.",
       "effort": "2-3 hours",
-      "impact": "medium term"
-    },
-    {
-      "priority": "low",
-      "title": "Limited Loyalty Program or Rewards",
-      "why": "Competitors frequently offer loyalty programs, points systems, or exclusive discounts for repeat customers. This incentivizes customer retention and encourages repeat purchases.",
-      "action": "1. Research 2 simple loyalty program ideas (e.g., points for purchases, birthday discounts). 2. Outline the basic structure and benefits of one chosen program.",
-      "effort": "30 min",
       "impact": "long term"
     },
     {
       "priority": "low",
-      "title": "Absence of Influencer Marketing Collaborations",
-      "why": "Competitors often partner with relevant influencers in the wellness or lifestyle space to reach new audiences and build brand awareness. These collaborations can drive significant traffic and sales.",
-      "action": "1. Identify 3 micro-influencers (under 10k followers) in the sleep or wellness niche. 2. Draft a template outreach message for potential collaborations.",
+      "title": "Basic Social Media Presence",
+      "why": "Leading competitors actively engage on social media platforms with visually appealing content and interactive campaigns. My Beloved Sleep's social media presence appears less developed and engaging.",
+      "action": "1. Schedule 3-5 engaging posts across relevant social media platforms. 2. Respond to any comments or messages received within 24 hours.",
       "effort": "30 min",
+      "impact": "quick win"
+    },
+    {
+      "priority": "low",
+      "title": "Absence of a Loyalty Program",
+      "why": "Many successful online retailers implement loyalty programs to encourage repeat purchases and customer retention. This is a common tactic that My Beloved Sleep does not currently employ.",
+      "action": "1. Research 2-3 successful e-commerce loyalty program models. 2. Draft a simple outline for a potential customer loyalty program.",
+      "effort": "2-3 hours",
       "impact": "long term"
     }
   ],
