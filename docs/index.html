@@ -247,7 +247,7 @@ select option{background:var(--navy2)}
       <div class="card">
         <div class="card-title" style="font-size:15px">🎨 Generate images — free, instant</div>
         <div style="font-size:12px;color:var(--muted);margin-bottom:12px;line-height:1.6">
-          Powered by <strong style="color:var(--cream)">Gemini 2.5 Flash Image</strong> — 100% free, uses your existing Gemini API key. 500 images/day on Google's own infrastructure. Falls back to Pollinations if needed.
+          Powered by <strong style="color:var(--cream)">Pollinations.ai</strong> — genuinely $0 cost, no API key, no billing ever. Auto-retries across 3 models if one is busy.
         </div>
         <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:6px">Topic for image</label>
         <select id="pol-topic" style="margin-bottom:12px">
@@ -279,7 +279,7 @@ select option{background:var(--navy2)}
             </a>
             <button class="run-btn ghost" style="font-size:12px" onclick="generatePolImage(window._polType)">↺ Regenerate</button>
           </div>
-          <div style="font-size:11px;color:var(--muted);margin-top:4px">Free · Gemini 2.5 Flash Image · 500 images/day · Falls back to Pollinations if needed</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:4px">$0 cost guaranteed · Pollinations.ai · Auto-retries busy models · Click regenerate anytime</div>
         </div>
       </div>
     </div>
@@ -562,17 +562,23 @@ function buildPolPrompt(topic, type) {
   return `${base[type]}, ${POL_BRAND}, ${POL_CFG[type].label}, high quality`;
 }
 
-// ── Gemini Image API (free: 500 images/day, uses your existing GEMINI_API_KEY) ──
-// Model: gemini-2.5-flash-image | Returns base64 PNG | 1024×1024 free tier
-// Aspect ratios supported: 1:1, 16:9, 9:16
+// ── Pollinations.ai image generation (genuinely free, $0 cost guaranteed) ──
+// Note: Gemini image models are NOT reliably free as of 2026 — Google's free
+// tier shows limit:0 for most accounts due to a known platform bug, and even
+// when working they bill per image. Pollinations is the only genuinely $0
+// option, so it is used as the primary engine with multi-model auto-retry.
 
-const GEMINI_IMG_SYSTEM = 'You are generating a branded image for My Beloved Sleep (mybelovedsleep.com), a Singapore baby sleep consulting brand. Style: deep navy blue background, soft moonlight glow, warm cream and gold tones (#c9a96e), elegant minimal aesthetic, professional and reassuring.';
+const POL_MODELS = ['flux', 'turbo', 'flux-pro'];
 
-async function generatePolImage(type) {
+function generatePolImage(type, modelIdx) {
   window._polType = type;
-  const topic   = document.getElementById('pol-topic')?.value || '4-month sleep regression';
-  const apiKey  = getGeminiKey();
-  if (!apiKey) return;
+  window._polModelIdx = modelIdx || 0;
+  const topic  = document.getElementById('pol-topic')?.value || '4-month sleep regression';
+  const cfg    = POL_CFG[type];
+  const prompt = buildPolPrompt(topic, type);
+  const seed   = Math.floor(Math.random()*99999);
+  const model  = POL_MODELS[window._polModelIdx] || 'flux';
+  const url    = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=${cfg.w}&height=${cfg.h}&seed=${seed}&nologo=true&model=${model}`;
 
   const result  = document.getElementById('pol-result');
   const loading = document.getElementById('pol-loading');
@@ -581,87 +587,9 @@ async function generatePolImage(type) {
 
   result.style.display  = 'block';
   loading.style.display = 'block';
-  loading.textContent   = 'Generating image with Gemini AI — takes 10–20 seconds... 🌙';
+  loading.textContent   = `Generating with ${model} — takes 5-20 seconds (attempt ${window._polModelIdx + 1}/${POL_MODELS.length})`;
   img.style.display     = 'none';
   actions.style.display = 'none';
-
-  // Build prompt per image type
-  const aspectMap = { carousel: '1:1', thumbnail: '16:9', reel: '9:16' };
-  const descMap   = {
-    carousel:  `Instagram carousel slide, square format. Topic: "${topic}". Show a peacefully sleeping baby in soft golden moonlight. Add subtle text overlay. Warm, reassuring mood.`,
-    thumbnail: `Blog header image, wide landscape format. Topic: "${topic}". Editorial lifestyle photography, sleeping newborn in cream muslin, professional and expert mood.`,
-    reel:      `Instagram Reel cover, vertical portrait format. Topic: "${topic}". Bold, mobile-first design. Eye-catching, scroll-stopping. Large text area at top.`
-  };
-
-  const prompt = `${GEMINI_IMG_SYSTEM}
-
-Generate a ${descMap[type]} The image should be suitable for a professional baby sleep consulting brand in Singapore. Include subtle @mybelovedsleep branding.`;
-
-  try {
-    const resp = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-image:generateContent?key=${apiKey}`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: {
-            responseModalities: ['TEXT', 'IMAGE'],
-          }
-        })
-      }
-    );
-
-    const data = await resp.json();
-
-    if (data.error) {
-      // If image model not available on free tier, fall back to Pollinations
-      loading.textContent = `Gemini image error: ${data.error.message}. Trying Pollinations fallback...`;
-      setTimeout(() => generatePolFallback(type, topic), 1500);
-      if ([400,401,403].includes(data.error.code)) sessionStorage.removeItem('gemini_key');
-      return;
-    }
-
-    // Extract base64 image from response
-    const parts = data.candidates?.[0]?.content?.parts || [];
-    const imgPart = parts.find(p => p.inlineData?.mimeType?.startsWith('image/'));
-
-    if (imgPart) {
-      const b64  = imgPart.inlineData.data;
-      const mime = imgPart.inlineData.mimeType;
-      const dataUrl = `data:${mime};base64,${b64}`;
-      img.src = dataUrl;
-      loading.style.display = 'none';
-      img.style.display     = 'block';
-      actions.style.display = 'flex';
-      // Set download link
-      document.getElementById('pol-download').href     = dataUrl;
-      document.getElementById('pol-download').download = `mybelovedsleep-${type}.png`;
-    } else {
-      // No image in response — fall back to Pollinations
-      loading.textContent = 'Gemini returned no image. Trying Pollinations fallback...';
-      setTimeout(() => generatePolFallback(type, topic), 1500);
-    }
-
-  } catch(e) {
-    loading.textContent = 'Connection error. Trying Pollinations fallback...';
-    setTimeout(() => generatePolFallback(type, topic), 1500);
-  }
-}
-
-function generatePolFallback(type, topic) {
-  // Pollinations as backup if Gemini image fails
-  const cfg = POL_CFG[type];
-  const prompt = buildPolPrompt(topic, type);
-  const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=${cfg.w}&height=${cfg.h}&seed=${Math.floor(Math.random()*99999)}&nologo=true&model=flux`;
-  const loading = document.getElementById('pol-loading');
-  const img     = document.getElementById('pol-img');
-  const actions = document.getElementById('pol-actions');
-  loading.style.display = 'block';
-  loading.textContent   = 'Generating with Pollinations fallback...';
-  img.style.display = 'none';
-  img.onload  = () => { loading.style.display='none'; img.style.display='block'; actions.style.display='flex'; document.getElementById('pol-download').href=url; };
-  img.onerror = () => { loading.textContent = '⚠ Both Gemini and Pollinations unavailable. Try again in a few minutes.'; };
   img.src = url;
 }
 
@@ -672,13 +600,19 @@ function polImgLoaded() {
   document.getElementById('pol-download').href         = document.getElementById('pol-img').src;
 }
 function polImgError() {
-  document.getElementById('pol-loading').textContent = '⚠ Image failed. Click Regenerate to try again.';
+  const nextIdx = (window._polModelIdx || 0) + 1;
+  if (nextIdx < POL_MODELS.length) {
+    generatePolImage(window._polType, nextIdx);
+  } else {
+    window._polModelIdx = 0;
+    document.getElementById('pol-loading').textContent = 'Pollinations is busy right now. Click Regenerate to retry - usually works within 2-3 tries.';
+  }
 }
 
-async function generateBlogThumbnail() {
+function generateBlogThumbnail() {
   const top    = REPORT?.content?.top_post_meta?.title || '4-month sleep regression';
-  const apiKey = getGeminiKey();
-  if (!apiKey) return;
+  const prompt = `editorial blog header, sleeping newborn baby, deep navy moonlight background, headline text "${top}", professional lifestyle photography, My Beloved Sleep Singapore brand, ${POL_BRAND}`;
+  const url    = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=1200&height=628&seed=${Math.floor(Math.random()*99999)}&nologo=true&model=flux`;
 
   const wrap = document.getElementById('blog-thumb-result');
   const load = document.getElementById('blog-thumb-loading');
@@ -687,46 +621,11 @@ async function generateBlogThumbnail() {
 
   wrap.style.display = 'block';
   load.style.display = 'block';
-  load.textContent   = 'Generating blog thumbnail with Gemini AI... 🌙';
+  load.textContent   = 'Generating thumbnail - takes 5-15 seconds...';
   img.style.display  = 'none';
-  document.getElementById('blog-thumb-dl-btn').style.display = 'none';
-
-  const prompt = `${GEMINI_IMG_SYSTEM}
-
-Generate a professional blog header image in wide landscape format (16:9). Topic: "${top}". Show a peacefully sleeping newborn baby in soft moonlight, editorial lifestyle photography style. Include space for text overlay at top. Professional and expert mood suitable for a Singapore baby sleep consulting brand.`;
-
-  try {
-    const resp = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-image:generateContent?key=${apiKey}`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: { responseModalities: ['TEXT', 'IMAGE'] }
-        })
-      }
-    );
-    const data = await resp.json();
-    const parts = data.candidates?.[0]?.content?.parts || [];
-    const imgPart = parts.find(p => p.inlineData?.mimeType?.startsWith('image/'));
-
-    if (imgPart) {
-      const dataUrl = `data:${imgPart.inlineData.mimeType};base64,${imgPart.inlineData.data}`;
-      img.src = dataUrl;
-      load.style.display = 'none';
-      img.style.display  = 'block';
-      document.getElementById('blog-thumb-dl-btn').style.display = 'flex';
-      dl.href = dataUrl;
-      dl.download = 'mybelovedsleep-thumbnail.png';
-    } else if (data.error) {
-      load.textContent = 'Gemini error: ' + data.error.message + ' — try again';
-    } else {
-      load.textContent = '⚠ No image returned — try again';
-    }
-  } catch(e) {
-    load.textContent = '⚠ Connection error — try again';
-  }
+  img.onload  = () => { load.style.display='none'; img.style.display='block'; document.getElementById('blog-thumb-dl-btn').style.display='flex'; dl.href=url; dl.download='mybelovedsleep-thumbnail.jpg'; };
+  img.onerror = () => { load.textContent='Pollinations busy - try again in a moment.'; };
+  img.src = url;
 }
 
 // ── Logs ─────────────────────────────────────────────────────────────────────
