@@ -442,28 +442,43 @@ function renderAll() {
   document.getElementById('viral-metrics').innerHTML = `
     <div class="metric"><div class="metric-label">Posts scanned</div><div class="metric-value">${fmtN(s.posts_scanned)}</div><div class="metric-delta up">↑ 12% vs last week</div></div>
     <div class="metric"><div class="metric-label">Viral hits found</div><div class="metric-value">${s.viral_hits}</div><div class="metric-delta up">↑ 3 new topics</div></div>
-    <div class="metric"><div class="metric-label">Avg viral score</div><div class="metric-value">${s.avg_viral_score}</div><div class="metric-delta up">↑ 4.1 pts</div></div>
+    <div class="metric"><div class="metric-label">Avg viral score</div><div class="metric-value">${s.avg_viral_score > 0 ? s.avg_viral_score : '—'}</div><div class="metric-delta ${s.avg_viral_score > 0 ? 'up' : 'neutral'}">${s.avg_viral_score > 0 ? '↑ 4.1 pts' : 'From live data'}</div></div>
     <div class="metric"><div class="metric-label">Sources active</div><div class="metric-value">${s.sources_active}</div><div class="metric-delta neutral">IG · TikTok · Pinterest…</div></div>`;
 
   // Viral posts
   const icons = {tiktok:'🎵',instagram:'📸',pinterest:'📌',youtube:'▶️',blog:'📰',reddit:'💬'};
-  document.getElementById('viral-list').innerHTML = R.viral_posts.map(p => `
-    <div class="viral-item">
+  document.getElementById('viral-list').innerHTML = R.viral_posts.map(p => {
+    // Format date safely — show 'Recent' if date missing or invalid
+    let dateStr = 'Recent';
+    if (p.published_at) {
+      const d = new Date(p.published_at);
+      if (!isNaN(d.getTime())) dateStr = d.toLocaleDateString('en-SG',{month:'short',day:'numeric'});
+    }
+    // Format score — show engagement summary if score is 0 (blog posts with no view data)
+    const scoreDisplay = p.viral_score > 0 ? `Score: ${p.viral_score}` : 'New find';
+    // Build clickable title — links to original post if URL available
+    const hasUrl = p.url && p.url !== '#' && p.url.startsWith('http');
+    const titleEl = hasUrl
+      ? `<a href="${p.url}" target="_blank" rel="noopener" style="color:var(--cream);text-decoration:none;border-bottom:1px solid rgba(201,169,110,0.3);padding-bottom:1px;transition:border-color .15s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(201,169,110,0.3)'">"${p.title}" ↗</a>`
+      : `"${p.title}"`;
+    return `<div class="viral-item">
       <div class="viral-rank">${p.rank}</div>
       <div class="viral-meta">
-        <div class="viral-title">"${p.title}"</div>
+        <div class="viral-title" style="margin-bottom:4px">${titleEl}</div>
         <div class="viral-sub">${icons[p.source]||'🌐'} ${p.source.charAt(0).toUpperCase()+p.source.slice(1)} · ${p.author}</div>
-        <div style="margin-top:4px;display:flex;gap:6px;flex-wrap:wrap">
-          <span class="badge b-gold">Score: ${p.viral_score}</span>
-          <span class="badge b-gray">${new Date(p.published_at).toLocaleDateString('en-SG',{month:'short',day:'numeric'})}</span>
+        <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap;align-items:center">
+          <span class="badge b-gold">${scoreDisplay}</span>
+          <span class="badge b-gray">📅 ${dateStr}</span>
+          ${hasUrl ? `<a href="${p.url}" target="_blank" rel="noopener" style="font-size:11px;color:var(--blue);text-decoration:none;display:flex;align-items:center;gap:3px">🔗 View original</a>` : ''}
         </div>
       </div>
-      <div class="viral-engage">${p.engagement_summary}</div>
-    </div>`).join('');
+      <div class="viral-engage">${p.engagement_summary||'—'}</div>
+    </div>`;
+  }).join('');
 
   // Adapt select
   document.getElementById('adapt-select').innerHTML = R.viral_posts.map(p =>
-    `<option value="${p.title}">${p.rank}. ${p.title.slice(0,60)}</option>`).join('');
+    `<option value="${p.title}" data-url="${p.url||''}">${p.rank}. ${p.title.slice(0,60)}</option>`).join('');
 
   // Content tab
   document.getElementById('blog-content').textContent  = R.content.blog || 'Run agent to generate';
@@ -538,7 +553,22 @@ async function callClaude(prompt, outEl) {
   } catch(e) { outEl.classList.remove('loading'); outEl.textContent = 'Connection error: ' + e.message; }
 }
 
-function adaptPost() { callClaude(`The viral post "${document.getElementById('adapt-select').value}" is trending. Adapt it for My Beloved Sleep (mybelovedsleep.com). Give: (1) new headline, (2) 2-paragraph intro hook, (3) 3 key points, (4) gentle CTA for free discovery call.`, document.getElementById('adapt-out')); }
+function adaptPost() {
+  const sel = document.getElementById('adapt-select');
+  const title = sel.value;
+  const url   = sel.options[sel.selectedIndex]?.getAttribute('data-url');
+  const out   = document.getElementById('adapt-out');
+  // Show link to original post above the generated content
+  if (url && url.startsWith('http')) {
+    out.style.display = 'block';
+    out.innerHTML = `<div style="margin-bottom:10px;padding:8px 10px;background:rgba(91,155,213,0.08);border:1px solid rgba(91,155,213,0.2);border-radius:6px;font-size:12px">
+      🔗 <a href="${url}" target="_blank" rel="noopener" style="color:var(--blue)">View original viral post ↗</a>
+    </div><div id="adapt-text" style="white-space:pre-wrap"></div>`;
+    callClaude('The viral post "' + title + '" is trending. Adapt it for My Beloved Sleep (mybelovedsleep.com). Give: (1) new headline, (2) 2-paragraph intro hook, (3) 3 key points, (4) gentle CTA for free discovery call.', document.getElementById('adapt-text'));
+  } else {
+    callClaude('The viral post "' + title + '" is trending. Adapt it for My Beloved Sleep (mybelovedsleep.com). Give: (1) new headline, (2) 2-paragraph intro hook, (3) 3 key points, (4) gentle CTA for free discovery call.', out);
+  }
+}
 function expandBlog() { const top = REPORT?.content?.top_post_meta?.title||'4-month sleep regression'; callClaude(`Write the opening 4 paragraphs of a blog post for My Beloved Sleep on: "${top}". Tone: warm, reassuring, expert. Audience: exhausted Singapore parents.`, document.getElementById('blog-ai-out')); }
 function genIGPost() { callClaude(`Create a ${document.getElementById('ig-type').value} for @mybelovedsleep on: "${document.getElementById('ig-topic').value}". Include headline, body copy, and CTA. Warm Singapore baby sleep consultant tone.`, document.getElementById('ig-ai-out')); }
 function deepDiveGaps() { callClaude('Give My Beloved Sleep (mybelovedsleep.com) a prioritised 3-point 30-day action plan to close the gap with Taking Cara Babies and Precious Little Sleep. Be specific and beginner-friendly.', document.getElementById('gap-ai-out')); }
