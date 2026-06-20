@@ -151,6 +151,7 @@ select option{background:var(--navy2)}
   <button class="nav-tab" onclick="sw('setup')">⚙️ Setup guide</button>
   <button class="nav-tab" onclick="sw('logs')">🖥 Logs</button>
   <button class="nav-tab" onclick="sw('reliability')">📡 Reliability</button>
+  <button class="nav-tab" onclick="sw('competitors')">🔍 Competitors</button>
 </nav>
 
 <main class="main">
@@ -410,6 +411,39 @@ select option{background:var(--navy2)}
   </div>
 </div>
 
+<!-- ══ COMPETITORS ══ -->
+<div class="sec" id="sec-competitors">
+  <div class="card">
+    <div class="card-title">Auto-discovered this week
+      <span class="badge b-gold" id="comp-disc-date">Loading...</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px" class="two-col">
+      <div>
+        <div style="font-size:12px;font-weight:500;color:var(--green);margin-bottom:10px;display:flex;align-items:center;gap:6px">
+          <span style="width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block"></span>
+          Singapore & SEA
+        </div>
+        <div id="comp-local-list"></div>
+      </div>
+      <div>
+        <div style="font-size:12px;font-weight:500;color:var(--blue);margin-bottom:10px;display:flex;align-items:center;gap:6px">
+          <span style="width:8px;height:8px;border-radius:50%;background:var(--blue);display:inline-block"></span>
+          Global
+        </div>
+        <div id="comp-global-list"></div>
+      </div>
+    </div>
+    <div style="font-size:12px;color:var(--muted);padding:10px;background:rgba(255,255,255,.03);border-radius:8px;line-height:1.7">
+      <strong style="color:var(--cream)">How discovery works:</strong> Every Monday the agent searches Google (via Serper.dev), scrapes Instagram hashtags like #babysleepsingapore and #sleeptraining, then visits Social Blade for follower counts and 30-day growth. Accounts are ranked by a score combining followers (50%) and recent growth momentum (50%).
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Competitor history — weekly changes</div>
+    <div id="comp-history-list"><div style="font-size:13px;color:var(--muted)">Loading history...</div></div>
+  </div>
+</div>
+
 </main>
 
 <script>
@@ -426,7 +460,7 @@ async function loadReport() {
 
 // ── Tab switching ────────────────────────────────────────────────────────────
 function sw(id) {
-  const ids = ['viral','content','instagram','dashboard','gaps','setup','logs','reliability'];
+  const ids = ['viral','content','instagram','dashboard','gaps','setup','logs','reliability','competitors'];
   document.querySelectorAll('.nav-tab').forEach((t,i) => t.classList.toggle('active', ids[i] === id));
   document.querySelectorAll('.sec').forEach(s => s.classList.toggle('active', s.id === 'sec-' + id));
 }
@@ -495,11 +529,60 @@ function renderAll() {
     <div class="metric"><div class="metric-label">Saves / shares</div><div class="metric-value">${fmtN(YM.saves_shares)}</div><div class="metric-delta up">↑ 34%</div></div>
     <div class="metric"><div class="metric-label">Booking enquiries</div><div class="metric-value">${YM.booking_enquiries}</div><div class="metric-delta up">↑ 5 vs last week</div></div>`;
 
-  // Competitor bars
-  const maxV = Math.max(YM.views_this_week, ...R.competitors.map(c => c.weekly_views));
+  // Competitor bars — use auto-discovered data if available
+  const comps = (R.competitor_discovery?.all || R.competitors || []);
+  const maxV  = Math.max(YM.views_this_week, ...comps.map(c => c.followers || c.weekly_views || 0));
+
+  const compRows = comps.map(c => {
+    const val      = c.followers || c.weekly_views || 0;
+    const growth   = c.growth_30d || 0;
+    const growthEl = growth !== 0
+      ? `<span style="font-size:11px;margin-left:6px;color:${growth>0?'var(--green)':'var(--red)'}">
+           ${growth>0?'↑':'↓'} ${fmtN(Math.abs(growth))} 30d
+         </span>` : '';
+    const market = c.market === 'local'
+      ? '<span style="font-size:10px;background:rgba(61,188,142,.15);color:var(--green);padding:1px 5px;border-radius:3px;margin-left:4px">SG/SEA</span>'
+      : '<span style="font-size:10px;background:rgba(91,155,213,.15);color:var(--blue);padding:1px 5px;border-radius:3px;margin-left:4px">Global</span>';
+    const sbLink = c.socialblade_url
+      ? `<a href="${c.socialblade_url}" target="_blank" rel="noopener" style="font-size:10px;color:var(--muted);margin-left:6px;text-decoration:none">SB ↗</a>` : '';
+    const igLink = c.instagram_url
+      ? `<a href="${c.instagram_url}" target="_blank" rel="noopener" style="font-size:10px;color:var(--muted);margin-left:4px;text-decoration:none">IG ↗</a>` : '';
+    const label = c.handle
+      ? `@${c.handle}${market}${sbLink}${igLink}`
+      : `${c.name || 'Unknown'}${sbLink}`;
+    return `<div class="bar-row" style="align-items:center;margin-bottom:14px">
+      <div class="bar-label" style="min-width:160px;line-height:1.4">${label}</div>
+      <div style="flex:1">
+        <div class="bar-track"><div class="bar-fill" style="width:${maxV>0?Math.round(val/maxV*100):0}%;background:rgba(255,255,255,.2)"></div></div>
+      </div>
+      <div style="font-size:12px;color:var(--cream);min-width:60px;text-align:right">${fmtN(val)}${growthEl}</div>
+    </div>`;
+  }).join('');
+
+  const gradeEl = c => c.grade && c.grade !== '—'
+    ? `<span style="font-size:10px;background:rgba(201,169,110,.1);color:var(--gold);padding:1px 5px;border-radius:3px;margin-left:4px">${c.grade}</span>` : '';
+
   document.getElementById('comp-bars').innerHTML =
-    `<div class="bar-row"><div class="bar-label" style="color:var(--gold);font-weight:500">✦ mybelovedsleep.com</div><div class="bar-track you-bar"><div class="bar-fill" style="width:${Math.round(YM.views_this_week/maxV*100)}%"></div></div><div style="font-size:12px;color:var(--gold);min-width:50px;text-align:right">${fmtN(YM.views_this_week)}</div></div>` +
-    R.competitors.map(c => `<div class="bar-row"><div class="bar-label">${c.name}</div><div class="bar-track"><div class="bar-fill" style="width:${Math.round(c.weekly_views/maxV*100)}%;background:rgba(255,255,255,.2)"></div></div><div style="font-size:12px;color:var(--cream);min-width:50px;text-align:right">${fmtN(c.weekly_views)}</div></div>`).join('');
+    `<div class="bar-row" style="margin-bottom:14px">
+       <div class="bar-label" style="color:var(--gold);font-weight:500;min-width:160px">✦ @mybelovedsleep</div>
+       <div style="flex:1"><div class="bar-track you-bar"><div class="bar-fill" style="width:${maxV>0?Math.round(YM.views_this_week/maxV*100):20}%"></div></div></div>
+       <div style="font-size:12px;color:var(--gold);min-width:60px;text-align:right">${fmtN(YM.views_this_week)}</div>
+     </div>` + compRows;
+
+  // Show discovery metadata
+  const disc = R.competitor_discovery;
+  if (disc) {
+    const discMeta = `<div style="font-size:11px;color:var(--muted);margin-top:8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+      <span>🔍 Auto-discovered ${new Date(disc.discovered_at||'').toLocaleDateString('en-SG',{month:'short',day:'numeric'})}</span>
+      <span>·</span>
+      <span>${comps.filter(c=>c.market==='local').length} SG/SEA accounts</span>
+      <span>·</span>
+      <span>${comps.filter(c=>c.market==='global').length} global accounts</span>
+      <span>·</span>
+      <span>Ranked by followers + 30d growth</span>
+    </div>`;
+    document.getElementById('comp-bars').insertAdjacentHTML('beforeend', discMeta);
+  }
 
   // Platform split
   const ps = YM.platform_split;
@@ -521,6 +604,8 @@ function renderAll() {
   renderReliability();
   renderHistory();
   renderActionGuide();
+  renderCompetitors();
+  renderCompetitors();
 }
 
 // ── Gemini AI calls (works on GitHub Pages) ──────────────────────────────────
@@ -713,6 +798,106 @@ function triggerRun() {
 }
 
 // ── Reliability ──────────────────────────────────────────────────────────────
+
+// ── Competitors tab ──────────────────────────────────────────────────────────
+function renderCompetitors() {
+  if (!REPORT) return;
+  const disc = REPORT.competitor_discovery;
+  if (!disc) {
+    document.getElementById('comp-local-list').innerHTML =
+      '<div style="font-size:13px;color:var(--muted)">Run the agent to auto-discover competitors.</div>';
+    return;
+  }
+
+  const discDate = new Date(disc.discovered_at||'');
+  document.getElementById('comp-disc-date').textContent =
+    isNaN(discDate) ? 'This week' : discDate.toLocaleDateString('en-SG',{month:'short',day:'numeric',year:'numeric'});
+
+  function compCard(a) {
+    const growth   = a.growth_30d || 0;
+    const growthEl = growth !== 0
+      ? '<span style="font-size:11px;color:' + (growth>0?'var(--green)':'var(--red)') + '">' + (growth>0?'\u2191':'\u2193') + ' ' + fmtN(Math.abs(growth)) + ' 30d</span>'
+      : '<span style="font-size:11px;color:var(--muted)">\u2014</span>';
+
+    // Source links — where this account was discovered
+    const sources = a.discovery_sources || [];
+    const sourceLinks = sources.length
+      ? '<div style="margin-top:5px;display:flex;gap:6px;flex-wrap:wrap">' +
+          '<span style="font-size:10px;color:var(--muted)">Found via:</span>' +
+          sources.map(function(s) {
+            return '<a href="' + s.url + '" target="_blank" rel="noopener" ' +
+              'style="font-size:10px;color:var(--blue);text-decoration:none;background:rgba(91,155,213,.08);' +
+              'padding:1px 6px;border-radius:3px;border:1px solid rgba(91,155,213,.2)">' +
+              s.label + ' \u2197</a>';
+          }).join('') +
+        '</div>'
+      : '';
+
+    return '<div style="padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)">' +
+      '<div style="display:flex;align-items:flex-start;gap:10px">' +
+        '<div style="flex:1">' +
+          '<div style="font-size:13px;font-weight:500;margin-bottom:3px">' +
+            '<a href="' + (a.instagram_url||'#') + '" target="_blank" rel="noopener" ' +
+               'style="color:var(--cream);text-decoration:none;border-bottom:1px solid rgba(201,169,110,.3)" ' +
+               'onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(201,169,110,.3)'">' +
+              '@' + a.handle + ' \u2197' +
+            '</a>' +
+            (a.name && a.name !== '@'+a.handle ? '<span style="font-size:11px;color:var(--muted);margin-left:6px">' + a.name + '</span>' : '') +
+          '</div>' +
+          '<div style="display:flex;gap:6px;margin-top:4px;flex-wrap:wrap;align-items:center">' +
+            '<span style="font-size:12px;color:var(--cream)">' + fmtN(a.followers||0) + ' followers</span>' +
+            '<span style="font-size:12px;color:var(--muted)">&middot;</span>' +
+            growthEl +
+            (a.grade && a.grade!=='\u2014' ? '<span class="badge b-gold" style="font-size:10px">' + a.grade + '</span>' : '') +
+          '</div>' +
+          '<div style="display:flex;gap:8px;margin-top:5px;flex-wrap:wrap">' +
+            '<a href="' + (a.instagram_url||'#') + '" target="_blank" rel="noopener" ' +
+               'style="font-size:10px;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:3px">' +
+               '📸 Instagram \u2197</a>' +
+            '<a href="' + (a.socialblade_url||'#') + '" target="_blank" rel="noopener" ' +
+               'style="font-size:10px;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:3px">' +
+               '📊 Social Blade \u2197</a>' +
+            (a.website_url ? '<a href="' + a.website_url + '" target="_blank" rel="noopener" ' +
+               'style="font-size:10px;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:3px">' +
+               '🌐 Website \u2197</a>' : '') +
+          '</div>' +
+          sourceLinks +
+        '</div>' +
+      '</div>' +
+    '</div>';
+  }
+
+  const local_   = disc.local  || [];
+  const global_  = disc.global || [];
+
+  document.getElementById('comp-local-list').innerHTML = local_.length
+    ? local_.map(compCard).join('')
+    : '<div style="font-size:13px;color:var(--muted)">No local accounts discovered yet. Run the agent to populate.</div>';
+
+  document.getElementById('comp-global-list').innerHTML = global_.length
+    ? global_.map(compCard).join('')
+    : '<div style="font-size:13px;color:var(--muted)">No global accounts discovered yet. Run the agent to populate.</div>';
+
+  fetch('competitor_history.json')
+    .then(function(r){return r.json();})
+    .then(function(history) {
+      const rows = history.slice(-8).reverse().map(function(h) {
+        return '<div style="padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:13px">' +
+          '<div style="font-weight:500;margin-bottom:4px">' + h.week + '</div>' +
+          '<div style="display:flex;gap:12px;flex-wrap:wrap">' +
+            '<div style="font-size:12px;color:var(--muted)"><span style="color:var(--green)">SG/SEA:</span> ' + ((h.local||[]).map(function(x){return '@'+x;}).join(', ')||'\u2014') + '</div>' +
+            '<div style="font-size:12px;color:var(--muted)"><span style="color:var(--blue)">Global:</span> ' + ((h.global||[]).map(function(x){return '@'+x;}).join(', ')||'\u2014') + '</div>' +
+          '</div></div>';
+      }).join('');
+      document.getElementById('comp-history-list').innerHTML = rows ||
+        '<div style="font-size:13px;color:var(--muted)">No history yet.</div>';
+    })
+    .catch(function() {
+      document.getElementById('comp-history-list').innerHTML =
+        '<div style="font-size:13px;color:var(--muted)">No competitor history yet \u2014 run the agent to start tracking.</div>';
+    });
+}
+
 function renderReliability() {
   if (!REPORT) return;
   const rel = REPORT.reliability || {run_complete:true,calls_total:4,calls_success:4,calls_fallback:0,fallback_rate:'0%',details:[]};
