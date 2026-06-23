@@ -187,11 +187,16 @@ async def _find_handles_instagram(hashtags: List[str]) -> Dict[str, List]:
 
 # ── Merge handle dicts preserving all sources ─────────────────────────────────
 def _merge_handles(*dicts, seeds=None) -> Dict[str, List]:
-    merged: Dict[str, List] = {}
-   for d in dicts:
+        merged: Dict[str, List] = {}
+        for d in dicts:
             if not isinstance(d, dict):
                 continue
             for h, sources in d.items():
+                if h not in merged:
+                    merged[h] = []
+                for s in sources:
+                    if s["url"] not in [x["url"] for x in merged[h]]:
+                        merged[h].append(s)
             if h not in merged:
                 merged[h] = []
             for s in sources:
