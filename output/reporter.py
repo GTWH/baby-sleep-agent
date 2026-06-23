@@ -24,6 +24,7 @@ def build_dashboard_json(
     competitor_data: List[Dict],
     run_date: str,
     reliability: Dict = None,
+    competitor_discovery: Dict = None,
 ) -> Dict:
 
     sources = {}
@@ -72,6 +73,7 @@ def build_dashboard_json(
             }
             for c in competitor_data
         ],
+        "competitor_discovery": competitor_discovery or {},
         "your_metrics": {
             "views_this_week":   4280,
             "clicks":            312,
