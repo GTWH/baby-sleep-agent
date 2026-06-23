@@ -187,16 +187,11 @@ async def _find_handles_instagram(hashtags: List[str]) -> Dict[str, List]:
 
 # ── Merge handle dicts preserving all sources ─────────────────────────────────
 def _merge_handles(*dicts, seeds=None) -> Dict[str, List]:
-        merged: Dict[str, List] = {}
-        for d in dicts:
-            if not isinstance(d, dict):
-                continue
-            for h, sources in d.items():
-                if h not in merged:
-                    merged[h] = []
-                for s in sources:
-                    if s["url"] not in [x["url"] for x in merged[h]]:
-                        merged[h].append(s)
+    merged: Dict[str, List] = {}
+    for d in dicts:
+        if not isinstance(d, dict):
+            continue
+        for h, sources in d.items():
             if h not in merged:
                 merged[h] = []
             for s in sources:
@@ -259,7 +254,7 @@ async def _get_socialblade_stats(handle_source_pairs: List, market: str) -> List
                         "socialblade_url":  sb_url,
                         "website_url":      website,
                         "weekly_views":     followers // 10,
-                        "discovery_sources": sources[:3],   # max 3 source links
+                        "discovery_sources": sources[:3],
                     })
                     sign = "+" if growth_30d > 0 else ""
                     print(f"  ✓ @{handle}: {_fmt(followers)} followers | {sign}{_fmt(growth_30d)} 30d | Grade: {grade}")
