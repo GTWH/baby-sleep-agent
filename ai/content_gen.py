@@ -71,7 +71,7 @@ def _call_gemini_with_retry(prompt: str, api_key: str,
                 headers={"Content-Type": "application/json"},
                 method="POST",
             )
-            with urllib.request.urlopen(req, timeout=30) as resp:
+            with urllib.request.urlopen(req, timeout=45) as resp:
                 result = json.loads(resp.read())
             text = result["candidates"][0]["content"]["parts"][0]["text"]
             print(f"    ✓ {label} succeeded on attempt {attempt}")
@@ -92,6 +92,12 @@ def _call_gemini_with_retry(prompt: str, api_key: str,
                 continue
             else:
                 raise
+
+        except (TimeoutError, OSError) as e:
+            attempts_made.append({"attempt": attempt, "error_code": "timeout"})
+            print(f"    ⏳ {label} timeout — attempt {attempt}/{len(RETRY_WAITS)}, waiting {wait}s...")
+            time.sleep(wait)
+            continue
 
         except Exception as e:
             print(f"    ⚠ {label} unexpected error: {e}")
