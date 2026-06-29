@@ -1,6 +1,6 @@
 {
   "meta": {
-    "run_date": "2026-06-29T03:46:05.395757",
+    "run_date": "2026-06-29T04:26:04.604377",
     "week_label": "Jun 29\u201305, 2026",
     "brand": "My Beloved Sleep",
     "brand_url": "https://www.mybelovedsleep.com",
@@ -16,7 +16,7 @@
     "cost_this_run": "$0.00"
   },
   "reliability": {
-    "run_date": "2026-06-29T03:46:05.395757",
+    "run_date": "2026-06-29T04:26:04.604377",
     "calls_total": 4,
     "calls_success": 4,
     "calls_fallback": 0,
@@ -26,6 +26,27 @@
       {
         "label": "Blog template",
         "result": "success",
+        "attempts": 1,
+        "errors": [],
+        "timestamp": "2026-06-29T04:32:29.617908"
+      },
+      {
+        "label": "IG carousel",
+        "result": "success",
+        "attempts": 1,
+        "errors": [],
+        "timestamp": "2026-06-29T04:32:52.626061"
+      },
+      {
+        "label": "Reel script",
+        "result": "success",
+        "attempts": 1,
+        "errors": [],
+        "timestamp": "2026-06-29T04:33:15.850441"
+      },
+      {
+        "label": "Gap analysis",
+        "result": "success",
         "attempts": 2,
         "errors": [
           {
@@ -33,178 +54,157 @@
             "error_code": 503
           }
         ],
-        "timestamp": "2026-06-29T03:53:40.182215"
-      },
-      {
-        "label": "IG carousel",
-        "result": "success",
-        "attempts": 1,
-        "errors": [],
-        "timestamp": "2026-06-29T03:54:03.281789"
-      },
-      {
-        "label": "Reel script",
-        "result": "success",
-        "attempts": 1,
-        "errors": [],
-        "timestamp": "2026-06-29T03:54:25.493497"
-      },
-      {
-        "label": "Gap analysis",
-        "result": "success",
-        "attempts": 1,
-        "errors": [],
-        "timestamp": "2026-06-29T03:54:48.076449"
+        "timestamp": "2026-06-29T04:34:10.563547"
       }
     ]
   },
   "viral_posts": [
     {
       "source": "blog",
-      "id": "https://www.facebook.com/SleepBabyConsulting/photos/1663060665160281/",
-      "title": "Sleep Baby Sleep Consulting - Facebook",
-      "url": "https://www.facebook.com/SleepBabyConsulting/photos/1663060665160281/",
+      "id": "https://www.facebook.com/groups/babysleeptrainingtipshelp/posts/1598888791864410/",
+      "title": "Is sleep regression causing my 11-week-old baby's sleep struggles?",
+      "url": "https://www.facebook.com/groups/babysleeptrainingtipshelp/posts/1598888791864410/",
       "author": "facebook.com",
-      "description": "As a sleep consultant I'm sure you're thinking that I should have a perfectly optimized, sleep-science- approved bedtime setup for my kids.",
+      "description": "Sometimes what looks like a regression is actually: \u2022 A schedule issue \u2022 Overtiredness \u2022 Undertiredness \u2022 A nap transition \u2022 Strong sleep associations \u2022 ...",
       "views": 0,
       "likes": 0,
       "saves": 0,
-      "published_at": "4 days ago",
+      "published_at": "6 days ago",
       "viral_score": 10500.0,
       "engagement_summary": "Top search result",
       "rank": 1
     },
     {
       "source": "blog",
-      "id": "https://betteroo.ai/guides/best-baby-sleep-consultants-vancouver/",
-      "title": "TOP 7 BEST Baby Sleep Consultants in Vancouver (2026) - Betteroo",
-      "url": "https://betteroo.ai/guides/best-baby-sleep-consultants-vancouver/",
-      "author": "betteroo.ai",
-      "description": "Compare the best baby sleep consultants in Vancouver, Canada for 2026. Vetted picks, real pricing in CAD, insurance-covered RCC options.",
+      "id": "https://www.reddit.com/r/NewParents/comments/1udhyq8/is_the_4_month_sleep_regression_always_hard_will/",
+      "title": "Is the 4 month sleep regression always hard? Will I get weeks of no ...",
+      "url": "https://www.reddit.com/r/NewParents/comments/1udhyq8/is_the_4_month_sleep_regression_always_hard_will/",
+      "author": "reddit.com",
+      "description": "It has a lot to do with milestones. If your baby is teething then, that will affect it or learning to roll a lot, practicing noises. I can't rmbr all the stuff ...",
       "views": 0,
       "likes": 0,
       "saves": 0,
-      "published_at": "2 days ago",
+      "published_at": "6 days ago",
       "viral_score": 9450.0,
       "engagement_summary": "Top search result",
       "rank": 2
     },
     {
       "source": "blog",
-      "id": "https://sleepwiseconsulting.com/child-home/",
-      "title": "Less struggles. More snuggles. - Sleep Wise Consulting",
-      "url": "https://sleepwiseconsulting.com/child-home/",
-      "author": "sleepwiseconsulting.com",
-      "description": "Certified pediatric sleep consultants guiding your family to calm nights, restful routines, and confident parenting \u2014 from newborns to school-aged kids.",
+      "id": "https://www.facebook.com/DrGollyTM/videos/if-your-babys-sleep-has-shifted-or-detoerirated-theres-usually-some-incredible-d/1716851016165028/",
+      "title": "If your baby's sleep has shifted or detoerirated there's usually some ...",
+      "url": "https://www.facebook.com/DrGollyTM/videos/if-your-babys-sleep-has-shifted-or-detoerirated-theres-usually-some-incredible-d/1716851016165028/",
+      "author": "facebook.com",
+      "description": "If you want more information check out the online program. But it is just a sleep regression and it's normal and they'll get over it and get used to it. That is ...",
       "views": 0,
       "likes": 0,
       "saves": 0,
-      "published_at": "4 days ago",
+      "published_at": "1 day ago",
       "viral_score": 8400.0,
       "engagement_summary": "Top search result",
       "rank": 3
     },
     {
       "source": "blog",
-      "id": "https://www.facebook.com/groups/191984864735535/posts/2091253914808611/",
-      "title": "Personalized baby and toddler sleep consulting services - Facebook",
-      "url": "https://www.facebook.com/groups/191984864735535/posts/2091253914808611/",
-      "author": "facebook.com",
-      "description": "I offer: -Free sleep assessment call -An in-depth questionnaire -A custom sleep plan tailored to YOUR needs and baby's age -30 minute zoom or call to go over ...",
+      "id": "https://www.instagram.com/reel/DaD9Y0Mh3pu/",
+      "title": "LOTS of big changes happening at 3-4 months!   You baby's sleep ...",
+      "url": "https://www.instagram.com/reel/DaD9Y0Mh3pu/",
+      "author": "instagram.com",
+      "description": "We mainly focus on what happens at night\u2026the wake ups! But one of the biggest things affecting sleep during the 4 month sleep regression actually happens during ...",
       "views": 0,
       "likes": 0,
       "saves": 0,
-      "published_at": "6 days ago",
+      "published_at": "2 days ago",
       "viral_score": 7350.0,
       "engagement_summary": "Top search result",
       "rank": 4
     },
     {
       "source": "blog",
-      "id": "https://sleepsweetconsulting.com/",
-      "title": "Sleep Sweet Consulting - Sleep Consultant, Melbourne, Australia",
-      "url": "https://sleepsweetconsulting.com/",
-      "author": "sleepsweetconsulting.com",
-      "description": "Certified sensitive sleep consultant helping babies from birth to 4 years old learn to sleep sweet. Consultations in home, by the phone or email.",
+      "id": "https://yourhealthmagazine.net/article/sleep/navigating-the-challenges-of-2-month-sleep-regression/",
+      "title": "Navigating the Challenges of 2 Month Sleep Regression",
+      "url": "https://yourhealthmagazine.net/article/sleep/navigating-the-challenges-of-2-month-sleep-regression/",
+      "author": "yourhealthmagazine.net",
+      "description": "If your baby consistently resists sleep, has trouble feeding, or seems unusually fussy or lethargic, it may be time to consult a pediatrician. Pediatricians can ...",
       "views": 0,
       "likes": 0,
       "saves": 0,
-      "published_at": "5 days ago",
+      "published_at": "3 days ago",
       "viral_score": 6300.0,
       "engagement_summary": "Top search result",
       "rank": 5
     },
     {
       "source": "blog",
-      "id": "https://www.reddit.com/r/sleeptrain/comments/1ud03ym/should_i_hire_a_sleep_consultant_to_help_us_sleep/",
-      "title": "Should I hire a sleep consultant to help us sleep train our baby, or ...",
-      "url": "https://www.reddit.com/r/sleeptrain/comments/1ud03ym/should_i_hire_a_sleep_consultant_to_help_us_sleep/",
-      "author": "reddit.com",
-      "description": "This is a safe place to discuss biologically normal infant (and toddler/preschooler) sleep for those wanting an alternative to sleep training. Biologically ...",
+      "id": "https://www.tiktok.com/@wellrestedweeones/video/7655029507711061278",
+      "title": "Sleep Training for 3\u20134 Month Olds: Well Rested Plan | TikTok",
+      "url": "https://www.tiktok.com/@wellrestedweeones/video/7655029507711061278",
+      "author": "tiktok.com",
+      "description": "What is often called the \"4-month sleep regression\" is actually a sleep progression, as babies' brains are rapidly developing and reorganising sleep patterns.",
       "views": 0,
       "likes": 0,
       "saves": 0,
-      "published_at": "6 days ago",
+      "published_at": "4 days ago",
       "viral_score": 5250.0,
       "engagement_summary": "Top search result",
       "rank": 6
     },
     {
       "source": "blog",
-      "id": "https://www.instagram.com/reel/DaGghCworsS/",
-      "title": "As an infant sleep consultant I'm regularly asked how to teach them ...",
-      "url": "https://www.instagram.com/reel/DaGghCworsS/",
-      "author": "instagram.com",
-      "description": "As an infant sleep consultant I'm regularly asked how to teach them to self soothe. And the truth is, true self regulation is learnt through MANY acts of ...",
+      "id": "https://www.littleones.co/blogs/our-blog/what-is-sleep-pressure?srsltid=AfmBOorKqpMKP0nrrINr8JIb1YrYGbU-b1P8qwlSGzdueCjZU37tNFF3",
+      "title": "What Is Sleep Pressure and How Does It Affect Your Baby's Sleep?",
+      "url": "https://www.littleones.co/blogs/our-blog/what-is-sleep-pressure?srsltid=AfmBOorKqpMKP0nrrINr8JIb1YrYGbU-b1P8qwlSGzdueCjZU37tNFF3",
+      "author": "littleones.co",
+      "description": "Understanding sleep pressure | How it affects naps & night sleep | Creating the right balance for better sleep | Little Ones\u2122 Sleep Article.",
       "views": 0,
       "likes": 0,
       "saves": 0,
-      "published_at": "1 day ago",
+      "published_at": "7 days ago",
       "viral_score": 4200.0,
       "engagement_summary": "Top search result",
       "rank": 7
     },
     {
       "source": "blog",
-      "id": "https://www.yelp.com/biz/rest-well-baby-los-angeles-2",
-      "title": "REST WELL BABY - Updated June 2026 - 65 Reviews - Yelp",
-      "url": "https://www.yelp.com/biz/rest-well-baby-los-angeles-2",
-      "author": "yelp.com",
-      "description": "Tracie is a sleep magician! If you need help with infant sleeping problems, she should be your first call. She helped our family go from crying-all-night to ...",
+      "id": "https://www.instagram.com/reel/DaGlYtkyJ4i/",
+      "title": "If your baby's sleep has shifted or detoerirated there's usually some ...",
+      "url": "https://www.instagram.com/reel/DaGlYtkyJ4i/",
+      "author": "instagram.com",
+      "description": "If your baby's sleep has shifted or detoerirated there's usually some incredible development happening- it's our job as parents to explore what they need:",
       "views": 0,
       "likes": 0,
       "saves": 0,
-      "published_at": "2 days ago",
+      "published_at": "1 day ago",
       "viral_score": 3150.0,
       "engagement_summary": "Top search result",
       "rank": 8
     },
     {
       "source": "blog",
-      "id": "https://www.arestfulnight.com/blog/fourth-of-july-tips",
-      "title": "Will Fireworks Ruin My Baby's Sleep? A Sleep Consultant's Fourth ...",
-      "url": "https://www.arestfulnight.com/blog/fourth-of-july-tips",
-      "author": "arestfulnight.com",
-      "description": "A Restful Night is a consulting and coaching provider dedicated to establishing independent sleeping skills to newborns, infants and toddlers. Founder and ...",
+      "id": "https://huckleberrycare.com/blog/daycare-sleep-regression",
+      "title": "Daycare sleep regression: Causes and expert solutions - Huckleberry",
+      "url": "https://huckleberrycare.com/blog/daycare-sleep-regression",
+      "author": "huckleberrycare.com",
+      "description": "Baby not sleeping after starting daycare? Learn what causes daycare sleep regression and how to support better naps and nights during the transition.",
       "views": 0,
       "likes": 0,
       "saves": 0,
-      "published_at": "6 days ago",
+      "published_at": "4 days ago",
       "viral_score": 2100.0,
       "engagement_summary": "Top search result",
       "rank": 9
     },
     {
       "source": "blog",
-      "id": "https://www.instagram.com/p/DaDF5rKD9T3/",
-      "title": "Samantha | Certified Baby & Child Sensitive Sleep Consultant",
-      "url": "https://www.instagram.com/p/DaDF5rKD9T3/",
-      "author": "instagram.com",
-      "description": "I'm Chelsie, a Level 3 certified baby & infant sleep consultant. Dedicated to helping families and their little ones ages 0-5 years find calm, consistent and ...",
+      "id": "https://www.tuasaude.com/en/newborn-sleep-schedule/",
+      "title": "Newborn Sleep Schedule: By Age, How Much Is Needed & More Tips",
+      "url": "https://www.tuasaude.com/en/newborn-sleep-schedule/",
+      "author": "tuasaude.com",
+      "description": "0 to 2 weeks, Sleep is very irregular and often divided into short periods across 24 hours. Babies wake often to feed. \u00b7 2 to 6 weeks, Sleep may still happen in ...",
       "views": 0,
       "likes": 0,
       "saves": 0,
-      "published_at": "3 days ago",
+      "published_at": "4 days ago",
       "viral_score": 1050.0,
       "engagement_summary": "Top search result",
       "rank": 10
@@ -212,15 +212,15 @@
   ],
   "content": {
     "top_post_meta": {
-      "title": "Sleep Baby Sleep Consulting - Facebook",
+      "title": "Is sleep regression causing my 11-week-old baby's sleep struggles?",
       "source": "blog",
       "engagement": "Top search result",
       "viral_score": 10500.0,
-      "url": "https://www.facebook.com/SleepBabyConsulting/photos/1663060665160281/"
+      "url": "https://www.facebook.com/groups/babysleeptrainingtipshelp/posts/1598888791864410/"
     },
-    "blog": "Here's a blog post template designed for My Beloved Sleep, keeping your brand voice, target audience, and current viral content in mind:\n\n---\n\n## Blog Post Template: My Beloved Sleep\n\n---\n\n### 1. SEO Title:\n\n**Baby Sleep Consultant Singapore: Gentle Guidance for Restful Nights**\n\n*(Alternative if \"Singapore\" feels forced: **Baby Sleep Consultant: Expert, Empathetic Sleep Solutions for Southeast Asia**)*\n\n---\n\n### 2. Meta Description:\n\nExhausted? Find gentle, science-backed baby sleep solutions from certified consultants in Singapore. Reclaim your sleep & your sanity. Book a free call!\n\n---\n\n### 3. Intro Hook:\n\nOh, mama. We see you. The endless nights, the rocking, the shushing, the quiet desperation that creeps in when you realize it's 3 AM and your little one is still wide awake. You've tried everything you can think of, fueled by caffeine and sheer determination, but the sleep deprivation is starting to feel like a heavy blanket you can't shake off. It's completely understandable to feel overwhelmed and, frankly, exhausted.\n\nYou're not alone in this journey. Many parents in Singapore and across Southeast Asia are navigating the beautiful, yet challenging, world of baby sleep. It's a delicate balance of wanting the best for your child while also yearning for a moment of peace for yourself. We understand the pressure, the well-meaning advice from all corners, and the deep desire to see your baby thrive with healthy sleep habits.\n\n---\n\n### 4. H2 Section Headings:\n\nHere are five H2 section headings, each with a one-sentence description to guide the content:\n\n*   **Understanding Your Baby's Sleep Cycles: The Science Behind the Snooze**\n    This section will demystify the natural, biological patterns of infant sleep, helping parents understand *why* their baby sleeps the way they do.\n\n*   **When to Consider a Baby Sleep Consultant: Signs You Might Need Support**\n    We'll explore common challenges and signals that indicate seeking professional guidance could be a game-changer for your family's sleep.\n\n*   **What a Certified Baby Sleep Consultant in Singapore Offers: Beyond Just \"Cry It Out\"**\n    This section will highlight the personalized, evidence-based, and empathetic approach My Beloved Sleep takes, dispelling common myths about sleep consulting.\n\n*   **The Benefits of Investing in Better Sleep: For Baby and for You**\n    We'll focus on the positive outcomes of improved sleep for the entire family, from enhanced development and mood for baby to reduced stress and increased well-being for parents.\n\n*   **Your Personalized Sleep Journey: How We Partner with You for Success**\n    This section will outline the collaborative and supportive process of working with My Beloved Sleep, emphasizing our tailored strategies for each unique family.\n\n---\n\n### 5. Call to Action:\n\nReady to trade those sleepless nights for peaceful slumber? We're here to offer a helping hand and a listening ear. Let's explore how gentle, science-backed strategies can transform your family's sleep.\n\n**Book your free 15-minute discovery call with a certified sleep consultant today at MyBelovedSleep.com.**",
-    "instagram_carousel": "Here's a 5-slide Instagram carousel for My Beloved Sleep on the topic of \"Sleep Baby Sleep Consulting - Facebook,\" keeping your brand voice and target audience in mind.\n\n---\n\n## Instagram Carousel Slides:\n\n**Slide 1:**\n\n*   **Headline:** Sleep Consulting: Your Facebook Guide\n*   **Body:** Feeling lost with baby sleep? We're here to help. Discover expert support, made easy.\n*   **Visual Direction:** A warm, inviting image of a parent gently holding their sleeping baby, bathed in soft, natural light. The My Beloved Sleep logo is subtly placed.\n\n**Slide 2:**\n\n*   **Headline:** Science-Backed Sleep Solutions\n*   **Body:** Understand your baby's sleep needs. We share evidence-based strategies for restful nights.\n*   **Visual Direction:** A clean, infographic-style graphic showcasing simple icons representing sleep cycles or brain waves, with a soft, calming colour palette.\n\n**Slide 3:**\n\n*   **Headline:** Personalized Support, Just for You\n*   **Body:** Every baby is unique. Get tailored advice for your family's specific challenges.\n*   **Visual Direction:** A split image: on one side, a diverse group of happy, well-rested parents; on the other, a smiling, friendly photo of one of the My Beloved Sleep consultants.\n\n**Slide 4:**\n\n*   **Headline:** Connect with Our Community\n*   **Body:** Join our supportive Facebook group. Share experiences and find encouragement.\n*   **Visual Direction:** A screenshot mockup of the My Beloved Sleep Facebook group page, showcasing positive comments or discussions, overlaid with a subtle graphic highlighting the community aspect.\n\n**Slide 5:**\n\n*   **Headline:** Ready for Peaceful Sleep?\n*   **Body:** Let's navigate this journey together. Visit our website for a consultation.\n*   **Visual Direction:** A gentle, encouraging graphic with the My Beloved Sleep website URL and a clear call-to-action button graphic (e.g., \"Learn More\").\n\n---\n\n## Instagram Caption:\n\n**Hook:** Tired of sleepless nights and wondering if there's a better way? You're not alone, mama. We know the exhaustion is real, and the desire for your little one (and you!) to get restful sleep is paramount.\n\n**Value:** At My Beloved Sleep, we're passionate about guiding families across Southeast Asia towards peaceful nights, armed with science-backed strategies and deep empathy. Our approach is never preachy, always reassuring. We understand that every baby and family is unique, which is why we offer personalized support. You can also connect with us and other parents in our supportive Facebook community for shared experiences and encouragement. We believe in providing practical, evidence-based solutions that work for *your* family.\n\n**Save CTA:** Save this post for when you need a little sleep",
-    "reel_script": "Here's a 60-second Reel script for My Beloved Sleep, focusing on Facebook sleep consulting:\n\n**Reel Script: Sleep Baby Sleep Consulting - Facebook**\n\n**(0-3 seconds) Hook**\n\n*   **Spoken:** (Warm, gentle voice) \"Is your baby's sleep feeling like a never-ending puzzle?\"\n*   **[Visual]:** Quick, dynamic montage of common parenting struggles: a parent looking exhausted, a baby fussing in a crib, a clock showing a late hour.\n*   **\"On-screen text\":** \"Dreaming of Sleep?\"\n\n**(4-15 seconds) Problem**\n\n*   **Spoken:** \"You've tried everything \u2013 rocking, feeding, shushing \u2013 but those long stretches of sleep still feel out of reach. You're feeling drained, overwhelmed, and just want a little peace for yourself *and* your little one.\"\n*   **[Visual]:** Slow-motion shot of a parent looking tired but loving, gently patting their baby. Then, a graphic showing a question mark over a sleeping baby icon.\n*   **\"On-screen text\":** \"Exhausted? We Get It.\"\n\n**(16-35 seconds) Insight**\n\n*   **Spoken:** \"We know how it feels. As certified sleep consultants, we've walked this path with hundreds of families in Singapore and across Southeast Asia. We understand that every baby is unique, and there's no one-size-fits-all solution. But what if we told you that a well-rested baby *is* possible, and it doesn't have to be a battle?\"\n*   **[Visual]:** Transition to a more hopeful, serene visual. Perhaps a softly lit nursery. Show a brief, reassuring clip of a certified consultant interacting gently with a baby (or a stock image representing this). Briefly flash \"Certified Consultants\" on screen.\n*   **\"On-screen text\":** \"Science-Backed. Empathetic. Proven.\"\n\n**(36-50 seconds) Solution**\n\n*   **Spoken:** \"Our approach is rooted in science and delivered with deep empathy. We don't do 'cry it out' without support. Instead, we create personalized, gentle sleep plans tailored to your baby's age and temperament, and importantly, your family's values. Imagine",
+    "blog": "Here's a blog post template for My Beloved Sleep, designed with your brand voice, target audience, and SEO considerations in mind:\n\n---\n\n## Blog Post Template: My Beloved Sleep\n\n---\n\n### 1. SEO Title\n\n**Is Your 11-Week-Old Baby Not Sleeping? Understanding Sleep Regression in Singapore**\n\n*(Alternative if \"Singapore\" feels forced: \"Is Your 11-Week-Old Baby Not Sleeping? Understanding Sleep Regression\")*\n\n### 2. Meta Description\n\nExhausted by your 11-week-old's sleep changes? Discover if it's sleep regression and get gentle, science-backed solutions from My Beloved Sleep.\n\n### 3. Intro Hook\n\nOh, mama, we see you. Those bleary eyes, the endless rocking, the quiet desperation as another night feels like a marathon of wake-ups. If your sweet 11-week-old, who was just starting to find a rhythm, has suddenly thrown a sleep-time curveball, you're likely feeling a mix of confusion, frustration, and a deep well of exhaustion. You're not alone, and your feelings are completely valid.\n\nThe journey of a newborn is a beautiful, overwhelming, and ever-changing one. It's perfectly normal for their sleep patterns to shift, and when they do, it can feel like everything you've worked for has been undone. Before you start to worry, let's explore what might be happening and how we can navigate this phase with compassion and a sprinkle of science.\n\n### 4. H2 Section Headings\n\n**H2: What Exactly is Sleep Regression at 11 Weeks?**\nThis section will demystify the concept of sleep regression and explain why it's a common developmental milestone around this age.\n\n**H2: Signs Your 11-Week-Old Might Be Experiencing Sleep Regression**\nHere, we'll outline the specific behaviours and sleep changes to look out for that point towards sleep regression.\n\n**H2: The Science Behind the Sleepy Struggles: What's Happening in Your Baby's Brain?**\nThis will delve into the developmental leaps and brain changes that contribute to sleep disruptions at this age, explained in an accessible way.\n\n**H2: Practical Strategies to Support Your Baby Through Sleep Regression**\nThis section will offer actionable, gentle advice and practical tips for parents to help their baby adjust and improve sleep.\n\n**H2: When to Seek Expert Support for Your Baby's Sleep**\nHere, we'll guide parents on when it might be beneficial to reach out for professional help and what to expect.\n\n### 5. Call to Action\n\nFeeling overwhelmed and unsure where to start? We understand. Taking the first step towards better sleep for your little one (and for you!) can feel daunting.\n\n**Let's chat! Schedule a free 15-minute discovery call with one of our certified baby sleep consultants at My Beloved Sleep. We're here to listen, offer support, and explore how we can help your family find more restful nights.**\n\n**[Link to your free discovery call booking page: mybelovedsleep.com/discovery-call]**\n\n---",
+    "instagram_carousel": "Here is your 5-slide Instagram carousel and caption for My Beloved Sleep, addressing sleep regression in 11-week-old babies:\n\n---\n\n## Instagram Carousel Content for @mybelovedsleep\n\n**Slide 1:**\n\n*   **Headline:** Is 11 Weeks Too Early for Regression?\n*   **Body:** Your baby's sleep might feel off. Let's explore what's happening.\n*   **Visual Direction:** Soft, warm image of a peacefully sleeping 3-month-old baby, perhaps swaddled, in a dimly lit nursery. Subtle bokeh effect.\n\n**Slide 2:**\n\n*   **Headline:** The 4-Month Sleep Shift Arrives Early\n*   **Body:** Many babies experience changes around 11-12 weeks. It\u2019s a developmental leap!\n*   **Visual Direction:** A gentle illustration or graphic showing a baby's sleep cycle subtly changing, perhaps with a visual cue for \"lighter sleep\" becoming more prominent.\n\n**Slide 3:**\n\n*   **Headline:** Signs Your Baby Needs Support\n*   **Body:** More night wakings, fussiness, shorter naps? These are common indicators.\n*   **Visual Direction:** A relatable image of a parent gently rocking a slightly fussy but still adorable baby, conveying empathy.\n\n**Slide 4:**\n\n*   **Headline:** It's Not Regression, It's Development!\n*   **Body:** Your baby is learning and growing. This phase is temporary, not forever.\n*   **Visual Direction:** A heartwarming photo of a parent holding their baby close, looking a little tired but full of love. Focus on connection.\n\n**Slide 5:**\n\n*   **Headline:** Gentle Guidance for Better Sleep\n*   **Body:** We can help you navigate this. Let's create a calmer sleep journey.\n*   **Visual Direction:** A clean, branded slide with the My Beloved Sleep logo and website address, featuring a soft, encouraging background.\n\n---\n\n## Instagram Caption for @mybelovedsleep\n\n**Hook:** Is your 11-week-old suddenly a sleep mystery? You're not alone, and it might not be what you think!\n\n**Value:** Many parents notice sleep disruptions around 11-12 weeks, often mistaking it for a \"regression.\" At My Beloved Sleep, we understand this can be incredibly frustrating and exhausting. This period is actually a significant developmental leap where your baby's sleep cycles are maturing. They are learning to transition between sleep stages, which can lead to more frequent waking and fussiness. It's a sign of growth, not a setback! We're here to offer reassurance and practical, science-backed strategies to gently guide your little one through this phase and foster healthier sleep habits for the long term. You've got this, and we're here to",
+    "reel_script": "Here's a 60-second Reel script for My Beloved Sleep, addressing sleep regression in 11-week-old babies:\n\n**Reel Title:** Is 11-Week Sleep Regression Real? \ud83e\udd14\n\n---\n\n**(0-3 seconds) - Hook**\n\n**Spoken:** \"Is your 11-week-old suddenly waking up more than usual?\"\n\n[Visual: Close-up shot of a tired but loving parent gently rocking a baby. Soft, warm lighting. Maybe a gentle smile from the parent.]\n\n**On-screen text:** \"11-Week Sleep Regression? Let's talk!\"\n\n---\n\n**(4-15 seconds) - Problem**\n\n**Spoken:** \"You've been so proud of your little one's sleep progress, and then BAM! Suddenly, naps are shorter, nights are broken, and everyone is feeling the exhaustion.\"\n\n[Visual: Quick cuts showing a baby stirring in their crib, a parent looking bleary-eyed at a clock, a baby fussing briefly. Keep the visuals relatable and not overly dramatic.]\n\n**On-screen text:** \"Sudden Sleep Woes? You're not alone.\"\n\n---\n\n**(16-35 seconds) - Insight**\n\n**Spoken:** \"While the term '4-month sleep regression' is more commonly known, many babies experience significant sleep shifts around 8-12 weeks. This isn't a true 'regression' in the sense of losing skills, but rather a developmental leap.\"\n\n[Visual: Gentle animation showing a baby's brain developing, or a soft graphic illustrating sleep cycles changing. Could also be a shot of our certified consultant, looking calm and knowledgeable, perhaps pointing to a simple visual aid.]\n\n**On-screen text:** \"Developmental Leaps, Not Lost Skills!\"\n**On-screen text:** \"Around 8-12 Weeks: Sleep Cycles Mature.\"\n\n---\n\n**(36-50 seconds) - Solution**\n\n**Spoken:** \"At this stage, their sleep cycles are maturing, becoming more like adult sleep. This means they might wake more between cycles. The key is to support them through this transition by focusing on healthy sleep habits: consistent routines, a calming bedtime ritual, and understanding their cues.\"\n\n[Visual: Split screen or quick cuts showing: a parent gently swaddling a baby, a dimly lit nursery with soft",
     "thumbnail_spec": {
       "blog_og": {
         "size": "1200x628px",
@@ -244,28 +244,23 @@
         {
           "label": "Blog template",
           "result": "success",
-          "attempts": 2,
-          "errors": [
-            {
-              "attempt": 1,
-              "error_code": 503
-            }
-          ],
-          "timestamp": "2026-06-29T03:53:40.182215"
+          "attempts": 1,
+          "errors": [],
+          "timestamp": "2026-06-29T04:32:29.617908"
         },
         {
           "label": "IG carousel",
           "result": "success",
           "attempts": 1,
           "errors": [],
-          "timestamp": "2026-06-29T03:54:03.281789"
+          "timestamp": "2026-06-29T04:32:52.626061"
         },
         {
           "label": "Reel script",
           "result": "success",
           "attempts": 1,
           "errors": [],
-          "timestamp": "2026-06-29T03:54:25.493497"
+          "timestamp": "2026-06-29T04:33:15.850441"
         }
       ]
     }
@@ -273,51 +268,51 @@
   "gaps": [
     {
       "priority": "high",
-      "title": "Limited Product Information and Benefits",
-      "why": "Competitors often provide extensive details on product materials, construction, and unique selling propositions. My Beloved Sleep's product pages could benefit from more in-depth descriptions to educate and persuade potential buyers.",
-      "action": "1. Expand product descriptions with details on materials, certifications, and unique features. \n2. Add a 'Benefits' section to each product page highlighting how it solves sleep problems.",
-      "effort": "2-3 hours",
+      "title": "Limited Product Variety and Niche Focus",
+      "why": "Competitors often offer a wider range of sleep-related products, catering to diverse needs like snoring aids, sleep trackers, and specialized pillows. My Beloved Sleep appears to focus primarily on mattresses and bedding, potentially missing out on broader customer segments.",
+      "action": "1. Research and identify 2-3 complementary sleep product categories with high demand. 2. Source a small, curated selection of these products to test market interest.",
+      "effort": "1 day",
       "impact": "medium term"
     },
     {
       "priority": "high",
-      "title": "Lack of Customer Social Proof",
-      "why": "Leading e-commerce sites heavily feature customer reviews, ratings, and user-generated content like photos and videos. This builds trust and helps shoppers make informed decisions.",
-      "action": "1. Implement a robust review system with prompts for customers to leave reviews post-purchase. \n2. Encourage customers to share photos and videos of their products in use.",
-      "effort": "1 day",
-      "impact": "long term"
-    },
-    {
-      "priority": "medium",
-      "title": "No Clear Value Proposition",
-      "why": "Competitors often articulate a strong, memorable value proposition that clearly communicates what makes them different and better. My Beloved Sleep's core message could be more defined.",
-      "action": "1. Define a concise and compelling value proposition statement for the brand. \n2. Integrate this statement prominently on the homepage and key landing pages.",
-      "effort": "30 min",
+      "title": "Lack of Customer Testimonials and Social Proof",
+      "why": "Many successful e-commerce sites prominently display customer reviews, ratings, and user-generated content. This builds trust and helps potential buyers make informed decisions, which is currently absent on My Beloved Sleep.",
+      "action": "1. Implement a system to actively solicit customer reviews post-purchase. 2. Feature a selection of positive testimonials on the homepage and product pages.",
+      "effort": "2-3 hours",
       "impact": "quick win"
     },
     {
       "priority": "medium",
-      "title": "Limited Content Marketing Strategy",
-      "why": "Successful sleep brands invest in blog posts, guides, and FAQs that educate consumers on sleep hygiene and related topics. This positions them as experts and drives organic traffic.",
-      "action": "1. Outline 3-5 blog post topics related to sleep improvement. \n2. Draft and publish at least one informative blog post.",
-      "effort": "2-3 hours",
+      "title": "Underdeveloped Blog and Content Marketing",
+      "why": "Competitors often leverage informative blog content about sleep hygiene, mattress care, and the science of sleep to attract organic traffic and establish authority. My Beloved Sleep's blog appears to be minimal, limiting its ability to engage potential customers.",
+      "action": "1. Publish 2-3 high-quality blog posts on relevant sleep topics. 2. Promote these posts across social media channels.",
+      "effort": "1 day",
       "impact": "medium term"
     },
     {
+      "priority": "medium",
+      "title": "Limited Social Media Presence and Engagement",
+      "why": "Competitors actively engage with their audience on platforms like Instagram and Facebook, sharing product updates, sleep tips, and running contests. My Beloved Sleep's social media presence seems less active and engaging.",
+      "action": "1. Schedule and post 3-5 engaging social media updates per week. 2. Respond to comments and messages promptly to foster community.",
+      "effort": "2-3 hours",
+      "impact": "quick win"
+    },
+    {
       "priority": "low",
-      "title": "Basic Website Navigation",
-      "why": "Competitors often employ more intuitive navigation with clear categories, filters, and search functionalities. Improving site structure can enhance user experience and reduce bounce rates.",
-      "action": "1. Review and simplify the main navigation menu categories. \n2. Ensure product filtering options are comprehensive and easy to use.",
+      "title": "Basic Website Navigation and User Experience",
+      "why": "While functional, the website's navigation could be more intuitive and visually appealing. Competitors often invest in cleaner layouts, better filtering options, and richer product imagery to enhance the browsing experience.",
+      "action": "1. Review and optimize product category naming for clarity. 2. Ensure all product images are high-resolution and consistent in style.",
       "effort": "30 min",
       "impact": "quick win"
     },
     {
       "priority": "low",
-      "title": "Underdeveloped 'About Us' Story",
-      "why": "Brands that connect with customers often share a compelling origin story and mission. My Beloved Sleep's 'About Us' page could be more engaging and personal.",
-      "action": "1. Flesh out the 'About Us' page with the brand's founding story and mission. \n2. Include a personal touch or team photos if appropriate.",
-      "effort": "30 min",
-      "impact": "quick win"
+      "title": "Absence of Loyalty Programs or Incentives",
+      "why": "Many e-commerce businesses utilize loyalty programs, discount codes for first-time buyers, or referral bonuses to encourage repeat purchases and customer lifetime value. My Beloved Sleep does not appear to offer such incentives.",
+      "action": "1. Create a simple discount code for first-time email subscribers. 2. Explore options for a basic referral program for future implementation.",
+      "effort": "2-3 hours",
+      "impact": "long term"
     }
   ],
   "competitors": [],
@@ -325,7 +320,7 @@
     "local": [],
     "global": [],
     "all": [],
-    "discovered_at": "2026-06-29T03:51:51.039278",
+    "discovered_at": "2026-06-29T04:31:10.193772",
     "total_checked": 0
   },
   "your_metrics": {
