@@ -813,13 +813,12 @@ function renderCompetitors() {
   document.getElementById('comp-disc-date').textContent =
     isNaN(discDate) ? 'This week' : discDate.toLocaleDateString('en-SG',{month:'short',day:'numeric',year:'numeric'});
 
-  function compCard(a) {
+function compCard(a) {
     const growth   = a.growth_30d || 0;
     const growthEl = growth !== 0
       ? '<span style="font-size:11px;color:' + (growth>0?'var(--green)':'var(--red)') + '">' + (growth>0?'\u2191':'\u2193') + ' ' + fmtN(Math.abs(growth)) + ' 30d</span>'
       : '<span style="font-size:11px;color:var(--muted)">\u2014</span>';
 
-    // Source links — where this account was discovered
     const sources = a.discovery_sources || [];
     const sourceLinks = sources.length
       ? '<div style="margin-top:5px;display:flex;gap:6px;flex-wrap:wrap">' +
@@ -833,13 +832,16 @@ function renderCompetitors() {
         '</div>'
       : '';
 
+    const igUrl  = a.instagram_url  || '#';
+    const sbUrl  = a.socialblade_url || '#';
+    const webUrl = a.website_url;
+
     return '<div style="padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)">' +
       '<div style="display:flex;align-items:flex-start;gap:10px">' +
         '<div style="flex:1">' +
           '<div style="font-size:13px;font-weight:500;margin-bottom:3px">' +
-            '<a href="' + (a.instagram_url||'#') + '" target="_blank" rel="noopener" ' +
-               'style="color:var(--cream);text-decoration:none;border-bottom:1px solid rgba(201,169,110,.3)" ' +
-               'onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(201,169,110,.3)'">' +
+            '<a href="' + igUrl + '" target="_blank" rel="noopener" ' +
+               'style="color:var(--cream);text-decoration:none;border-bottom:1px solid rgba(201,169,110,.3)">' +
               '@' + a.handle + ' \u2197' +
             '</a>' +
             (a.name && a.name !== '@'+a.handle ? '<span style="font-size:11px;color:var(--muted);margin-left:6px">' + a.name + '</span>' : '') +
@@ -851,15 +853,9 @@ function renderCompetitors() {
             (a.grade && a.grade!=='\u2014' ? '<span class="badge b-gold" style="font-size:10px">' + a.grade + '</span>' : '') +
           '</div>' +
           '<div style="display:flex;gap:8px;margin-top:5px;flex-wrap:wrap">' +
-            '<a href="' + (a.instagram_url||'#') + '" target="_blank" rel="noopener" ' +
-               'style="font-size:10px;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:3px">' +
-               '📸 Instagram \u2197</a>' +
-            '<a href="' + (a.socialblade_url||'#') + '" target="_blank" rel="noopener" ' +
-               'style="font-size:10px;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:3px">' +
-               '📊 Social Blade \u2197</a>' +
-            (a.website_url ? '<a href="' + a.website_url + '" target="_blank" rel="noopener" ' +
-               'style="font-size:10px;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:3px">' +
-               '🌐 Website \u2197</a>' : '') +
+            '<a href="' + igUrl + '" target="_blank" rel="noopener" style="font-size:10px;color:var(--muted);text-decoration:none">📸 Instagram \u2197</a>' +
+            '<a href="' + sbUrl + '" target="_blank" rel="noopener" style="font-size:10px;color:var(--muted);text-decoration:none">📊 Social Blade \u2197</a>' +
+            (webUrl ? '<a href="' + webUrl + '" target="_blank" rel="noopener" style="font-size:10px;color:var(--muted);text-decoration:none">🌐 Website \u2197</a>' : '') +
           '</div>' +
           sourceLinks +
         '</div>' +
