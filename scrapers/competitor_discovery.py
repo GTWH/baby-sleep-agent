@@ -6,12 +6,19 @@ Auto-discovers top baby sleep accounts on Instagram weekly across:
   - Global (international benchmarks)
 
 Discovery pipeline:
-  1. Serper.dev   → finds handles from Google search results (records source URLs)
-  2. Playwright   → scrapes Instagram hashtags to find active accounts
-  3. Social Blade → follower count + 30-day growth + grade for each handle
-  4. Ranker       → scores and returns top 10 (5 local + 5 global)
+  1. Serper.dev → finds handles from Google search results (records source URLs)
+  2. Playwright → scrapes Instagram hashtags to find active accounts
+  3. Benchmarks → known follower counts (manually updated monthly — see KNOWN_BENCHMARKS below)
+  4. Ranker     → scores and returns top 10 (5 local + 5 global)
 
-Cost: $0 — uses Serper free tier + Playwright + Social Blade public pages
+NOTE ON SOCIAL BLADE: Social Blade actively blocks headless Playwright scrapers,
+so live follower/growth data is not reliably available for free. Instead this
+file uses a small hardcoded benchmark table. Update KNOWN_BENCHMARKS by hand
+once a month by checking each account's Instagram profile directly — takes
+about 5 minutes. Accounts not in the table still appear (discovered via
+search/hashtag) but show "follower count unknown" instead of a number.
+
+Cost: $0 — uses Serper free tier + Playwright, no paid scraping services
 """
 
 import asyncio
@@ -26,7 +33,7 @@ from datetime import datetime
 # ── Search queries ────────────────────────────────────────────────────────────
 SERPER_QUERIES = {
     "local": [
-        "baby sleep consultant Singapore Instagram",
+        "baby sleep consultant Instagram",
         "sleep training consultant Singapore Instagram account",
         "baby sleep coach Malaysia Indonesia Instagram",
         "newborn sleep consultant Southeast Asia Instagram",
@@ -49,6 +56,18 @@ HASHTAGS = {
 GLOBAL_SEEDS = ["takingcarababies", "littlezssleep", "preciouslittlesleep",
                 "sleeplady", "babysleepscience"]
 
+# ── Manual follower benchmarks ─────────────────────────────────────────────
+# UPDATE THIS MONTHLY: visit each handle's Instagram profile, check the
+# follower count shown under their name, and update the number here.
+# This is approximate — last verified by you, not live data.
+KNOWN_BENCHMARKS = {
+    "takingcarababies":     {"followers": 1_900_000, "grade": "A"},
+    "littlezssleep":        {"followers": 19_200,    "grade": "B+"},
+    "preciouslittlesleep":  {"followers": 20_100,    "grade": "B+"},
+    "sleeplady":            {"followers": 12_500,    "grade": "B"},
+    "babysleepscience":     {"followers": 8_900,     "grade": "B-"},
+}
+
 
 # ── Main discovery function ───────────────────────────────────────────────────
 async def discover_competitors(serper_api_key: str) -> Dict:
@@ -68,9 +87,9 @@ async def discover_competitors(serper_api_key: str) -> Dict:
 
     print(f"  [Discovery] {len(all_local)} local candidates, {len(all_global)} global candidates")
 
-    # Step 3 — Social Blade stats for all
-    local_stats  = await _get_socialblade_stats(list(all_local.items())[:10],  "local")
-    global_stats = await _get_socialblade_stats(list(all_global.items())[:10], "global")
+    # Step 3 — Attach known benchmark data where available
+    local_stats  = _attach_benchmarks(list(all_local.items())[:10],  "local")
+    global_stats = _attach_benchmarks(list(all_global.items())[:10], "global")
 
     # Step 4 — Rank and select top 5 each
     top_local  = _rank_accounts(local_stats)[:5]
@@ -204,113 +223,55 @@ def _merge_handles(*dicts, seeds=None) -> Dict[str, List]:
     return merged
 
 
-# ── Step 3: Social Blade stats ────────────────────────────────────────────────
-async def _get_socialblade_stats(handle_source_pairs: List, market: str) -> List[Dict]:
+# ── Step 3: Attach known benchmark data (replaces Social Blade) ──────────────
+def _attach_benchmarks(handle_source_pairs: List, market: str) -> List[Dict]:
+    """
+    Social Blade blocks scrapers, so this uses a manually-maintained benchmark
+    table instead. Accounts not in KNOWN_BENCHMARKS still appear, just without
+    a follower count — flagged so the dashboard can show "count unknown".
+    """
     stats = []
-    async with async_playwright() as pw:
-        browser = await pw.chromium.launch(
-            headless=True,
-            args=["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"]
-        )
-        ctx = await browser.new_context(
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                       "AppleWebKit/537.36 Chrome/124.0 Safari/537.36",
-        )
-        page = await ctx.new_page()
+    for handle, sources in handle_source_pairs[:10]:
+        bench = KNOWN_BENCHMARKS.get(handle)
+        followers   = bench["followers"] if bench else 0
+        grade       = bench["grade"] if bench else "—"
+        has_data    = bench is not None
 
-        for handle, sources in handle_source_pairs[:8]:
-            sb_url = f"https://socialblade.com/instagram/user/{handle}"
-            try:
-                await page.goto(sb_url, wait_until="networkidle", timeout=20000)
-                await page.wait_for_timeout(2000)
-                content = await page.content()
+        stats.append({
+            "handle":            handle,
+            "name":              f"@{handle}",
+            "market":            market,
+            "followers":         followers,
+            "growth_30d":        0,  # not available without live scraping
+            "grade":             grade,
+            "instagram_url":     f"https://www.instagram.com/{handle}/",
+            "socialblade_url":   "",  # no longer used
+            "website_url":       "",
+            "weekly_views":      followers // 10 if followers else 0,
+            "discovery_sources": sources[:3],
+            "data_known":        has_data,
+        })
+        if has_data:
+            print(f"  ✓ @{handle}: {_fmt(followers)} followers (benchmark) | Grade: {grade}")
+        else:
+            print(f"  • @{handle}: discovered, follower count unknown")
 
-                followers = _extract_number(content, [
-                    r'Followers.*?<span[^>]*>([\d,KMB.]+)</span>',
-                    r'"followers"\s*:\s*"?([\d,]+)"?',
-                    r'follower.*?([\d,KMB.]+)',
-                ])
-                growth_30d = _extract_signed_number(content, [
-                    r'30 Days.*?([+-][\d,KMB.]+)',
-                    r'Monthly.*?([+-][\d,KMB.]+)',
-                ])
-                grade_m = re.search(r'grade["\s:>]+([A-F][+-]?)', content, re.I)
-                grade   = grade_m.group(1).upper() if grade_m else "—"
-
-                # Try to find website URL from their IG bio
-                website_m = re.search(r'(https?://(?!instagram|socialblade)[^\s"<>]{5,60})', content)
-                website   = website_m.group(1) if website_m else ""
-
-                # Only include if we got follower data
-                if followers > 0:
-                    stats.append({
-                        "handle":           handle,
-                        "name":             _display_name(content, handle),
-                        "market":           market,
-                        "followers":        followers,
-                        "growth_30d":       growth_30d,
-                        "grade":            grade,
-                        "instagram_url":    f"https://www.instagram.com/{handle}/",
-                        "socialblade_url":  sb_url,
-                        "website_url":      website,
-                        "weekly_views":     followers // 10,
-                        "discovery_sources": sources[:3],
-                    })
-                    sign = "+" if growth_30d > 0 else ""
-                    print(f"  ✓ @{handle}: {_fmt(followers)} followers | {sign}{_fmt(growth_30d)} 30d | Grade: {grade}")
-                else:
-                    print(f"  ⚠ @{handle}: no data on Social Blade")
-
-                await asyncio.sleep(2)
-
-            except Exception as e:
-                print(f"  ⚠ Social Blade @{handle}: {e}")
-
-        await browser.close()
     return stats
 
 
-# ── Step 4: Rank by followers + growth momentum ───────────────────────────────
+# ── Step 4: Rank — known followers first, then discovered-but-unknown ────────
 def _rank_accounts(accounts: List[Dict]) -> List[Dict]:
     for a in accounts:
         f = a.get("followers", 0)
-        g = abs(a.get("growth_30d", 0))
-        a["discovery_score"] = round(f * 0.5 + g * 10 * 0.5, 0)
-    return sorted(accounts, key=lambda x: x["discovery_score"], reverse=True)
+        a["discovery_score"] = f
+    # Known-data accounts ranked by followers; unknown accounts kept after, in discovery order
+    known   = [a for a in accounts if a.get("data_known")]
+    unknown = [a for a in accounts if not a.get("data_known")]
+    known.sort(key=lambda x: x["discovery_score"], reverse=True)
+    return known + unknown
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
-def _extract_number(text: str, patterns: List[str]) -> int:
-    for p in patterns:
-        m = re.search(p, text, re.I | re.S)
-        if m:
-            raw = m.group(1).replace(",", "").strip()
-            try:
-                if "K" in raw.upper(): return int(float(raw.upper().replace("K","")) * 1_000)
-                if "M" in raw.upper(): return int(float(raw.upper().replace("M","")) * 1_000_000)
-                return int(float(raw.replace("+","").replace("-","")))
-            except ValueError: continue
-    return 0
-
-def _extract_signed_number(text: str, patterns: List[str]) -> int:
-    for p in patterns:
-        m = re.search(p, text, re.I | re.S)
-        if m:
-            raw = m.group(1).replace(",", "").strip()
-            try:
-                neg = raw.startswith("-")
-                val = _extract_number(raw, [r"(\d[\d.KMB]*)"])
-                return -val if neg else val
-            except: continue
-    return 0
-
-def _display_name(text: str, fallback: str) -> str:
-    m = re.search(r'<title>([^<]{3,60})', text)
-    if m:
-        name = m.group(1).split("|")[0].split("(")[0].strip()
-        if len(name) > 2: return name
-    return f"@{fallback}"
-
 def _fmt(n: int) -> str:
     if abs(n) >= 1_000_000: return f"{n/1_000_000:.1f}M"
     if abs(n) >= 1_000:     return f"{n/1_000:.1f}K"
