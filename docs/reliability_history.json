@@ -723,5 +723,111 @@
         "timestamp": "2026-06-30T08:01:50.373937"
       }
     ]
+  },
+  {
+    "run_date": "2026-06-30T11:01:08.991682",
+    "calls_total": 4,
+    "calls_success": 0,
+    "calls_fallback": 4,
+    "fallback_rate": "100%",
+    "run_complete": false,
+    "details": [
+      {
+        "label": "Blog template",
+        "result": "fallback",
+        "attempts": 4,
+        "errors": [
+          {
+            "attempt": 1,
+            "error_code": 503
+          },
+          {
+            "attempt": 2,
+            "error_code": 429
+          },
+          {
+            "attempt": 3,
+            "error_code": 429
+          },
+          {
+            "attempt": 4,
+            "error_code": 429
+          }
+        ],
+        "timestamp": "2026-06-30T11:07:27.298150"
+      },
+      {
+        "label": "IG carousel",
+        "result": "fallback",
+        "attempts": 4,
+        "errors": [
+          {
+            "attempt": 1,
+            "error_code": 429
+          },
+          {
+            "attempt": 2,
+            "error_code": 429
+          },
+          {
+            "attempt": 3,
+            "error_code": 429
+          },
+          {
+            "attempt": 4,
+            "error_code": 429
+          }
+        ],
+        "timestamp": "2026-06-30T11:12:47.795101"
+      },
+      {
+        "label": "Reel script",
+        "result": "fallback",
+        "attempts": 4,
+        "errors": [
+          {
+            "attempt": 1,
+            "error_code": 429
+          },
+          {
+            "attempt": 2,
+            "error_code": 429
+          },
+          {
+            "attempt": 3,
+            "error_code": 429
+          },
+          {
+            "attempt": 4,
+            "error_code": 429
+          }
+        ],
+        "timestamp": "2026-06-30T11:18:08.302030"
+      },
+      {
+        "label": "Gap analysis",
+        "result": "fallback",
+        "attempts": 4,
+        "errors": [
+          {
+            "attempt": 1,
+            "error_code": 429
+          },
+          {
+            "attempt": 2,
+            "error_code": 429
+          },
+          {
+            "attempt": 3,
+            "error_code": 429
+          },
+          {
+            "attempt": 4,
+            "error_code": 429
+          }
+        ],
+        "timestamp": "2026-06-30T11:23:28.808985"
+      }
+    ]
   }
 ]
