@@ -60,6 +60,13 @@ GLOBAL_SEEDS = ["takingcarababies", "littlezssleep", "preciouslittlesleep",
 # UPDATE THIS MONTHLY: visit each handle's Instagram profile, check the
 # follower count shown under their name, and update the number here.
 # This is approximate — last verified by you, not live data.
+#
+# IMPORTANT: every time you update the numbers below, also update
+# BENCHMARKS_LAST_UPDATED to today's date (format: "YYYY-MM-DD"). The
+# dashboard reads this date to show you when the data was last refreshed
+# and to warn you when it's overdue (30+ days old).
+BENCHMARKS_LAST_UPDATED = "2026-06-29"
+
 KNOWN_BENCHMARKS = {
     "takingcarababies":     {"followers": 1_900_000, "grade": "A"},
     "littlezssleep":        {"followers": 19_200,    "grade": "B+"},
@@ -100,11 +107,12 @@ async def discover_competitors(serper_api_key: str) -> Dict:
     print(f"  [Discovery] Top global: {[a['handle'] for a in top_global]}")
 
     return {
-        "local":          top_local,
-        "global":         top_global,
-        "all":            all_ranked,
-        "discovered_at":  datetime.utcnow().isoformat(),
-        "total_checked":  len(local_stats) + len(global_stats),
+        "local":                    top_local,
+        "global":                   top_global,
+        "all":                      all_ranked,
+        "discovered_at":            datetime.utcnow().isoformat(),
+        "total_checked":            len(local_stats) + len(global_stats),
+        "benchmarks_last_updated":  BENCHMARKS_LAST_UPDATED,
     }
 
 
