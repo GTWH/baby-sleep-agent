@@ -8,7 +8,8 @@ Sources:
   - Pinterest  → Playwright (public search pages)
   - Blogs      → Serper.dev (free: 2,500 searches/month)
   - Trending   → Serper.dev (weekly rotating topic search)
-  - Competitors→ Auto-discovered weekly via Serper + Instagram + Social Blade
+  - YouTube    → YouTube Data API v3 (free: 10,000 units/day)
+  - Competitors→ Auto-discovered weekly via Serper + Instagram + benchmark table
 
 AI: Google Gemini 2.5 Flash-Lite (free)
 Cost: $0.00/month · Runs: Every Monday 6am SGT via GitHub Actions
@@ -24,6 +25,7 @@ from scrapers.instagram            import scrape_instagram
 from scrapers.tiktok               import scrape_tiktok
 from scrapers.pinterest            import scrape_pinterest
 from scrapers.blogs                import scrape_blogs, get_trending_topics
+from scrapers.youtube              import scrape_youtube
 from scrapers.competitor_discovery import discover_competitors
 from ai.viral_scorer               import rank_posts
 from ai.content_gen                import generate_weekly_content
@@ -83,16 +85,18 @@ async def run_agent():
         scrape_pinterest(KEYWORDS),
         scrape_blogs(KEYWORDS, serper_api_key=os.environ["SERPER_API_KEY"]),
         get_trending_topics(os.environ["SERPER_API_KEY"], week_index=week_index),
+        scrape_youtube(youtube_api_key=os.environ.get("YOUTUBE_API_KEY", "")),
     )
 
-    ig_posts, tt_posts, pin_posts, blog_posts, trending_posts = results
-    all_posts = ig_posts + tt_posts + pin_posts + blog_posts + trending_posts
+    ig_posts, tt_posts, pin_posts, blog_posts, trending_posts, yt_posts = results
+    all_posts = ig_posts + tt_posts + pin_posts + blog_posts + trending_posts + yt_posts
 
     print(f"    ✓ Instagram  : {len(ig_posts)} posts")
     print(f"    ✓ TikTok     : {len(tt_posts)} posts")
     print(f"    ✓ Pinterest  : {len(pin_posts)} pins")
     print(f"    ✓ Blogs      : {len(blog_posts)} articles")
     print(f"    ✓ Trending   : {len(trending_posts)} topics via Serper")
+    print(f"    ✓ YouTube    : {len(yt_posts)} videos")
     print(f"    ✓ Total      : {len(all_posts)} items")
 
     # ── Step 3: Score & rank viral posts ──────────────────────────────────────
