@@ -25,6 +25,7 @@ def build_dashboard_json(
     run_date: str,
     reliability: Dict = None,
     competitor_discovery: Dict = None,
+    youtube_videos: List[Dict] = None,
 ) -> Dict:
 
     sources = {}
@@ -59,9 +60,10 @@ def build_dashboard_json(
             "fallback_rate":  "0%",
             "details":        [],
         },
-        "viral_posts":  viral_posts,
-        "content":      content,
-        "gaps":         gaps,
+        "viral_posts":     viral_posts,
+        "youtube_videos":  youtube_videos or [],
+        "content":         content,
+        "gaps":            gaps,
         "competitors": [
             {
                 "name":          c.get("name", ""),
