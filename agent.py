@@ -143,7 +143,7 @@ async def run_agent():
         "details":        reliability_log,
     }
 
-        youtube_ranked = sorted(yt_posts, key=lambda p: p.get("views", 0), reverse=True)[:10]
+    youtube_ranked = sorted(yt_posts, key=lambda p: p.get("views", 0), reverse=True)[:10]
 
     report = build_dashboard_json(
         viral_posts=ranked,
