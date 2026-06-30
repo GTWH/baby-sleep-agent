@@ -814,6 +814,27 @@ function renderCompetitors() {
   document.getElementById('comp-disc-date').textContent =
     isNaN(discDate) ? 'This week' : discDate.toLocaleDateString('en-SG',{month:'short',day:'numeric',year:'numeric'});
 
+  // ── Benchmark data freshness reminder ──────────────────────────────────
+  // Reads benchmarks_last_updated from the JSON — set in competitor_discovery.py
+  const benchDateStr = disc.benchmarks_last_updated;
+  if (benchDateStr) {
+    const lastUpdate = new Date(benchDateStr);
+    const daysSince   = Math.floor((Date.now() - lastUpdate) / 86400000);
+    const overdue     = daysSince > 30;
+    const lastUpdateLabel = lastUpdate.toLocaleDateString('en-SG',{month:'short',day:'numeric',year:'numeric'});
+    const nextDue = new Date(lastUpdate.getTime() + 30*86400000).toLocaleDateString('en-SG',{month:'short',day:'numeric',year:'numeric'});
+
+    document.getElementById('benchmark-reminder').innerHTML =
+      `<div style="background:${overdue?'rgba(232,169,74,.1)':'rgba(91,155,213,.08)'};border:1px solid ${overdue?'rgba(232,169,74,.3)':'rgba(91,155,213,.2)'};border-radius:8px;padding:10px 12px">
+        <strong style="color:${overdue?'var(--amber)':'var(--blue)'}">${overdue?'⚠️ Benchmark data is overdue for an update':'📅 Follower benchmarks as of '+lastUpdateLabel}</strong><br>
+        <span style="color:var(--muted)">${overdue
+          ? 'Last updated '+lastUpdateLabel+' — please refresh follower counts in scrapers/competitor_discovery.py (KNOWN_BENCHMARKS).'
+          : 'Next update due '+nextDue+'. Update KNOWN_BENCHMARKS in scrapers/competitor_discovery.py monthly to keep this accurate.'}</span>
+      </div>`;
+  } else {
+    document.getElementById('benchmark-reminder').innerHTML = '';
+  }
+
 function compCard(a) {
     const growth   = a.growth_30d || 0;
     const growthEl = growth !== 0
