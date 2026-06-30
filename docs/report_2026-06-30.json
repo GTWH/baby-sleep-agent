@@ -1,6 +1,6 @@
 {
   "meta": {
-    "run_date": "2026-06-30T04:59:13.448864",
+    "run_date": "2026-06-30T07:54:25.274026",
     "week_label": "Jun 29\u201305, 2026",
     "brand": "My Beloved Sleep",
     "brand_url": "https://www.mybelovedsleep.com",
@@ -8,15 +8,15 @@
     "stack": "Playwright + Serper.dev + Gemini 2.0 Flash"
   },
   "summary": {
-    "posts_scanned": 1500,
-    "viral_hits": 10,
+    "posts_scanned": 1350,
+    "viral_hits": 9,
     "sources_active": 1,
-    "top_platform": "pinterest",
-    "avg_viral_score": 37856.0,
+    "top_platform": "blog",
+    "avg_viral_score": 6300.0,
     "cost_this_run": "$0.00"
   },
   "reliability": {
-    "run_date": "2026-06-30T04:59:13.448864",
+    "run_date": "2026-06-30T07:54:25.274026",
     "calls_total": 4,
     "calls_success": 4,
     "calls_fallback": 0,
@@ -25,20 +25,6 @@
     "details": [
       {
         "label": "Blog template",
-        "result": "success",
-        "attempts": 1,
-        "errors": [],
-        "timestamp": "2026-06-30T05:02:28.973113"
-      },
-      {
-        "label": "IG carousel",
-        "result": "success",
-        "attempts": 1,
-        "errors": [],
-        "timestamp": "2026-06-30T05:02:55.323179"
-      },
-      {
-        "label": "Reel script",
         "result": "success",
         "attempts": 3,
         "errors": [
@@ -51,170 +37,194 @@
             "error_code": 503
           }
         ],
-        "timestamp": "2026-06-30T05:04:57.813580"
+        "timestamp": "2026-06-30T07:58:50.648374"
+      },
+      {
+        "label": "IG carousel",
+        "result": "success",
+        "attempts": 2,
+        "errors": [
+          {
+            "attempt": 1,
+            "error_code": 503
+          }
+        ],
+        "timestamp": "2026-06-30T07:59:48.779114"
+      },
+      {
+        "label": "Reel script",
+        "result": "success",
+        "attempts": 2,
+        "errors": [
+          {
+            "attempt": 1,
+            "error_code": 503
+          }
+        ],
+        "timestamp": "2026-06-30T08:00:48.602004"
       },
       {
         "label": "Gap analysis",
         "result": "success",
-        "attempts": 1,
-        "errors": [],
-        "timestamp": "2026-06-30T05:05:22.384091"
+        "attempts": 2,
+        "errors": [
+          {
+            "attempt": 1,
+            "error_code": 503
+          }
+        ],
+        "timestamp": "2026-06-30T08:01:50.373937"
       }
     ]
   },
   "viral_posts": [
     {
-      "source": "pinterest",
-      "id": "pin_baby_0",
-      "title": "the complete baby sleep guide for newborns to 12 months and up with instructions on how to use it",
-      "url": "https://www.pinterest.com/search/pins/?q=baby%20sleep%20consulting",
-      "author": "pinterest",
-      "saves": 8000,
-      "views": 40000,
+      "source": "blog",
+      "id": "https://www.tiktok.com/@wellrestedweeones/video/7655029507711061278",
+      "title": "Sleep Training for 3\u20134 Month Olds: Well Rested Plan - TikTok",
+      "url": "https://www.tiktok.com/@wellrestedweeones/video/7655029507711061278",
+      "author": "tiktok.com",
+      "description": "At the core of sleep training is the infant or babies , mental health. This comes before any sleep training , because nurturing your child's mental health , ...",
+      "views": 0,
       "likes": 0,
-      "published_at": "",
-      "viral_score": 41600.0,
-      "engagement_summary": "40K views \u00b7 8K saves",
+      "saves": 0,
+      "published_at": "6 days ago",
+      "viral_score": 10500.0,
+      "engagement_summary": "Top search result",
       "rank": 1
     },
     {
-      "source": "pinterest",
-      "id": "pin_baby_0",
-      "title": "the baby's sleep schedule is shown with instructions on how to use it for their bed",
-      "url": "https://www.pinterest.com/search/pins/?q=baby%20sleep%20training",
-      "author": "pinterest",
-      "saves": 8000,
-      "views": 40000,
+      "source": "blog",
+      "id": "https://www.reddit.com/r/sleeptraining/comments/1uf9u5d/sleep_training_a_baby_who_puts_himself_to_sleep/",
+      "title": "Sleep training a baby who 'puts himself to sleep' - Reddit",
+      "url": "https://www.reddit.com/r/sleeptraining/comments/1uf9u5d/sleep_training_a_baby_who_puts_himself_to_sleep/",
+      "author": "reddit.com",
+      "description": "Sleep training a baby who 'puts himself to sleep'. This seems like such a weird question to ask because I had such a different experience with my first baby.",
+      "views": 0,
       "likes": 0,
-      "published_at": "",
-      "viral_score": 41600.0,
-      "engagement_summary": "40K views \u00b7 8K saves",
+      "saves": 0,
+      "published_at": "5 days ago",
+      "viral_score": 9450.0,
+      "engagement_summary": "Top search result",
       "rank": 2
     },
     {
-      "source": "pinterest",
-      "id": "pin_slee_0",
-      "title": "a baby sleeping on top of a bed with text overlay that reads, baby sleep progression survival guide real tips to get through the hardest nights",
-      "url": "https://www.pinterest.com/search/pins/?q=sleep%20regression%20baby",
-      "author": "pinterest",
-      "saves": 8000,
-      "views": 40000,
+      "source": "blog",
+      "id": "https://www.facebook.com/61568137001249/posts/i-sleep-trained-my-baby-at-4-months-old-and-i-dont-regret-it-one-bitit-helped-bo/122185780754604566/",
+      "title": "I sleep trained my baby at 4 months old and I don't regret it one bit. It ...",
+      "url": "https://www.facebook.com/61568137001249/posts/i-sleep-trained-my-baby-at-4-months-old-and-i-dont-regret-it-one-bitit-helped-bo/122185780754604566/",
+      "author": "facebook.com",
+      "description": "I sleep trained my baby at 4 months of us get better sleep. Feeding, diaper change, and plenty of cuddles before putting her down drowsy but awake.",
+      "views": 0,
       "likes": 0,
-      "published_at": "",
-      "viral_score": 41600.0,
-      "engagement_summary": "40K views \u00b7 8K saves",
+      "saves": 0,
+      "published_at": "2 days ago",
+      "viral_score": 8400.0,
+      "engagement_summary": "Top search result",
       "rank": 3
     },
     {
-      "source": "pinterest",
-      "id": "pin_baby_1",
-      "title": "the baby's night time sleep stages are shown in this graphic above it is an info",
-      "url": "https://www.pinterest.com/search/pins/?q=baby%20sleep%20consulting",
-      "author": "pinterest",
-      "saves": 7400,
-      "views": 37000,
+      "source": "blog",
+      "id": "https://www.instagram.com/reel/DaL0j0HS3cU/",
+      "title": "solidarity to all the parents who are not sleeping right now. it is a ...",
+      "url": "https://www.instagram.com/reel/DaL0j0HS3cU/",
+      "author": "instagram.com",
+      "description": "baby sleep \u2022 infant sleep \u2022 newborn sleep tips \u2022 toddler sleep help \u2022 sleep ... Sleep training my second baby was completely different than with my first",
+      "views": 0,
       "likes": 0,
-      "published_at": "",
-      "viral_score": 38480.0,
-      "engagement_summary": "37K views \u00b7 7K saves",
+      "saves": 0,
+      "published_at": "3 hours ago",
+      "viral_score": 7350.0,
+      "engagement_summary": "Top search result",
       "rank": 4
     },
     {
-      "source": "pinterest",
-      "id": "pin_baby_1",
-      "title": "a baby sleeping with the title how to get baby to sleep 8 hours and straight by 3 months",
-      "url": "https://www.pinterest.com/search/pins/?q=baby%20sleep%20training",
-      "author": "pinterest",
-      "saves": 7400,
-      "views": 37000,
+      "source": "blog",
+      "id": "https://www.youtube.com/watch?v=vtBQhqIzf0Q",
+      "title": "Infant sleep training explained - YouTube",
+      "url": "https://www.youtube.com/watch?v=vtBQhqIzf0Q",
+      "author": "youtube.com",
+      "description": "Disclaimer: The information provided in this video is for educational and informational purposes only, and does not constitute medical advice.",
+      "views": 0,
       "likes": 0,
-      "published_at": "",
-      "viral_score": 38480.0,
-      "engagement_summary": "37K views \u00b7 7K saves",
+      "saves": 0,
+      "published_at": "13 hours ago",
+      "viral_score": 6300.0,
+      "engagement_summary": "Top search result",
       "rank": 5
     },
     {
-      "source": "pinterest",
-      "id": "pin_slee_1",
-      "title": "An infographic guide for surviving the 4 month sleep regression with gentle baby sleep tips that work. Free responsive parenting advice for tired moms",
-      "url": "https://www.pinterest.com/search/pins/?q=sleep%20regression%20baby",
-      "author": "pinterest",
-      "saves": 7400,
-      "views": 37000,
+      "source": "blog",
+      "id": "https://sleepwiseconsulting.com/child-home/",
+      "title": "Less struggles. More snuggles. - Sleep Wise Consulting",
+      "url": "https://sleepwiseconsulting.com/child-home/",
+      "author": "sleepwiseconsulting.com",
+      "description": "Sleep is a learned skill, and a crucial one. Designed for babies 12 weeks and older, our baby sleep plans give you custom solutions for your little one's sleep ...",
+      "views": 0,
       "likes": 0,
-      "published_at": "",
-      "viral_score": 38480.0,
-      "engagement_summary": "37K views \u00b7 7K saves",
+      "saves": 0,
+      "published_at": "6 days ago",
+      "viral_score": 5250.0,
+      "engagement_summary": "Top search result",
       "rank": 6
     },
     {
-      "source": "pinterest",
-      "id": "pin_baby_2",
-      "title": "Understanding newborn sleep can be simple, as long as you keep one basic principle in mind: everything about a newborn is connected. Many factors infl",
-      "url": "https://www.pinterest.com/search/pins/?q=baby%20sleep%20consulting",
-      "author": "pinterest",
-      "saves": 6800,
-      "views": 34000,
+      "source": "blog",
+      "id": "https://www.takingcarababies.com/pages/reviews?srsltid=AfmBOopTS2oVVmkJs_6O-8WYk9eq07Rtxgznchn5QtRxecMziJEhHIt_",
+      "title": "Taking Cara Babies Reviews",
+      "url": "https://www.takingcarababies.com/pages/reviews?srsltid=AfmBOopTS2oVVmkJs_6O-8WYk9eq07Rtxgznchn5QtRxecMziJEhHIt_",
+      "author": "takingcarababies.com",
+      "description": "It helped us build a strong foundation for sleep from the very beginning, and when we later transitioned to sleep training, it made the process much smoother.",
+      "views": 0,
       "likes": 0,
-      "published_at": "",
-      "viral_score": 35360.0,
-      "engagement_summary": "34K views \u00b7 7K saves",
+      "saves": 0,
+      "published_at": "3 days ago",
+      "viral_score": 4200.0,
+      "engagement_summary": "Top search result",
       "rank": 7
     },
     {
-      "source": "pinterest",
-      "id": "pin_baby_2",
-      "title": "the sleep training by age poster is shown with information about how to use it for babies",
-      "url": "https://www.pinterest.com/search/pins/?q=baby%20sleep%20training",
-      "author": "pinterest",
-      "saves": 6800,
-      "views": 34000,
+      "source": "blog",
+      "id": "https://momcozy.com/en-jp/blogs/babycare/how-smart-baby-monitors-help-with-sleep-training",
+      "title": "How Smart Baby Monitors Help With Sleep Training - Momcozy",
+      "url": "https://momcozy.com/en-jp/blogs/babycare/how-smart-baby-monitors-help-with-sleep-training",
+      "author": "momcozy.com",
+      "description": "Learn how smart baby monitors can support sleep training with video, smart notifications, sleep trends, and contact-free monitoring while keeping safe sleep ...",
+      "views": 0,
       "likes": 0,
-      "published_at": "",
-      "viral_score": 35360.0,
-      "engagement_summary": "34K views \u00b7 7K saves",
+      "saves": 0,
+      "published_at": "1 day ago",
+      "viral_score": 3150.0,
+      "engagement_summary": "Top search result",
       "rank": 8
     },
     {
-      "source": "pinterest",
-      "id": "pin_slee_2",
-      "title": "a baby standing in a crib with the words, the 8 - month sleep progression what's actually happening and how to survive it",
-      "url": "https://www.pinterest.com/search/pins/?q=sleep%20regression%20baby",
-      "author": "pinterest",
-      "saves": 6800,
-      "views": 34000,
+      "source": "blog",
+      "id": "https://tchhsa.org/eng/public-health/safe-asleep-program",
+      "title": "Safe Asleep Program | Health & Human Services Agency",
+      "url": "https://tchhsa.org/eng/public-health/safe-asleep-program",
+      "author": "tchhsa.org",
+      "description": "The Safe Asleep Program provides up to three free home visits by a certified staff member to teach parents, guardians.",
+      "views": 0,
       "likes": 0,
-      "published_at": "",
-      "viral_score": 35360.0,
-      "engagement_summary": "34K views \u00b7 7K saves",
+      "saves": 0,
+      "published_at": "4 days ago",
+      "viral_score": 2100.0,
+      "engagement_summary": "Top search result",
       "rank": 9
-    },
-    {
-      "source": "pinterest",
-      "id": "pin_baby_3",
-      "title": "the baby travel sleep guide is shown on a pink background with bubbles and stars around it",
-      "url": "https://www.pinterest.com/search/pins/?q=baby%20sleep%20consulting",
-      "author": "pinterest",
-      "saves": 6200,
-      "views": 31000,
-      "likes": 0,
-      "published_at": "",
-      "viral_score": 32240.0,
-      "engagement_summary": "31K views \u00b7 6K saves",
-      "rank": 10
     }
   ],
   "content": {
     "top_post_meta": {
-      "title": "the complete baby sleep guide for newborns to 12 months and up with instructions on how to use it",
-      "source": "pinterest",
-      "engagement": "40K views \u00b7 8K saves",
-      "viral_score": 41600.0,
-      "url": "https://www.pinterest.com/search/pins/?q=baby%20sleep%20consulting"
+      "title": "Sleep Training for 3\u20134 Month Olds: Well Rested Plan - TikTok",
+      "source": "blog",
+      "engagement": "Top search result",
+      "viral_score": 10500.0,
+      "url": "https://www.tiktok.com/@wellrestedweeones/video/7655029507711061278"
     },
-    "blog": "Here is a blog post template for My Beloved Sleep, designed to resonate with Singaporean parents and leverage the success of your viral Pinterest post:\n\n---\n\n## Blog Post Template:\n\n**1. SEO Title:**\n\n*   **Option 1 (Focus on Age Range):** Newborn to 12 Months: Your Essential Singapore Baby Sleep Guide\n*   **Option 2 (Focus on Problem/Solution):** Tired Parents Rejoice: The Singapore Baby Sleep Guide for Newborns to Toddlers\n*   **Option 3 (More Direct):** Master Baby Sleep: A Comprehensive Guide for Singapore Parents (Newborns to 12 Months+)\n\n**2. Meta Description:**\n\n*   **Option 1:** Exhausted? Get expert, science-backed baby sleep advice for newborns to 12 months+. Discover practical steps for Singaporean parents.\n*   **Option 2:** Your ultimate baby sleep guide for Singapore families! From newborn to 12 months+, find reassurance & gentle strategies for restful nights.\n\n**3. Intro Hook (2 warm, empathetic paragraphs):**\n\n**(Paragraph 1 - Empathy & Reassurance)**\nWe see you, mama and papa. Those bleary eyes, the constant hum of the white noise machine, the quiet moments of doubt wondering if you're doing enough. The journey of parenthood is a beautiful, profound one, but let's be honest, the sleep deprivation can feel overwhelming. It's completely normal to feel like you're navigating uncharted waters, especially when it comes to your precious little one's sleep. Please know that you are not alone in this, and what you're experiencing is a shared chapter for so many families here in Singapore and across Southeast Asia.\n\n**(Paragraph 2 - Acknowledging the Need & Offering Hope)**\nYou've likely spent countless hours scrolling, searching for that magical solution, that one piece of advice that will finally bring peace to your nights. The good news is, understanding baby sleep isn't about rigid schedules or harsh methods; it's about gentle guidance, understanding your baby's natural cues, and building a foundation of healthy sleep habits. We're here to offer that clarity and support, drawing on science-backed strategies and a deep understanding of the unique challenges and joys of parenting in our region.\n\n**4. 5 H2 Section Headings with 1-Sentence Descriptions:**\n\n*   **H2: Understanding the Newborn Sleep Landscape (0-3 Months):** We'll demystify those unpredictable newborn sleep patterns and introduce gentle ways to encourage healthy sleep from the very start.\n*   **H2: Navigating the \"Four-Month Sleep Regression\" and Beyond:** Learn how to identify and gently guide your baby through common sleep disruptions as they grow and develop.\n*   **H2: Establishing Age-Appropriate Sleep Schedules:** Discover how to create flexible routines that promote better sleep for both baby and parents, tailored to their developmental stage.\n*   **H2: The Science Behind Sleep Cues and Soothing Strategies:** We'll break down the science of baby sleep and equip you with effective, empathetic techniques to help your little one settle.\n*   **H2: Practical Tips for Creating a Sleep-Conducive Environment:** Explore simple yet impactful adjustments to your baby's sleep space that can make a world of difference.\n\n**5. Call to Action (CTA):**\n\nReady to reclaim your nights and support your baby's healthy sleep journey? We understand that every family is unique, and sometimes a personalized conversation is the best first step.\n\n**Book a free 15-minute discovery call with one of our certified sleep consultants today at [mybelovedsleep.com](https://www.mybelovedsleep.com). Let's explore how we can bring more restful sleep to your family.**\n\n---",
-    "instagram_carousel": "Here is your 5-slide Instagram carousel and caption for @mybelovedsleep:\n\n---\n\n## Instagram Carousel: The Complete Baby Sleep Guide\n\n**Slide 1**\n\n*   **Headline:** Your Baby's Sleep Journey Starts Here\n*   **Body:** From newborn days to toddler leaps, we've got you. This guide is your roadmap to restful nights.\n*   **Visual Direction:** A soft, warm image of a sleeping newborn swaddled in a gentle, muted colour. Perhaps a hint of a parent's hand resting nearby.\n\n**Slide 2**\n\n*   **Headline:** Newborn Sleep: Finding Your Rhythm\n*   **Body:** Understand wake windows and safe sleep for tiny ones. Gentle strategies to build good habits early.\n*   **Visual Direction:** A carousel of illustrated icons representing key newborn sleep concepts: a clock for wake windows, a crib for safe sleep, a gentle rocking motion.\n\n**Slide 3**\n\n*   **Headline:** 4-12 Months: Navigating Sleep Regressions\n*   **Body:** Teething, milestones, and growth spurts can disrupt sleep. We offer science-backed solutions to ease transitions.\n*   **Visual Direction:** A split image or two side-by-side images. One showing a slightly older baby (around 6 months) happily cooing, the other showing a slightly frustrated-looking baby with a teething toy.\n\n**Slide 4**\n\n*   **Headline:** 12 Months & Beyond: Independent Sleep\n*   **Body:** Foster self-soothing skills for longer stretches and consistent naps. Empowering you with practical, gentle methods.\n*   **Visual Direction:** A serene image of a toddler sleeping peacefully in their crib, perhaps with a favourite soft toy. The room is calm and inviting.\n\n**Slide 5**\n\n*   **Headline:** How to Use Your Sleep Guide\n*   **Body:** Navigate each stage with confidence. Our guide provides step-by-step instructions tailored to your baby's age.\n*   **Visual Direction:** A visually appealing flat lay of the \"Complete Baby Sleep Guide\" (could be a digital cover or a mock-up of a physical guide) alongside a gentle baby sleep prop like a white noise machine or a sleep sack.\n\n---\n\n## Instagram Caption:\n\nExhausted parents of Southeast Asia, we hear you! \ud83e\udd7a Navigating your baby's sleep can feel like a beautiful, overwhelming puzzle. But what if you had a clear, gentle roadmap from those first precious newborn days all the way to their toddler adventures?\n\nOur **Complete Baby Sleep Guide** is here to be your trusted companion. Packed with science-backed insights and empathetic advice, it breaks down the complexities of infant sleep into actionable steps for each stage: newborns, 4-12 months, and beyond. We'll guide you through understanding wake windows",
-    "reel_script": "## My Beloved Sleep: Your Baby's Sleep Journey (60-Second Reel Script)\n\n**Target Audience:** Exhausted parents in Singapore & Southeast Asia, aged 28-40, often first-time parents seeking reassurance and practical, evidence-based solutions.\n\n**Brand Voice:** Warm, expert, deeply empathetic, science-backed, never preachy.\n\n---\n\n**(0-3s) Hook**\n\n**Spoken Words:** \"Dreaming of sleep? We get it.\"\n\n**[Visual:** Close-up shot of a serene, sleeping newborn, then a quick cut to a slightly frazzled but loving parent gently rocking their baby. Soft, warm lighting.]\n\n**On-screen text:** \"Is baby sleep a mystery?\"\n\n**(4-15s) Problem**\n\n**Spoken Words:** \"From those first hazy newborn days to the exciting milestones of the first year and beyond, the journey of baby sleep can feel\u2026 overwhelming.\"\n\n**[Visual:** A montage of relatable parenting moments: a parent peeking into a crib with tired eyes, a baby fussing in a bassinet, a parent looking at a clock with a sigh. Quick, dynamic cuts. Maybe a subtle graphic of a winding, uncertain road.]\n\n**On-screen text:** \"Exhausted? Lost?\"\n\n**(16-35s) Insight**\n\n**Spoken Words:** \"But here's the beautiful truth: consistent, healthy sleep habits aren't magic. They're built on understanding your baby's unique needs at each stage. We've distilled years of science and real-world success into a guide that walks *with* you.\"\n\n**[Visual:** Transition to a more organized, bright setting. Show a hand gently turning pages of a beautifully designed, comprehensive guide. Highlight key sections with subtle animated overlays, like \"Newborn Essentials\" or \"4-Month Sleep Shift.\" Show a parent reading the guide with a thoughtful, relieved expression.]\n\n**On-screen text:** \"Science-backed. Stage-by-stage.\"\n\n**(36-50s) Solution**\n\n**Spoken Words:** \"Our complete baby sleep guide, from newborn to 12 months and beyond, is your roadmap. Inside, you'll find step-by-step instructions, practical tips, and the reassurance you deserve. We\u2019ll show you how to use it \u2013 making sleep achievable",
+    "blog": "Here's a blog post template for My Beloved Sleep, designed to resonate with your target audience and align with your brand voice:\n\n---\n\n## Blog Post Template: My Beloved Sleep\n\n**1. SEO Title:**\n\n*   **Option 1 (Focus on age & problem):** Baby Sleep Training 3-4 Months Singapore: Your Gentle, Science-Backed Guide\n*   **Option 2 (Focus on solution & benefit):** 3-4 Month Old Sleep Training Singapore: A Restful Plan for Exhausted Parents\n*   **Option 3 (Direct & intriguing):** TikTok Viral: Baby Sleep Training 3-4 Months Singapore \u2013 What You Need to Know\n\n**2. Meta Description:**\n\nExhausted by baby sleep struggles? Discover our gentle, science-backed sleep training plan for 3-4 month olds in Singapore. Get your baby sleeping soundly!\n\n**3. Intro Hook:**\n\nOh, mama, papa \u2013 we see you. The sleepless nights are starting to blur into one, and the gentle humming of the white noise machine has become your new lullaby. If you're in the thick of those early months, juggling a tiny human and a mountain of exhaustion, you're not alone. Those first few months with a newborn are a beautiful whirlwind, but they can also be incredibly demanding, leaving you feeling like you're running on fumes.\n\nAnd now, you're hearing whispers about sleep training, perhaps even seeing viral TikToks, and wondering if it's even possible, or appropriate, for your little 3-4 month old. We understand the hesitation, the desire to do what's best for your baby while also desperately needing some rest yourself. At My Beloved Sleep, we believe in a compassionate, evidence-based approach that honours both your baby's needs and your family's well-being.\n\n**4. H2 Section Headings:**\n\n*   **Understanding Your 3-4 Month Old's Sleep Needs:** Delve into the developmental stage of your baby and what their sleep patterns typically look like at this age.\n*   **The Science Behind Gentle Sleep Shaping:** Explore the biological readiness and the foundational principles of introducing healthy sleep habits without harsh methods.\n*   **Creating a Soothing Sleep Environment:** Discover the key elements of a nursery that promotes safe and effective sleep for your little one.\n*   **Establishing a Predictable Bedtime Routine:** Learn how to build a calming sequence of events that signals to your baby it's time to wind down and sleep.\n*   **Practical Steps for Sleep Support:** Gain actionable, age-appropriate strategies you can implement to encourage longer stretches of sleep.\n\n**5. Call to Action (CTA):**\n\nFeeling overwhelmed and ready for a personalized approach? Let's chat! Book a free 15-minute discovery call with our certified sleep consultants at My Beloved Sleep. We're here to offer compassionate support and practical solutions tailored to your family's unique needs. Visit [mybelovedsleep.com](https://mybelovedsleep.com) to schedule your call today.\n\n---",
+    "instagram_carousel": "Here is a 5-slide Instagram carousel and caption for My Beloved Sleep, tailored for your target audience:\n\n## Instagram Carousel: Sleep Training for 3\u20134 Month Olds\n\n---\n\n**Slide 1: Headline**\n\n**Tiny Changes, Big Sleep Wins**\n\n**Body:**\nYour 3-4 month old is ready for gentle sleep foundations.\nLet's build healthy sleep habits, one nap at a time.\n\n**Visual Direction:**\nA soft, warm image of a baby peacefully sleeping in a bassinet, perhaps with a gentle sunrise peeking in. Soft pastel colors.\n\n---\n\n**Slide 2: Headline**\n\n**Understanding the 3\u20134 Month Sleep Shift**\n\n**Body:**\nThis is a crucial developmental stage for sleep patterns.\nWe\u2019ll guide you through it with science-backed strategies.\n\n**Visual Direction:**\nAn infographic-style illustration showing a simplified timeline of baby sleep development around 3-4 months, highlighting key changes. Use gentle, clean lines.\n\n---\n\n**Slide 3: Headline**\n\n**Gentle Sleep Solutions, Not Tears**\n\n**Body:**\nFocus on creating a predictable, comforting sleep environment.\nOur approach prioritizes connection and your baby's well-being.\n\n**Visual Direction:**\nA serene image of a parent gently rocking their baby, or a close-up of a parent's comforting hand on their baby's back. Emphasis on warmth and connection.\n\n---\n\n**Slide 4: Headline**\n\n**Your \"Well Rested\" 3\u20134 Month Plan**\n\n**Body:**\nDiscover practical steps for consistent naps and nighttime sleep.\nWe make it achievable, even for tired parents.\n\n**Visual Direction:**\nA visually appealing graphic that represents \"steps\" or \"foundations.\" This could be a simple stacking of blocks or a gentle upward arrow. Use icons that represent routine (e.g., moon, clock).\n\n---\n\n**Slide 5: Headline**\n\n**Ready for Restful Nights? We Can Help.**\n\n**Body:**\nEmpower yourself with the knowledge to support your baby's sleep.\nLet's embark on this journey together for a happier family.\n\n**Visual Direction:**\nA hopeful image of a parent smiling and looking refreshed, perhaps holding a content baby. The My Beloved Sleep logo subtly placed.\n\n---\n\n## Instagram Caption:\n\n**Hook:** Is your 3-4 month old's sleep feeling a little\u2026 unpredictable? You\u2019re not alone! This is a common time for sleep to shift, but it\u2019s also a beautiful window to lay the groundwork for healthy sleep habits.\n\n**Value:** At My Beloved Sleep, we understand how exhausting these early months can be. We\u2019re here to offer a **science-backed, deeply empathetic approach** to sleep training for your little one. Forget harsh methods \u2013 our \"Well Rest",
+    "reel_script": "Here's a 60-second Reel script for My Beloved Sleep, tailored for your brand voice and target audience:\n\n**Reel Title:** Sleep Training for 3-4 Month Olds: Your Well-Rested Plan\n\n**(0-3s) Hook**\n\n**Spoken Words:**\n\"Is your 3-4 month old suddenly a tiny sleep ninja, or worse, a sleep refuser?\"\n\n**[Visual Directions]:**\n[Quick cuts of a parent looking tired but smiling, a baby peacefully sleeping in a crib, then a quick shot of a baby fussing slightly. Upbeat, gentle background music starts.]\n\n**On-Screen Text:**\n\"3-4 Month Old Sleep Woes?\"\n\n**(4-15s) Problem**\n\n**Spoken Words:**\n\"You're not alone! This age is often called the '4-month sleep regression,' and it's a big shift. Naps are shorter, nights are more broken, and you're feeling it.\"\n\n**[Visual Directions]:**\n[Show a split screen: one side with a parent looking overwhelmed with a baby, the other side with a graphic showing a jagged sleep wave. Music becomes slightly more empathetic.]\n\n**On-Screen Text:**\n\"The 4-Month Sleep Regression is REAL.\"\n\"Feeling Exhausted?\"\n\n**(16-35s) Insight**\n\n**Spoken Words:**\n\"But here's the good news: this isn't a permanent problem! At this age, babies are developing more mature sleep cycles. They're not 'regressing,' they're *evolving*. And we can guide them through it with a gentle, science-backed approach.\"\n\n**[Visual Directions]:**\n[Transition to a calm, expert-looking shot of the consultant (or a friendly graphic representing the consultant). Show a smooth, flowing wave graphic representing developing sleep patterns. Music becomes reassuring and hopeful.]\n\n**On-Screen Text:**\n\"They're EVOLVING, not regressing!\"\n\"Gentle, Science-Backed Guidance.\"\n\n**(36-50s) Solution**\n\n**Spoken Words:**\n\"Our 'Well-Rested Plan' for 3-4 month olds focuses on establishing healthy sleep habits, not 'cry-it-out.' We'll help you with age-appropriate routines, understanding wake windows,",
     "thumbnail_spec": {
       "blog_og": {
         "size": "1200x628px",
@@ -238,20 +248,6 @@
         {
           "label": "Blog template",
           "result": "success",
-          "attempts": 1,
-          "errors": [],
-          "timestamp": "2026-06-30T05:02:28.973113"
-        },
-        {
-          "label": "IG carousel",
-          "result": "success",
-          "attempts": 1,
-          "errors": [],
-          "timestamp": "2026-06-30T05:02:55.323179"
-        },
-        {
-          "label": "Reel script",
-          "result": "success",
           "attempts": 3,
           "errors": [
             {
@@ -263,7 +259,31 @@
               "error_code": 503
             }
           ],
-          "timestamp": "2026-06-30T05:04:57.813580"
+          "timestamp": "2026-06-30T07:58:50.648374"
+        },
+        {
+          "label": "IG carousel",
+          "result": "success",
+          "attempts": 2,
+          "errors": [
+            {
+              "attempt": 1,
+              "error_code": 503
+            }
+          ],
+          "timestamp": "2026-06-30T07:59:48.779114"
+        },
+        {
+          "label": "Reel script",
+          "result": "success",
+          "attempts": 2,
+          "errors": [
+            {
+              "attempt": 1,
+              "error_code": 503
+            }
+          ],
+          "timestamp": "2026-06-30T08:00:48.602004"
         }
       ]
     }
@@ -271,49 +291,49 @@
   "gaps": [
     {
       "priority": "high",
-      "title": "Engaging Instagram Content Strategy Lacking",
-      "why": "Competitors, even with zero posts, have a presence and potential for engagement. My Beloved Sleep lacks a consistent and visually appealing content strategy to attract and retain followers.",
-      "action": "1. Develop a content calendar for the next month focusing on visually appealing infographics and short video tips. 2. Implement a consistent posting schedule of at least 3 times per week.",
+      "title": "Consistent, Engaging Social Media Content Strategy",
+      "why": "Competitors with active social media presence are building communities and brand recognition. My Beloved Sleep is missing opportunities to connect with potential customers and establish authority.",
+      "action": "1. Develop a content calendar with daily posts for the next two weeks. 2. Focus on educational, relatable, and visually appealing content.",
       "effort": "2-3 hours",
       "impact": "quick win"
     },
     {
       "priority": "high",
-      "title": "Limited Social Media Visibility and Reach",
-      "why": "The absence of posts on competitor accounts suggests a potential for them to build a following from scratch. My Beloved Sleep is not actively building an audience on social media.",
-      "action": "1. Research relevant hashtags and begin using them on all posts. 2. Engage with other accounts in the sleep niche by commenting and liking their content.",
-      "effort": "30 min",
+      "title": "Leverage Instagram Reels for Broader Reach",
+      "why": "Short-form video content like Reels is highly discoverable and engaging on platforms like Instagram. Competitors are likely utilizing this to reach a wider audience and drive traffic.",
+      "action": "1. Create 3-5 short, informative Reels addressing common sleep challenges. 2. Use trending audio and relevant hashtags to increase visibility.",
+      "effort": "2-3 hours",
       "impact": "quick win"
     },
     {
       "priority": "medium",
-      "title": "Lack of User-Generated Content and Testimonials",
-      "why": "Competitors can leverage early adopter testimonials to build trust and social proof. My Beloved Sleep is not actively soliciting or showcasing customer success stories.",
-      "action": "1. Create a simple system to request testimonials from satisfied clients. 2. Feature positive reviews and success stories prominently on social media and the website.",
-      "effort": "2-3 hours",
+      "title": "Develop a Lead Magnet for Email List Growth",
+      "why": "Competitors are likely capturing leads through valuable free resources, allowing them to nurture potential clients. My Beloved Sleep is not currently building a direct communication channel.",
+      "action": "1. Create a downloadable guide or checklist related to baby sleep. 2. Promote this lead magnet across social media and the website.",
+      "effort": "1 day",
       "impact": "medium term"
     },
     {
       "priority": "medium",
-      "title": "Undefined Unique Selling Proposition on Social",
-      "why": "Competitors can carve out a niche by highlighting specific approaches or benefits. My Beloved Sleep's social presence doesn't clearly communicate what makes it stand out.",
-      "action": "1. Clearly define 2-3 key benefits or unique aspects of My Beloved Sleep's approach. 2. Incorporate these into social media captions and visual branding.",
-      "effort": "30 min",
+      "title": "Engage Actively in Online Parenting Communities",
+      "why": "Competitors are likely participating in relevant Facebook groups and forums, offering advice and building trust. This is a direct way to connect with the target audience.",
+      "action": "1. Identify 3-5 active parenting groups on Facebook. 2. Consistently offer helpful, non-promotional advice and engage in discussions.",
+      "effort": "2-3 hours",
       "impact": "medium term"
     },
     {
       "priority": "low",
-      "title": "Missed Opportunity for Community Building",
-      "why": "Competitors can foster a sense of community around shared sleep challenges. My Beloved Sleep is not actively engaging in conversations or creating a space for parents to connect.",
-      "action": "1. Respond to all comments and direct messages promptly and thoughtfully. 2. Consider hosting a Q&A session or poll to encourage interaction.",
-      "effort": "30 min",
+      "title": "Optimize Website for Search Engine Visibility",
+      "why": "Competitors with established online presences are likely investing in SEO to rank higher in search results. My Beloved Sleep may be losing out on organic traffic.",
+      "action": "1. Research 5-10 relevant keywords related to baby sleep. 2. Incorporate these keywords naturally into website content and blog posts.",
+      "effort": "1 day",
       "impact": "long term"
     },
     {
       "priority": "low",
-      "title": "Inconsistent Branding Across Platforms",
-      "why": "Competitors can establish a recognizable brand identity. My Beloved Sleep's branding may be inconsistent, diluting its impact and memorability.",
-      "action": "1. Ensure all social media profiles and website visuals use a consistent color palette and logo. 2. Develop a consistent tone of voice for all communications.",
+      "title": "Run Targeted Social Media Advertising Campaigns",
+      "why": "Competitors may be using paid advertising to reach specific demographics and drive conversions. This can accelerate growth and brand awareness.",
+      "action": "1. Define a small budget for a two-week ad campaign. 2. Create a compelling ad targeting parents of infants struggling with sleep.",
       "effort": "1 day",
       "impact": "long term"
     }
@@ -552,27 +572,6 @@
         "discovery_score": 0
       },
       {
-        "handle": "the.peaceful.sleeper",
-        "name": "@the.peaceful.sleeper",
-        "market": "global",
-        "followers": 0,
-        "growth_30d": 0,
-        "grade": "\u2014",
-        "instagram_url": "https://www.instagram.com/the.peaceful.sleeper/",
-        "socialblade_url": "",
-        "website_url": "",
-        "weekly_views": 0,
-        "discovery_sources": [
-          {
-            "label": "The Peaceful Sleeper - Instagram",
-            "url": "https://www.instagram.com/the.peaceful.sleeper/?hl=en",
-            "via": "Google search"
-          }
-        ],
-        "data_known": false,
-        "discovery_score": 0
-      },
-      {
         "handle": "babysleepteam",
         "name": "@babysleepteam",
         "market": "global",
@@ -587,6 +586,27 @@
           {
             "label": "Cat - Sleep Consultant (@babysleepteam) - Instagra",
             "url": "https://www.instagram.com/babysleepteam/?hl=en",
+            "via": "Google search"
+          }
+        ],
+        "data_known": false,
+        "discovery_score": 0
+      },
+      {
+        "handle": "the.peaceful.sleeper",
+        "name": "@the.peaceful.sleeper",
+        "market": "global",
+        "followers": 0,
+        "growth_30d": 0,
+        "grade": "\u2014",
+        "instagram_url": "https://www.instagram.com/the.peaceful.sleeper/",
+        "socialblade_url": "",
+        "website_url": "",
+        "weekly_views": 0,
+        "discovery_sources": [
+          {
+            "label": "The Peaceful Sleeper - Instagram",
+            "url": "https://www.instagram.com/the.peaceful.sleeper/?hl=en",
             "via": "Google search"
           }
         ],
@@ -827,7 +847,7 @@
         "discovery_score": 0
       }
     ],
-    "discovered_at": "2026-06-30T05:00:20.080855",
+    "discovered_at": "2026-06-30T07:55:29.166123",
     "total_checked": 20,
     "benchmarks_last_updated": "2026-06-29"
   },
