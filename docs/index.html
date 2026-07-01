@@ -940,7 +940,48 @@ function compCard(a) {
         '<div style="font-size:13px;color:var(--muted)">No competitor history yet \u2014 run the agent to start tracking.</div>';
     });
 }
-
+// ── YouTube tab ──────────────────────────────────────────────────────────────
+function renderYoutube() {
+  if (!REPORT) return;
+  const videos = REPORT.youtube_videos || [];
+  if (!videos.length) {
+    document.getElementById('yt-list').innerHTML =
+      '<div style="font-size:13px;color:var(--muted)">No YouTube videos found yet — run the agent to populate.</div>';
+    return;
+  }
+  document.getElementById('yt-list').innerHTML = videos.map(function(v, i) {
+    const views    = v.views    || 0;
+    const likes    = v.likes    || 0;
+    const comments = v.comments || 0;
+    const url      = v.url || '#';
+    const hasUrl   = url.startsWith('http');
+    let dateStr = 'Recent';
+    if (v.published_at) {
+      const d = new Date(v.published_at);
+      if (!isNaN(d.getTime())) dateStr = d.toLocaleDateString('en-SG',{month:'short',day:'numeric'});
+    }
+    return '<div class="viral-item">' +
+      '<div class="viral-rank">' + (i+1) + '</div>' +
+      '<div class="viral-meta">' +
+        '<div class="viral-title" style="margin-bottom:4px">' +
+          (hasUrl
+            ? '<a href="' + url + '" target="_blank" rel="noopener" style="color:var(--cream);text-decoration:none;border-bottom:1px solid rgba(201,169,110,0.3);padding-bottom:1px">' + v.title + ' ↗</a>'
+            : v.title) +
+        '</div>' +
+        '<div class="viral-sub">▶️ YouTube · ' + (v.author || 'Unknown channel') + '</div>' +
+        '<div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap;align-items:center">' +
+          '<span class="badge b-red" style="background:rgba(255,0,0,.1);color:#ff6b6b">' + fmtN(views) + ' views</span>' +
+          '<span class="badge b-gray">👍 ' + fmtN(likes) + '</span>' +
+          '<span class="badge b-gray">💬 ' + fmtN(comments) + '</span>' +
+          '<span class="badge b-gray">📅 ' + dateStr + '</span>' +
+          (hasUrl ? '<a href="' + url + '" target="_blank" rel="noopener" style="font-size:11px;color:var(--blue);text-decoration:none">🔗 Watch</a>' : '') +
+        '</div>' +
+      '</div>' +
+      '<div class="viral-engage">' + (v.engagement_summary || fmtN(views) + ' views') + '</div>' +
+    '</div>';
+  }).join('');
+}
+  
 function renderReliability() {
   if (!REPORT) return;
   const rel = REPORT.reliability || {run_complete:true,calls_total:4,calls_success:4,calls_fallback:0,fallback_rate:'0%',details:[]};
