@@ -1046,5 +1046,94 @@
         "timestamp": "2026-07-02T03:44:52.795586"
       }
     ]
+  },
+  {
+    "run_date": "2026-07-02T07:03:31.113788",
+    "calls_total": 4,
+    "calls_success": 1,
+    "calls_fallback": 3,
+    "fallback_rate": "75%",
+    "run_complete": false,
+    "details": [
+      {
+        "label": "Blog template",
+        "result": "fallback",
+        "attempts": 4,
+        "errors": [
+          {
+            "attempt": 1,
+            "error_code": 503
+          },
+          {
+            "attempt": 2,
+            "error_code": 503
+          },
+          {
+            "attempt": 3,
+            "error_code": 503
+          },
+          {
+            "attempt": 4,
+            "error_code": 503
+          }
+        ],
+        "timestamp": "2026-07-02T07:10:37.583162"
+      },
+      {
+        "label": "IG carousel",
+        "result": "fallback",
+        "attempts": 4,
+        "errors": [
+          {
+            "attempt": 1,
+            "error_code": 503
+          },
+          {
+            "attempt": 2,
+            "error_code": 503
+          },
+          {
+            "attempt": 3,
+            "error_code": 503
+          },
+          {
+            "attempt": 4,
+            "error_code": 503
+          }
+        ],
+        "timestamp": "2026-07-02T07:16:11.661502"
+      },
+      {
+        "label": "Reel script",
+        "result": "fallback",
+        "attempts": 4,
+        "errors": [
+          {
+            "attempt": 1,
+            "error_code": 503
+          },
+          {
+            "attempt": 2,
+            "error_code": 503
+          },
+          {
+            "attempt": 3,
+            "error_code": 503
+          },
+          {
+            "attempt": 4,
+            "error_code": 503
+          }
+        ],
+        "timestamp": "2026-07-02T07:21:48.290221"
+      },
+      {
+        "label": "Gap analysis",
+        "result": "success",
+        "attempts": 1,
+        "errors": [],
+        "timestamp": "2026-07-02T07:22:15.724832"
+      }
+    ]
   }
 ]

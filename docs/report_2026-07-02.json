@@ -1,6 +1,6 @@
 {
   "meta": {
-    "run_date": "2026-07-02T03:41:38.443890",
+    "run_date": "2026-07-02T07:03:31.113788",
     "week_label": "Jun 29\u201305, 2026",
     "brand": "My Beloved Sleep",
     "brand_url": "https://www.mybelovedsleep.com",
@@ -12,44 +12,95 @@
     "viral_hits": 10,
     "sources_active": 1,
     "top_platform": "youtube",
-    "avg_viral_score": 271797.9,
+    "avg_viral_score": 273226.6,
     "cost_this_run": "$0.00"
   },
   "reliability": {
-    "run_date": "2026-07-02T03:41:38.443890",
+    "run_date": "2026-07-02T07:03:31.113788",
     "calls_total": 4,
-    "calls_success": 4,
-    "calls_fallback": 0,
-    "fallback_rate": "0%",
-    "run_complete": true,
+    "calls_success": 1,
+    "calls_fallback": 3,
+    "fallback_rate": "75%",
+    "run_complete": false,
     "details": [
       {
         "label": "Blog template",
-        "result": "success",
-        "attempts": 1,
-        "errors": [],
-        "timestamp": "2026-07-02T03:43:39.571896"
+        "result": "fallback",
+        "attempts": 4,
+        "errors": [
+          {
+            "attempt": 1,
+            "error_code": 503
+          },
+          {
+            "attempt": 2,
+            "error_code": 503
+          },
+          {
+            "attempt": 3,
+            "error_code": 503
+          },
+          {
+            "attempt": 4,
+            "error_code": 503
+          }
+        ],
+        "timestamp": "2026-07-02T07:10:37.583162"
       },
       {
         "label": "IG carousel",
-        "result": "success",
-        "attempts": 1,
-        "errors": [],
-        "timestamp": "2026-07-02T03:44:03.932551"
+        "result": "fallback",
+        "attempts": 4,
+        "errors": [
+          {
+            "attempt": 1,
+            "error_code": 503
+          },
+          {
+            "attempt": 2,
+            "error_code": 503
+          },
+          {
+            "attempt": 3,
+            "error_code": 503
+          },
+          {
+            "attempt": 4,
+            "error_code": 503
+          }
+        ],
+        "timestamp": "2026-07-02T07:16:11.661502"
       },
       {
         "label": "Reel script",
-        "result": "success",
-        "attempts": 1,
-        "errors": [],
-        "timestamp": "2026-07-02T03:44:29.610075"
+        "result": "fallback",
+        "attempts": 4,
+        "errors": [
+          {
+            "attempt": 1,
+            "error_code": 503
+          },
+          {
+            "attempt": 2,
+            "error_code": 503
+          },
+          {
+            "attempt": 3,
+            "error_code": 503
+          },
+          {
+            "attempt": 4,
+            "error_code": 503
+          }
+        ],
+        "timestamp": "2026-07-02T07:21:48.290221"
       },
       {
         "label": "Gap analysis",
         "result": "success",
         "attempts": 1,
         "errors": [],
-        "timestamp": "2026-07-02T03:44:52.795586"
+        "timestamp": "2026-07-02T07:22:15.724832"
       }
     ]
   },
@@ -61,13 +112,13 @@
       "url": "https://www.youtube.com/watch?v=G08gNlDKuIw",
       "author": "Mamibabi | Thai gi\u00e1o, Ch\u0103m s\u00f3c b\u00e9, EASY Luy\u1ec7n ng\u1ee7",
       "description": "\u0110\u0103ng k\u00fd l\u00e0m h\u1ed9i vi\u00ean \u0111\u1ec3 nh\u1eadn video \u0111\u1ed9c quy\u1ec1n d\u00e0nh ri\u00eang cho h\u1ed9i vi\u00ean c\u1ee7a k\u00eanh: ...",
-      "views": 1911533,
-      "likes": 3702,
+      "views": 1929202,
+      "likes": 3749,
       "saves": 0,
       "comments": 10,
       "published_at": "2026-06-26T21:00:02Z",
       "engagement_summary": "1.9M views \u00b7 4K likes \u00b7 10 comments",
-      "viral_score": 918872.16,
+      "viral_score": 927370.2,
       "rank": 1
     },
     {
@@ -77,13 +128,13 @@
       "url": "https://www.youtube.com/watch?v=KQ8G_Ye0MP4",
       "author": "Laro Benz",
       "description": "",
-      "views": 1161196,
-      "likes": 97567,
+      "views": 1162699,
+      "likes": 97627,
       "saves": 0,
       "comments": 1263,
       "published_at": "2026-06-08T03:38:40Z",
       "engagement_summary": "1.2M views \u00b7 98K likes \u00b7 1K comments",
-      "viral_score": 592952.88,
+      "viral_score": 593695.92,
       "rank": 2
     },
     {
@@ -93,13 +144,13 @@
       "url": "https://www.youtube.com/watch?v=2qKbijgS6KQ",
       "author": "Mamibabi | Thai gi\u00e1o, Ch\u0103m s\u00f3c b\u00e9, EASY Luy\u1ec7n ng\u1ee7",
       "description": "\u0110\u0103ng k\u00fd l\u00e0m h\u1ed9i vi\u00ean \u0111\u1ec3 nh\u1eadn video \u0111\u1ed9c quy\u1ec1n d\u00e0nh ri\u00eang cho h\u1ed9i vi\u00ean c\u1ee7a k\u00eanh: ...",
-      "views": 418573,
-      "likes": 3280,
+      "views": 422486,
+      "likes": 3315,
       "saves": 0,
-      "comments": 29,
+      "comments": 30,
       "published_at": "2026-06-29T06:00:18Z",
-      "engagement_summary": "419K views \u00b7 3K likes \u00b7 29 comments",
-      "viral_score": 202106.28,
+      "engagement_summary": "422K views \u00b7 3K likes \u00b7 30 comments",
+      "viral_score": 203997.48,
       "rank": 3
     },
     {
@@ -109,13 +160,13 @@
       "url": "https://www.youtube.com/watch?v=Mu65MTWPvn0",
       "author": "Blesiv",
       "description": "TRAINING TO BE A TIO W/ @KAED__ .. Thank you Helix Sleep for sponsoring! Visit https://helixsleep.com/blesiv to take ...",
-      "views": 389047,
-      "likes": 10932,
+      "views": 392015,
+      "likes": 10979,
       "saves": 0,
       "comments": 316,
       "published_at": "2026-06-25T00:01:54Z",
-      "engagement_summary": "389K views \u00b7 11K likes \u00b7 316 comments",
-      "viral_score": 190791.84,
+      "engagement_summary": "392K views \u00b7 11K likes \u00b7 316 comments",
+      "viral_score": 192233.4,
       "rank": 4
     },
     {
@@ -125,13 +176,13 @@
       "url": "https://www.youtube.com/watch?v=iPOyBZvVMaw",
       "author": "Kaykaylalas",
       "description": "",
-      "views": 380812,
-      "likes": 15388,
+      "views": 380832,
+      "likes": 15386,
       "saves": 0,
       "comments": 867,
       "published_at": "2026-06-13T14:26:31Z",
       "engagement_summary": "381K views \u00b7 15K likes \u00b7 867 comments",
-      "viral_score": 188641.56,
+      "viral_score": 188650.44,
       "rank": 5
     },
     {
@@ -141,13 +192,13 @@
       "url": "https://www.youtube.com/watch?v=6Lq3gmNPDyw",
       "author": "SnugNest ",
       "description": "",
-      "views": 318426,
+      "views": 318430,
       "likes": 3334,
       "saves": 0,
       "comments": 70,
       "published_at": "2026-06-06T15:24:29Z",
       "engagement_summary": "318K views \u00b7 3K likes \u00b7 70 comments",
-      "viral_score": 154069.92,
+      "viral_score": 154071.84,
       "rank": 6
     },
     {
@@ -157,13 +208,13 @@
       "url": "https://www.youtube.com/watch?v=4iK1Y5NoLn4",
       "author": "Kaykaylalas",
       "description": "",
-      "views": 276307,
-      "likes": 15668,
+      "views": 276348,
+      "likes": 15665,
       "saves": 0,
       "comments": 797,
       "published_at": "2026-06-12T15:12:06Z",
       "engagement_summary": "276K views \u00b7 16K likes \u00b7 797 comments",
-      "viral_score": 138554.76,
+      "viral_score": 138573.36,
       "rank": 7
     },
     {
@@ -173,13 +224,13 @@
       "url": "https://www.youtube.com/watch?v=M6SLewOn7nU",
       "author": "Alex Hobern",
       "description": "",
-      "views": 235914,
-      "likes": 4488,
+      "views": 236919,
+      "likes": 4498,
       "saves": 0,
       "comments": 72,
       "published_at": "2026-06-26T18:32:03Z",
-      "engagement_summary": "236K views \u00b7 4K likes \u00b7 72 comments",
-      "viral_score": 114880.32,
+      "engagement_summary": "237K views \u00b7 4K likes \u00b7 72 comments",
+      "viral_score": 115366.32,
       "rank": 8
     },
     {
@@ -189,13 +240,13 @@
       "url": "https://www.youtube.com/watch?v=nIfWgxAfhlI",
       "author": "Mamibabi | Thai gi\u00e1o, Ch\u0103m s\u00f3c b\u00e9, EASY Luy\u1ec7n ng\u1ee7",
       "description": "\u0110\u0103ng k\u00fd l\u00e0m h\u1ed9i vi\u00ean \u0111\u1ec3 nh\u1eadn video \u0111\u1ed9c quy\u1ec1n d\u00e0nh ri\u00eang cho h\u1ed9i vi\u00ean c\u1ee7a k\u00eanh: ...",
-      "views": 236265,
-      "likes": 2416,
+      "views": 237677,
+      "likes": 2440,
       "saves": 0,
       "comments": 34,
       "published_at": "2026-06-23T07:00:12Z",
-      "engagement_summary": "236K views \u00b7 2K likes \u00b7 34 comments",
-      "viral_score": 114289.2,
+      "engagement_summary": "238K views \u00b7 2K likes \u00b7 34 comments",
+      "viral_score": 114975.6,
       "rank": 9
     },
     {
@@ -205,13 +256,13 @@
       "url": "https://www.youtube.com/watch?v=TAUa_x9Elz8",
       "author": "Mamibabi | Thai gi\u00e1o, Ch\u0103m s\u00f3c b\u00e9, EASY Luy\u1ec7n ng\u1ee7",
       "description": "\u0110\u0103ng k\u00fd l\u00e0m h\u1ed9i vi\u00ean \u0111\u1ec3 nh\u1eadn video \u0111\u1ed9c quy\u1ec1n d\u00e0nh ri\u00eang cho h\u1ed9i vi\u00ean c\u1ee7a k\u00eanh: ...",
-      "views": 213107,
-      "likes": 1456,
+      "views": 214161,
+      "likes": 1470,
       "saves": 0,
       "comments": 13,
       "published_at": "2026-06-25T16:00:35Z",
-      "engagement_summary": "213K views \u00b7 1K likes \u00b7 13 comments",
-      "viral_score": 102820.2,
+      "engagement_summary": "214K views \u00b7 1K likes \u00b7 13 comments",
+      "viral_score": 103331.16,
       "rank": 10
     }
   ],
@@ -223,13 +274,13 @@
       "url": "https://www.youtube.com/watch?v=G08gNlDKuIw",
       "author": "Mamibabi | Thai gi\u00e1o, Ch\u0103m s\u00f3c b\u00e9, EASY Luy\u1ec7n ng\u1ee7",
       "description": "\u0110\u0103ng k\u00fd l\u00e0m h\u1ed9i vi\u00ean \u0111\u1ec3 nh\u1eadn video \u0111\u1ed9c quy\u1ec1n d\u00e0nh ri\u00eang cho h\u1ed9i vi\u00ean c\u1ee7a k\u00eanh: ...",
-      "views": 1911533,
-      "likes": 3702,
+      "views": 1929202,
+      "likes": 3749,
       "saves": 0,
       "comments": 10,
       "published_at": "2026-06-26T21:00:02Z",
       "engagement_summary": "1.9M views \u00b7 4K likes \u00b7 10 comments",
-      "viral_score": 918872.16,
+      "viral_score": 927370.2,
       "rank": 1
     },
     {
@@ -239,13 +290,13 @@
       "url": "https://www.youtube.com/watch?v=KQ8G_Ye0MP4",
       "author": "Laro Benz",
       "description": "",
-      "views": 1161196,
-      "likes": 97567,
+      "views": 1162699,
+      "likes": 97627,
       "saves": 0,
       "comments": 1263,
       "published_at": "2026-06-08T03:38:40Z",
       "engagement_summary": "1.2M views \u00b7 98K likes \u00b7 1K comments",
-      "viral_score": 592952.88,
+      "viral_score": 593695.92,
       "rank": 2
     },
     {
@@ -255,13 +306,13 @@
       "url": "https://www.youtube.com/watch?v=2qKbijgS6KQ",
       "author": "Mamibabi | Thai gi\u00e1o, Ch\u0103m s\u00f3c b\u00e9, EASY Luy\u1ec7n ng\u1ee7",
       "description": "\u0110\u0103ng k\u00fd l\u00e0m h\u1ed9i vi\u00ean \u0111\u1ec3 nh\u1eadn video \u0111\u1ed9c quy\u1ec1n d\u00e0nh ri\u00eang cho h\u1ed9i vi\u00ean c\u1ee7a k\u00eanh: ...",
-      "views": 418573,
-      "likes": 3280,
+      "views": 422486,
+      "likes": 3315,
       "saves": 0,
-      "comments": 29,
+      "comments": 30,
       "published_at": "2026-06-29T06:00:18Z",
-      "engagement_summary": "419K views \u00b7 3K likes \u00b7 29 comments",
-      "viral_score": 202106.28,
+      "engagement_summary": "422K views \u00b7 3K likes \u00b7 30 comments",
+      "viral_score": 203997.48,
       "rank": 3
     },
     {
@@ -271,13 +322,13 @@
       "url": "https://www.youtube.com/watch?v=Mu65MTWPvn0",
       "author": "Blesiv",
       "description": "TRAINING TO BE A TIO W/ @KAED__ .. Thank you Helix Sleep for sponsoring! Visit https://helixsleep.com/blesiv to take ...",
-      "views": 389047,
-      "likes": 10932,
+      "views": 392015,
+      "likes": 10979,
       "saves": 0,
       "comments": 316,
       "published_at": "2026-06-25T00:01:54Z",
-      "engagement_summary": "389K views \u00b7 11K likes \u00b7 316 comments",
-      "viral_score": 190791.84,
+      "engagement_summary": "392K views \u00b7 11K likes \u00b7 316 comments",
+      "viral_score": 192233.4,
       "rank": 4
     },
     {
@@ -287,13 +338,13 @@
       "url": "https://www.youtube.com/watch?v=iPOyBZvVMaw",
       "author": "Kaykaylalas",
       "description": "",
-      "views": 380812,
-      "likes": 15388,
+      "views": 380832,
+      "likes": 15386,
       "saves": 0,
       "comments": 867,
       "published_at": "2026-06-13T14:26:31Z",
       "engagement_summary": "381K views \u00b7 15K likes \u00b7 867 comments",
-      "viral_score": 188641.56,
+      "viral_score": 188650.44,
       "rank": 5
     },
     {
@@ -303,13 +354,13 @@
       "url": "https://www.youtube.com/watch?v=6Lq3gmNPDyw",
       "author": "SnugNest ",
       "description": "",
-      "views": 318426,
+      "views": 318430,
       "likes": 3334,
       "saves": 0,
       "comments": 70,
       "published_at": "2026-06-06T15:24:29Z",
       "engagement_summary": "318K views \u00b7 3K likes \u00b7 70 comments",
-      "viral_score": 154069.92,
+      "viral_score": 154071.84,
       "rank": 6
     },
     {
@@ -319,13 +370,13 @@
       "url": "https://www.youtube.com/watch?v=4iK1Y5NoLn4",
       "author": "Kaykaylalas",
       "description": "",
-      "views": 276307,
-      "likes": 15668,
+      "views": 276348,
+      "likes": 15665,
       "saves": 0,
       "comments": 797,
       "published_at": "2026-06-12T15:12:06Z",
       "engagement_summary": "276K views \u00b7 16K likes \u00b7 797 comments",
-      "viral_score": 138554.76,
+      "viral_score": 138573.36,
       "rank": 7
     },
     {
@@ -335,13 +386,13 @@
       "url": "https://www.youtube.com/watch?v=nIfWgxAfhlI",
       "author": "Mamibabi | Thai gi\u00e1o, Ch\u0103m s\u00f3c b\u00e9, EASY Luy\u1ec7n ng\u1ee7",
       "description": "\u0110\u0103ng k\u00fd l\u00e0m h\u1ed9i vi\u00ean \u0111\u1ec3 nh\u1eadn video \u0111\u1ed9c quy\u1ec1n d\u00e0nh ri\u00eang cho h\u1ed9i vi\u00ean c\u1ee7a k\u00eanh: ...",
-      "views": 236265,
-      "likes": 2416,
+      "views": 237677,
+      "likes": 2440,
       "saves": 0,
       "comments": 34,
       "published_at": "2026-06-23T07:00:12Z",
-      "engagement_summary": "236K views \u00b7 2K likes \u00b7 34 comments",
-      "viral_score": 114289.2,
+      "engagement_summary": "238K views \u00b7 2K likes \u00b7 34 comments",
+      "viral_score": 114975.6,
       "rank": 9
     },
     {
@@ -351,13 +402,13 @@
       "url": "https://www.youtube.com/watch?v=M6SLewOn7nU",
       "author": "Alex Hobern",
       "description": "",
-      "views": 235914,
-      "likes": 4488,
+      "views": 236919,
+      "likes": 4498,
       "saves": 0,
       "comments": 72,
       "published_at": "2026-06-26T18:32:03Z",
-      "engagement_summary": "236K views \u00b7 4K likes \u00b7 72 comments",
-      "viral_score": 114880.32,
+      "engagement_summary": "237K views \u00b7 4K likes \u00b7 72 comments",
+      "viral_score": 115366.32,
       "rank": 8
     },
     {
@@ -367,13 +418,13 @@
       "url": "https://www.youtube.com/watch?v=TAUa_x9Elz8",
       "author": "Mamibabi | Thai gi\u00e1o, Ch\u0103m s\u00f3c b\u00e9, EASY Luy\u1ec7n ng\u1ee7",
       "description": "\u0110\u0103ng k\u00fd l\u00e0m h\u1ed9i vi\u00ean \u0111\u1ec3 nh\u1eadn video \u0111\u1ed9c quy\u1ec1n d\u00e0nh ri\u00eang cho h\u1ed9i vi\u00ean c\u1ee7a k\u00eanh: ...",
-      "views": 213107,
-      "likes": 1456,
+      "views": 214161,
+      "likes": 1470,
       "saves": 0,
       "comments": 13,
       "published_at": "2026-06-25T16:00:35Z",
-      "engagement_summary": "213K views \u00b7 1K likes \u00b7 13 comments",
-      "viral_score": 102820.2,
+      "engagement_summary": "214K views \u00b7 1K likes \u00b7 13 comments",
+      "viral_score": 103331.16,
       "rank": 10
     }
   ],
@@ -382,12 +433,12 @@
       "title": "Ph\u00ea th\u1ebf #baby #kids #nuoicon #beyeu #mevabe #lamme #thaigiao #cute #cutebaby #beyeu",
       "source": "youtube",
       "engagement": "1.9M views \u00b7 4K likes \u00b7 10 comments",
-      "viral_score": 918872.16,
+      "viral_score": 927370.2,
       "url": "https://www.youtube.com/watch?v=G08gNlDKuIw"
     },
-    "blog": "Here is a blog post template designed for My Beloved Sleep, keeping your brand voice, target audience, and the viral YouTube post in mind:\n\n---\n\n## Blog Post Template:\n\n**1. SEO Title:**\n\n*   **Option 1 (Focus on a common sleep struggle):** Singapore Parents: Is Your Baby's Sleep Suddenly Chaotic? Gentle Solutions for Restful Nights.\n*   **Option 2 (More direct benefit):** Unlock Peaceful Sleep: Expert Baby Sleep Tips for Singapore Families.\n*   **Option 3 (Intriguing and problem-solving):** From Fussy to Flourishing: Navigating Baby Sleep Challenges in Singapore.\n\n**2. Meta Description:**\n\nFeeling overwhelmed by your baby's sleep? Discover gentle, science-backed strategies for restful nights. Expert advice for Singapore parents.\n\n**3. Intro Hook (2 warm, empathetic paragraphs):**\n\nOh, mama, we see you. That precious little one is your world, but when sleep becomes a battle, it can feel like your own world is crumbling around you. The endless nights, the early mornings, the constant worry \u2013 it\u2019s enough to make even the most resilient parent feel utterly depleted. You're not alone in this journey, and the exhaustion you're feeling is completely valid.\n\nWe understand the immense pressure you might be feeling, especially as new parents in vibrant Singapore, juggling so much while trying to nurture your little one. Seeing those viral videos of perfectly sleeping babies can sometimes add to the overwhelm, making you wonder if you're doing something wrong. But here at My Beloved Sleep, we believe in a different approach \u2013 one that\u2019s grounded in empathy, backed by science, and tailored to the unique needs of your family.\n\n**4. 5 H2 Section Headings with 1-Sentence Descriptions:**\n\n*   **Understanding the \"Why\" Behind Sleep Disruptions:** We'll explore common reasons why even the sweetest babies can suddenly struggle with sleep, offering reassurance that it's often a normal developmental phase.\n*   **Gentle Strategies for Settling Your Baby:** Discover practical, non-judgmental techniques to help your little one feel secure and learn to self-soothe, fostering independent sleep.\n*   **Creating a Sleep-Conducive Environment in Singapore's Climate:** Learn how to optimize your baby's sleep space, considering local humidity and temperature to promote comfort and rest.\n*   **The Science of Sleep Cycles: What Parents Need to Know:** We'll break down the fascinating science behind baby sleep cycles in an easy-to-understand way, empowering you with knowledge.\n*   **Building Sustainable Sleep Habits for a Happier Family:** Focus on long-term solutions that nurture your baby's development while respecting your family's well-being and sanity.\n\n**5. Call to Action (CTA):**\n\nFeeling a glimmer of hope? You don't have to navigate these sleep challenges alone. Let's explore how we can bring more peace and rest to your family.\n\n**Book your free 15-minute discovery call with a certified sleep consultant at MyBelovedSleep.com today and take the first step towards a more rested tomorrow.**\n\n---",
-    "instagram_carousel": "Here's a 5-slide Instagram carousel and caption for My Beloved Sleep, tailored for your target audience and brand voice:\n\n---\n\n## Instagram Carousel: Ph\u00ea Th\u1ebf? Let's Decode Baby's Sleep Needs!\n\n**Slide 1:**\n\n*   **Headline:** Sleepy Cues: What's Your Baby Saying?\n*   **Body:** Is your little one signalling they're ready for sleep? Understanding their subtle cues is key to smoother naps and bedtime.\n*   **Visual Direction:** A close-up shot of a baby's soft, slightly drowsy face, perhaps rubbing their eyes or yawning gently. Soft, natural lighting.\n\n**Slide 2:**\n\n*   **Headline:** The \"Ph\u00ea Th\u1ebf\" Stage Explained\n*   **Body:** That \"ph\u00ea th\u1ebf\" feeling? It's often a sign of overstimulation or overtiredness. Let's learn to spot it early.\n*   **Visual Direction:** A split image. One side shows a slightly fussy but still cute baby looking a bit overwhelmed. The other side shows a calm, contented baby beginning to drift off.\n\n**Slide 3:**\n\n*   **Headline:** Creating a Sleep Sanctuary\n*   **Body:** A peaceful environment helps signal sleep time. Simple adjustments can make a world of difference for your little one.\n*   **Visual Direction:** A beautifully styled nursery corner. Think soft colours, blackout blinds, a white noise machine subtly visible, and a cosy crib.\n\n**Slide 4:**\n\n*   **Headline:** Gentle Routines for Sweet Dreams\n*   **Body:** Consistent, calming routines build sleep confidence. We'll guide you through creating one that works for your family.\n*   **Visual Direction:** A gentle, warm-toned illustration or photo of a parent reading a soft storybook to a baby in their crib, or a parent rocking a baby peacefully.\n\n**Slide 5:**\n\n*   **Headline:** Sleep Well, Live Well, Mama\n*   **Body:** Prioritising your baby's sleep is prioritising your well-being. You've got this, mama.\n*   **Visual Direction:** A comforting image of a mother gently holding or looking at her sleeping baby, a sense of peace and connection.\n\n---\n\n## Instagram Caption:\n\nIs your little one displaying those \"ph\u00ea th\u1ebf\" signs? \ud83d\ude34 We understand how challenging it can be to decipher those sleepy cues when you're running on empty. That feeling of \"ph\u00ea th\u1ebf\" often signals that your baby is either overstimulated or starting to get overtired, and needs a little help to wind down.\n\nAt My Beloved Sleep, we believe in a science-backed, empathetic approach to gentle sleep shaping. We're here to offer reassurance and practical, evidence-based strategies to help your baby develop healthy sleep habits, without the struggle. Let's",
-    "reel_script": "Here's a 60-second Reel script for My Beloved Sleep, tailored for your target audience and brand voice:\n\n---\n\n**Reel Script: \"The Sleepy Snuggle Struggle\"**\n\n**Target Audience:** Singaporean parents, 28-40, pragmatic, first-time parents, seeking expert, empathetic advice.\n\n**Brand Voice:** Warm, expert, deeply empathetic, science-backed, never preachy.\n\n**Hashtags:** #baby #kids #nuoicon #beyeu #mevabe #lamme #thaigiao #cute #cutebaby #beyeu (Note: The Vietnamese hashtags are kept as requested, assuming they are relevant to a segment of your audience or for broader reach).\n\n---\n\n**(0-3s) HOOK**\n\n**[Visual:** Close-up shot of a very sleepy baby, eyes fluttering, maybe a gentle yawn. Soft, warm lighting. Upbeat yet soothing instrumental music begins.]\n\n**Spoken Words:** \"Is this your reality at 2 AM?\"\n\n**On-Screen Text:** \"2 AM? Again?\"\n\n**(4-15s) PROBLEM**\n\n**[Visual:** Quick cuts showing the realities of sleep deprivation: a parent with tired eyes, a baby fussing in a crib, a clock showing a late hour, a parent rocking a baby gently but looking weary.]\n\n**Spoken Words:** \"You love your little one more than anything, but the constant wake-ups, the endless rocking\u2026 it\u2019s just plain exhausting, isn't it?\"\n\n**On-Screen Text:** \"Exhausted is an understatement.\"\n\n**(16-35s) INSIGHT**\n\n**[Visual:** Transition to a slightly brighter, more informative shot. Perhaps a parent holding their baby calmly, a gentle smile on their face. Overlay a subtle graphic of a brainwave or a simplified sleep cycle diagram.]\n\n**Spoken Words:** \"We get it. And there\u2019s a science to this! Your baby\u2019s sleep isn't just about luck. It's about understanding their natural development, their sleep cycles, and creating a soothing environment that supports healthy sleep habits.\"\n\n**On-Screen Text:** \"It's NOT your fault. It's science.\"\n\n**(36-50s) SOLUTION**\n\n**[Visual:** Show a parent implementing a gentle sleep strategy: dimming",
+    "blog": "[Blog template unavailable \u2014 Gemini returned errors on all 4 attempts. Errors: [503, 503, 503, 503]. Re-run the agent to regenerate this section.]",
+    "instagram_carousel": "[IG carousel unavailable \u2014 Gemini returned errors on all 4 attempts. Errors: [503, 503, 503, 503]. Re-run the agent to regenerate this section.]",
+    "reel_script": "[Reel script unavailable \u2014 Gemini returned errors on all 4 attempts. Errors: [503, 503, 503, 503]. Re-run the agent to regenerate this section.]",
     "thumbnail_spec": {
       "blog_og": {
         "size": "1200x628px",
@@ -404,30 +455,81 @@
     },
     "reliability": {
       "calls_total": 3,
-      "calls_success": 3,
-      "calls_fallback": 0,
-      "fallback_rate": "0%",
+      "calls_success": 0,
+      "calls_fallback": 3,
+      "fallback_rate": "100%",
       "details": [
         {
           "label": "Blog template",
-          "result": "success",
-          "attempts": 1,
-          "errors": [],
-          "timestamp": "2026-07-02T03:43:39.571896"
+          "result": "fallback",
+          "attempts": 4,
+          "errors": [
+            {
+              "attempt": 1,
+              "error_code": 503
+            },
+            {
+              "attempt": 2,
+              "error_code": 503
+            },
+            {
+              "attempt": 3,
+              "error_code": 503
+            },
+            {
+              "attempt": 4,
+              "error_code": 503
+            }
+          ],
+          "timestamp": "2026-07-02T07:10:37.583162"
         },
         {
           "label": "IG carousel",
-          "result": "success",
-          "attempts": 1,
-          "errors": [],
-          "timestamp": "2026-07-02T03:44:03.932551"
+          "result": "fallback",
+          "attempts": 4,
+          "errors": [
+            {
+              "attempt": 1,
+              "error_code": 503
+            },
+            {
+              "attempt": 2,
+              "error_code": 503
+            },
+            {
+              "attempt": 3,
+              "error_code": 503
+            },
+            {
+              "attempt": 4,
+              "error_code": 503
+            }
+          ],
+          "timestamp": "2026-07-02T07:16:11.661502"
         },
         {
           "label": "Reel script",
-          "result": "success",
-          "attempts": 1,
-          "errors": [],
-          "timestamp": "2026-07-02T03:44:29.610075"
+          "result": "fallback",
+          "attempts": 4,
+          "errors": [
+            {
+              "attempt": 1,
+              "error_code": 503
+            },
+            {
+              "attempt": 2,
+              "error_code": 503
+            },
+            {
+              "attempt": 3,
+              "error_code": 503
+            },
+            {
+              "attempt": 4,
+              "error_code": 503
+            }
+          ],
+          "timestamp": "2026-07-02T07:21:48.290221"
         }
       ]
     }
@@ -435,51 +537,51 @@
   "gaps": [
     {
       "priority": "high",
-      "title": "Consistent, Engaging Social Media Content",
-      "why": "Competitors with active social media presence are building community and brand awareness. They are consistently sharing valuable content that keeps their audience engaged and returning.",
-      "action": "1. Develop a content calendar for Instagram and Facebook. 2. Create 3-5 posts per week focusing on common sleep challenges and solutions.",
+      "title": "Consistent Instagram content strategy needed",
+      "why": "Competitors like @takingcarababies and @the.peaceful.sleeper have established consistent posting schedules and content themes. My Beloved Sleep currently lacks this visible, regular presence.",
+      "action": "1. Develop a weekly content calendar with 3-5 post ideas. 2. Schedule posts using a social media management tool.",
       "effort": "2-3 hours",
       "impact": "medium term"
     },
     {
       "priority": "high",
-      "title": "Targeted Audience Engagement Strategies",
-      "why": "Active competitors are likely interacting with their audience through comments, DMs, and Q&A sessions. This direct engagement fosters trust and loyalty.",
-      "action": "1. Respond to all comments and direct messages within 24 hours. 2. Schedule a weekly Instagram Live Q&A session.",
-      "effort": "30 min",
-      "impact": "quick win"
-    },
-    {
-      "priority": "medium",
-      "title": "Clear and Compelling Value Proposition",
-      "why": "Competitors likely articulate their unique approach to sleep consulting more clearly on their platforms. This helps potential clients understand what makes them different.",
-      "action": "1. Refine the 'About Us' section on the website to highlight key differentiators. 2. Create a short, shareable infographic summarizing core services and benefits.",
+      "title": "Engaging visual content for Instagram",
+      "why": "Many competitors utilize a mix of carousel posts, Reels, and visually appealing graphics to share information. My Beloved Sleep's current Instagram presence does not showcase this variety.",
+      "action": "1. Create 2-3 carousel posts with tips and infographics. 2. Plan and film one short Reel demonstrating a sleep technique.",
       "effort": "2-3 hours",
       "impact": "medium term"
     },
     {
       "priority": "medium",
-      "title": "Leveraging User-Generated Content",
-      "why": "Competitors may be showcasing testimonials or success stories from clients. This social proof is highly effective in building credibility.",
-      "action": "1. Request testimonials from satisfied clients. 2. Share positive feedback on social media and the website.",
+      "title": "Leverage user-generated content opportunities",
+      "why": "Competitors often encourage and showcase client testimonials or success stories, building social proof. This is not evident on My Beloved Sleep's current platforms.",
+      "action": "1. Create a simple prompt for clients to share their sleep wins. 2. Offer a small incentive for sharing (e.g., a discount on future services).",
+      "effort": "30 min",
+      "impact": "quick win"
+    },
+    {
+      "priority": "medium",
+      "title": "Develop a unique Instagram content pillar",
+      "why": "Competitors often have a clear niche or a signature content style that sets them apart. My Beloved Sleep could benefit from defining a specific area of focus for its content.",
+      "action": "1. Brainstorm 3-5 unique content angles related to sleep. 2. Select one angle and create a series of 3 posts around it.",
+      "effort": "2-3 hours",
+      "impact": "medium term"
+    },
+    {
+      "priority": "low",
+      "title": "Optimize Instagram bio for clarity",
+      "why": "Competitors have clear, concise bios that immediately communicate their value proposition and target audience. My Beloved Sleep's bio could be more direct.",
+      "action": "1. Rewrite the bio to highlight key benefits and services. 2. Ensure a clear call to action is present.",
       "effort": "30 min",
       "impact": "quick win"
     },
     {
       "priority": "low",
-      "title": "SEO-Optimized Blog Content",
-      "why": "Competitors with active blogs are likely ranking for relevant keywords, driving organic traffic. This provides a steady stream of potential leads.",
-      "action": "1. Identify 5-7 high-intent keywords related to baby sleep. 2. Write two blog posts targeting these keywords.",
-      "effort": "1 day",
-      "impact": "long term"
-    },
-    {
-      "priority": "low",
-      "title": "Email List Building Strategy",
-      "why": "Competitors may be offering lead magnets to capture email addresses. This allows for direct marketing and nurturing of potential clients.",
-      "action": "1. Create a simple lead magnet (e.g., a checklist). 2. Implement an email signup form on the website.",
-      "effort": "2-3 hours",
-      "impact": "long term"
+      "title": "Hashtag strategy refinement for reach",
+      "why": "Effective hashtag usage is crucial for discoverability on Instagram, a tactic employed by successful competitors. My Beloved Sleep's current hashtag strategy may not be optimal.",
+      "action": "1. Research 10-15 relevant and niche hashtags. 2. Incorporate a mix of broad and specific hashtags into posts.",
+      "effort": "30 min",
+      "impact": "quick win"
     }
   ],
   "competitors": [
@@ -524,6 +626,14 @@
       "error": null
     },
     {
+      "name": "@the.peaceful.sleeper",
+      "url": "",
+      "weekly_views": 5000,
+      "pages_scraped": 0,
+      "recent_titles": [],
+      "error": null
+    },
+    {
       "name": "@sleep_likeababy",
       "url": "",
       "weekly_views": 5000,
@@ -549,14 +659,6 @@
     },
     {
       "name": "@sleepbysteph",
-      "url": "",
-      "weekly_views": 5000,
-      "pages_scraped": 0,
-      "recent_titles": [],
-      "error": null
-    },
-    {
-      "name": "@hushlittledarlingsleep",
       "url": "",
       "weekly_views": 5000,
       "pages_scraped": 0,
@@ -663,7 +765,7 @@
         "weekly_views": 0,
         "discovery_sources": [
           {
-            "label": "Rosey Davidson: Sleep Consultant (@just_chill_mama",
+            "label": "Sleep Consultant (@just_chill_mama) - Rosey Davids",
             "url": "https://www.instagram.com/just_chill_mama/?hl=en",
             "via": "Google search"
           }
@@ -686,34 +788,13 @@
         "weekly_views": 190000,
         "discovery_sources": [
           {
-            "label": "Baby and Toddler Sleep Expert (@takingcarababies) ",
+            "label": "Baby and Toddler Sleep Expert (@takingcarababies)",
             "url": "https://www.instagram.com/takingcarababies/?hl=en",
             "via": "Google search"
           }
         ],
         "data_known": true,
         "discovery_score": 1900000
-      },
-      {
-        "handle": "the.peaceful.sleeper",
-        "name": "@the.peaceful.sleeper",
-        "market": "global",
-        "followers": 0,
-        "growth_30d": 0,
-        "grade": "\u2014",
-        "instagram_url": "https://www.instagram.com/the.peaceful.sleeper/",
-        "socialblade_url": "",
-        "website_url": "",
-        "weekly_views": 0,
-        "discovery_sources": [
-          {
-            "label": "The Peaceful Sleeper - Instagram",
-            "url": "https://www.instagram.com/the.peaceful.sleeper/?hl=en",
-            "via": "Google search"
-          }
-        ],
-        "data_known": false,
-        "discovery_score": 0
       },
       {
         "handle": "babysleepteam",
@@ -728,7 +809,7 @@
         "weekly_views": 0,
         "discovery_sources": [
           {
-            "label": "Cat - Sleep Consultant (@babysleepteam) - Instagra",
+            "label": "Cat - Sleep Consultant (@babysleepteam)",
             "url": "https://www.instagram.com/babysleepteam/?hl=en",
             "via": "Google search"
           }
@@ -737,20 +818,20 @@
         "discovery_score": 0
       },
       {
-        "handle": "helpingbabiessleep",
-        "name": "@helpingbabiessleep",
+        "handle": "snoozy_sleep",
+        "name": "@snoozy_sleep",
         "market": "global",
         "followers": 0,
         "growth_30d": 0,
         "grade": "\u2014",
-        "instagram_url": "https://www.instagram.com/helpingbabiessleep/",
+        "instagram_url": "https://www.instagram.com/snoozy_sleep/",
         "socialblade_url": "",
         "website_url": "",
         "weekly_views": 0,
         "discovery_sources": [
           {
-            "label": "The Helping Babies Sleep Method\u2122\ufe0f (@helpingbabiess",
-            "url": "https://www.instagram.com/helpingbabiessleep/?hl=en",
+            "label": "Emily - Infant Sleep Consultant (@snoozy_sleep)",
+            "url": "https://www.instagram.com/snoozy_sleep/",
             "via": "Google search"
           }
         ],
@@ -758,20 +839,41 @@
         "discovery_score": 0
       },
       {
-        "handle": "wellrestedweeones",
-        "name": "@wellrestedweeones",
+        "handle": "sleep_likeababy",
+        "name": "@sleep_likeababy",
         "market": "global",
         "followers": 0,
         "growth_30d": 0,
         "grade": "\u2014",
-        "instagram_url": "https://www.instagram.com/wellrestedweeones/",
+        "instagram_url": "https://www.instagram.com/sleep_likeababy/",
         "socialblade_url": "",
         "website_url": "",
         "weekly_views": 0,
         "discovery_sources": [
           {
-            "label": "Katy Bourzikas (@wellrestedweeones) \u2022 Instagram ph",
-            "url": "https://www.instagram.com/wellrestedweeones/?hl=en",
+            "label": "Jay - Baby and Child Sleep Consultant (@sleep_like",
+            "url": "https://www.instagram.com/sleep_likeababy/",
+            "via": "Google search"
+          }
+        ],
+        "data_known": false,
+        "discovery_score": 0
+      },
+      {
+        "handle": "the.peaceful.sleeper",
+        "name": "@the.peaceful.sleeper",
+        "market": "global",
+        "followers": 0,
+        "growth_30d": 0,
+        "grade": "\u2014",
+        "instagram_url": "https://www.instagram.com/the.peaceful.sleeper/",
+        "socialblade_url": "",
+        "website_url": "",
+        "weekly_views": 0,
+        "discovery_sources": [
+          {
+            "label": "The Peaceful Sleeper",
+            "url": "https://www.instagram.com/the.peaceful.sleeper/?hl=en",
             "via": "Google search"
           }
         ],
@@ -877,8 +979,29 @@
         "weekly_views": 0,
         "discovery_sources": [
           {
-            "label": "Rosey Davidson: Sleep Consultant (@just_chill_mama",
+            "label": "Sleep Consultant (@just_chill_mama) - Rosey Davids",
             "url": "https://www.instagram.com/just_chill_mama/?hl=en",
+            "via": "Google search"
+          }
+        ],
+        "data_known": false,
+        "discovery_score": 0
+      },
+      {
+        "handle": "the.peaceful.sleeper",
+        "name": "@the.peaceful.sleeper",
+        "market": "local",
+        "followers": 0,
+        "growth_30d": 0,
+        "grade": "\u2014",
+        "instagram_url": "https://www.instagram.com/the.peaceful.sleeper/",
+        "socialblade_url": "",
+        "website_url": "",
+        "weekly_views": 0,
+        "discovery_sources": [
+          {
+            "label": "The Peaceful Sleeper",
+            "url": "https://www.instagram.com/the.peaceful.sleeper/?hl=en",
             "via": "Google search"
           }
         ],
@@ -968,30 +1091,9 @@
         ],
         "data_known": false,
         "discovery_score": 0
-      },
-      {
-        "handle": "hushlittledarlingsleep",
-        "name": "@hushlittledarlingsleep",
-        "market": "local",
-        "followers": 0,
-        "growth_30d": 0,
-        "grade": "\u2014",
-        "instagram_url": "https://www.instagram.com/hushlittledarlingsleep/",
-        "socialblade_url": "",
-        "website_url": "",
-        "weekly_views": 0,
-        "discovery_sources": [
-          {
-            "label": "Baby & Toddler Sleep Coach (@hushlittledarlingslee",
-            "url": "https://www.instagram.com/hushlittledarlingsleep/?hl=en",
-            "via": "Google search"
-          }
-        ],
-        "data_known": false,
-        "discovery_score": 0
       }
     ],
-    "discovered_at": "2026-07-02T03:42:44.857863",
+    "discovered_at": "2026-07-02T07:04:38.614449",
     "total_checked": 20,
     "benchmarks_last_updated": "2026-06-29"
   },
