@@ -101,8 +101,15 @@ async def discover_competitors(serper_api_key: str) -> Dict:
     # Step 4 — Rank and select top 5 each
     top_local  = _rank_accounts(local_stats)[:5]
     top_global = _rank_accounts(global_stats)[:5]
-    all_ranked = _rank_accounts(local_stats + global_stats)[:10]
-
+    # Deduplicate by handle before ranking — same account can appear in both local + global
+    seen_handles = set()
+    combined = []
+    for a in local_stats + global_stats:
+        if a["handle"] not in seen_handles:
+            seen_handles.add(a["handle"])
+            combined.append(a)
+    all_ranked = _rank_accounts(combined)[:10]
+  
     print(f"  [Discovery] Top local:  {[a['handle'] for a in top_local]}")
     print(f"  [Discovery] Top global: {[a['handle'] for a in top_global]}")
 
