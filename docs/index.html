@@ -547,13 +547,12 @@ function renderAll() {
   document.getElementById('thumb-headline').textContent = top.title ? top.title.slice(0,45) : 'Baby Sleep Guide';
   document.getElementById('ig-caption-box').textContent = R.content.instagram_carousel || 'Run agent to generate carousel';
 
-  // Dashboard metrics
-  const YM = R.your_metrics;
+  // Dashboard metrics — manual entry required (no live analytics connected)
   document.getElementById('dash-metrics').innerHTML = `
-    <div class="metric"><div class="metric-label">Your views this week</div><div class="metric-value">${fmtN(YM.views_this_week)}</div><div class="metric-delta up">↑ 18% vs last week</div></div>
-    <div class="metric"><div class="metric-label">Link clicks</div><div class="metric-value">${fmtN(YM.clicks)}</div><div class="metric-delta up">↑ 9%</div></div>
-    <div class="metric"><div class="metric-label">Saves / shares</div><div class="metric-value">${fmtN(YM.saves_shares)}</div><div class="metric-delta up">↑ 34%</div></div>
-    <div class="metric"><div class="metric-label">Booking enquiries</div><div class="metric-value">${YM.booking_enquiries}</div><div class="metric-delta up">↑ 5 vs last week</div></div>`;
+    <div class="metric"><div class="metric-label">Your views this week</div><div class="metric-value">—</div><div class="metric-delta neutral">Update manually from Instagram Insights</div></div>
+    <div class="metric"><div class="metric-label">Link clicks</div><div class="metric-value">—</div><div class="metric-delta neutral">Update manually from link tracker</div></div>
+    <div class="metric"><div class="metric-label">Saves / shares</div><div class="metric-value">—</div><div class="metric-delta neutral">Update manually from Instagram Insights</div></div>
+    <div class="metric"><div class="metric-label">Booking enquiries</div><div class="metric-value">—</div><div class="metric-delta neutral">Update manually from your inbox</div></div>`;
 
   // Competitor bars — use auto-discovered data if available
   const comps = (R.competitor_discovery?.all || R.competitors || []);
