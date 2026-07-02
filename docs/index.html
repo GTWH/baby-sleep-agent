@@ -542,6 +542,7 @@ function renderAll() {
   document.getElementById('ig-caption-box').textContent = R.content.instagram_carousel || 'Run agent to generate carousel';
 
   // Dashboard metrics — manual entry required (no live analytics connected)
+  const YM = R.your_metrics;
   document.getElementById('dash-metrics').innerHTML = `
     <div class="metric"><div class="metric-label">Your views this week</div><div class="metric-value">—</div><div class="metric-delta neutral">Update manually from Instagram Insights</div></div>
     <div class="metric"><div class="metric-label">Link clicks</div><div class="metric-value">—</div><div class="metric-delta neutral">Update manually from link tracker</div></div>
