@@ -473,11 +473,17 @@ function renderAll() {
   document.getElementById('week-label').textContent = R.meta.week_label;
 
   const s = R.summary;
+  const sc = s.source_counts || {};
+  const activeLabel  = (s.active_sources  || []).join(' · ') || '—';
+  const blockedLabel = (s.inactive_sources || []).join(' · ') || 'None';
+  const topSource    = Object.entries(sc).sort((a,b)=>b[1]-a[1])[0];
+  const topSourceLabel = topSource ? `${topSource[0].charAt(0).toUpperCase()+topSource[0].slice(1)} (${topSource[1]})` : '—';
   document.getElementById('viral-metrics').innerHTML = `
-    <div class="metric"><div class="metric-label">Posts scanned</div><div class="metric-value">${fmtN(s.posts_scanned)}</div><div class="metric-delta up">↑ 12% vs last week</div></div>
-    <div class="metric"><div class="metric-label">Viral hits found</div><div class="metric-value">${s.viral_hits}</div><div class="metric-delta up">↑ 3 new topics</div></div>
-    <div class="metric"><div class="metric-label">Avg viral score</div><div class="metric-value">${s.avg_viral_score > 0 ? s.avg_viral_score : '—'}</div><div class="metric-delta ${s.avg_viral_score > 0 ? 'up' : 'neutral'}">${s.avg_viral_score > 0 ? '↑ 4.1 pts' : 'From live data'}</div></div>
-    <div class="metric"><div class="metric-label">Sources active</div><div class="metric-value">${s.sources_active}</div><div class="metric-delta neutral">IG · TikTok · Pinterest…</div></div>`;
+    <div class="metric"><div class="metric-label">Posts collected</div><div class="metric-value">${fmtN(s.total_collected||0)}</div><div class="metric-delta neutral">${activeLabel}</div></div>
+    <div class="metric"><div class="metric-label">Viral hits found</div><div class="metric-value">${s.viral_hits}</div><div class="metric-delta neutral">Top posts ranked this week</div></div>
+    <div class="metric"><div class="metric-label">Top source</div><div class="metric-value" style="font-size:16px;padding-top:4px">${topSourceLabel}</div><div class="metric-delta neutral">By post count</div></div>
+    <div class="metric"><div class="metric-label">Blocked sources</div><div class="metric-value" style="font-size:13px;padding-top:6px;color:var(--amber)">${blockedLabel}</div><div class="metric-delta neutral">Returned 0 posts</div></div>`;
+
 
   const icons = {tiktok:'🎵',instagram:'📸',pinterest:'📌',youtube:'▶️',blog:'📰',reddit:'💬'};
   document.getElementById('viral-list').innerHTML = R.viral_posts.map(p => {
