@@ -145,6 +145,15 @@ async def run_agent():
 
     youtube_ranked = sorted(yt_posts, key=lambda p: p.get("views", 0), reverse=True)[:10]
 
+    source_counts = {
+        "instagram":  len(ig_posts),
+        "tiktok":     len(tt_posts),
+        "pinterest":  len(pin_posts),
+        "blog":       len(blog_posts),
+        "trending":   len(trending_posts),
+        "youtube":    len(yt_posts),
+    }
+
     report = build_dashboard_json(
         viral_posts=ranked,
         content=content,
