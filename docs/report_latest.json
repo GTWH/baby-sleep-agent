@@ -1,6 +1,6 @@
 {
   "meta": {
-    "run_date": "2026-07-03T04:10:37.137314",
+    "run_date": "2026-07-03T12:48:06.832946",
     "week_label": "Jun 29\u201305, 2026",
     "brand": "My Beloved Sleep",
     "brand_url": "https://www.mybelovedsleep.com",
@@ -8,7 +8,7 @@
     "stack": "Playwright + Serper.dev + Gemini 2.0 Flash + YouTube Data API"
   },
   "summary": {
-    "total_collected": 79,
+    "total_collected": 58,
     "viral_hits": 10,
     "active_sources": [
       "Pinterest",
@@ -23,65 +23,71 @@
     "source_counts": {
       "instagram": 0,
       "tiktok": 0,
-      "pinterest": 30,
-      "blog": 26,
-      "trending": 8,
+      "pinterest": 28,
+      "blog": 9,
+      "trending": 6,
       "youtube": 15
     },
     "cost_this_run": "$0.00"
   },
   "reliability": {
-    "run_date": "2026-07-03T04:10:37.137314",
+    "run_date": "2026-07-03T12:48:06.832946",
     "calls_total": 4,
-    "calls_success": 3,
-    "calls_fallback": 1,
-    "fallback_rate": "25%",
-    "run_complete": false,
+    "calls_success": 4,
+    "calls_fallback": 0,
+    "fallback_rate": "0%",
+    "run_complete": true,
     "details": [
       {
         "label": "Blog template",
         "result": "success",
-        "attempts": 1,
-        "errors": [],
-        "timestamp": "2026-07-03T04:12:15.372706"
+        "attempts": 2,
+        "errors": [
+          {
+            "attempt": 1,
+            "error_code": 503
+          }
+        ],
+        "timestamp": "2026-07-03T12:50:36.372191"
       },
       {
         "label": "IG carousel",
         "result": "success",
         "attempts": 1,
         "errors": [],
-        "timestamp": "2026-07-03T04:12:38.529306"
+        "timestamp": "2026-07-03T12:50:59.373502"
       },
       {
         "label": "Reel script",
         "result": "success",
-        "attempts": 1,
-        "errors": [],
-        "timestamp": "2026-07-03T04:13:00.915430"
-      },
-      {
-        "label": "Gap analysis",
-        "result": "fallback",
         "attempts": 4,
         "errors": [
           {
             "attempt": 1,
-            "error_code": 429
+            "error_code": 503
           },
           {
             "attempt": 2,
-            "error_code": 429
+            "error_code": 503
           },
           {
             "attempt": 3,
-            "error_code": 429
-          },
-          {
-            "attempt": 4,
-            "error_code": 429
+            "error_code": 503
           }
         ],
-        "timestamp": "2026-07-03T04:18:21.464390"
+        "timestamp": "2026-07-03T12:54:39.554569"
+      },
+      {
+        "label": "Gap analysis",
+        "result": "success",
+        "attempts": 2,
+        "errors": [
+          {
+            "attempt": 1,
+            "error_code": 503
+          }
+        ],
+        "timestamp": "2026-07-03T12:55:41.639984"
       }
     ]
   },
@@ -93,13 +99,13 @@
       "url": "https://www.youtube.com/watch?v=G08gNlDKuIw",
       "author": "Mamibabi | Thai gi\u00e1o, Ch\u0103m s\u00f3c b\u00e9, EASY Luy\u1ec7n ng\u1ee7",
       "description": "\u0110\u0103ng k\u00fd l\u00e0m h\u1ed9i vi\u00ean \u0111\u1ec3 nh\u1eadn video \u0111\u1ed9c quy\u1ec1n d\u00e0nh ri\u00eang cho h\u1ed9i vi\u00ean c\u1ee7a k\u00eanh: ...",
-      "views": 2074515,
-      "likes": 4025,
+      "views": 2131673,
+      "likes": 4118,
       "saves": 0,
-      "comments": 10,
+      "comments": 11,
       "published_at": "2026-06-26T21:00:02Z",
-      "engagement_summary": "2.1M views \u00b7 4K likes \u00b7 10 comments",
-      "viral_score": 997219.8,
+      "engagement_summary": "2.1M views \u00b7 4K likes \u00b7 11 comments",
+      "viral_score": 1024689.48,
       "rank": 1
     },
     {
@@ -109,13 +115,13 @@
       "url": "https://www.youtube.com/watch?v=KQ8G_Ye0MP4",
       "author": "Laro Benz",
       "description": "",
-      "views": 1170897,
-      "likes": 97962,
+      "views": 1173529,
+      "likes": 98070,
       "saves": 0,
-      "comments": 1266,
+      "comments": 1268,
       "published_at": "2026-06-08T03:38:40Z",
       "engagement_summary": "1.2M views \u00b7 98K likes \u00b7 1K comments",
-      "viral_score": 597752.64,
+      "viral_score": 599055.6,
       "rank": 2
     },
     {
@@ -125,13 +131,13 @@
       "url": "https://www.youtube.com/watch?v=2qKbijgS6KQ",
       "author": "Mamibabi | Thai gi\u00e1o, Ch\u0103m s\u00f3c b\u00e9, EASY Luy\u1ec7n ng\u1ee7",
       "description": "\u0110\u0103ng k\u00fd l\u00e0m h\u1ed9i vi\u00ean \u0111\u1ec3 nh\u1eadn video \u0111\u1ed9c quy\u1ec1n d\u00e0nh ri\u00eang cho h\u1ed9i vi\u00ean c\u1ee7a k\u00eanh: ...",
-      "views": 452519,
-      "likes": 3552,
+      "views": 462179,
+      "likes": 3645,
       "saves": 0,
       "comments": 31,
       "published_at": "2026-06-29T06:00:18Z",
-      "engagement_summary": "453K views \u00b7 4K likes \u00b7 31 comments",
-      "viral_score": 218499.0,
+      "engagement_summary": "462K views \u00b7 4K likes \u00b7 31 comments",
+      "viral_score": 223169.28,
       "rank": 3
     },
     {
@@ -141,13 +147,13 @@
       "url": "https://www.youtube.com/watch?v=Mu65MTWPvn0",
       "author": "Blesiv",
       "description": "TRAINING TO BE A TIO W/ @KAED__ .. Thank you Helix Sleep for sponsoring! Visit https://helixsleep.com/blesiv to take ...",
-      "views": 400320,
-      "likes": 11157,
+      "views": 403927,
+      "likes": 11193,
       "saves": 0,
       "comments": 323,
       "published_at": "2026-06-25T00:01:54Z",
-      "engagement_summary": "400K views \u00b7 11K likes \u00b7 323 comments",
-      "viral_score": 196286.4,
+      "engagement_summary": "404K views \u00b7 11K likes \u00b7 323 comments",
+      "viral_score": 198030.72,
       "rank": 4
     },
     {
@@ -157,13 +163,13 @@
       "url": "https://www.youtube.com/watch?v=iPOyBZvVMaw",
       "author": "Kaykaylalas",
       "description": "",
-      "views": 380952,
+      "views": 380974,
       "likes": 15387,
       "saves": 0,
       "comments": 867,
       "published_at": "2026-06-13T14:26:31Z",
       "engagement_summary": "381K views \u00b7 15K likes \u00b7 867 comments",
-      "viral_score": 188708.4,
+      "viral_score": 188718.96,
       "rank": 5
     },
     {
@@ -173,13 +179,13 @@
       "url": "https://www.youtube.com/watch?v=z3J3pdY3KBY",
       "author": "Karma Reels",
       "description": "Jiang Wan was just an ordinary postpartum nanny\u2014until one day, she woke up with an extraordinary gift that would change ...",
-      "views": 329786,
-      "likes": 7162,
+      "views": 336916,
+      "likes": 7289,
       "saves": 0,
-      "comments": 240,
+      "comments": 243,
       "published_at": "2026-06-25T12:00:29Z",
-      "engagement_summary": "330K views \u00b7 7K likes \u00b7 240 comments",
-      "viral_score": 160962.0,
+      "engagement_summary": "337K views \u00b7 7K likes \u00b7 243 comments",
+      "viral_score": 164431.2,
       "rank": 6
     },
     {
@@ -189,46 +195,14 @@
       "url": "https://www.youtube.com/watch?v=6Lq3gmNPDyw",
       "author": "SnugNest ",
       "description": "",
-      "views": 318488,
-      "likes": 3334,
+      "views": 318501,
+      "likes": 3335,
       "saves": 0,
       "comments": 70,
       "published_at": "2026-06-06T15:24:29Z",
-      "engagement_summary": "318K views \u00b7 3K likes \u00b7 70 comments",
-      "viral_score": 154099.68,
+      "engagement_summary": "319K views \u00b7 3K likes \u00b7 70 comments",
+      "viral_score": 154106.28,
       "rank": 7
-    },
-    {
-      "source": "youtube",
-      "id": "4iK1Y5NoLn4",
-      "title": "Why doesn\u2019t he sleep?! #momlife #momvlog #babyroutine #parenting #nighttimeroutine #babyshorts #mom",
-      "url": "https://www.youtube.com/watch?v=4iK1Y5NoLn4",
-      "author": "Kaykaylalas",
-      "description": "",
-      "views": 276485,
-      "likes": 15670,
-      "saves": 0,
-      "comments": 796,
-      "published_at": "2026-06-12T15:12:06Z",
-      "engagement_summary": "276K views \u00b7 16K likes \u00b7 796 comments",
-      "viral_score": 138640.56,
-      "rank": 8
-    },
-    {
-      "source": "youtube",
-      "id": "nIfWgxAfhlI",
-      "title": "T\u1eafm xinh x\u1ec9u #baby #kids #nuoicon #beyeu #mevabe #lamme #thaigiao #cute #cutebaby #beyeu",
-      "url": "https://www.youtube.com/watch?v=nIfWgxAfhlI",
-      "author": "Mamibabi | Thai gi\u00e1o, Ch\u0103m s\u00f3c b\u00e9, EASY Luy\u1ec7n ng\u1ee7",
-      "description": "\u0110\u0103ng k\u00fd l\u00e0m h\u1ed9i vi\u00ean \u0111\u1ec3 nh\u1eadn video \u0111\u1ed9c quy\u1ec1n d\u00e0nh ri\u00eang cho h\u1ed9i vi\u00ean c\u1ee7a k\u00eanh: ...",
-      "views": 245642,
-      "likes": 2564,
-      "saves": 0,
-      "comments": 36,
-      "published_at": "2026-06-23T07:00:12Z",
-      "engagement_summary": "246K views \u00b7 3K likes \u00b7 36 comments",
-      "viral_score": 118844.16,
-      "rank": 9
     },
     {
       "source": "youtube",
@@ -237,13 +211,45 @@
       "url": "https://www.youtube.com/watch?v=M6SLewOn7nU",
       "author": "Alex Hobern",
       "description": "",
-      "views": 241692,
-      "likes": 4535,
+      "views": 242496,
+      "likes": 4524,
       "saves": 0,
       "comments": 75,
       "published_at": "2026-06-26T18:32:03Z",
       "engagement_summary": "242K views \u00b7 5K likes \u00b7 75 comments",
-      "viral_score": 117671.76,
+      "viral_score": 118053.72,
+      "rank": 8
+    },
+    {
+      "source": "youtube",
+      "id": "P-DNiWGECfk",
+      "title": "There\u2019s girl math then there\u2019s postpartum math",
+      "url": "https://www.youtube.com/watch?v=P-DNiWGECfk",
+      "author": "Chrissy Horton",
+      "description": "There's girl math then there's sleep deprived postpartum math #babysleep #sleeptraining #newbornsleep #newbornlife.",
+      "views": 223320,
+      "likes": 5836,
+      "saves": 0,
+      "comments": 216,
+      "published_at": "2026-07-01T22:33:45Z",
+      "engagement_summary": "223K views \u00b7 6K likes \u00b7 216 comments",
+      "viral_score": 109372.32,
+      "rank": 9
+    },
+    {
+      "source": "youtube",
+      "id": "TAUa_x9Elz8",
+      "title": "Nhanh nh\u01b0 c\u1eaft #baby #kids #nuoicon #beyeu #mevabe #lamme #mangthai #thaigiao #cute #cutebaby",
+      "url": "https://www.youtube.com/watch?v=TAUa_x9Elz8",
+      "author": "Mamibabi | Thai gi\u00e1o, Ch\u0103m s\u00f3c b\u00e9, EASY Luy\u1ec7n ng\u1ee7",
+      "description": "\u0110\u0103ng k\u00fd l\u00e0m h\u1ed9i vi\u00ean \u0111\u1ec3 nh\u1eadn video \u0111\u1ed9c quy\u1ec1n d\u00e0nh ri\u00eang cho h\u1ed9i vi\u00ean c\u1ee7a k\u00eanh: ...",
+      "views": 221723,
+      "likes": 1564,
+      "saves": 0,
+      "comments": 14,
+      "published_at": "2026-06-25T16:00:35Z",
+      "engagement_summary": "222K views \u00b7 2K likes \u00b7 14 comments",
+      "viral_score": 106995.12,
       "rank": 10
     }
   ],
@@ -255,13 +261,13 @@
       "url": "https://www.youtube.com/watch?v=G08gNlDKuIw",
       "author": "Mamibabi | Thai gi\u00e1o, Ch\u0103m s\u00f3c b\u00e9, EASY Luy\u1ec7n ng\u1ee7",
       "description": "\u0110\u0103ng k\u00fd l\u00e0m h\u1ed9i vi\u00ean \u0111\u1ec3 nh\u1eadn video \u0111\u1ed9c quy\u1ec1n d\u00e0nh ri\u00eang cho h\u1ed9i vi\u00ean c\u1ee7a k\u00eanh: ...",
-      "views": 2074515,
-      "likes": 4025,
+      "views": 2131673,
+      "likes": 4118,
       "saves": 0,
-      "comments": 10,
+      "comments": 11,
       "published_at": "2026-06-26T21:00:02Z",
-      "engagement_summary": "2.1M views \u00b7 4K likes \u00b7 10 comments",
-      "viral_score": 997219.8,
+      "engagement_summary": "2.1M views \u00b7 4K likes \u00b7 11 comments",
+      "viral_score": 1024689.48,
       "rank": 1
     },
     {
@@ -271,13 +277,13 @@
       "url": "https://www.youtube.com/watch?v=KQ8G_Ye0MP4",
       "author": "Laro Benz",
       "description": "",
-      "views": 1170897,
-      "likes": 97962,
+      "views": 1173529,
+      "likes": 98070,
       "saves": 0,
-      "comments": 1266,
+      "comments": 1268,
       "published_at": "2026-06-08T03:38:40Z",
       "engagement_summary": "1.2M views \u00b7 98K likes \u00b7 1K comments",
-      "viral_score": 597752.64,
+      "viral_score": 599055.6,
       "rank": 2
     },
     {
@@ -287,13 +293,13 @@
       "url": "https://www.youtube.com/watch?v=2qKbijgS6KQ",
       "author": "Mamibabi | Thai gi\u00e1o, Ch\u0103m s\u00f3c b\u00e9, EASY Luy\u1ec7n ng\u1ee7",
       "description": "\u0110\u0103ng k\u00fd l\u00e0m h\u1ed9i vi\u00ean \u0111\u1ec3 nh\u1eadn video \u0111\u1ed9c quy\u1ec1n d\u00e0nh ri\u00eang cho h\u1ed9i vi\u00ean c\u1ee7a k\u00eanh: ...",
-      "views": 452519,
-      "likes": 3552,
+      "views": 462179,
+      "likes": 3645,
       "saves": 0,
       "comments": 31,
       "published_at": "2026-06-29T06:00:18Z",
-      "engagement_summary": "453K views \u00b7 4K likes \u00b7 31 comments",
-      "viral_score": 218499.0,
+      "engagement_summary": "462K views \u00b7 4K likes \u00b7 31 comments",
+      "viral_score": 223169.28,
       "rank": 3
     },
     {
@@ -303,13 +309,13 @@
       "url": "https://www.youtube.com/watch?v=Mu65MTWPvn0",
       "author": "Blesiv",
       "description": "TRAINING TO BE A TIO W/ @KAED__ .. Thank you Helix Sleep for sponsoring! Visit https://helixsleep.com/blesiv to take ...",
-      "views": 400320,
-      "likes": 11157,
+      "views": 403927,
+      "likes": 11193,
       "saves": 0,
       "comments": 323,
       "published_at": "2026-06-25T00:01:54Z",
-      "engagement_summary": "400K views \u00b7 11K likes \u00b7 323 comments",
-      "viral_score": 196286.4,
+      "engagement_summary": "404K views \u00b7 11K likes \u00b7 323 comments",
+      "viral_score": 198030.72,
       "rank": 4
     },
     {
@@ -319,13 +325,13 @@
       "url": "https://www.youtube.com/watch?v=iPOyBZvVMaw",
       "author": "Kaykaylalas",
       "description": "",
-      "views": 380952,
+      "views": 380974,
       "likes": 15387,
       "saves": 0,
       "comments": 867,
       "published_at": "2026-06-13T14:26:31Z",
       "engagement_summary": "381K views \u00b7 15K likes \u00b7 867 comments",
-      "viral_score": 188708.4,
+      "viral_score": 188718.96,
       "rank": 5
     },
     {
@@ -335,13 +341,13 @@
       "url": "https://www.youtube.com/watch?v=z3J3pdY3KBY",
       "author": "Karma Reels",
       "description": "Jiang Wan was just an ordinary postpartum nanny\u2014until one day, she woke up with an extraordinary gift that would change ...",
-      "views": 329786,
-      "likes": 7162,
+      "views": 336916,
+      "likes": 7289,
       "saves": 0,
-      "comments": 240,
+      "comments": 243,
       "published_at": "2026-06-25T12:00:29Z",
-      "engagement_summary": "330K views \u00b7 7K likes \u00b7 240 comments",
-      "viral_score": 160962.0,
+      "engagement_summary": "337K views \u00b7 7K likes \u00b7 243 comments",
+      "viral_score": 164431.2,
       "rank": 6
     },
     {
@@ -351,46 +357,14 @@
       "url": "https://www.youtube.com/watch?v=6Lq3gmNPDyw",
       "author": "SnugNest ",
       "description": "",
-      "views": 318488,
-      "likes": 3334,
+      "views": 318501,
+      "likes": 3335,
       "saves": 0,
       "comments": 70,
       "published_at": "2026-06-06T15:24:29Z",
-      "engagement_summary": "318K views \u00b7 3K likes \u00b7 70 comments",
-      "viral_score": 154099.68,
+      "engagement_summary": "319K views \u00b7 3K likes \u00b7 70 comments",
+      "viral_score": 154106.28,
       "rank": 7
-    },
-    {
-      "source": "youtube",
-      "id": "4iK1Y5NoLn4",
-      "title": "Why doesn\u2019t he sleep?! #momlife #momvlog #babyroutine #parenting #nighttimeroutine #babyshorts #mom",
-      "url": "https://www.youtube.com/watch?v=4iK1Y5NoLn4",
-      "author": "Kaykaylalas",
-      "description": "",
-      "views": 276485,
-      "likes": 15670,
-      "saves": 0,
-      "comments": 796,
-      "published_at": "2026-06-12T15:12:06Z",
-      "engagement_summary": "276K views \u00b7 16K likes \u00b7 796 comments",
-      "viral_score": 138640.56,
-      "rank": 8
-    },
-    {
-      "source": "youtube",
-      "id": "nIfWgxAfhlI",
-      "title": "T\u1eafm xinh x\u1ec9u #baby #kids #nuoicon #beyeu #mevabe #lamme #thaigiao #cute #cutebaby #beyeu",
-      "url": "https://www.youtube.com/watch?v=nIfWgxAfhlI",
-      "author": "Mamibabi | Thai gi\u00e1o, Ch\u0103m s\u00f3c b\u00e9, EASY Luy\u1ec7n ng\u1ee7",
-      "description": "\u0110\u0103ng k\u00fd l\u00e0m h\u1ed9i vi\u00ean \u0111\u1ec3 nh\u1eadn video \u0111\u1ed9c quy\u1ec1n d\u00e0nh ri\u00eang cho h\u1ed9i vi\u00ean c\u1ee7a k\u00eanh: ...",
-      "views": 245642,
-      "likes": 2564,
-      "saves": 0,
-      "comments": 36,
-      "published_at": "2026-06-23T07:00:12Z",
-      "engagement_summary": "246K views \u00b7 3K likes \u00b7 36 comments",
-      "viral_score": 118844.16,
-      "rank": 9
     },
     {
       "source": "youtube",
@@ -399,13 +373,45 @@
       "url": "https://www.youtube.com/watch?v=M6SLewOn7nU",
       "author": "Alex Hobern",
       "description": "",
-      "views": 241692,
-      "likes": 4535,
+      "views": 242496,
+      "likes": 4524,
       "saves": 0,
       "comments": 75,
       "published_at": "2026-06-26T18:32:03Z",
       "engagement_summary": "242K views \u00b7 5K likes \u00b7 75 comments",
-      "viral_score": 117671.76,
+      "viral_score": 118053.72,
+      "rank": 8
+    },
+    {
+      "source": "youtube",
+      "id": "P-DNiWGECfk",
+      "title": "There\u2019s girl math then there\u2019s postpartum math",
+      "url": "https://www.youtube.com/watch?v=P-DNiWGECfk",
+      "author": "Chrissy Horton",
+      "description": "There's girl math then there's sleep deprived postpartum math #babysleep #sleeptraining #newbornsleep #newbornlife.",
+      "views": 223320,
+      "likes": 5836,
+      "saves": 0,
+      "comments": 216,
+      "published_at": "2026-07-01T22:33:45Z",
+      "engagement_summary": "223K views \u00b7 6K likes \u00b7 216 comments",
+      "viral_score": 109372.32,
+      "rank": 9
+    },
+    {
+      "source": "youtube",
+      "id": "TAUa_x9Elz8",
+      "title": "Nhanh nh\u01b0 c\u1eaft #baby #kids #nuoicon #beyeu #mevabe #lamme #mangthai #thaigiao #cute #cutebaby",
+      "url": "https://www.youtube.com/watch?v=TAUa_x9Elz8",
+      "author": "Mamibabi | Thai gi\u00e1o, Ch\u0103m s\u00f3c b\u00e9, EASY Luy\u1ec7n ng\u1ee7",
+      "description": "\u0110\u0103ng k\u00fd l\u00e0m h\u1ed9i vi\u00ean \u0111\u1ec3 nh\u1eadn video \u0111\u1ed9c quy\u1ec1n d\u00e0nh ri\u00eang cho h\u1ed9i vi\u00ean c\u1ee7a k\u00eanh: ...",
+      "views": 221723,
+      "likes": 1564,
+      "saves": 0,
+      "comments": 14,
+      "published_at": "2026-06-25T16:00:35Z",
+      "engagement_summary": "222K views \u00b7 2K likes \u00b7 14 comments",
+      "viral_score": 106995.12,
       "rank": 10
     }
   ],
@@ -413,13 +419,13 @@
     "top_post_meta": {
       "title": "Ph\u00ea th\u1ebf #baby #kids #nuoicon #beyeu #mevabe #lamme #thaigiao #cute #cutebaby #beyeu",
       "source": "youtube",
-      "engagement": "2.1M views \u00b7 4K likes \u00b7 10 comments",
-      "viral_score": 997219.8,
+      "engagement": "2.1M views \u00b7 4K likes \u00b7 11 comments",
+      "viral_score": 1024689.48,
       "url": "https://www.youtube.com/watch?v=G08gNlDKuIw"
     },
-    "blog": "Here is a blog post template for My Beloved Sleep, incorporating your brand voice, target audience, and inspired by the viral YouTube post:\n\n---\n\n## Blog Post Template: My Beloved Sleep\n\n**1. SEO Title:**\n\n*   **Option 1 (Focus on Sleep & Singapore):** Sleep Training Singapore: Gentle Methods for a Rested Baby & You\n*   **Option 2 (Broader Appeal, Emotion-Focused):** Is Your Baby's Sleep a Mystery? Understanding Little Ones for Peaceful Nights\n*   **Option 3 (Intriguing & Benefit-Oriented):** Unlock Peaceful Sleep for Your Baby: Expert Tips for Southeast Asian Parents\n\n**2. Meta Description:**\n\n*   **Option 1:** Exhausted? Discover gentle, science-backed sleep solutions for your baby. Expert support for Singapore families. Book your free call!\n*   **Option 2:** Feeling overwhelmed by baby sleep? We offer empathetic, evidence-based guidance for parents in Singapore & SEA. Start resting now.\n*   **Option 3:** Reclaim your nights! Learn practical, nurturing sleep strategies for your little one. Singapore's trusted baby sleep consultants.\n\n---\n\n**[Blog Post Title - Choose from SEO Title options above, or a variation]**\n\n### **Intro Hook:**\n\nOh, mama. We see you. The endless nights, the bleary eyes, the constant worry about whether your little one is getting the rest they need \u2013 and if you\u2019ll ever get a full night\u2019s sleep again. In the whirlwind of parenthood, especially here in vibrant Singapore, it's so easy to feel like you're navigating uncharted waters, desperately searching for a beacon of calm in the sleep storm. You're not alone in this, and your desire for peaceful nights for both you and your precious baby is completely valid.\n\nThat viral video of little ones finding their blissful sleep might have caught your eye, sparking a flicker of hope \u2013 a reminder that serene slumber *is* possible. At My Beloved Sleep, we understand the deep emotional toll that sleep deprivation takes. We're here not just with strategies, but with genuine empathy, knowing that beneath the exhaustion lies a profound love for your child and a deep yearning for them to thrive. Let's gently explore how we can help you find that peace together.\n\n---\n\n### **5 H2 Section Headings with 1-Sentence Descriptions:**\n\n*   **H2: Understanding Your Baby's Sleep Cues: The First Step to Peace**\n    *   Learning to recognise your baby's subtle signals is key to preventing overtiredness and fostering positive sleep habits from the start.\n*   **H2: The Science Behind Sleep: What Every Singaporean Parent Needs to Know**\n    *   We'll break down the essential scientific principles of infant sleep in a way that's easy to digest and apply to your daily routine.\n*   **H2: Gentle Sleep Strategies: Nurturing Independence, Not Isolation**\n    *   Discover practical, evidence-based techniques that promote healthy sleep development while honouring your baby's need for comfort and connection.\n*   **H2: Common Sleep Challenges & How My Beloved Sleep Can Help**\n    *   From frequent night wakings to nap refusals, we address the most common hurdles parents face and offer tailored solutions.\n*   **H2: Building a Sustainable Sleep Routine for Your Family in Southeast Asia**\n    *   Creating a predictable and supportive sleep environment that works for your unique family dynamics and the tropical climate of Singapore and beyond.\n\n---\n\n### **Call to Action (CTA):**\n\nFeeling inspired and ready to take the first step towards more restful nights for your family? We know that every baby is unique, and so is every parenting journey. Let's chat about your specific situation.\n\n**Book your",
-    "instagram_carousel": "Here's a 5-slide Instagram carousel for My Beloved Sleep, focusing on the topic \"Ph\u00ea th\u1ebf\" (which can be interpreted as \"so exhausted/overwhelmed\" in a relatable, almost humorous way for parents):\n\n---\n\n## Instagram Carousel: Ph\u00ea Th\u1ebf? We've Got You.\n\n**Slide 1:**\n\n*   **Headline:** Sleep Deprivation is REAL.\n*   **Body:** You're not alone in feeling utterly exhausted. It's a common parenthood challenge.\n*   **Visual Direction:** A soft-focus, warm image of a parent gently holding a sleeping baby, perhaps with a hint of a cozy nursery in the background. The parent's expression is one of quiet love, not despair.\n\n**Slide 2:**\n\n*   **Headline:** Reclaiming Your Rest Starts Now.\n*   **Body:** Small, achievable steps can make a big difference. Let's explore gentle solutions.\n*   **Visual Direction:** A split image or graphic. One side shows a slightly frazzled parent's silhouette, the other side shows a calm, organized visual representing a peaceful sleep routine (e.g., a moon icon, a soft blanket).\n\n**Slide 3:**\n\n*   **Headline:** Understanding Baby's Sleep Needs.\n*   **Body:** Every baby is unique, and so are their sleep patterns. Science guides our approach.\n*   **Visual Direction:** An infographic-style visual showing a simplified sleep cycle for babies, perhaps with gentle, pastel colours. Avoid overly technical diagrams.\n\n**Slide 4:**\n\n*   **Headline:** Your Expert Support System Awaits.\n*   **Body:** We're here to offer evidence-based strategies with empathy. No judgment, just solutions.\n*   **Visual Direction:** A warm, friendly photo of one of the My Beloved Sleep consultants, smiling genuinely. The background should be clean and professional.\n\n**Slide 5:**\n\n*   **Headline:** Let's Build Better Sleep Together.\n*   **Body:** Take the first step towards a more rested you and a happier baby.\n*   **Visual Direction:** A beautiful, inviting image of a peacefully sleeping baby in their crib, bathed in soft, natural light. This represents the desired outcome.\n\n---\n\n## Instagram Caption:\n\n**Hook:** Feeling that \"ph\u00ea th\u1ebf\" exhaustion creeping in? \ud83d\ude34 You're juggling so much, and sleep often feels like a distant dream. We get it.\n\n**Value:** At My Beloved Sleep, we believe no parent should feel alone in their sleep struggles. Our certified consultants offer a warm, empathetic, and science-backed approach, tailored to your family's unique needs. We're here to provide reassurance and practical, gentle strategies to help you and your little one reclaim restful nights. You're doing an amazing job, and support is",
-    "reel_script": "Here's a 60-second Reel script for @mybelovedsleep, tailored for your target audience and brand voice:\n\n**Reel Title:** \"Is This Your Baby's Sleep Struggle?\"\n\n**(0-3s) Hook**\n\n*   **Spoken:** (Warm, gentle tone) \"Mummy, Daddy... feeling that familiar exhaustion?\"\n*   **Visual:** [Close-up shot of a parent looking lovingly but tiredly at their sleeping baby. Soft, warm lighting. Maybe a gentle yawn from the parent.]\n*   **On-screen text:** \"Sleep struggles got you feeling\u2026 \ud83d\ude34\"\n\n**(4-15s) Problem**\n\n*   **Spoken:** \"You've tried everything, haven't you? Rocking, shushing, feeding to sleep... and yet, the night feels endless. Little one wakes up, and so do you, over and over.\"\n*   **Visual:** [Quick cuts of common sleep associations: a hand gently rocking a bassinet, a baby being fed, a parent looking at their phone with tired eyes in the dim light of a nursery.]\n*   **On-screen text:** \"Constant wake-ups? \ud83c\udf19\"\n\n**(16-35s) Insight**\n\n*   **Spoken:** \"It's not about 'making' your baby sleep, but about gently guiding them to understand their own amazing sleep cues. As certified sleep consultants, we see this every day. Your baby is capable of independent sleep, and it's a skill they can learn, just like crawling or talking.\"\n*   **Visual:** [Transition to a slightly brighter, more hopeful visual. Maybe a split screen showing a graph of healthy sleep cycles (abstracted and gentle, not overwhelming) alongside a shot of a baby looking content and peaceful in their crib. Could also show a brief, subtle animation of a baby's brain waves settling.]\n*   **On-screen text:** \"It's a learned skill, not a struggle! \u2728\"\n\n**(36-50s) Solution**\n\n*   **Spoken:** \"At My Beloved Sleep, we use science-backed, gentle methods tailored to your baby's age and your family's unique needs. We help you understand their cues, establish healthy routines, and create a sleep environment that supports restful nights for everyone.\"\n*   **Visual",
+    "blog": "Here's a blog post template for My Beloved Sleep, designed to resonate with Singaporean parents and address their sleep challenges:\n\n---\n\n## Blog Post Template: My Beloved Sleep\n\n### 1. SEO Title\n\n**Example:** Singapore Sleep Solutions: Gentle Ways to Soothe Your Baby to Sleep\n\n*(Consider incorporating keywords like \"baby sleep,\" \"Singapore parents,\" \"sleep training,\" \"newborn sleep,\" \"toddler sleep,\" \"nap training,\" \"sleep regression,\" etc., naturally into the title.)*\n\n### 2. Meta Description\n\n**Example:** Exhausted Singapore parents, find gentle, science-backed baby sleep solutions. Reassurance & practical tips for peaceful nights. Book your free call!\n\n### 3. Intro Hook\n\n**(Paragraph 1 - Warm & Empathetic)**\n\nDear parents, we see you. The haze of sleepless nights can feel endless, a constant hum of exhaustion that colours every moment of your day. You're navigating a brand new world, filled with immeasurable love for your little one, yet also with a deep longing for just a few uninterrupted hours of rest. It's a journey that's both profoundly beautiful and incredibly challenging, and please know, you are absolutely not alone in this.\n\n**(Paragraph 2 - Reassurance & Shared Experience)**\n\nHere at My Beloved Sleep, we understand the unique pressures and joys of raising a family in Singapore. We know the juggling act, the desire to be the best parent you can be, and the quiet worry that creeps in when sleep becomes a distant memory. Our mission is to walk alongside you, offering a supportive hand and sharing evidence-based strategies that have helped countless families in our community find their rhythm and reclaim their sleep.\n\n### 4. H2 Section Headings\n\nHere are 5 H2 section headings, each with a concise, descriptive sentence. These are placeholders and should be adapted to the specific topic of the blog post.\n\n*   **Understanding Your Baby's Sleep Cues: The Gentle Signals of Tiredness**\n    *   Learn to read your baby's subtle cues to understand when they are genuinely ready for sleep, preventing overtiredness and frustration.\n*   **Creating a Sleep Sanctuary: Optimising Your Baby's Sleep Environment in Singapore**\n    *   Discover how to create a conducive sleep space at home that promotes longer, more restful sleep, tailored to your environment.\n*   **The Power of Routine: Establishing Predictable Sleep Patterns for Little Ones**\n    *   Explore how consistent bedtime routines can signal to your baby that it's time to wind down and prepare for sleep.\n*   **Navigating Common Sleep Challenges: From Newborn Nights to Toddler Tussles**\n    *   Gain practical insights into addressing common sleep hurdles, such as short naps, night wakings, and bedtime battles, with empathy and understanding.\n*   **Evidence-Based Approaches: Gentle Sleep Support for Your Family's Well-being**\n    *   Understand the science behind effective sleep strategies that are kind, respectful, and designed to foster healthy sleep habits for your child.\n\n### 5. Call to Action (CTA)\n\n**Ready to embrace more peaceful nights and brighter days?** We're here to help you navigate your baby's sleep journey with confidence and compassion. Let's explore how we can support your family.\n\n**Book your FREE 15-minute discovery call with a certified baby sleep consultant today.** Visit us at [mybelovedsleep.com](https://www.mybelovedsleep.com) to schedule your session.\n\n---",
+    "instagram_carousel": "Here's a 5-slide Instagram carousel and caption for My Beloved Sleep, tailored for your target audience and brand voice:\n\n---\n\n## Instagram Carousel: Ph\u00ea Th\u1ebf? Let's Decode Baby's Moods!\n\n**Slide 1:**\n\n*   **Headline:** Is Baby \"Ph\u00ea Th\u1ebf\"? Understanding Cues\n*   **Body:** That glazed-over look isn't always contentment. Let's decode what your little one is truly communicating.\n*   **Visual Direction:** Soft, warm lighting. A close-up of a baby's face with a slightly dreamy, unfocused expression, but not necessarily crying. Maybe a parent gently stroking their cheek.\n\n**Slide 2:**\n\n*   **Headline:** Beyond the Smile: Signs of Overstimulation\n*   **Body:** Fidgeting, fussiness, or sudden wakefulness can signal too much input. Learn to spot the subtle clues.\n*   **Visual Direction:** A slightly busier, but still gentle, scene. Perhaps a baby looking around a room with slightly wide eyes, or a parent holding a baby who is looking a bit overwhelmed.\n\n**Slide 3:**\n\n*   **Headline:** The \"Ph\u00ea Th\u1ebf\" Sleep Connection\n*   **Body:** An overstimulated baby often struggles to settle. This can lead to fragmented sleep and overtiredness.\n*   **Visual Direction:** A split image. One side shows a baby looking a bit restless in their crib. The other side shows a peaceful, sleeping baby.\n\n**Slide 4:**\n\n*   **Headline:** Gentle Steps to Reset & Reassure\n*   **Body:** Create calm transitions. Dim lights, quiet voices, and predictable routines help signal rest time.\n*   **Visual Direction:** A parent gently rocking a baby in a dimly lit, cozy nursery. Focus on the peaceful interaction.\n\n**Slide 5:**\n\n*   **Headline:** Reclaim Peaceful Sleep Together\n*   **Body:** We're here to guide you. Let's build a sleep foundation that honours your baby's needs.\n*   **Visual Direction:** A warm, inviting photo of a parent and baby snuggled together, looking content and peaceful. Include the My Beloved Sleep logo subtly.\n\n---\n\n## Instagram Caption:\n\n**Hook:** \"Ph\u00ea th\u1ebf\" \u2013 that sweet, sometimes puzzling, glazed-over look our little ones get! Is it pure bliss, or something more? \ud83d\ude34\n\n**Value:** As parents in Singapore, we're always attuned to our babies' needs. But sometimes, that \"ph\u00ea th\u1ebf\" state can be a sign of overstimulation, which can actually disrupt their sleep. It\u2019s not about blaming anyone; it\u2019s about understanding those subtle cues. Overwhelm can lead to fussiness and difficulty settling, impacting precious sleep. We're here to gently guide you through recognizing these signs",
+    "reel_script": "Here's a 60-second Reel script for @mybelovedsleep, tailored for your brand voice and target audience:\n\n---\n\n**Reel Script: \"The 'Too Much' Sleep Struggle\"**\n\n**(0-3s) Hook**\n\n*   **Spoken:** \"Is your little one getting *too much* sleep?\"\n*   **[Visual:** Close-up shot of a baby looking surprisingly awake and content, perhaps with a gentle smile. Soft, warm lighting.]\n*   **On-screen text:** \"Too Much Sleep? \ud83e\udd14\"\n\n**(4-15s) Problem**\n\n*   **Spoken:** \"You've heard all about sleep deprivation, but what about the opposite? When your baby sleeps *a lot*, it can feel just as confusing, right?\"\n*   **[Visual:** Quick cuts showing a parent looking a little bewildered, then a shot of a baby peacefully sleeping for an extended period. Maybe a parent checking their watch with a slight furrowed brow.]\n*   **On-screen text:** \"Confusingly Sleepy Babies?\"\n\n**(16-35s) Insight**\n\n*   **Spoken:** \"At My Beloved Sleep, we understand. Sometimes, 'too much' sleep isn't about quantity, but about *quality*. Or it could be a sign their internal clock needs a gentle nudge.\"\n*   **[Visual:** Transition to a slightly more educational feel. Show a graphic illustrating a gentle sleep cycle, or a visual metaphor for a \"ticking clock.\" A warm, friendly shot of a consultant or a parent with their baby looking calm.]\n*   **On-screen text:** \"It's Not Always About Quantity...\"\n*   **On-screen text:** \"...But Quality & Timing!\"\n\n**(36-50s) Solution**\n\n*   **Spoken:** \"We help you understand your baby's unique sleep patterns, not with rigid rules, but with science-backed insights. We guide you to create a soothing environment that supports healthy sleep, so they thrive \u2013 awake and asleep.\"\n*   **[Visual:** Show a parent gently rocking a baby, a shot of a calm nursery environment, maybe a subtle graphic of a brain wave or a sun/moon cycle. Keep it soft and reassuring.]\n*   **On-screen text:** \"Gentle Guidance for Healthy Sleep Habits\"",
     "thumbnail_spec": {
       "blog_og": {
         "size": "1200x628px",
@@ -443,28 +449,95 @@
         {
           "label": "Blog template",
           "result": "success",
-          "attempts": 1,
-          "errors": [],
-          "timestamp": "2026-07-03T04:12:15.372706"
+          "attempts": 2,
+          "errors": [
+            {
+              "attempt": 1,
+              "error_code": 503
+            }
+          ],
+          "timestamp": "2026-07-03T12:50:36.372191"
         },
         {
           "label": "IG carousel",
           "result": "success",
           "attempts": 1,
           "errors": [],
-          "timestamp": "2026-07-03T04:12:38.529306"
+          "timestamp": "2026-07-03T12:50:59.373502"
         },
         {
           "label": "Reel script",
           "result": "success",
-          "attempts": 1,
-          "errors": [],
-          "timestamp": "2026-07-03T04:13:00.915430"
+          "attempts": 4,
+          "errors": [
+            {
+              "attempt": 1,
+              "error_code": 503
+            },
+            {
+              "attempt": 2,
+              "error_code": 503
+            },
+            {
+              "attempt": 3,
+              "error_code": 503
+            }
+          ],
+          "timestamp": "2026-07-03T12:54:39.554569"
         }
       ]
     }
   },
-  "gaps": [],
+  "gaps": [
+    {
+      "priority": "high",
+      "title": "Engaging Instagram content strategy needed",
+      "why": "Competitors are not actively posting, creating an opportunity to establish brand presence. My Beloved Sleep can become a recognized voice in the niche by consistently sharing valuable content.",
+      "action": "1. Develop a content calendar for the next 4 weeks. 2. Create 3-5 visually appealing posts per week focusing on common sleep challenges and solutions.",
+      "effort": "2-3 hours",
+      "impact": "quick win"
+    },
+    {
+      "priority": "medium",
+      "title": "Leverage Instagram Reels for visibility",
+      "why": "Short-form video content is highly engaging and discoverable on Instagram. Competitors are not utilizing this format, offering a significant advantage.",
+      "action": "1. Brainstorm 5-7 Reel ideas based on popular sleep tips. 2. Film and edit 2-3 Reels to post within the next two weeks.",
+      "effort": "2-3 hours",
+      "impact": "medium term"
+    },
+    {
+      "priority": "medium",
+      "title": "Build community through interactive Stories",
+      "why": "Instagram Stories allow for direct engagement with the audience through polls, Q&As, and quizzes. This fosters connection and loyalty, which competitors are not currently doing.",
+      "action": "1. Plan 3 interactive Story series. 2. Implement one series per week, encouraging audience participation and feedback.",
+      "effort": "30 min",
+      "impact": "medium term"
+    },
+    {
+      "priority": "low",
+      "title": "Consistent brand messaging across platforms",
+      "why": "While competitors are inactive, establishing a clear and consistent brand voice early on is crucial for long-term recognition. This will differentiate My Beloved Sleep.",
+      "action": "1. Define key brand pillars and messaging points. 2. Ensure all content aligns with these defined messages.",
+      "effort": "30 min",
+      "impact": "long term"
+    },
+    {
+      "priority": "low",
+      "title": "Explore collaborations with complementary brands",
+      "why": "Partnering with other businesses in the parenting or baby space can expand reach. Competitors are not yet active, making this an opportune time to initiate outreach.",
+      "action": "1. Identify 3-5 potential collaboration partners. 2. Draft initial outreach messages for two partners.",
+      "effort": "1 day",
+      "impact": "long term"
+    },
+    {
+      "priority": "low",
+      "title": "Develop a lead magnet for email list growth",
+      "why": "Capturing leads through valuable freebies is essential for nurturing potential clients. Competitors are not actively building their email lists, presenting a clear opportunity.",
+      "action": "1. Outline ideas for a downloadable sleep guide or checklist. 2. Begin drafting content for the chosen lead magnet.",
+      "effort": "1 day",
+      "impact": "long term"
+    }
+  ],
   "competitors": [
     {
       "name": "@takingcarababies",
@@ -690,7 +763,7 @@
         "weekly_views": 0,
         "discovery_sources": [
           {
-            "label": "The Peaceful Sleeper - Instagram",
+            "label": "The Peaceful Sleeper",
             "url": "https://www.instagram.com/the.peaceful.sleeper/?hl=en",
             "via": "Google search"
           }
@@ -711,7 +784,7 @@
         "weekly_views": 0,
         "discovery_sources": [
           {
-            "label": "Cat - Sleep Consultant (@babysleepteam) - Instagra",
+            "label": "Cat - Sleep Consultant (@babysleepteam)",
             "url": "https://www.instagram.com/babysleepteam/?hl=en",
             "via": "Google search"
           }
@@ -741,20 +814,20 @@
         "discovery_score": 0
       },
       {
-        "handle": "arestfulnight",
-        "name": "@arestfulnight",
+        "handle": "heysleepybaby",
+        "name": "@heysleepybaby",
         "market": "global",
         "followers": 0,
         "growth_30d": 0,
         "grade": "\u2014",
-        "instagram_url": "https://www.instagram.com/arestfulnight/",
+        "instagram_url": "https://www.instagram.com/heysleepybaby/",
         "socialblade_url": "",
         "website_url": "",
         "weekly_views": 0,
         "discovery_sources": [
           {
-            "label": "Meg O'Leary | Infant & Child Sleep Expert (@arestf",
-            "url": "https://www.instagram.com/arestfulnight/?hl=en",
+            "label": "Rachael Shepard-Ohta (@heysleepybaby) - Instagram",
+            "url": "https://www.instagram.com/heysleepybaby/?hl=en",
             "via": "Google search"
           }
         ],
@@ -974,8 +1047,8 @@
         "discovery_score": 0
       }
     ],
-    "discovered_at": "2026-07-03T04:11:21.094977",
-    "total_checked": 20,
+    "discovered_at": "2026-07-03T12:49:06.531129",
+    "total_checked": 18,
     "benchmarks_last_updated": "2026-06-29"
   },
   "your_metrics": {
