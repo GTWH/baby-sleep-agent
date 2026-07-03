@@ -163,6 +163,7 @@ async def run_agent():
         run_date=run_start.isoformat(),
         reliability=run_reliability,
         youtube_videos=youtube_ranked,
+        source_counts=source_counts,
     )
 
     out_dir = Path("docs")
