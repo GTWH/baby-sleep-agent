@@ -1502,5 +1502,79 @@
         "timestamp": "2026-07-26T23:08:35.666056"
       }
     ]
+  },
+  {
+    "run_date": "2026-08-02T23:01:29.461012",
+    "calls_total": 4,
+    "calls_success": 4,
+    "calls_fallback": 0,
+    "fallback_rate": "0%",
+    "run_complete": true,
+    "details": [
+      {
+        "label": "Blog template",
+        "result": "success",
+        "attempts": 4,
+        "errors": [
+          {
+            "attempt": 1,
+            "error_code": 503
+          },
+          {
+            "attempt": 2,
+            "error_code": 503
+          },
+          {
+            "attempt": 3,
+            "error_code": 503
+          }
+        ],
+        "timestamp": "2026-08-02T23:06:39.206125"
+      },
+      {
+        "label": "IG carousel",
+        "result": "success",
+        "attempts": 2,
+        "errors": [
+          {
+            "attempt": 1,
+            "error_code": 503
+          }
+        ],
+        "timestamp": "2026-08-02T23:07:31.722618"
+      },
+      {
+        "label": "Reel script",
+        "result": "success",
+        "attempts": 2,
+        "errors": [
+          {
+            "attempt": 1,
+            "error_code": 503
+          }
+        ],
+        "timestamp": "2026-08-02T23:08:25.567767"
+      },
+      {
+        "label": "Gap analysis",
+        "result": "success",
+        "attempts": 4,
+        "errors": [
+          {
+            "attempt": 1,
+            "error_code": 503
+          },
+          {
+            "attempt": 2,
+            "error_code": 503
+          },
+          {
+            "attempt": 3,
+            "error_code": 503
+          }
+        ],
+        "timestamp": "2026-08-02T23:11:51.893630"
+      }
+    ]
   }
 ]
