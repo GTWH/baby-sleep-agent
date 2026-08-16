@@ -1614,5 +1614,43 @@
         "timestamp": "2026-08-09T22:43:04.998498"
       }
     ]
+  },
+  {
+    "run_date": "2026-08-16T22:29:13.229281",
+    "calls_total": 4,
+    "calls_success": 4,
+    "calls_fallback": 0,
+    "fallback_rate": "0%",
+    "run_complete": true,
+    "details": [
+      {
+        "label": "Blog template",
+        "result": "success",
+        "attempts": 1,
+        "errors": [],
+        "timestamp": "2026-08-16T22:31:32.459255"
+      },
+      {
+        "label": "IG carousel",
+        "result": "success",
+        "attempts": 1,
+        "errors": [],
+        "timestamp": "2026-08-16T22:31:54.741805"
+      },
+      {
+        "label": "Reel script",
+        "result": "success",
+        "attempts": 1,
+        "errors": [],
+        "timestamp": "2026-08-16T22:32:16.952093"
+      },
+      {
+        "label": "Gap analysis",
+        "result": "success",
+        "attempts": 1,
+        "errors": [],
+        "timestamp": "2026-08-16T22:32:39.560618"
+      }
+    ]
   }
 ]
