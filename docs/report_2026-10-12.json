@@ -1,0 +1,1026 @@
+{
+  "meta": {
+    "run_date": "2026-10-12T01:10:07.822922",
+    "week_label": "Oct 12\u201318, 2026",
+    "brand": "My Beloved Sleep",
+    "brand_url": "https://www.mybelovedsleep.com",
+    "version": "4.0-free",
+    "stack": "Playwright + Serper.dev + Gemini 2.0 Flash + YouTube Data API"
+  },
+  "summary": {
+    "total_collected": 74,
+    "viral_hits": 10,
+    "active_sources": [
+      "Blog",
+      "Trending search",
+      "YouTube"
+    ],
+    "inactive_sources": [
+      "Instagram",
+      "TikTok",
+      "Pinterest"
+    ],
+    "source_counts": {
+      "instagram": 0,
+      "tiktok": 0,
+      "pinterest": 0,
+      "blog": 39,
+      "trending": 20,
+      "youtube": 15
+    },
+    "cost_this_run": "$0.00"
+  },
+  "reliability": {
+    "run_date": "2026-10-12T01:10:07.822922",
+    "calls_total": 4,
+    "calls_success": 4,
+    "calls_fallback": 0,
+    "fallback_rate": "0%",
+    "run_complete": true,
+    "details": [
+      {
+        "label": "Blog template",
+        "result": "success",
+        "attempts": 1,
+        "errors": [],
+        "timestamp": "2026-10-12T01:13:09.664986"
+      },
+      {
+        "label": "IG carousel",
+        "result": "success",
+        "attempts": 1,
+        "errors": [],
+        "timestamp": "2026-10-12T01:13:32.443311"
+      },
+      {
+        "label": "Reel script",
+        "result": "success",
+        "attempts": 1,
+        "errors": [],
+        "timestamp": "2026-10-12T01:13:54.751229"
+      },
+      {
+        "label": "Gap analysis",
+        "result": "success",
+        "attempts": 1,
+        "errors": [],
+        "timestamp": "2026-10-12T01:14:19.183250"
+      }
+    ]
+  },
+  "viral_posts": [
+    {
+      "source": "youtube",
+      "id": "2igz8iYL7Kk",
+      "title": "Seeing how much I can get done before she falls asleep on my back \ud83e\udee3\ud83e\udd0d#CleanWithMe #Babywearing",
+      "url": "https://www.youtube.com/watch?v=2igz8iYL7Kk",
+      "author": "Angela Holm ",
+      "description": "",
+      "views": 2668321,
+      "likes": 44890,
+      "saves": 0,
+      "comments": 532,
+      "published_at": "2026-09-17T15:00:13Z",
+      "engagement_summary": "2.7M views \u00b7 45K likes \u00b7 532 comments",
+      "viral_score": 1297146.0,
+      "rank": 1
+    },
+    {
+      "source": "youtube",
+      "id": "QY85DxhEMzo",
+      "title": "\ud83d\ude0dCute Newborn Sleep Support Pillow &amp; Cozy Swaddle Combo Baby Comfort Essentials\ud83e\udd70",
+      "url": "https://www.youtube.com/watch?v=QY85DxhEMzo",
+      "author": "Baby Smile Zone",
+      "description": "zZz Cozy Baby Sleep Support Pillow & Swaddle Combo Cute Newborn Comfort Essentials   Give your little one the ...",
+      "views": 2554742,
+      "likes": 14510,
+      "saves": 0,
+      "comments": 30,
+      "published_at": "2026-09-23T22:01:06Z",
+      "engagement_summary": "2.6M views \u00b7 15K likes \u00b7 30 comments",
+      "viral_score": 1231510.56,
+      "rank": 2
+    },
+    {
+      "source": "youtube",
+      "id": "ru4rjQOaUdw",
+      "title": "Bathtime and nighttime for my baby girl \ud83e\ude77\u2601\ufe0f\ud83e\udee7\ud83c\udf7c\u2728 #bathtime #nightroutine",
+      "url": "https://www.youtube.com/watch?v=ru4rjQOaUdw",
+      "author": "Angela Holm ",
+      "description": "",
+      "views": 789516,
+      "likes": 12102,
+      "saves": 0,
+      "comments": 125,
+      "published_at": "2026-10-08T01:50:02Z",
+      "engagement_summary": "790K views \u00b7 12K likes \u00b7 125 comments",
+      "viral_score": 383369.4,
+      "rank": 3
+    },
+    {
+      "source": "youtube",
+      "id": "2PrJsnYW7wU",
+      "title": "Can your baby survive if something covers their face?",
+      "url": "https://www.youtube.com/watch?v=2PrJsnYW7wU",
+      "author": "Elliston Pediatrics",
+      "description": "Could your baby get something off their face if they needed to? In the first months of life, babies don't yet have the strength, ...",
+      "views": 669006,
+      "likes": 15115,
+      "saves": 0,
+      "comments": 202,
+      "published_at": "2026-09-20T12:52:55Z",
+      "engagement_summary": "669K views \u00b7 15K likes \u00b7 202 comments",
+      "viral_score": 326637.0,
+      "rank": 4
+    },
+    {
+      "source": "youtube",
+      "id": "KtYkUwNJNws",
+      "title": "And it sounds like I&#39;ll be losing more sleep \ud83e\udd23 and baby&#39;s favorite time to do this... Mombabyusa Usa",
+      "url": "https://www.youtube.com/watch?v=KtYkUwNJNws",
+      "author": "Mombabyusa Usa",
+      "description": "And it sounds like I'll be losing more sleep and baby's favorite time to do this is at 3 am when you desperately want to go back ...",
+      "views": 447761,
+      "likes": 3598,
+      "saves": 0,
+      "comments": 35,
+      "published_at": "2026-09-30T06:00:13Z",
+      "engagement_summary": "448K views \u00b7 4K likes \u00b7 35 comments",
+      "viral_score": 216233.16,
+      "rank": 5
+    },
+    {
+      "source": "youtube",
+      "id": "SqdYn7KfCkw",
+      "title": "I don&#39;t breastfeed my baby at night",
+      "url": "https://www.youtube.com/watch?v=SqdYn7KfCkw",
+      "author": "The Unplanned Podcast",
+      "description": "The Newborn Stage: Hemorrhage Scare & Sleep Deprivation | out now #unplannedpodcast.",
+      "views": 404784,
+      "likes": 7292,
+      "saves": 0,
+      "comments": 228,
+      "published_at": "2026-09-13T17:19:58Z",
+      "engagement_summary": "405K views \u00b7 7K likes \u00b7 228 comments",
+      "viral_score": 197003.52,
+      "rank": 6
+    },
+    {
+      "source": "youtube",
+      "id": "QbsSajfIU48",
+      "title": "10 Hours Mozart Baby Sleep Music + Gentle Water Sounds \ud83d\ude34 Fall Asleep in 3 Minutes! | Dark Screen",
+      "url": "https://www.youtube.com/watch?v=QbsSajfIU48",
+      "author": "Mother & Baby Sounds",
+      "description": "10 Hours Mozart Baby Sleep Music + Gentle Water Sounds Fall Asleep in 3 Minutes! | Dark Screen Are you struggling to get ...",
+      "views": 386046,
+      "likes": 1815,
+      "saves": 0,
+      "comments": 0,
+      "published_at": "2026-09-12T13:06:48Z",
+      "engagement_summary": "386K views \u00b7 2K likes",
+      "viral_score": 185955.48,
+      "rank": 7
+    },
+    {
+      "source": "youtube",
+      "id": "3IkveiQafBo",
+      "title": "NEWBORN Night Routine\u2026 PURE CHAOS \ud83d\ude2d",
+      "url": "https://www.youtube.com/watch?v=3IkveiQafBo",
+      "author": "The Logan Fam",
+      "description": "Morning routines hit DIFFERENT with a newborn Between the 3AM wake-ups, feedings, diaper changes, getting TJ ready, ...",
+      "views": 362621,
+      "likes": 8480,
+      "saves": 0,
+      "comments": 420,
+      "published_at": "2026-09-14T15:21:01Z",
+      "engagement_summary": "363K views \u00b7 8K likes \u00b7 420 comments",
+      "viral_score": 177262.08,
+      "rank": 8
+    },
+    {
+      "source": "youtube",
+      "id": "bPWvDNMPes4",
+      "title": "The Sleep Mistake Exhausted Parents Need to Know About",
+      "url": "https://www.youtube.com/watch?v=bPWvDNMPes4",
+      "author": "Elliston Pediatrics",
+      "description": "You can keep your baby close without sharing the same bed. \u2764\ufe0f For safe sleep, think: same room, separate sleep surface. A firm ...",
+      "views": 336711,
+      "likes": 4604,
+      "saves": 0,
+      "comments": 455,
+      "published_at": "2026-09-27T13:06:54Z",
+      "engagement_summary": "337K views \u00b7 5K likes \u00b7 455 comments",
+      "viral_score": 163442.52,
+      "rank": 9
+    },
+    {
+      "source": "youtube",
+      "id": "jMgmhk6wBCI",
+      "title": "A late bedtime routine because somebody took a late nap \u2728\ud83c\udf19 #NightRoutine #MomLife #BabyRoutine",
+      "url": "https://www.youtube.com/watch?v=jMgmhk6wBCI",
+      "author": "Angela Holm ",
+      "description": "",
+      "views": 288865,
+      "likes": 5735,
+      "saves": 0,
+      "comments": 133,
+      "published_at": "2026-09-19T01:00:09Z",
+      "engagement_summary": "289K views \u00b7 6K likes \u00b7 133 comments",
+      "viral_score": 140767.68,
+      "rank": 10
+    }
+  ],
+  "youtube_videos": [
+    {
+      "source": "youtube",
+      "id": "2igz8iYL7Kk",
+      "title": "Seeing how much I can get done before she falls asleep on my back \ud83e\udee3\ud83e\udd0d#CleanWithMe #Babywearing",
+      "url": "https://www.youtube.com/watch?v=2igz8iYL7Kk",
+      "author": "Angela Holm ",
+      "description": "",
+      "views": 2668321,
+      "likes": 44890,
+      "saves": 0,
+      "comments": 532,
+      "published_at": "2026-09-17T15:00:13Z",
+      "engagement_summary": "2.7M views \u00b7 45K likes \u00b7 532 comments",
+      "viral_score": 1297146.0,
+      "rank": 1
+    },
+    {
+      "source": "youtube",
+      "id": "QY85DxhEMzo",
+      "title": "\ud83d\ude0dCute Newborn Sleep Support Pillow &amp; Cozy Swaddle Combo Baby Comfort Essentials\ud83e\udd70",
+      "url": "https://www.youtube.com/watch?v=QY85DxhEMzo",
+      "author": "Baby Smile Zone",
+      "description": "zZz Cozy Baby Sleep Support Pillow & Swaddle Combo Cute Newborn Comfort Essentials   Give your little one the ...",
+      "views": 2554742,
+      "likes": 14510,
+      "saves": 0,
+      "comments": 30,
+      "published_at": "2026-09-23T22:01:06Z",
+      "engagement_summary": "2.6M views \u00b7 15K likes \u00b7 30 comments",
+      "viral_score": 1231510.56,
+      "rank": 2
+    },
+    {
+      "source": "youtube",
+      "id": "ru4rjQOaUdw",
+      "title": "Bathtime and nighttime for my baby girl \ud83e\ude77\u2601\ufe0f\ud83e\udee7\ud83c\udf7c\u2728 #bathtime #nightroutine",
+      "url": "https://www.youtube.com/watch?v=ru4rjQOaUdw",
+      "author": "Angela Holm ",
+      "description": "",
+      "views": 789516,
+      "likes": 12102,
+      "saves": 0,
+      "comments": 125,
+      "published_at": "2026-10-08T01:50:02Z",
+      "engagement_summary": "790K views \u00b7 12K likes \u00b7 125 comments",
+      "viral_score": 383369.4,
+      "rank": 3
+    },
+    {
+      "source": "youtube",
+      "id": "2PrJsnYW7wU",
+      "title": "Can your baby survive if something covers their face?",
+      "url": "https://www.youtube.com/watch?v=2PrJsnYW7wU",
+      "author": "Elliston Pediatrics",
+      "description": "Could your baby get something off their face if they needed to? In the first months of life, babies don't yet have the strength, ...",
+      "views": 669006,
+      "likes": 15115,
+      "saves": 0,
+      "comments": 202,
+      "published_at": "2026-09-20T12:52:55Z",
+      "engagement_summary": "669K views \u00b7 15K likes \u00b7 202 comments",
+      "viral_score": 326637.0,
+      "rank": 4
+    },
+    {
+      "source": "youtube",
+      "id": "KtYkUwNJNws",
+      "title": "And it sounds like I&#39;ll be losing more sleep \ud83e\udd23 and baby&#39;s favorite time to do this... Mombabyusa Usa",
+      "url": "https://www.youtube.com/watch?v=KtYkUwNJNws",
+      "author": "Mombabyusa Usa",
+      "description": "And it sounds like I'll be losing more sleep and baby's favorite time to do this is at 3 am when you desperately want to go back ...",
+      "views": 447761,
+      "likes": 3598,
+      "saves": 0,
+      "comments": 35,
+      "published_at": "2026-09-30T06:00:13Z",
+      "engagement_summary": "448K views \u00b7 4K likes \u00b7 35 comments",
+      "viral_score": 216233.16,
+      "rank": 5
+    },
+    {
+      "source": "youtube",
+      "id": "SqdYn7KfCkw",
+      "title": "I don&#39;t breastfeed my baby at night",
+      "url": "https://www.youtube.com/watch?v=SqdYn7KfCkw",
+      "author": "The Unplanned Podcast",
+      "description": "The Newborn Stage: Hemorrhage Scare & Sleep Deprivation | out now #unplannedpodcast.",
+      "views": 404784,
+      "likes": 7292,
+      "saves": 0,
+      "comments": 228,
+      "published_at": "2026-09-13T17:19:58Z",
+      "engagement_summary": "405K views \u00b7 7K likes \u00b7 228 comments",
+      "viral_score": 197003.52,
+      "rank": 6
+    },
+    {
+      "source": "youtube",
+      "id": "QbsSajfIU48",
+      "title": "10 Hours Mozart Baby Sleep Music + Gentle Water Sounds \ud83d\ude34 Fall Asleep in 3 Minutes! | Dark Screen",
+      "url": "https://www.youtube.com/watch?v=QbsSajfIU48",
+      "author": "Mother & Baby Sounds",
+      "description": "10 Hours Mozart Baby Sleep Music + Gentle Water Sounds Fall Asleep in 3 Minutes! | Dark Screen Are you struggling to get ...",
+      "views": 386046,
+      "likes": 1815,
+      "saves": 0,
+      "comments": 0,
+      "published_at": "2026-09-12T13:06:48Z",
+      "engagement_summary": "386K views \u00b7 2K likes",
+      "viral_score": 185955.48,
+      "rank": 7
+    },
+    {
+      "source": "youtube",
+      "id": "3IkveiQafBo",
+      "title": "NEWBORN Night Routine\u2026 PURE CHAOS \ud83d\ude2d",
+      "url": "https://www.youtube.com/watch?v=3IkveiQafBo",
+      "author": "The Logan Fam",
+      "description": "Morning routines hit DIFFERENT with a newborn Between the 3AM wake-ups, feedings, diaper changes, getting TJ ready, ...",
+      "views": 362621,
+      "likes": 8480,
+      "saves": 0,
+      "comments": 420,
+      "published_at": "2026-09-14T15:21:01Z",
+      "engagement_summary": "363K views \u00b7 8K likes \u00b7 420 comments",
+      "viral_score": 177262.08,
+      "rank": 8
+    },
+    {
+      "source": "youtube",
+      "id": "bPWvDNMPes4",
+      "title": "The Sleep Mistake Exhausted Parents Need to Know About",
+      "url": "https://www.youtube.com/watch?v=bPWvDNMPes4",
+      "author": "Elliston Pediatrics",
+      "description": "You can keep your baby close without sharing the same bed. \u2764\ufe0f For safe sleep, think: same room, separate sleep surface. A firm ...",
+      "views": 336711,
+      "likes": 4604,
+      "saves": 0,
+      "comments": 455,
+      "published_at": "2026-09-27T13:06:54Z",
+      "engagement_summary": "337K views \u00b7 5K likes \u00b7 455 comments",
+      "viral_score": 163442.52,
+      "rank": 9
+    },
+    {
+      "source": "youtube",
+      "id": "jMgmhk6wBCI",
+      "title": "A late bedtime routine because somebody took a late nap \u2728\ud83c\udf19 #NightRoutine #MomLife #BabyRoutine",
+      "url": "https://www.youtube.com/watch?v=jMgmhk6wBCI",
+      "author": "Angela Holm ",
+      "description": "",
+      "views": 288865,
+      "likes": 5735,
+      "saves": 0,
+      "comments": 133,
+      "published_at": "2026-09-19T01:00:09Z",
+      "engagement_summary": "289K views \u00b7 6K likes \u00b7 133 comments",
+      "viral_score": 140767.68,
+      "rank": 10
+    }
+  ],
+  "content": {
+    "top_post_meta": {
+      "title": "Seeing how much I can get done before she falls asleep on my back \ud83e\udee3\ud83e\udd0d#CleanWithMe #Babywearing",
+      "source": "youtube",
+      "engagement": "2.7M views \u00b7 45K likes \u00b7 532 comments",
+      "viral_score": 1297146.0,
+      "url": "https://www.youtube.com/watch?v=2igz8iYL7Kk"
+    },
+    "blog": "Here's a blog post template for My Beloved Sleep, tailored to your brand voice, market, and inspired by the viral YouTube post:\n\n---\n\n## Blog Post Template:\n\n**1. SEO Title:**\n\n*   **Option 1 (Focus on the \"why\"):** Singapore Parents: Is Babywearing Stealing Your Sleep? Discover How to Reclaim Your Rest\n*   **Option 2 (Focus on the \"how\"):** Babywearing & Sleep: A Singapore Parent's Guide to Harmony and Rest\n*   **Option 3 (Benefit-driven):** Tired of the Babywearing Hustle? Singapore Parents, Find Your Sleep Solution Here\n\n**2. Meta Description:**\n\n*   **Option 1:** Singapore parents, feeling overwhelmed by babywearing? Discover gentle, science-backed strategies to improve sleep for you and your little one.\n*   **Option 2:** Exhausted Singapore parents, is babywearing impacting your sleep? Learn how to create a harmonious sleep environment with expert guidance.\n\n**3. Intro Hook:**\n\n**(Paragraph 1 - Empathetic & Reassuring)**\nOh, mama. We see you. That viral video of someone tackling their to-do list while their little one naps soundly on their back? It\u2019s a beautiful glimpse into what feels like a distant dream for so many of us. You\u2019re juggling a million things, and that precious babywearing time, while a lifeline for connection and comfort, can sometimes feel like another demand on your already stretched energy. The quiet moments you crave for yourself, or even just a moment to sit down, can seem impossible to find.\n\n**(Paragraph 2 - Validating & Setting the Stage)**\nIt's completely understandable to feel that pull between wanting to be present for your baby and needing to reclaim a sliver of your own life. You\u2019re doing an incredible job, and the fact that you\u2019re even thinking about how to make this work better shows how much you care. We know that exhaustion is a real, heavy thing, and you deserve support that\u2019s as warm and understanding as it is effective.\n\n**4. H2 Section Headings with 1-Sentence Descriptions:**\n\n*   **H2: The Sweet Spot: Understanding Babywearing's Role in Sleep**\n    *   This section will explore the science behind why babywearing can be soothing for babies and how it can sometimes create challenges for parental sleep.\n\n*   **H2: Beyond the Viral Snippet: Creating Sustainable Sleep Habits**\n    *   We'll delve into practical, gentle strategies that go beyond the quick wins to foster healthier sleep patterns for both you and your baby.\n\n*   **H2: Singaporean Parents: Navigating Sleep in a Busy World**\n    *   This section will address the unique context of parenting in Singapore and offer relatable, evidence-based solutions.\n\n*   **H2: Tiny Triumphs: Small Steps to Bigger Sleep Wins**\n    *   Discover actionable tips and techniques that can be implemented gradually, celebrating each small improvement.\n\n*   **H2: Building Your Village: Support for Exhausted Parents**\n    *   Learn about the importance of community and professional support in your journey towards better sleep.\n\n**5. Call to Action (CTA):**\n\nFeeling overwhelmed by the juggle? You don't have to navigate this alone. Let's explore how we can bring more peace and rest to your family. **Book your free 15-minute discovery call with My Beloved Sleep today and take the first step towards a more restful tomorrow.**\n\n---",
+    "instagram_carousel": "Here's a 5-slide Instagram carousel and caption for My Beloved Sleep, tailored to your brand voice and target audience:\n\n---\n\n## Instagram Carousel:\n\n**Slide 1**\n\n*   **Headline:** The \"Just One More Thing\" Hustle\n*   **Body:** That precious window before baby naps is a powerful productivity zone.\n    We get it \u2013 you're squeezing in tasks while they rest.\n*   **Visual Direction:** A warm, softly lit photo of a parent gently holding their baby, who is asleep on their chest or back, with a subtle hint of a tidy corner in the background (e.g., a neatly folded blanket, a clean surface).\n\n**Slide 2**\n\n*   **Headline:** Is Babywearing Your Secret Weapon?\n*   **Body:** It's amazing how much can be achieved with a sleeping baby in tow.\n    This close connection can make chores feel less daunting.\n*   **Visual Direction:** A close-up, heartwarming shot of a baby securely and comfortably worn by a parent, their face peaceful. The parent's hands might be subtly engaged in a light task like folding laundry.\n\n**Slide 3**\n\n*   **Headline:** Finding Your Rhythm, Not Perfection\n*   **Body:** Don't aim for spotless, aim for manageable and peaceful.\n    Small wins during naptime add up and boost your morale.\n*   **Visual Direction:** A split image or a subtle overlay. One side shows a parent calmly doing a simple task (e.g., wiping a counter), the other side shows the sleeping baby being worn. The overall tone is serene.\n\n**Slide 4**\n\n*   **Headline:** Your Needs Matter Too, Mama\n*   **Body:** While you're a superhero getting things done, remember yourself.\n    Prioritising rest and sanity is just as important.\n*   **Visual Direction:** A parent taking a brief, mindful moment for themselves \u2013 perhaps sipping tea, stretching, or simply closing their eyes for a second \u2013 while the baby is still sleeping soundly in a carrier.\n\n**Slide 5**\n\n*   **Headline:** We're Here to Support Your Sleep\n*   **Body:** Rest assured, we're dedicated to helping you find sustainable sleep solutions.\n    Let's build a calmer, more rested family life together.\n*   **Visual Direction:** The My Beloved Sleep logo with a gentle, reassuring background. Perhaps a soft gradient or a subtle image of a peaceful nursery.\n\n---\n\n## Instagram Caption:\n\n**Hook:** That magical moment when baby drifts off on your back\u2026 suddenly you feel like you can conquer the world (or at least the laundry pile! \ud83d\ude05\ud83e\udd0d)\n\n**Value:** We see you, mama, expertly navigating the \"just one more thing\" hustle while your little one naps. Babywearing is a beautiful",
+    "reel_script": "Here's a 60-second Reel script for @mybelovedsleep on \"Seeing how much I can get done before she falls asleep on my back \ud83e\udee3\ud83e\udd0d#CleanWithMe #Babywearing\":\n\n**Reel Script: \"The Babywearing Productivity Hack\"**\n\n**(0-3s Hook)**\n\n**Spoken:** \"Ever feel like you can only get things done *after* they're asleep?\"\n\n**[Visual:** Quick, slightly chaotic shot of a parent looking a bit tired, maybe juggling a baby carrier and a laundry basket. Fast cuts between parent's face and the baby carrier.]\n\n**On-screen text:** \"The 'Naptime Hustle' Realness\"\n\n**(4-15s Problem)**\n\n**Spoken:** \"We get it. When your little one is awake, your world often stops. And those precious nap times? They feel like the *only* window to catch your breath... or maybe even tackle that never-ending to-do list.\"\n\n**[Visual:** Transition to a slightly softer shot. Parent is now wearing the baby, looking a little overwhelmed by a messy living room. Maybe a quick shot of a pile of dishes or unfolded laundry.]\n\n**On-screen text:** \"When your baby's awake, your to-do list waits...\"\n\n**(16-35s Insight)**\n\n**Spoken:** \"But what if I told you there's a secret weapon many parents in Singapore are discovering? It's not about magically creating more hours in the day. It's about *leveraging* those moments you're already holding them close.\"\n\n**[Visual:** Parent is now in motion, baby securely in a comfortable carrier. Show them tidying up a small area, folding a few clothes, or wiping down a counter. The baby looks content and sleepy.]\n\n**On-screen text:** \"The hidden productivity power of #Babywearing\"\n\n**(36-50s Solution)**\n\n**Spoken:** \"When your baby is content and secure in a carrier, they're often happy to just be near you. This allows you to move around, do light chores, and even have a moment of calm, all while fostering that beautiful connection.\"\n\n**[Visual:** Show a montage of practical, light tasks: wiping down a kitchen counter, folding a few baby clothes, watering a plant, or even replying to",
+    "thumbnail_spec": {
+      "blog_og": {
+        "size": "1200x628px",
+        "style": "Navy background, cream headline, MBS logo, moon icon"
+      },
+      "instagram_feed": {
+        "size": "1080x1080px",
+        "style": "Slide 1 of carousel, large headline, brand colours"
+      },
+      "pinterest": {
+        "size": "1000x1500px",
+        "style": "Tall format, headline top, URL watermark bottom"
+      }
+    },
+    "reliability": {
+      "calls_total": 3,
+      "calls_success": 3,
+      "calls_fallback": 0,
+      "fallback_rate": "0%",
+      "details": [
+        {
+          "label": "Blog template",
+          "result": "success",
+          "attempts": 1,
+          "errors": [],
+          "timestamp": "2026-10-12T01:13:09.664986"
+        },
+        {
+          "label": "IG carousel",
+          "result": "success",
+          "attempts": 1,
+          "errors": [],
+          "timestamp": "2026-10-12T01:13:32.443311"
+        },
+        {
+          "label": "Reel script",
+          "result": "success",
+          "attempts": 1,
+          "errors": [],
+          "timestamp": "2026-10-12T01:13:54.751229"
+        }
+      ]
+    }
+  },
+  "gaps": [
+    {
+      "priority": "high",
+      "title": "Consistent, Engaging Social Media Content Strategy",
+      "why": "Competitors with active social media presence are consistently engaging their audience with valuable content. My Beloved Sleep lacks this consistent presence, missing opportunities for brand building and customer connection.",
+      "action": "1. Develop a content calendar for the next 4 weeks focusing on common sleep challenges. 2. Schedule 3-4 posts per week across key platforms (Instagram, Facebook). 3. Engage with comments and messages daily.",
+      "effort": "2-3 hours",
+      "impact": "medium term"
+    },
+    {
+      "priority": "high",
+      "title": "Leveraging User-Generated Content and Testimonials",
+      "why": "Competitors actively showcase client success stories and testimonials, building trust and social proof. My Beloved Sleep is not currently highlighting these powerful endorsements.",
+      "action": "1. Actively request testimonials from satisfied clients via email. 2. Create visually appealing graphics to share positive feedback on social media. 3. Feature a dedicated 'Success Stories' section on the website.",
+      "effort": "30 min",
+      "impact": "quick win"
+    },
+    {
+      "priority": "medium",
+      "title": "Clear, Benefit-Driven Service Offerings",
+      "why": "Competitors clearly articulate the benefits and outcomes of their sleep consulting services. My Beloved Sleep's service descriptions could be more focused on client transformations.",
+      "action": "1. Rewrite service descriptions to highlight the specific problems solved and benefits gained. 2. Use stronger, action-oriented language that resonates with parent pain points. 3. Add a clear call to action for each service.",
+      "effort": "2-3 hours",
+      "impact": "medium term"
+    },
+    {
+      "priority": "medium",
+      "title": "Targeted Content for Specific Sleep Stages",
+      "why": "Many competitors create content tailored to different age groups and sleep challenges (newborns, toddlers, etc.). My Beloved Sleep's content may be too general, failing to attract specific niches.",
+      "action": "1. Identify 2-3 key age groups or sleep issues to target. 2. Create blog posts or social media series addressing these specific needs. 3. Use relevant keywords in content for better searchability.",
+      "effort": "1 day",
+      "impact": "long term"
+    },
+    {
+      "priority": "low",
+      "title": "Interactive Q&A Sessions and Live Content",
+      "why": "Competitors often host live Q&A sessions, fostering direct engagement and establishing authority. This interactive format is currently absent for My Beloved Sleep.",
+      "action": "1. Schedule a monthly live Q&A session on Instagram or Facebook. 2. Promote the session in advance to gather questions. 3. Answer questions in real-time and save the live for later viewing.",
+      "effort": "2-3 hours",
+      "impact": "medium term"
+    },
+    {
+      "priority": "low",
+      "title": "Strategic Use of Lead Magnets and Email Capture",
+      "why": "Competitors use free resources (e.g., guides, checklists) to capture email addresses and nurture leads. My Beloved Sleep could improve its lead generation efforts.",
+      "action": "1. Create a simple, valuable downloadable resource (e.g., '5 Tips for Better Baby Sleep'). 2. Implement an opt-in form on the website and social media. 3. Set up an automated welcome email sequence.",
+      "effort": "1 day",
+      "impact": "long term"
+    }
+  ],
+  "competitors": [
+    {
+      "name": "@takingcarababies",
+      "url": "",
+      "weekly_views": 5000,
+      "pages_scraped": 0,
+      "recent_titles": [],
+      "error": null
+    },
+    {
+      "name": "@babysleep.answers",
+      "url": "",
+      "weekly_views": 5000,
+      "pages_scraped": 0,
+      "recent_titles": [],
+      "error": null
+    },
+    {
+      "name": "@riniegupta",
+      "url": "",
+      "weekly_views": 5000,
+      "pages_scraped": 0,
+      "recent_titles": [],
+      "error": null
+    },
+    {
+      "name": "@the.peaceful.sleeper",
+      "url": "",
+      "weekly_views": 5000,
+      "pages_scraped": 0,
+      "recent_titles": [],
+      "error": null
+    },
+    {
+      "name": "@sleepbysteph",
+      "url": "",
+      "weekly_views": 5000,
+      "pages_scraped": 0,
+      "recent_titles": [],
+      "error": null
+    },
+    {
+      "name": "@cozybabysleep",
+      "url": "",
+      "weekly_views": 5000,
+      "pages_scraped": 0,
+      "recent_titles": [],
+      "error": null
+    },
+    {
+      "name": "@babysleepconsultant",
+      "url": "",
+      "weekly_views": 5000,
+      "pages_scraped": 0,
+      "recent_titles": [],
+      "error": null
+    },
+    {
+      "name": "@babysleepteam",
+      "url": "",
+      "weekly_views": 5000,
+      "pages_scraped": 0,
+      "recent_titles": [],
+      "error": null
+    },
+    {
+      "name": "@helpingbabiessleep",
+      "url": "",
+      "weekly_views": 5000,
+      "pages_scraped": 0,
+      "recent_titles": [],
+      "error": null
+    },
+    {
+      "name": "@careitoutsleepconsultant",
+      "url": "",
+      "weekly_views": 5000,
+      "pages_scraped": 0,
+      "recent_titles": [],
+      "error": null
+    }
+  ],
+  "competitor_discovery": {
+    "local": [
+      {
+        "handle": "takingcarababies",
+        "name": "@takingcarababies",
+        "market": "local",
+        "followers": 1900000,
+        "growth_30d": 0,
+        "grade": "A",
+        "instagram_url": "https://www.instagram.com/takingcarababies/",
+        "socialblade_url": "",
+        "website_url": "",
+        "weekly_views": 190000,
+        "discovery_sources": [
+          {
+            "label": "Baby and Toddler Sleep Expert (@takingcarababies)",
+            "url": "https://www.instagram.com/takingcarababies/?hl=en",
+            "via": "Google search"
+          }
+        ],
+        "data_known": true,
+        "discovery_score": 1900000
+      },
+      {
+        "handle": "babysleep.answers",
+        "name": "@babysleep.answers",
+        "market": "local",
+        "followers": 0,
+        "growth_30d": 0,
+        "grade": "\u2014",
+        "instagram_url": "https://www.instagram.com/babysleep.answers/",
+        "socialblade_url": "",
+        "website_url": "",
+        "weekly_views": 0,
+        "discovery_sources": [
+          {
+            "label": "Sleep Consultant (@babysleep.answers)",
+            "url": "https://www.instagram.com/babysleep.answers/?hl=en",
+            "via": "Google search"
+          }
+        ],
+        "data_known": false,
+        "discovery_score": 0
+      },
+      {
+        "handle": "riniegupta",
+        "name": "@riniegupta",
+        "market": "local",
+        "followers": 0,
+        "growth_30d": 0,
+        "grade": "\u2014",
+        "instagram_url": "https://www.instagram.com/riniegupta/",
+        "socialblade_url": "",
+        "website_url": "",
+        "weekly_views": 0,
+        "discovery_sources": [
+          {
+            "label": "Newborn, Baby & Toddler Sleep Consultant (@riniegu",
+            "url": "https://www.instagram.com/riniegupta/?hl=en",
+            "via": "Google search"
+          }
+        ],
+        "data_known": false,
+        "discovery_score": 0
+      },
+      {
+        "handle": "the.peaceful.sleeper",
+        "name": "@the.peaceful.sleeper",
+        "market": "local",
+        "followers": 0,
+        "growth_30d": 0,
+        "grade": "\u2014",
+        "instagram_url": "https://www.instagram.com/the.peaceful.sleeper/",
+        "socialblade_url": "",
+        "website_url": "",
+        "weekly_views": 0,
+        "discovery_sources": [
+          {
+            "label": "The Peaceful Sleeper",
+            "url": "https://www.instagram.com/the.peaceful.sleeper/?hl=en",
+            "via": "Google search"
+          }
+        ],
+        "data_known": false,
+        "discovery_score": 0
+      },
+      {
+        "handle": "sleepbysteph",
+        "name": "@sleepbysteph",
+        "market": "local",
+        "followers": 0,
+        "growth_30d": 0,
+        "grade": "\u2014",
+        "instagram_url": "https://www.instagram.com/sleepbysteph/",
+        "socialblade_url": "",
+        "website_url": "",
+        "weekly_views": 0,
+        "discovery_sources": [
+          {
+            "label": "Baby & Child Sleep Consultant Australia (@sleepbys",
+            "url": "https://www.instagram.com/sleepbysteph/?hl=en",
+            "via": "Google search"
+          }
+        ],
+        "data_known": false,
+        "discovery_score": 0
+      }
+    ],
+    "global": [
+      {
+        "handle": "takingcarababies",
+        "name": "@takingcarababies",
+        "market": "global",
+        "followers": 1900000,
+        "growth_30d": 0,
+        "grade": "A",
+        "instagram_url": "https://www.instagram.com/takingcarababies/",
+        "socialblade_url": "",
+        "website_url": "",
+        "weekly_views": 190000,
+        "discovery_sources": [
+          {
+            "label": "Baby and Toddler Sleep Expert (@takingcarababies)",
+            "url": "https://www.instagram.com/takingcarababies/?hl=en",
+            "via": "Google search"
+          }
+        ],
+        "data_known": true,
+        "discovery_score": 1900000
+      },
+      {
+        "handle": "the.peaceful.sleeper",
+        "name": "@the.peaceful.sleeper",
+        "market": "global",
+        "followers": 0,
+        "growth_30d": 0,
+        "grade": "\u2014",
+        "instagram_url": "https://www.instagram.com/the.peaceful.sleeper/",
+        "socialblade_url": "",
+        "website_url": "",
+        "weekly_views": 0,
+        "discovery_sources": [
+          {
+            "label": "The Peaceful Sleeper",
+            "url": "https://www.instagram.com/the.peaceful.sleeper/?hl=en",
+            "via": "Google search"
+          }
+        ],
+        "data_known": false,
+        "discovery_score": 0
+      },
+      {
+        "handle": "arestfulnight",
+        "name": "@arestfulnight",
+        "market": "global",
+        "followers": 0,
+        "growth_30d": 0,
+        "grade": "\u2014",
+        "instagram_url": "https://www.instagram.com/arestfulnight/",
+        "socialblade_url": "",
+        "website_url": "",
+        "weekly_views": 0,
+        "discovery_sources": [
+          {
+            "label": "Meg O'Leary | Infant & Child Sleep Expert (@arestf",
+            "url": "https://www.instagram.com/arestfulnight/?hl=en",
+            "via": "Google search"
+          }
+        ],
+        "data_known": false,
+        "discovery_score": 0
+      },
+      {
+        "handle": "modernsleepmama",
+        "name": "@modernsleepmama",
+        "market": "global",
+        "followers": 0,
+        "growth_30d": 0,
+        "grade": "\u2014",
+        "instagram_url": "https://www.instagram.com/modernsleepmama/",
+        "socialblade_url": "",
+        "website_url": "",
+        "weekly_views": 0,
+        "discovery_sources": [
+          {
+            "label": "Certified Child Sleep Consultant Near You",
+            "url": "https://familysleepinstitute.com/graduates/",
+            "via": "Google search"
+          }
+        ],
+        "data_known": false,
+        "discovery_score": 0
+      },
+      {
+        "handle": "babysleepteam",
+        "name": "@babysleepteam",
+        "market": "global",
+        "followers": 0,
+        "growth_30d": 0,
+        "grade": "\u2014",
+        "instagram_url": "https://www.instagram.com/babysleepteam/",
+        "socialblade_url": "",
+        "website_url": "",
+        "weekly_views": 0,
+        "discovery_sources": [
+          {
+            "label": "Cat - Sleep Consultant (@babysleepteam)",
+            "url": "https://www.instagram.com/babysleepteam/?hl=en",
+            "via": "Google search"
+          }
+        ],
+        "data_known": false,
+        "discovery_score": 0
+      }
+    ],
+    "all": [
+      {
+        "handle": "takingcarababies",
+        "name": "@takingcarababies",
+        "market": "local",
+        "followers": 1900000,
+        "growth_30d": 0,
+        "grade": "A",
+        "instagram_url": "https://www.instagram.com/takingcarababies/",
+        "socialblade_url": "",
+        "website_url": "",
+        "weekly_views": 190000,
+        "discovery_sources": [
+          {
+            "label": "Baby and Toddler Sleep Expert (@takingcarababies)",
+            "url": "https://www.instagram.com/takingcarababies/?hl=en",
+            "via": "Google search"
+          }
+        ],
+        "data_known": true,
+        "discovery_score": 1900000
+      },
+      {
+        "handle": "babysleep.answers",
+        "name": "@babysleep.answers",
+        "market": "local",
+        "followers": 0,
+        "growth_30d": 0,
+        "grade": "\u2014",
+        "instagram_url": "https://www.instagram.com/babysleep.answers/",
+        "socialblade_url": "",
+        "website_url": "",
+        "weekly_views": 0,
+        "discovery_sources": [
+          {
+            "label": "Sleep Consultant (@babysleep.answers)",
+            "url": "https://www.instagram.com/babysleep.answers/?hl=en",
+            "via": "Google search"
+          }
+        ],
+        "data_known": false,
+        "discovery_score": 0
+      },
+      {
+        "handle": "riniegupta",
+        "name": "@riniegupta",
+        "market": "local",
+        "followers": 0,
+        "growth_30d": 0,
+        "grade": "\u2014",
+        "instagram_url": "https://www.instagram.com/riniegupta/",
+        "socialblade_url": "",
+        "website_url": "",
+        "weekly_views": 0,
+        "discovery_sources": [
+          {
+            "label": "Newborn, Baby & Toddler Sleep Consultant (@riniegu",
+            "url": "https://www.instagram.com/riniegupta/?hl=en",
+            "via": "Google search"
+          }
+        ],
+        "data_known": false,
+        "discovery_score": 0
+      },
+      {
+        "handle": "the.peaceful.sleeper",
+        "name": "@the.peaceful.sleeper",
+        "market": "local",
+        "followers": 0,
+        "growth_30d": 0,
+        "grade": "\u2014",
+        "instagram_url": "https://www.instagram.com/the.peaceful.sleeper/",
+        "socialblade_url": "",
+        "website_url": "",
+        "weekly_views": 0,
+        "discovery_sources": [
+          {
+            "label": "The Peaceful Sleeper",
+            "url": "https://www.instagram.com/the.peaceful.sleeper/?hl=en",
+            "via": "Google search"
+          }
+        ],
+        "data_known": false,
+        "discovery_score": 0
+      },
+      {
+        "handle": "sleepbysteph",
+        "name": "@sleepbysteph",
+        "market": "local",
+        "followers": 0,
+        "growth_30d": 0,
+        "grade": "\u2014",
+        "instagram_url": "https://www.instagram.com/sleepbysteph/",
+        "socialblade_url": "",
+        "website_url": "",
+        "weekly_views": 0,
+        "discovery_sources": [
+          {
+            "label": "Baby & Child Sleep Consultant Australia (@sleepbys",
+            "url": "https://www.instagram.com/sleepbysteph/?hl=en",
+            "via": "Google search"
+          }
+        ],
+        "data_known": false,
+        "discovery_score": 0
+      },
+      {
+        "handle": "cozybabysleep",
+        "name": "@cozybabysleep",
+        "market": "local",
+        "followers": 0,
+        "growth_30d": 0,
+        "grade": "\u2014",
+        "instagram_url": "https://www.instagram.com/cozybabysleep/",
+        "socialblade_url": "",
+        "website_url": "",
+        "weekly_views": 0,
+        "discovery_sources": [
+          {
+            "label": "Alice Bloomfield | Baby Sleep Support (@cozybabysl",
+            "url": "https://www.instagram.com/cozybabysleep/?hl=en",
+            "via": "Google search"
+          }
+        ],
+        "data_known": false,
+        "discovery_score": 0
+      },
+      {
+        "handle": "babysleepconsultant",
+        "name": "@babysleepconsultant",
+        "market": "local",
+        "followers": 0,
+        "growth_30d": 0,
+        "grade": "\u2014",
+        "instagram_url": "https://www.instagram.com/babysleepconsultant/",
+        "socialblade_url": "",
+        "website_url": "",
+        "weekly_views": 0,
+        "discovery_sources": [
+          {
+            "label": "Baby Sleep Consultant NZ/AU (@babysleepconsultant)",
+            "url": "https://www.instagram.com/babysleepconsultant/?hl=en",
+            "via": "Google search"
+          }
+        ],
+        "data_known": false,
+        "discovery_score": 0
+      },
+      {
+        "handle": "babysleepteam",
+        "name": "@babysleepteam",
+        "market": "local",
+        "followers": 0,
+        "growth_30d": 0,
+        "grade": "\u2014",
+        "instagram_url": "https://www.instagram.com/babysleepteam/",
+        "socialblade_url": "",
+        "website_url": "",
+        "weekly_views": 0,
+        "discovery_sources": [
+          {
+            "label": "Cat - Sleep Consultant (@babysleepteam)",
+            "url": "https://www.instagram.com/babysleepteam/?hl=en",
+            "via": "Google search"
+          }
+        ],
+        "data_known": false,
+        "discovery_score": 0
+      },
+      {
+        "handle": "helpingbabiessleep",
+        "name": "@helpingbabiessleep",
+        "market": "local",
+        "followers": 0,
+        "growth_30d": 0,
+        "grade": "\u2014",
+        "instagram_url": "https://www.instagram.com/helpingbabiessleep/",
+        "socialblade_url": "",
+        "website_url": "",
+        "weekly_views": 0,
+        "discovery_sources": [
+          {
+            "label": "The Helping Babies Sleep Method\u2122\ufe0f (@ ... - Instagr",
+            "url": "https://www.instagram.com/helpingbabiessleep/?hl=en",
+            "via": "Google search"
+          }
+        ],
+        "data_known": false,
+        "discovery_score": 0
+      },
+      {
+        "handle": "careitoutsleepconsultant",
+        "name": "@careitoutsleepconsultant",
+        "market": "local",
+        "followers": 0,
+        "growth_30d": 0,
+        "grade": "\u2014",
+        "instagram_url": "https://www.instagram.com/careitoutsleepconsultant/",
+        "socialblade_url": "",
+        "website_url": "",
+        "weekly_views": 0,
+        "discovery_sources": [
+          {
+            "label": "No sleep training | Kerry Secker (@careitoutsleepc",
+            "url": "https://www.instagram.com/careitoutsleepconsultant/?hl=en",
+            "via": "Google search"
+          }
+        ],
+        "data_known": false,
+        "discovery_score": 0
+      }
+    ],
+    "discovered_at": "2026-10-12T01:11:32.254732",
+    "total_checked": 20,
+    "benchmarks_last_updated": "2026-06-29"
+  },
+  "your_metrics": {
+    "views_this_week": 0,
+    "clicks": 0,
+    "saves_shares": 0,
+    "booking_enquiries": 0,
+    "platform_split": {
+      "instagram": 62,
+      "google_seo": 20,
+      "pinterest": 9,
+      "facebook": 6,
+      "other": 3
+    }
+  }
+}
